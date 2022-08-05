@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C700%3B0%2C900&family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C800%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C800%3B0%2C900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C700%3B0%2C900&family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800%3B0%2C900&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800%3B0%2C900&display=swap");
 
 .plasmic_tokens {
   --token-BDgDAcExDbGgek: #007aff;
@@ -158,6 +158,9 @@
   --mixin-SmdENIgffwuTFz_position: relative;
   --mixin-SmdENIgffwuTFz_list-style-type: disc;
   --mixin-SmdENIgffwuTFz_white-space: pre-wrap;
+  --mixin-zZJK1NVrz_font-size: 32px;
+  --mixin-zZJK1NVrz_font-weight: 700;
+  --mixin-zZJK1NVrz_white-space: pre-wrap;
 }
 
 .plasmic_mixins {
@@ -660,4 +663,12 @@
   position: var(--mixin-SmdENIgffwuTFz_position);
   list-style-type: var(--mixin-SmdENIgffwuTFz_list-style-type);
   flex-column-gap: var(--mixin-SmdENIgffwuTFz_flex-column-gap);
+}
+
+:where(.root_reset .plasmic_default__h2),
+:where(.root_reset .h2),
+:where(.root_reset .__wab_expr_html_text h2),
+:where(.root_reset.plasmic_default__h2) {
+  font-size: var(--mixin-zZJK1NVrz_font-size);
+  font-weight: var(--mixin-zZJK1NVrz_font-weight);
 }

@@ -35,10 +35,9 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
-import SignUpPrompt from "../../SignUpPrompt"; // plasmic-import: jM7vs6lScRpWPU/component
 import Section from "../../Section"; // plasmic-import: CM18A3LQky7Nr4/component
 import ValueProp from "../../ValueProp"; // plasmic-import: JJc-2jC6k2mJoy/component
+import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
 import ListItem from "../../ListItem"; // plasmic-import: GUmk-LbJ1tM4id/component
 import PriceCard from "../../PriceCard"; // plasmic-import: sY5-UMWUJodTrY/component
 import Banner from "../../Banner"; // plasmic-import: fAApUF3-RWThPH/component
@@ -53,9 +52,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_landing_page_starter.module.css"; // plasmic-import: qtkpEraJg2gN978YDtMYaP/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: mPPg8I0ucCOUu/css
 
+import CheckIcon from "./icons/PlasmicIcon__Check"; // plasmic-import: gHCuOW8JEryqrm/icon
 import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: Zu9y5vY-DbAu23/icon
 import ChevronRightIcon from "./icons/PlasmicIcon__ChevronRight"; // plasmic-import: yLX3owivRxFuO1/icon
-import CheckIcon from "./icons/PlasmicIcon__Check"; // plasmic-import: gHCuOW8JEryqrm/icon
 import CheckCircleIcon from "./icons/PlasmicIcon__CheckCircle"; // plasmic-import: _QAU6Sxfpz1Lu0/icon
 
 export type PlasmicHomepage__VariantMembers = {};
@@ -72,7 +71,6 @@ export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   headerHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
-  signUpPrompt?: p.Flex<typeof SignUpPrompt>;
   valuePropsSection?: p.Flex<typeof Section>;
   checkpointsSection?: p.Flex<typeof Section>;
   pricingSection?: p.Flex<typeof Section>;
@@ -173,111 +171,19 @@ function PlasmicHomepage__RenderFunc(props: {
                     hasGap={true}
                     className={classNames(projectcss.all, sty.freeBox__vsZYk)}
                   >
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__efVar)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__icJBs
-                        )}
-                      >
-                        {"Updated!"}
-                      </div>
-                    </div>
-
-                    <div
+                    <h2
                       className={classNames(
                         projectcss.all,
+                        projectcss.h2,
                         projectcss.__wab_text,
-                        sty.text__xNb0C
+                        sty.h2__tSoKh,
+                        "vertical-word" as const
                       )}
                     >
-                      <React.Fragment>
-                        <React.Fragment>{"Designs that "}</React.Fragment>
-                        <span
-                          className={
-                            "plasmic_default__all plasmic_default__span"
-                          }
-                          style={{ textDecoration: "underline" }}
-                        >
-                          {"adapt"}
-                        </span>
-                      </React.Fragment>
-                    </div>
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__wbDre
-                      )}
-                    >
-                      {
-                        "Orci dui condimentum rutrum laoreet hac purus porta sem sem a vivamus a posuere vel molestie."
-                      }
-                    </div>
-                  </p.Stack>
-
-                  <p.Stack
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__ugwBk)}
-                  >
-                    <Button
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__j3HcN
-                      )}
-                      color={"darkGray" as const}
-                      endIcon={
-                        <ChevronRightIcon
-                          className={classNames(projectcss.all, sty.svg__mA7Ds)}
-                          role={"img"}
-                        />
-                      }
-                      showEndIcon={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___0WtA7
-                        )}
-                      >
-                        {"Start now"}
-                      </div>
-                    </Button>
-
-                    <Button
-                      bgDifference={true}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.button__xp0Xy
-                      )}
-                      color={"darkGray" as const}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___4KdTd
-                        )}
-                      >
-                        {"Learn more…"}
-                      </div>
-                    </Button>
+                      {"更快速及精確的掌握"}
+                    </h2>
                   </p.Stack>
                 </p.Stack>
-              </div>
-
-              <div className={classNames(projectcss.all, sty.column__tOiZs)}>
-                <SignUpPrompt
-                  data-plasmic-name={"signUpPrompt"}
-                  data-plasmic-override={overrides.signUpPrompt}
-                  className={classNames("__wab_instance", sty.signUpPrompt)}
-                />
               </div>
             </p.Stack>
           </p.Stack>
@@ -1404,7 +1310,6 @@ const PlasmicDescendants = {
     "root",
     "headerHeroSection",
     "navbar",
-    "signUpPrompt",
     "valuePropsSection",
     "checkpointsSection",
     "pricingSection",
@@ -1414,9 +1319,8 @@ const PlasmicDescendants = {
     "callToActionSection",
     "footerSection"
   ],
-  headerHeroSection: ["headerHeroSection", "navbar", "signUpPrompt"],
+  headerHeroSection: ["headerHeroSection", "navbar"],
   navbar: ["navbar"],
-  signUpPrompt: ["signUpPrompt"],
   valuePropsSection: ["valuePropsSection"],
   checkpointsSection: ["checkpointsSection"],
   pricingSection: ["pricingSection"],
@@ -1433,7 +1337,6 @@ type NodeDefaultElementType = {
   root: "div";
   headerHeroSection: "div";
   navbar: typeof Navbar;
-  signUpPrompt: typeof SignUpPrompt;
   valuePropsSection: typeof Section;
   checkpointsSection: typeof Section;
   pricingSection: typeof Section;
@@ -1507,7 +1410,6 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     headerHeroSection: makeNodeComponent("headerHeroSection"),
     navbar: makeNodeComponent("navbar"),
-    signUpPrompt: makeNodeComponent("signUpPrompt"),
     valuePropsSection: makeNodeComponent("valuePropsSection"),
     checkpointsSection: makeNodeComponent("checkpointsSection"),
     pricingSection: makeNodeComponent("pricingSection"),

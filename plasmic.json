@@ -24,7 +24,7 @@
     {
       "projectId": "qtkpEraJg2gN978YDtMYaP",
       "projectApiToken": "BpdI0vHcuhpg9NK4rxfy28p1wImJxkGtwqXJRSTR24CMavTd34XE5S9aYVOXRXs35UteImPtC3MX7vDHAOyuaw",
-      "projectName": "Landing page starter",
+      "projectName": "laziness-demo",
       "version": "latest",
       "cssFilePath": "plasmic/landing_page_starter/plasmic_landing_page_starter.module.css",
       "components": [
@@ -442,8 +442,27 @@
         }
       ],
       "indirect": false,
-      "globalContextsFilePath": "",
+      "globalContextsFilePath": "plasmic/laziness_demo/PlasmicGlobalContextsProvider.tsx",
       "codeComponents": []
+    },
+    {
+      "projectId": "8PtdGodUbexNYgkuyBUcWu",
+      "projectApiToken": "34o5R5KswluuZ4sD83F88oQrcLWsNNeUpCptQ8Okf4hYqgjnHnX2idGAlhtB7WWQQelNAInf5XFazR1cGw",
+      "projectName": "plasmic-embed-css",
+      "version": "3.0.4",
+      "cssFilePath": "plasmic/plasmic_embed_css/plasmic_plasmic_embed_css.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "plasmic/plasmic_embed_css/PlasmicGlobalContextsProvider.tsx",
+      "codeComponents": [
+        {
+          "id": "qF0uJxFztB",
+          "name": "EmbedCss",
+          "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
+        }
+      ]
     }
   ],
   "globalVariants": {

@@ -547,6 +547,11 @@
     dlv "^1.1.3"
     dset "^3.1.2"
 
+"@plasmicpkgs/plasmic-embed-css@^0.1.57":
+  version "0.1.57"
+  resolved "https://registry.yarnpkg.com/@plasmicpkgs/plasmic-embed-css/-/plasmic-embed-css-0.1.57.tgz#d5f272e9cb04e9402066d929617369c3a7c3f0c5"
+  integrity sha512-J8OyMDLS67t3r4CVonOx0OmPw60wviq2IC2JF2Is+eH90Fa6agPJxJWmZZJpDgyPj09QxugCksmDq1Y7d/k65A==
+
 "@react-aria/checkbox@^3.3.4":
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/@react-aria/checkbox/-/checkbox-3.5.0.tgz#2d99957cdaf95b13b958159134a4894c0c6e7f47"
