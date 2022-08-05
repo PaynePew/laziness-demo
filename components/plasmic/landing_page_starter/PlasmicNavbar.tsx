@@ -149,8 +149,9 @@ function PlasmicNavbar__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__j9Fd)}
             color={"navLink" as const}
+            link={"/contact" as const}
           >
-            {"Contact"}
+            {"聯絡我們"}
           </Button>
 
           <Button
@@ -162,7 +163,8 @@ function PlasmicNavbar__RenderFunc(props: {
 
           <Button
             className={classNames("__wab_instance", sty.button__qhe0L)}
-            color={"darkGray" as const}
+            color={"navLink" as const}
+            outline={true}
           >
             {"Sign up"}
           </Button>

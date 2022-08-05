@@ -190,6 +190,9 @@ function PlasmicButton__RenderFunc(props: {
           [sty.rootcolor_green]: hasVariant(variants, "color", "green"),
           [sty.rootcolor_indigo]: hasVariant(variants, "color", "indigo"),
           [sty.rootcolor_navLink]: hasVariant(variants, "color", "navLink"),
+          [sty.rootcolor_navLink_outline]:
+            hasVariant(variants, "color", "navLink") &&
+            hasVariant(variants, "outline", "outline"),
           [sty.rootcolor_red]: hasVariant(variants, "color", "red"),
           [sty.rootcolor_white]: hasVariant(variants, "color", "white"),
           [sty.rootextraSmallShadow]: hasVariant(
@@ -343,6 +346,9 @@ function PlasmicButton__RenderFunc(props: {
                 "color",
                 "navLink"
               ),
+              [sty.slotTargetChildrencolor_navLink_outline]:
+                hasVariant(variants, "color", "navLink") &&
+                hasVariant(variants, "outline", "outline"),
               [sty.slotTargetChildrencolor_red]: hasVariant(
                 variants,
                 "color",
@@ -367,6 +373,11 @@ function PlasmicButton__RenderFunc(props: {
                 variants,
                 "large",
                 "large"
+              ),
+              [sty.slotTargetChildrenoutline]: hasVariant(
+                variants,
+                "outline",
+                "outline"
               ),
               [sty.slotTargetChildrenshowEndIcon]: hasVariant(
                 variants,
