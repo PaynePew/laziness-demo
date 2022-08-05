@@ -5,6 +5,7 @@ import * as React from "react";
 import { ScreenVariantProvider } from "../components/plasmic/landing_page_starter/PlasmicGlobalVariant__Screen";
 import { PlasmicHomepage } from "../components/plasmic/landing_page_starter/PlasmicHomepage";
 
+
 function Homepage() {
   // Use PlasmicHomepage to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
