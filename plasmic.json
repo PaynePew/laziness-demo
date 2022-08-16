@@ -250,6 +250,19 @@
           "cssFilePath": "plasmic/landing_page_starter/PlasmicContact.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "_2BVlTZVvM",
+          "name": "AboutCard",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAboutCard.tsx",
+          "importSpec": {
+            "modulePath": "AboutCard.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicAboutCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -439,6 +452,36 @@
           "id": "BaiNHAFZHOMWZJ",
           "name": "meeting",
           "filePath": "../public/plasmic/landing_page_starter/images/meeting.jpeg"
+        },
+        {
+          "id": "ppplzOvmX",
+          "name": "bg-14.webp",
+          "filePath": "../public/plasmic/laziness_demo/images/bg14Webp.webp"
+        },
+        {
+          "id": "I2GM6NBZH",
+          "name": "bg-3.webp",
+          "filePath": "../public/plasmic/laziness_demo/images/bg3Webp.webp"
+        },
+        {
+          "id": "K8FruciDb",
+          "name": "bernard-hermant-_THpp4Hs8LU-unsplash.webp",
+          "filePath": "../public/plasmic/laziness_demo/images/bernardHermantTHpp4Hs8LuUnsplashwebp.webp"
+        },
+        {
+          "id": "7YCWMUKbw",
+          "name": "calculate",
+          "filePath": "../public/plasmic/laziness_demo/images/calculate.webp"
+        },
+        {
+          "id": "E8U92xy9B",
+          "name": "meeting-1",
+          "filePath": "../public/plasmic/laziness_demo/images/meeting1.webp"
+        },
+        {
+          "id": "7_NDJgMSb",
+          "name": "tower",
+          "filePath": "../public/plasmic/laziness_demo/images/tower.webp"
         }
       ],
       "indirect": false,
@@ -462,7 +505,8 @@
           "name": "EmbedCss",
           "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {
@@ -479,6 +523,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.184",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.184/dist/plasmic.schema.json"
+  "cliVersion": "0.1.186",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.186/dist/plasmic.schema.json"
 }

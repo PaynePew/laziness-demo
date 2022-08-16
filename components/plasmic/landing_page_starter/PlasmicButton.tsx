@@ -46,6 +46,7 @@ export type PlasmicButton__VariantMembers = {
   showStartIcon: "showStartIcon";
   showEndIcon: "showEndIcon";
   color:
+    | "primary"
     | "green"
     | "indigo"
     | "blue"
@@ -68,6 +69,7 @@ export type PlasmicButton__VariantsArgs = {
   showStartIcon?: SingleBooleanChoiceArg<"showStartIcon">;
   showEndIcon?: SingleBooleanChoiceArg<"showEndIcon">;
   color?: SingleChoiceArg<
+    | "primary"
     | "green"
     | "indigo"
     | "blue"
@@ -123,6 +125,7 @@ export type PlasmicButton__OverridesType = {
 
 export interface DefaultButtonProps extends pp.BaseButtonProps {
   color?: SingleChoiceArg<
+    | "primary"
     | "green"
     | "indigo"
     | "blue"
@@ -210,6 +213,9 @@ function PlasmicButton__RenderFunc(props: {
           [sty.rootlarge]: hasVariant(variants, "large", "large"),
           [sty.rootoutline]: hasVariant(variants, "outline", "outline"),
           [sty.rootround]: hasVariant(variants, "round", "round"),
+          [sty.rootround_color_primary]:
+            hasVariant(variants, "color", "primary") &&
+            hasVariant(variants, "round", "round"),
           [sty.rootshowEndIcon]: hasVariant(
             variants,
             "showEndIcon",
@@ -349,6 +355,11 @@ function PlasmicButton__RenderFunc(props: {
               [sty.slotTargetChildrencolor_navLink_outline]:
                 hasVariant(variants, "color", "navLink") &&
                 hasVariant(variants, "outline", "outline"),
+              [sty.slotTargetChildrencolor_primary]: hasVariant(
+                variants,
+                "color",
+                "primary"
+              ),
               [sty.slotTargetChildrencolor_red]: hasVariant(
                 variants,
                 "color",
@@ -379,6 +390,9 @@ function PlasmicButton__RenderFunc(props: {
                 "outline",
                 "outline"
               ),
+              [sty.slotTargetChildrenround_color_primary]:
+                hasVariant(variants, "color", "primary") &&
+                hasVariant(variants, "round", "round"),
               [sty.slotTargetChildrenshowEndIcon]: hasVariant(
                 variants,
                 "showEndIcon",

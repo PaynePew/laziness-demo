@@ -34,8 +34,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Logo from "../../Logo"; // plasmic-import: kosXDNVVRUk_WE/component
 import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
+import Logo from "../../Logo"; // plasmic-import: kosXDNVVRUk_WE/component
 
 import { useScreenVariants as useScreenVariantsnCpqQwRKrRf2Hx } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: nCpqQwRKrRf2Hx/globalVariant
 
@@ -113,6 +113,33 @@ function PlasmicNavbar__RenderFunc(props: {
         hasGap={true}
         className={classNames(projectcss.all, sty.freeBox__ifiW)}
       >
+        <p.Stack
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__scFmz)}
+        >
+          <Button
+            className={classNames("__wab_instance", sty.button__aUsln)}
+            color={"navLink" as const}
+          >
+            {"首頁"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__r3GGj)}
+            color={"navLink" as const}
+          >
+            {"公司簡介"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__arOz5)}
+            color={"navLink" as const}
+          >
+            {"工程實績"}
+          </Button>
+        </p.Stack>
+
         <Logo
           data-plasmic-name={"logo"}
           data-plasmic-override={overrides.logo}
@@ -122,10 +149,10 @@ function PlasmicNavbar__RenderFunc(props: {
         <p.Stack
           as={"div"}
           hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__scFmz)}
+          className={classNames(projectcss.all, sty.freeBox__wdExf)}
         >
           <Button
-            className={classNames("__wab_instance", sty.button__zKyem)}
+            className={classNames("__wab_instance", sty.button__wyHno)}
             color={"navLink" as const}
             link={"/services" as const}
           >
@@ -133,21 +160,14 @@ function PlasmicNavbar__RenderFunc(props: {
           </Button>
 
           <Button
-            className={classNames("__wab_instance", sty.button__aUsln)}
+            className={classNames("__wab_instance", sty.button__oDLgG)}
             color={"navLink" as const}
           >
-            {"報價流程"}
+            {"價目表"}
           </Button>
 
           <Button
-            className={classNames("__wab_instance", sty.button__r3GGj)}
-            color={"navLink" as const}
-          >
-            {"關於我們"}
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button__j9Fd)}
+            className={classNames("__wab_instance", sty.button___2G5Wu)}
             color={"navLink" as const}
             link={"/contact" as const}
           >
@@ -155,14 +175,7 @@ function PlasmicNavbar__RenderFunc(props: {
           </Button>
 
           <Button
-            className={classNames("__wab_instance", sty.button__arOz5)}
-            color={"navLink" as const}
-          >
-            {"工程實績"}
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button__qhe0L)}
+            className={classNames("__wab_instance", sty.button__axQ7P)}
             color={"navLink" as const}
             outline={true}
           >

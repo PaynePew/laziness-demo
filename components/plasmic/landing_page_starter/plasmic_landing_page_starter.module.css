@@ -27,13 +27,13 @@
   --plasmic-token-light-quarternary: var(--token-i6cQ9UoRkBzot7);
   --token-v8a-vq6Sbnt4vo: #1c1c1e;
   --plasmic-token-dark-gray-06: var(--token-v8a-vq6Sbnt4vo);
-  --token-mrM-Su-PzGovMG: #32d74b;
+  --token-mrM-Su-PzGovMG: #298a81;
   --plasmic-token-dark-green: var(--token-mrM-Su-PzGovMG);
   --token-DJuvQ434u9j6-f: #0a84ff;
   --plasmic-token-dark-blue: var(--token-DJuvQ434u9j6-f);
   --token-hsX3AHN9edfitg: #ffffff1a;
   --plasmic-token-dark-quarternary: var(--token-hsX3AHN9edfitg);
-  --token-X_MubEhfhEbXKh: #34c759;
+  --token-X_MubEhfhEbXKh: #66aa35;
   --plasmic-token-light-green: var(--token-X_MubEhfhEbXKh);
   --token-sfD2lxnd916CTu: #5856d6;
   --plasmic-token-light-indigo: var(--token-sfD2lxnd916CTu);
@@ -64,7 +64,7 @@
   --mixin-heDuR08qrN3Pct_font-family: "Inter";
   --mixin-heDuR08qrN3Pct_color: #000000;
   --mixin-heDuR08qrN3Pct_font-size: 32px;
-  --mixin-heDuR08qrN3Pct_font-weight: 600;
+  --mixin-heDuR08qrN3Pct_font-weight: 700;
   --mixin-heDuR08qrN3Pct_letter-spacing: -0.8px;
   --mixin-heDuR08qrN3Pct_line-height: 1.2;
   --mixin-heDuR08qrN3Pct_white-space: pre-wrap;
@@ -77,10 +77,10 @@
   --mixin-9k3thp-E-VZBH6_white-space: pre-wrap;
   --mixin-LD94XxZwtadCWY_font-family: "Inter";
   --mixin-LD94XxZwtadCWY_color: #000000;
-  --mixin-LD94XxZwtadCWY_font-size: 20px;
-  --mixin-LD94XxZwtadCWY_font-weight: 600;
-  --mixin-LD94XxZwtadCWY_letter-spacing: -0.3px;
-  --mixin-LD94XxZwtadCWY_line-height: 1.5;
+  --mixin-LD94XxZwtadCWY_font-size: 18px;
+  --mixin-LD94XxZwtadCWY_font-weight: 400;
+  --mixin-LD94XxZwtadCWY_letter-spacing: 6px;
+  --mixin-LD94XxZwtadCWY_line-height: 28px;
   --mixin-LD94XxZwtadCWY_white-space: pre-wrap;
   --mixin-vhrSsx8k2VDzti_font-family: "Inter";
   --mixin-vhrSsx8k2VDzti_color: #000000;
@@ -158,7 +158,7 @@
   --mixin-SmdENIgffwuTFz_position: relative;
   --mixin-SmdENIgffwuTFz_list-style-type: disc;
   --mixin-SmdENIgffwuTFz_white-space: pre-wrap;
-  --mixin-zZJK1NVrz_font-size: 32px;
+  --mixin-zZJK1NVrz_font-size: 35px;
   --mixin-zZJK1NVrz_font-weight: 700;
   --mixin-zZJK1NVrz_white-space: pre-wrap;
 }
