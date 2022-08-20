@@ -20,7 +20,7 @@
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
   margin-left: 16px;
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .root {
     padding: 32px;
   }
@@ -51,13 +51,13 @@
   > img {
   margin-left: 16px;
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .freeBox__ifiW {
     display: flex;
     flex-direction: column;
   }
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .freeBox__ifiW > :global(.__wab_flex-container) {
     flex-direction: column;
     align-items: center;
@@ -67,7 +67,7 @@
     height: calc(100% + 16px);
   }
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .freeBox__ifiW > :global(.__wab_flex-container) > *,
   .freeBox__ifiW > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .freeBox__ifiW > :global(.__wab_flex-container) > picture > img,
@@ -102,7 +102,7 @@
   > img {
   margin-left: 8px;
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .freeBox__scFmz > :global(.__wab_flex-container) {
     flex-wrap: wrap;
     justify-content: center;
@@ -110,7 +110,7 @@
     height: calc(100% + 8px);
   }
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .freeBox__scFmz > :global(.__wab_flex-container) > *,
   .freeBox__scFmz > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .freeBox__scFmz > :global(.__wab_flex-container) > picture > img,
@@ -189,7 +189,7 @@
   > img {
   margin-left: 8px;
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .freeBox__wdExf > :global(.__wab_flex-container) {
     flex-wrap: wrap;
     justify-content: center;
@@ -197,7 +197,7 @@
     height: calc(100% + 8px);
   }
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .freeBox__wdExf > :global(.__wab_flex-container) > *,
   .freeBox__wdExf > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .freeBox__wdExf > :global(.__wab_flex-container) > picture > img,

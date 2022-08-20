@@ -29,13 +29,13 @@
   > img {
   margin-left: 64px;
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .freeBox__nOTsm {
     display: flex;
     flex-direction: column;
   }
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .freeBox__nOTsm > :global(.__wab_flex-container) {
     flex-direction: column;
     margin-left: calc(0px - 0px);
@@ -44,7 +44,7 @@
     height: calc(100% + 64px);
   }
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 769px) {
   .freeBox__nOTsm > :global(.__wab_flex-container) > *,
   .freeBox__nOTsm > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .freeBox__nOTsm > :global(.__wab_flex-container) > picture > img,

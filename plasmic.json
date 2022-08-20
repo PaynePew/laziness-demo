@@ -42,19 +42,6 @@
           "componentType": "page"
         },
         {
-          "id": "Mn7zz55YD2Ma3v",
-          "name": "Services",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/landing_page_starter/PlasmicServices.tsx",
-          "importSpec": {
-            "modulePath": "../pages/services.tsx"
-          },
-          "cssFilePath": "plasmic/landing_page_starter/PlasmicServices.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "2AU0qEyM1oCTCP",
           "name": "Navbar",
           "type": "managed",
@@ -263,6 +250,84 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicAboutCard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "Mn7zz55YD2Ma3v",
+          "name": "Backup",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicBackup.tsx",
+          "importSpec": {
+            "modulePath": "../pages/services-backup.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicBackup.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "_Sa5uF9FlTQ",
+          "name": "About",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAbout.tsx",
+          "importSpec": {
+            "modulePath": "../pages/about.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "RdOB0C9oEvS",
+          "name": "Service",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicService.tsx",
+          "importSpec": {
+            "modulePath": "../pages/services.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicService.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "DhprYlf-5nu",
+          "name": "Project",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicProject.tsx",
+          "importSpec": {
+            "modulePath": "../pages/project.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicProject.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "VqqXUhJrgP",
+          "name": "ProjectCardPrimary",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicProjectCardPrimary.tsx",
+          "importSpec": {
+            "modulePath": "ProjectCardPrimary.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicProjectCardPrimary.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "UgNbjXEvxu8",
+          "name": "ProjectCardDetail",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicProjectCardDetail.tsx",
+          "importSpec": {
+            "modulePath": "ProjectCardDetail.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicProjectCardDetail.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -465,8 +530,8 @@
         },
         {
           "id": "K8FruciDb",
-          "name": "bernard-hermant-_THpp4Hs8LU-unsplash.webp",
-          "filePath": "../public/plasmic/laziness_demo/images/bernardHermantTHpp4Hs8LuUnsplashwebp.webp"
+          "name": "bg-5",
+          "filePath": "../public/plasmic/laziness_demo/images/bg5.webp"
         },
         {
           "id": "7YCWMUKbw",
@@ -482,6 +547,61 @@
           "id": "7_NDJgMSb",
           "name": "tower",
           "filePath": "../public/plasmic/laziness_demo/images/tower.webp"
+        },
+        {
+          "id": "1gV8bx1Dd",
+          "name": "hallway",
+          "filePath": "../public/plasmic/laziness_demo/images/hallway.webp"
+        },
+        {
+          "id": "AT0WNr_dT",
+          "name": "office-4",
+          "filePath": "../public/plasmic/laziness_demo/images/office4.webp"
+        },
+        {
+          "id": "f0PzbhGC2",
+          "name": "design",
+          "filePath": "../public/plasmic/laziness_demo/images/design.webp"
+        },
+        {
+          "id": "c5Q4BVDV2",
+          "name": "office-3",
+          "filePath": "../public/plasmic/laziness_demo/images/office3.webp"
+        },
+        {
+          "id": "M85Usc1H7",
+          "name": "office-1",
+          "filePath": "../public/plasmic/laziness_demo/images/office1.webp"
+        },
+        {
+          "id": "UC74--Ph3",
+          "name": "office-2",
+          "filePath": "../public/plasmic/laziness_demo/images/office2.webp"
+        },
+        {
+          "id": "apCdvE3bw",
+          "name": "circle-structure",
+          "filePath": "../public/plasmic/laziness_demo/images/circleStructure.webp"
+        },
+        {
+          "id": "AxLoRSdfi",
+          "name": "davidcohen-i1x2BO7CSBI-unsplash.webp",
+          "filePath": "../public/plasmic/laziness_demo/images/davidcohenI1X2Bo7CsbiUnsplashwebp.webp"
+        },
+        {
+          "id": "OY_75ovqO",
+          "name": "bim-structure",
+          "filePath": "../public/plasmic/laziness_demo/images/bimStructure.webp"
+        },
+        {
+          "id": "mBwlGZ1Zf",
+          "name": "bim-house",
+          "filePath": "../public/plasmic/laziness_demo/images/bimHouse.webp"
+        },
+        {
+          "id": "FyoylRWtm",
+          "name": "apartment-bim",
+          "filePath": "../public/plasmic/laziness_demo/images/apartmentBim.webp"
         }
       ],
       "indirect": false,

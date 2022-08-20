@@ -246,63 +246,65 @@ function PlasmicHomepage__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.aboutSection)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__eQxa)}>
-              <h4
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h4,
-                  projectcss.__wab_text,
-                  sty.h4___8NItU,
-                  "" as const
-                )}
-              >
-                {"#懶得算，幫你精打細算"}
-              </h4>
+            <div className={classNames(projectcss.all, sty.freeBox__gYXgv)}>
+              <div className={classNames(projectcss.all, sty.freeBox__eQxa)}>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4___8NItU,
+                    "" as const
+                  )}
+                >
+                  {"#懶得算，幫你精打細算"}
+                </h4>
 
-              <h2
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h2,
-                  projectcss.__wab_text,
-                  sty.h2__krYd6,
-                  "" as const
-                )}
-              >
-                {"更快速及精確的掌握"}
-              </h2>
+                <h2
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h2,
+                    projectcss.__wab_text,
+                    sty.h2__krYd6,
+                    "" as const
+                  )}
+                >
+                  {"更快速及精確的掌握"}
+                </h2>
 
-              <h6
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h6,
-                  projectcss.__wab_text,
-                  sty.h6__quoig,
-                  "" as const
-                )}
-              >
-                {"懶得算，幫你精打細算"}
-              </h6>
+                <h6
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h6,
+                    projectcss.__wab_text,
+                    sty.h6__quoig,
+                    "" as const
+                  )}
+                >
+                  {"懶得算，幫你精打細算"}
+                </h6>
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__bTOd
-                )}
-              >
-                {
-                  "在一件一件的工程估算中，累積出的完善體制，深知成本掌控的各項細節。懶得算，希望每位客戶都能在此輕鬆獲取精確的估算資料，讓辛苦的汗水皆有所獲。"
-                }
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bTOd
+                  )}
+                >
+                  {
+                    "在一件一件的工程估算中，累積出的完善體制，深知成本掌控的各項細節。懶得算，希望每位客戶都能在此輕鬆獲取精確的估算資料，讓辛苦的汗水皆有所獲。"
+                  }
+                </div>
               </div>
-            </div>
 
-            <Button
-              className={classNames("__wab_instance", sty.button__cmlJc)}
-              color={"primary" as const}
-              round={true}
-            >
-              {"關於我們"}
-            </Button>
+              <Button
+                className={classNames("__wab_instance", sty.button__cmlJc)}
+                color={"primary" as const}
+                round={true}
+              >
+                {"關於我們"}
+              </Button>
+            </div>
           </p.Stack>
 
           <p.Stack
@@ -312,136 +314,138 @@ function PlasmicHomepage__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.contactSection)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__oYaqq)}>
-              <h4
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h4,
-                  projectcss.__wab_text,
-                  sty.h4__xCmVw,
-                  "" as const
-                )}
-              >
-                {"#各項施工圖配合"}
-              </h4>
+            <div className={classNames(projectcss.all, sty.freeBox__ribUq)}>
+              <div className={classNames(projectcss.all, sty.freeBox__oYaqq)}>
+                <h4
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h4,
+                    projectcss.__wab_text,
+                    sty.h4__xCmVw,
+                    "" as const
+                  )}
+                >
+                  {"#各項施工圖配合"}
+                </h4>
 
-              <h2
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h2,
-                  projectcss.__wab_text,
-                  sty.h2__ipP,
-                  "" as const
-                )}
-              >
-                {"專業營建管理系統"}
-              </h2>
+                <h2
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h2,
+                    projectcss.__wab_text,
+                    sty.h2__ipP,
+                    "" as const
+                  )}
+                >
+                  {"專業營建管理系統"}
+                </h2>
 
-              <h6
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h6,
-                  projectcss.__wab_text,
-                  sty.h6__xjPvn,
-                  "" as const
-                )}
-              >
-                {"從平面到3D圖型，一次搞定"}
-              </h6>
+                <h6
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h6,
+                    projectcss.__wab_text,
+                    sty.h6__xjPvn,
+                    "" as const
+                  )}
+                >
+                  {"從平面到3D圖型，一次搞定"}
+                </h6>
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__w3S1G
-                )}
-              >
-                {
-                  "汶源資訊所研發的一系列營建業ERP高階管理系統，自微軟DOS時代即已成熟普遍的被應用於臺灣的營建業市場，並普獲營建業界的認同、肯定與好評。(此為範例文字)"
-                }
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__w3S1G
+                  )}
+                >
+                  {
+                    "汶源資訊所研發的一系列營建業ERP高階管理系統，自微軟DOS時代即已成熟普遍的被應用於臺灣的營建業市場，並普獲營建業界的認同、肯定與好評。(此為範例文字)"
+                  }
+                </div>
+
+                <Button
+                  className={classNames("__wab_instance", sty.button___2NPfY)}
+                  color={"primary" as const}
+                  round={true}
+                >
+                  {"聯絡我們"}
+                </Button>
               </div>
 
-              <Button
-                className={classNames("__wab_instance", sty.button___2NPfY)}
-                color={"primary" as const}
-                round={true}
-              >
-                {"聯絡我們"}
-              </Button>
-            </div>
+              <div className={classNames(projectcss.all, sty.freeBox___4Zqdh)}>
+                <AboutCard
+                  className={classNames("__wab_instance", sty.aboutCard__q0OIz)}
+                  description={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__sslFf
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? "結構估算(鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視)、裝修估算(室內及外裝修數量、分層、分戶)、工程預算書及標單編列。"
+                        : "結構估算(鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視)、裝修估算(室內及外裝修數量、分層、分戶)、工程預算書及標單編列。"}
+                    </div>
+                  }
+                  heading={"專業的服務項目"}
+                />
 
-            <div className={classNames(projectcss.all, sty.freeBox___4Zqdh)}>
-              <AboutCard
-                className={classNames("__wab_instance", sty.aboutCard__q0OIz)}
-                description={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sslFf
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? "結構估算(鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視)、裝修估算(室內及外裝修數量、分層、分戶)、工程預算書及標單編列。"
-                      : "結構估算(鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視)、裝修估算(室內及外裝修數量、分層、分戶)、工程預算書及標單編列。"}
-                  </div>
-                }
-                heading={"專業的服務項目"}
-              />
+                <AboutCard
+                  className={classNames("__wab_instance", sty.aboutCard__v3MYx)}
+                  description={
+                    "至今累積超過五十件以上工程估算案例，您可以從過往的專案了解我們對於估算的嚴格把關。"
+                  }
+                  heading={"不斷累積的專案經驗"}
+                  image={
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img__q51Ti)}
+                      displayHeight={"100%" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"100%" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: "/plasmic/laziness_demo/images/tower.webp",
+                        fullWidth: 5715,
+                        fullHeight: 3810,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  }
+                />
 
-              <AboutCard
-                className={classNames("__wab_instance", sty.aboutCard__v3MYx)}
-                description={
-                  "至今累積超過五十件以上工程估算案例，您可以從過往的專案了解我們對於估算的嚴格把關。"
-                }
-                heading={"不斷累積的專案經驗"}
-                image={
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img__q51Ti)}
-                    displayHeight={"100%" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"100%" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"100%" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: "/plasmic/laziness_demo/images/tower.webp",
-                      fullWidth: 5715,
-                      fullHeight: 3810,
-                      aspectRatio: undefined
-                    }}
-                  />
-                }
-              />
-
-              <AboutCard
-                className={classNames("__wab_instance", sty.aboutCard__pRjb3)}
-                description={
-                  "從RC、SRC/SC、SS，每層樓地板面積的收費皆清楚列出，在報價及後續流程上都有專人為您解釋，可以更專心在專案執行上。"
-                }
-                heading={"清楚的收費方式"}
-                image={
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img__eLu5A)}
-                    displayHeight={"100%" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"100%" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"100%" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: "/plasmic/laziness_demo/images/meeting1.webp",
-                      fullWidth: 7360,
-                      fullHeight: 4912,
-                      aspectRatio: undefined
-                    }}
-                  />
-                }
-              />
+                <AboutCard
+                  className={classNames("__wab_instance", sty.aboutCard__pRjb3)}
+                  description={
+                    "從RC、SRC/SC、SS，每層樓地板面積的收費皆清楚列出，在報價及後續流程上都有專人為您解釋，可以更專心在專案執行上。"
+                  }
+                  heading={"清楚的收費方式"}
+                  image={
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img__eLu5A)}
+                      displayHeight={"100%" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"100%" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: "/plasmic/laziness_demo/images/meeting1.webp",
+                        fullWidth: 7360,
+                        fullHeight: 4912,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  }
+                />
+              </div>
             </div>
           </p.Stack>
 

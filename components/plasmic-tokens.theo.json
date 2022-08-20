@@ -13,11 +13,21 @@
     {
       "name": "Content max width",
       "type": "spacing",
-      "value": "1080px",
+      "value": "1140px",
       "category": "spacing",
       "meta": {
         "projectId": "qtkpEraJg2gN978YDtMYaP",
         "id": "ENZjHcnmOJYy13"
+      }
+    },
+    {
+      "name": "UnnamedStyleToken",
+      "type": "spacing",
+      "value": "100%",
+      "category": "spacing",
+      "meta": {
+        "projectId": "qtkpEraJg2gN978YDtMYaP",
+        "id": "6xnewts11"
       }
     },
     {

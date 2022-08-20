@@ -65,6 +65,7 @@ export const PlasmicAboutCard__ArgProps = new Array<ArgPropType>(
 );
 
 export type PlasmicAboutCard__OverridesType = {
+  root?: p.Flex<"div">;
   root2?: p.Flex<"div">;
   link?: p.Flex<"a"> & Partial<LinkProps>;
   h4?: p.Flex<"h4">;
@@ -108,8 +109,8 @@ function PlasmicAboutCard__RenderFunc(props: {
   return (
     true ? (
       <div
-        data-plasmic-name={"root2"}
-        data-plasmic-override={overrides.root2}
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
         data-plasmic-root={true}
         data-plasmic-for-node={forNode}
         className={classNames(
@@ -118,90 +119,109 @@ function PlasmicAboutCard__RenderFunc(props: {
           projectcss.plasmic_default_styles,
           projectcss.plasmic_mixins,
           projectcss.plasmic_tokens,
-          sty.root2
+          sty.root
         )}
       >
-        <p.PlasmicLink
-          data-plasmic-name={"link"}
-          data-plasmic-override={overrides.link}
-          className={classNames(projectcss.all, projectcss.a, sty.link)}
-          component={Link}
-          platform={"nextjs"}
-        >
-          {(
-            hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
-          ) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__ynqI)}>
-              {true ? (
-                <div className={classNames(projectcss.all, sty.freeBox__po5Ny)}>
-                  {p.renderPlasmicSlot({
-                    defaultContents: (
-                      <p.PlasmicImg
-                        alt={""}
-                        className={classNames(sty.img__brqa3)}
-                        displayHeight={"100%" as const}
-                        displayMaxHeight={"none" as const}
-                        displayMaxWidth={"100%" as const}
-                        displayMinHeight={"0" as const}
-                        displayMinWidth={"0" as const}
-                        displayWidth={"100%" as const}
-                        loading={"lazy" as const}
-                        src={{
-                          src: "/plasmic/laziness_demo/images/calculate.webp",
-                          fullWidth: 2848,
-                          fullHeight: 4272,
-                          aspectRatio: undefined
-                        }}
-                      />
-                    ),
+        {true ? (
+          <div
+            data-plasmic-name={"root2"}
+            data-plasmic-override={overrides.root2}
+            className={classNames(projectcss.all, sty.root2)}
+          >
+            <p.PlasmicLink
+              data-plasmic-name={"link"}
+              data-plasmic-override={overrides.link}
+              className={classNames(projectcss.all, projectcss.a, sty.link)}
+              component={Link}
+              platform={"nextjs"}
+            >
+              {(
+                hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+              ) ? (
+                <div className={classNames(projectcss.all, sty.freeBox__ynqI)}>
+                  {true ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__po5Ny)}
+                    >
+                      {p.renderPlasmicSlot({
+                        defaultContents: (
+                          <p.PlasmicImg
+                            alt={""}
+                            className={classNames(sty.img__brqa3)}
+                            displayHeight={"100%" as const}
+                            displayMaxHeight={"none" as const}
+                            displayMaxWidth={"100%" as const}
+                            displayMinHeight={"0" as const}
+                            displayMinWidth={"0" as const}
+                            displayWidth={"100%" as const}
+                            loading={"lazy" as const}
+                            src={{
+                              src: "/plasmic/laziness_demo/images/calculate.webp",
+                              fullWidth: 2848,
+                              fullHeight: 4272,
+                              aspectRatio: undefined
+                            }}
+                          />
+                        ),
 
-                    value: args.image
-                  })}
+                        value: args.image
+                      })}
+                    </div>
+                  ) : null}
+
+                  <h4
+                    data-plasmic-name={"h4"}
+                    data-plasmic-override={overrides.h4}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      sty.h4
+                    )}
+                  >
+                    {p.renderPlasmicSlot({
+                      defaultContents: "介紹標題",
+                      value: args.heading,
+                      className: classNames(sty.slotTargetHeading)
+                    })}
+                  </h4>
+
+                  <h5
+                    data-plasmic-name={"h5"}
+                    data-plasmic-override={overrides.h5}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h5,
+                      sty.h5
+                    )}
+                  >
+                    {p.renderPlasmicSlot({
+                      defaultContents: "介紹文字",
+                      value: args.description,
+                      className: classNames(sty.slotTargetDescription)
+                    })}
+                  </h5>
                 </div>
               ) : null}
+            </p.PlasmicLink>
 
-              <h4
-                data-plasmic-name={"h4"}
-                data-plasmic-override={overrides.h4}
-                className={classNames(projectcss.all, projectcss.h4, sty.h4)}
-              >
-                {p.renderPlasmicSlot({
-                  defaultContents: "介紹標題",
-                  value: args.heading,
-                  className: classNames(sty.slotTargetHeading)
-                })}
-              </h4>
-
-              <h5
-                data-plasmic-name={"h5"}
-                data-plasmic-override={overrides.h5}
-                className={classNames(projectcss.all, projectcss.h5, sty.h5)}
-              >
-                {p.renderPlasmicSlot({
-                  defaultContents: "介紹文字",
-                  value: args.description,
-                  className: classNames(sty.slotTargetDescription)
-                })}
-              </h5>
-            </div>
-          ) : null}
-        </p.PlasmicLink>
-
-        <Button
-          data-plasmic-name={"button"}
-          data-plasmic-override={overrides.button}
-          className={classNames("__wab_instance", sty.button)}
-          color={"primary" as const}
-          round={true}
-        >
-          {"聯絡我們"}
-        </Button>
+            <Button
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames("__wab_instance", sty.button)}
+              color={"primary" as const}
+              round={true}
+            >
+              {"聯絡我們"}
+            </Button>
+          </div>
+        ) : null}
       </div>
     ) : null
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
+  root: ["root", "root2", "link", "h4", "h5", "button"],
   root2: ["root2", "link", "h4", "h5", "button"],
   link: ["link", "h4", "h5"],
   h4: ["h4"],
@@ -212,6 +232,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
+  root: "div";
   root2: "div";
   link: "a";
   h4: "h4";
@@ -267,7 +288,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "root2") {
+  if (nodeName === "root") {
     func.displayName = "PlasmicAboutCard";
   } else {
     func.displayName = `PlasmicAboutCard.${nodeName}`;
@@ -277,9 +298,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicAboutCard = Object.assign(
   // Top-level PlasmicAboutCard renders the root element
-  makeNodeComponent("root2"),
+  makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    root2: makeNodeComponent("root2"),
     link: makeNodeComponent("link"),
     h4: makeNodeComponent("h4"),
     h5: makeNodeComponent("h5"),
