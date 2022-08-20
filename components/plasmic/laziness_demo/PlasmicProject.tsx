@@ -100,11 +100,11 @@ function PlasmicProject__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"工程實績"}</title>
+        <title key="title">{"Project"}</title>
 
-        <meta key="og:title" property="og:title" content={"工程實績"} />
+        <meta key="og:title" property="og:title" content={"Project"} />
 
-        <meta key="twitter:title" name="twitter:title" content={"工程實績"} />
+        <meta key="twitter:title" name="twitter:title" content={"Project"} />
       </Head>
 
       <style>{`

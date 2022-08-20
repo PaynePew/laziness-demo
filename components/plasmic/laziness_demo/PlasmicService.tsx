@@ -97,11 +97,11 @@ function PlasmicService__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"服務項目"}</title>
+        <title key="title">{"Service"}</title>
 
-        <meta key="og:title" property="og:title" content={"服務項目"} />
+        <meta key="og:title" property="og:title" content={"Service"} />
 
-        <meta key="twitter:title" name="twitter:title" content={"服務項目"} />
+        <meta key="twitter:title" name="twitter:title" content={"Service"} />
       </Head>
 
       <style>{`
