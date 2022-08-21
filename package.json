@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@plasmicapp/cli": "^0.1.186",
-    "@plasmicapp/host": "^1.0.73",
+    "@plasmicapp/host": "^1.0.76",
     "@plasmicapp/react-web": "^0.2.103",
     "@plasmicpkgs/plasmic-embed-css": "^0.1.57",
     "next": "12.2.4",

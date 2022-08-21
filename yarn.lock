@@ -513,10 +513,10 @@
     lodash "^4.17.19"
     prettier "^2.0.5"
 
-"@plasmicapp/host@^1.0.73":
-  version "1.0.73"
-  resolved "https://registry.yarnpkg.com/@plasmicapp/host/-/host-1.0.73.tgz#9405b7a54a502a2447a80734212aee6203323906"
-  integrity sha512-uSVdjMsxZOAj81E+JHnIYy6Ru2C6AJjUdmf9V5MF9AKHvqQNlk84vt2k2+YIFubjh3eeMk3c5nXGjQFMsIphdw==
+"@plasmicapp/host@^1.0.76":
+  version "1.0.76"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/host/-/host-1.0.76.tgz#9ed6228506579024322d574fe3c197af5ff8ab3f"
+  integrity sha512-mkEWMwzcbZL+61vUG+gyzg0s30t2ET7+xdRRoc0fff5UzKhbnxFrArq1C42kF6/U86PvV2+LaSHs/9UciceQxg==
   dependencies:
     window-or-global "^1.0.1"
 
