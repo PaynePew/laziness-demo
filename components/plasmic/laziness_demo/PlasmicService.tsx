@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
+import ValueProp from "../../ValueProp"; // plasmic-import: JJc-2jC6k2mJoy/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import { useScreenVariants as useScreenVariantsnCpqQwRKrRf2Hx } from "../landing_page_starter/PlasmicGlobalVariant__Screen"; // plasmic-import: nCpqQwRKrRf2Hx/globalVariant
@@ -43,6 +44,12 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../landing_page_starter/plasmic_landing_page_starter.module.css"; // plasmic-import: qtkpEraJg2gN978YDtMYaP/projectcss
 import sty from "./PlasmicService.module.css"; // plasmic-import: RdOB0C9oEvS/css
+
+import TargetIcon from "../landing_page_starter/icons/PlasmicIcon__Target"; // plasmic-import: Wt4zs8noN7sd2H/icon
+import CheckIcon from "../landing_page_starter/icons/PlasmicIcon__Check"; // plasmic-import: gHCuOW8JEryqrm/icon
+import CheckCircleIcon from "../landing_page_starter/icons/PlasmicIcon__CheckCircle"; // plasmic-import: _QAU6Sxfpz1Lu0/icon
+import StrongIcon from "../landing_page_starter/icons/PlasmicIcon__Strong"; // plasmic-import: nO_1wxfmPKvWbo/icon
+import WandIcon from "../landing_page_starter/icons/PlasmicIcon__Wand"; // plasmic-import: iQv5jNrYURIoDO/icon
 
 export type PlasmicService__VariantMembers = {};
 
@@ -59,8 +66,8 @@ export type PlasmicService__OverridesType = {
   headerHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
   aboutSection?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
-  h3?: p.Flex<"h3">;
+  columns?: p.Flex<"div">;
+  processSection?: p.Flex<"div">;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -97,11 +104,11 @@ function PlasmicService__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"Service"}</title>
+        <title key="title">{"服務項目"}</title>
 
-        <meta key="og:title" property="og:title" content={"Service"} />
+        <meta key="og:title" property="og:title" content={"服務項目"} />
 
-        <meta key="twitter:title" name="twitter:title" content={"Service"} />
+        <meta key="twitter:title" name="twitter:title" content={"服務項目"} />
       </Head>
 
       <style>{`
@@ -159,8 +166,10 @@ function PlasmicService__RenderFunc(props: {
           >
             <p.Stack
               as={"div"}
+              data-plasmic-name={"columns"}
+              data-plasmic-override={overrides.columns}
               hasGap={true}
-              className={classNames(projectcss.all, sty.columns__wjmY4)}
+              className={classNames(projectcss.all, sty.columns)}
             >
               <div className={classNames(projectcss.all, sty.column__saUls)}>
                 <div className={classNames(projectcss.all, sty.freeBox__r8KDg)}>
@@ -239,61 +248,94 @@ function PlasmicService__RenderFunc(props: {
                 </div>
               </div>
             </p.Stack>
+          </p.Stack>
 
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.columns___6W7Q6)}
+          <p.Stack
+            as={"div"}
+            data-plasmic-name={"processSection"}
+            data-plasmic-override={overrides.processSection}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.processSection)}
+          >
+            <h2
+              className={classNames(
+                projectcss.all,
+                projectcss.h2,
+                projectcss.__wab_text,
+                sty.h2__mD6Im
+              )}
             >
-              <div className={classNames(projectcss.all, sty.column__nmrlP)}>
-                <p.PlasmicImg
-                  data-plasmic-name={"img"}
-                  data-plasmic-override={overrides.img}
-                  alt={""}
-                  className={classNames(sty.img)}
-                  displayHeight={"auto" as const}
-                  displayMaxHeight={"none" as const}
-                  displayMaxWidth={"100%" as const}
-                  displayMinHeight={"0" as const}
-                  displayMinWidth={"0" as const}
-                  displayWidth={"auto" as const}
-                  loading={"lazy" as const}
-                  src={{
-                    src: "/plasmic/laziness_demo/images/office4.webp",
-                    fullWidth: 6000,
-                    fullHeight: 4000,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
+              {"估價流程"}
+            </h2>
 
-              <div className={classNames(projectcss.all, sty.column__rzfWc)}>
-                <h3
-                  data-plasmic-name={"h3"}
-                  data-plasmic-override={overrides.h3}
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h3,
-                    projectcss.__wab_text,
-                    sty.h3
-                  )}
-                >
-                  {"懶得算"}
-                </h3>
+            <div className={classNames(projectcss.all, sty.freeBox__ofWnJ)}>
+              <ValueProp
+                className={classNames("__wab_instance", sty.valueProp___77PhJ)}
+                description={"此階段以概算估價為主。"}
+                flatIcon={true}
+                icon={
+                  <TargetIcon
+                    className={classNames(projectcss.all, sty.svg___6VdHy)}
+                    role={"img"}
+                  />
+                }
+                title={"規劃階段估價"}
+              />
 
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__b7DUy
-                  )}
-                >
-                  {
-                    "於84年成立至今已有20多年的經驗，除擁有數十位『經驗豐富之估算工程師』外，更採用『專業營建管理系統軟體設備，由建築圖面轉工程數量計算，全面3D透視圖電腦化操作』提供營造建設單位，精確的成本估算，在營建工程上節省成本人力及提高效率，以降低公司營運成本，創造利潤，協助企業再造，提昇企業競爭力 。"
-                  }
-                </div>
-              </div>
-            </p.Stack>
+              <ValueProp
+                className={classNames("__wab_instance", sty.valueProp__vruOk)}
+                description={"又稱底價估價，此階段可分初步設計及完整設計"}
+                flatIcon={true}
+                icon={
+                  <CheckIcon
+                    className={classNames(projectcss.all, sty.svg__i8MhB)}
+                    role={"img"}
+                  />
+                }
+                title={"設計階段估價"}
+              />
+
+              <ValueProp
+                className={classNames("__wab_instance", sty.valueProp__gotK4)}
+                description={"又稱投標估價，此階段以概算估價或詳細估價為主。"}
+                flatIcon={true}
+                icon={
+                  <CheckCircleIcon
+                    className={classNames(projectcss.all, sty.svg__yZeAz)}
+                    role={"img"}
+                  />
+                }
+                title={"投標階段估價"}
+              />
+            </div>
+
+            <div className={classNames(projectcss.all, sty.freeBox__m2FVg)}>
+              <ValueProp
+                className={classNames("__wab_instance", sty.valueProp___1F5Op)}
+                description={"又稱施工估價，此階段以詳細估價為主。"}
+                flatIcon={true}
+                icon={
+                  <StrongIcon
+                    className={classNames(projectcss.all, sty.svg__gGfH)}
+                    role={"img"}
+                  />
+                }
+                title={"施工階段估價"}
+              />
+
+              <ValueProp
+                className={classNames("__wab_instance", sty.valueProp__uUrOr)}
+                description={"又稱期別估價或估驗，此階段以詳細估價為主。"}
+                flatIcon={true}
+                icon={
+                  <WandIcon
+                    className={classNames(projectcss.all, sty.svg___6QaNv)}
+                    role={"img"}
+                  />
+                }
+                title={"驗收階段估價"}
+              />
+            </div>
           </p.Stack>
 
           <FooterSection
@@ -313,15 +355,15 @@ const PlasmicDescendants = {
     "headerHeroSection",
     "navbar",
     "aboutSection",
-    "img",
-    "h3",
+    "columns",
+    "processSection",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar"],
   navbar: ["navbar"],
-  aboutSection: ["aboutSection", "img", "h3"],
-  img: ["img"],
-  h3: ["h3"],
+  aboutSection: ["aboutSection", "columns"],
+  columns: ["columns"],
+  processSection: ["processSection"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -332,8 +374,8 @@ type NodeDefaultElementType = {
   headerHeroSection: "div";
   navbar: typeof Navbar;
   aboutSection: "div";
-  img: typeof p.PlasmicImg;
-  h3: "h3";
+  columns: "div";
+  processSection: "div";
   footerSection: typeof FooterSection;
 };
 
@@ -401,8 +443,8 @@ export const PlasmicService = Object.assign(
     headerHeroSection: makeNodeComponent("headerHeroSection"),
     navbar: makeNodeComponent("navbar"),
     aboutSection: makeNodeComponent("aboutSection"),
-    img: makeNodeComponent("img"),
-    h3: makeNodeComponent("h3"),
+    columns: makeNodeComponent("columns"),
+    processSection: makeNodeComponent("processSection"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicService

@@ -45,6 +45,7 @@ import projectcss from "./plasmic_landing_page_starter.module.css"; // plasmic-i
 import sty from "./PlasmicNavbar.module.css"; // plasmic-import: 2AU0qEyM1oCTCP/css
 
 import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: Zu9y5vY-DbAu23/icon
+import HamburgerIcon from "./icons/PlasmicIcon__Hamburger"; // plasmic-import: S_mtU_iCMI9e-q/icon
 
 export type PlasmicNavbar__VariantMembers = {};
 
@@ -58,7 +59,7 @@ export const PlasmicNavbar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNavbar__OverridesType = {
   root?: p.Flex<"div">;
-  logo?: p.Flex<typeof Logo>;
+  svg?: p.Flex<"svg">;
 };
 
 export interface DefaultNavbarProps {
@@ -108,116 +109,109 @@ function PlasmicNavbar__RenderFunc(props: {
         sty.root
       )}
     >
-      <p.Stack
-        as={"div"}
-        hasGap={true}
-        className={classNames(projectcss.all, sty.freeBox__ifiW)}
-      >
+      {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
         <p.Stack
           as={"div"}
           hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__scFmz)}
+          className={classNames(projectcss.all, sty.freeBox__ifiW)}
         >
-          <Button
-            className={classNames("__wab_instance", sty.button__aUsln)}
-            color={"navLink" as const}
-            link={"/" as const}
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__scFmz)}
           >
-            {"首頁"}
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button__r3GGj)}
-            color={"navLink" as const}
-            link={"/about" as const}
-          >
-            {"公司簡介"}
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button__arOz5)}
-            color={"navLink" as const}
-          >
-            {"工程實績"}
-          </Button>
-        </p.Stack>
-
-        <Logo
-          data-plasmic-name={"logo"}
-          data-plasmic-override={overrides.logo}
-          className={classNames("__wab_instance", sty.logo)}
-        />
-
-        <p.Stack
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__wdExf)}
-        >
-          <Button
-            className={classNames("__wab_instance", sty.button__wyHno)}
-            color={"navLink" as const}
-            link={"/services-backup" as const}
-          >
-            {"服務項目"}
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button__oDLgG)}
-            color={"navLink" as const}
-          >
-            {"價目表"}
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button___2G5Wu)}
-            color={"navLink" as const}
-            link={"/contact" as const}
-          >
-            {"聯絡我們"}
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button__axQ7P)}
-            color={"navLink" as const}
-            outline={true}
-          >
-            {"會員資訊平台"}
-          </Button>
-        </p.Stack>
-
-        {false ? (
-          <div className={classNames(projectcss.all, sty.freeBox__dmwjy)}>
-            <button
-              className={classNames(
-                projectcss.all,
-                projectcss.button,
-                projectcss.__wab_text,
-                sty.button__ymC2J
-              )}
+            <Button
+              className={classNames("__wab_instance", sty.button__aUsln)}
+              color={"navLink" as const}
+              link={"/" as const}
             >
-              {"Sign up"}
-            </button>
-
-            <Button className={classNames("__wab_instance", sty.button__gapek)}>
-              {"Log in"}
+              {"首頁"}
             </Button>
-          </div>
-        ) : null}
-      </p.Stack>
+
+            <Button
+              className={classNames("__wab_instance", sty.button__r3GGj)}
+              color={"navLink" as const}
+              link={"/about" as const}
+            >
+              {"公司簡介"}
+            </Button>
+
+            <Button
+              className={classNames("__wab_instance", sty.button__arOz5)}
+              color={"navLink" as const}
+              link={"/project" as const}
+            >
+              {"工程實績"}
+            </Button>
+          </p.Stack>
+
+          <Logo className={classNames("__wab_instance", sty.logo__ioShS)} />
+
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__wdExf)}
+          >
+            <Button
+              className={classNames("__wab_instance", sty.button__wyHno)}
+              color={"navLink" as const}
+              link={"/services" as const}
+            >
+              {"服務項目"}
+            </Button>
+
+            <Button
+              className={classNames("__wab_instance", sty.button__oDLgG)}
+              color={"navLink" as const}
+            >
+              {"價目表"}
+            </Button>
+
+            <Button
+              className={classNames("__wab_instance", sty.button___2G5Wu)}
+              color={"navLink" as const}
+              link={"/contact" as const}
+            >
+              {"聯絡我們"}
+            </Button>
+
+            <Button
+              className={classNames("__wab_instance", sty.button__axQ7P)}
+              color={"navLink" as const}
+              outline={true}
+            >
+              {"會員資訊平台"}
+            </Button>
+          </p.Stack>
+        </p.Stack>
+      ) : null}
+
+      {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
+        <div className={classNames(projectcss.all, sty.freeBox__pqNE)}>
+          <Logo className={classNames("__wab_instance", sty.logo__uJm9Z)} />
+
+          <HamburgerIcon
+            data-plasmic-name={"svg"}
+            data-plasmic-override={overrides.svg}
+            className={classNames(projectcss.all, sty.svg)}
+            role={"img"}
+          />
+        </div>
+      ) : null}
     </p.Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "logo"],
-  logo: ["logo"]
+  root: ["root", "svg"],
+  svg: ["svg"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  logo: typeof Logo;
+  svg: "svg";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -281,7 +275,7 @@ export const PlasmicNavbar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    logo: makeNodeComponent("logo"),
+    svg: makeNodeComponent("svg"),
 
     // Metadata about props expected for PlasmicNavbar
     internalVariantProps: PlasmicNavbar__VariantProps,

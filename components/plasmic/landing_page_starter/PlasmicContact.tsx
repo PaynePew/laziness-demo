@@ -116,11 +116,11 @@ function PlasmicContact__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"Contact"}</title>
+        <title key="title">{"聯絡我們"}</title>
 
-        <meta key="og:title" property="og:title" content={"Contact"} />
+        <meta key="og:title" property="og:title" content={"聯絡我們"} />
 
-        <meta key="twitter:title" name="twitter:title" content={"Contact"} />
+        <meta key="twitter:title" name="twitter:title" content={"聯絡我們"} />
 
         <meta
           key="description"

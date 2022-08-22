@@ -328,6 +328,19 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicProjectCardDetail.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "WueZ8IvzTBv",
+          "name": "ProjectCardDetailReverse",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicProjectCardDetailReverse.tsx",
+          "importSpec": {
+            "modulePath": "ProjectCardDetailReverse.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicProjectCardDetailReverse.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

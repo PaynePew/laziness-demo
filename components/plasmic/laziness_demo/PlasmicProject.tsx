@@ -36,6 +36,7 @@ import {
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
 import ProjectCardDetail from "../../ProjectCardDetail"; // plasmic-import: UgNbjXEvxu8/component
+import ProjectCardDetailReverse from "../../ProjectCardDetailReverse"; // plasmic-import: WueZ8IvzTBv/component
 import ProjectCardPrimary from "../../ProjectCardPrimary"; // plasmic-import: VqqXUhJrgP/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
@@ -63,6 +64,7 @@ export type PlasmicProject__OverridesType = {
   h2?: p.Flex<"h2">;
   projectSection?: p.Flex<"div">;
   projectCardDetail?: p.Flex<typeof ProjectCardDetail>;
+  projectCardDetailReverse?: p.Flex<typeof ProjectCardDetailReverse>;
   img?: p.Flex<typeof p.PlasmicImg>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
@@ -100,11 +102,11 @@ function PlasmicProject__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"Project"}</title>
+        <title key="title">{"工程實績"}</title>
 
-        <meta key="og:title" property="og:title" content={"Project"} />
+        <meta key="og:title" property="og:title" content={"工程實績"} />
 
-        <meta key="twitter:title" name="twitter:title" content={"Project"} />
+        <meta key="twitter:title" name="twitter:title" content={"工程實績"} />
       </Head>
 
       <style>{`
@@ -155,15 +157,26 @@ function PlasmicProject__RenderFunc(props: {
             </h2>
           </p.Stack>
 
-          <div
+          <p.Stack
+            as={"div"}
             data-plasmic-name={"projectSection"}
             data-plasmic-override={overrides.projectSection}
+            hasGap={true}
             className={classNames(projectcss.all, sty.projectSection)}
           >
             <ProjectCardDetail
               data-plasmic-name={"projectCardDetail"}
               data-plasmic-override={overrides.projectCardDetail}
               className={classNames("__wab_instance", sty.projectCardDetail)}
+            />
+
+            <ProjectCardDetailReverse
+              data-plasmic-name={"projectCardDetailReverse"}
+              data-plasmic-override={overrides.projectCardDetailReverse}
+              className={classNames(
+                "__wab_instance",
+                sty.projectCardDetailReverse
+              )}
             />
 
             <div className={classNames(projectcss.all, sty.freeBox__vQsK1)}>
@@ -207,7 +220,7 @@ function PlasmicProject__RenderFunc(props: {
                 }
               />
             </div>
-          </div>
+          </p.Stack>
 
           <FooterSection
             data-plasmic-name={"footerSection"}
@@ -228,14 +241,21 @@ const PlasmicDescendants = {
     "h2",
     "projectSection",
     "projectCardDetail",
+    "projectCardDetailReverse",
     "img",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  projectSection: ["projectSection", "projectCardDetail", "img"],
+  projectSection: [
+    "projectSection",
+    "projectCardDetail",
+    "projectCardDetailReverse",
+    "img"
+  ],
   projectCardDetail: ["projectCardDetail"],
+  projectCardDetailReverse: ["projectCardDetailReverse"],
   img: ["img"],
   footerSection: ["footerSection"]
 } as const;
@@ -249,6 +269,7 @@ type NodeDefaultElementType = {
   h2: "h2";
   projectSection: "div";
   projectCardDetail: typeof ProjectCardDetail;
+  projectCardDetailReverse: typeof ProjectCardDetailReverse;
   img: typeof p.PlasmicImg;
   footerSection: typeof FooterSection;
 };
@@ -319,6 +340,7 @@ export const PlasmicProject = Object.assign(
     h2: makeNodeComponent("h2"),
     projectSection: makeNodeComponent("projectSection"),
     projectCardDetail: makeNodeComponent("projectCardDetail"),
+    projectCardDetailReverse: makeNodeComponent("projectCardDetailReverse"),
     img: makeNodeComponent("img"),
     footerSection: makeNodeComponent("footerSection"),
 

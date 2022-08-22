@@ -133,7 +133,7 @@
   border-color: var(--token-X_MubEhfhEbXKh);
 }
 .root:focus {
-  box-shadow: 0px 0px 0px 4px #0095ff80;
+  box-shadow: 0px 0px 0px 1px var(--token-X_MubEhfhEbXKh);
   outline: none;
 }
 .slotTargetStartIcon {
@@ -246,6 +246,25 @@
 }
 .rootcolor_navLink_outline:hover .slotTargetChildrencolor_navLink_outline {
   color: var(--token-X_MubEhfhEbXKh);
+}
+.root:focus .slotTargetChildren {
+  color: var(--token-X_MubEhfhEbXKh);
+}
+.root:focus .slotTargetChildren > *,
+.root:focus .slotTargetChildren > .__wab_slot > *,
+.root:focus .slotTargetChildren > .__wab_slot > .__wab_slot > *,
+.root:focus .slotTargetChildren > .__wab_slot > .__wab_slot > .__wab_slot > *,
+.root:focus .slotTargetChildren > picture > img,
+.root:focus .slotTargetChildren > .__wab_slot > picture > img,
+.root:focus .slotTargetChildren > .__wab_slot > .__wab_slot > picture > img,
+.root:focus
+  .slotTargetChildren
+  > .__wab_slot
+  > .__wab_slot
+  > .__wab_slot
+  > picture
+  > img {
+  outline: none;
 }
 .slotTargetEndIcon {
   color: var(--token-iaRqcCmsjQJpYX);

@@ -103,11 +103,11 @@ function PlasmicHomepage__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"Home"}</title>
+        <title key="title">{"首頁"}</title>
 
-        <meta key="og:title" property="og:title" content={"Home"} />
+        <meta key="og:title" property="og:title" content={"首頁"} />
 
-        <meta key="twitter:title" name="twitter:title" content={"Home"} />
+        <meta key="twitter:title" name="twitter:title" content={"首頁"} />
       </Head>
 
       <style>{`
@@ -161,65 +161,60 @@ function PlasmicHomepage__RenderFunc(props: {
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox__dMkDl)}
                 >
-                  <h5
+                  <div
                     className={classNames(
                       projectcss.all,
-                      projectcss.h5,
                       projectcss.__wab_text,
-                      sty.h5__tSoKh,
+                      sty.text__tSoKh,
                       "vertical-word" as const
                     )}
                   >
                     {"有最好的回饋。​"}
-                  </h5>
+                  </div>
 
-                  <h5
+                  <div
                     className={classNames(
                       projectcss.all,
-                      projectcss.h5,
                       projectcss.__wab_text,
-                      sty.h5__eSfse,
+                      sty.text__eSfse,
                       "vertical-word" as const
                     )}
                   >
                     {"辛勤的汗水，​"}
-                  </h5>
+                  </div>
 
-                  <h5
+                  <div
                     className={classNames(
                       projectcss.all,
-                      projectcss.h5,
                       projectcss.__wab_text,
-                      sty.h5__qzYz,
+                      sty.text__qzYz,
                       "vertical-word" as const
                     )}
                   >
                     {"讓我們的經驗幫助您，​"}
-                  </h5>
+                  </div>
 
-                  <h5
+                  <div
                     className={classNames(
                       projectcss.all,
-                      projectcss.h5,
                       projectcss.__wab_text,
-                      sty.h5__pvigX,
+                      sty.text__pvigX,
                       "vertical-word" as const
                     )}
                   >
                     {"一土一方，一吋一長。"}
-                  </h5>
+                  </div>
 
-                  <h5
+                  <div
                     className={classNames(
                       projectcss.all,
-                      projectcss.h5,
                       projectcss.__wab_text,
-                      sty.h5__hp6B7,
+                      sty.text__hp6B7,
                       "vertical-word" as const
                     )}
                   >
                     {"在每件工程中不斷累積，"}
-                  </h5>
+                  </div>
 
                   <h3
                     data-plasmic-name={"h3"}

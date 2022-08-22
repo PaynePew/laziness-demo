@@ -96,11 +96,11 @@ function PlasmicAbout__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"About"}</title>
+        <title key="title">{"關於我們"}</title>
 
-        <meta key="og:title" property="og:title" content={"About"} />
+        <meta key="og:title" property="og:title" content={"關於我們"} />
 
-        <meta key="twitter:title" name="twitter:title" content={"About"} />
+        <meta key="twitter:title" name="twitter:title" content={"關於我們"} />
       </Head>
 
       <style>{`

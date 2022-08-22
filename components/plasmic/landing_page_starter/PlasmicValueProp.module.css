@@ -2,6 +2,7 @@
   flex-direction: row;
   display: flex;
   position: relative;
+  min-width: 328px;
 }
 .root > :global(.__wab_flex-container) {
   flex-direction: row;
