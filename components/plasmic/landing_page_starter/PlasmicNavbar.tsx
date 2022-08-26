@@ -52,7 +52,7 @@ export type PlasmicNavbar__VariantMembers = {
 };
 
 export type PlasmicNavbar__VariantsArgs = {
-  showModal?: MultiChoiceArg<"showModal">;
+  showModal?: SingleBooleanChoiceArg<"showModal">;
 };
 
 type VariantPropType = keyof PlasmicNavbar__VariantsArgs;
@@ -73,7 +73,7 @@ export type PlasmicNavbar__OverridesType = {
 };
 
 export interface DefaultNavbarProps {
-  showModal?: MultiChoiceArg<"showModal">;
+  showModal?: SingleBooleanChoiceArg<"showModal">;
   className?: string;
 }
 
@@ -201,7 +201,7 @@ function PlasmicNavbar__RenderFunc(props: {
       {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
         <div
           className={classNames(projectcss.all, sty.freeBox__pqNE, {
-            [sty.freeBoxshowModal__pqNEiygWf]: hasVariant(
+            [sty.freeBoxshowModal__pqNEuyJcM]: hasVariant(
               variants,
               "showModal",
               "showModal"
@@ -318,7 +318,7 @@ function PlasmicNavbar__RenderFunc(props: {
         >
           <Button
             className={classNames("__wab_instance", sty.button___1UgVl, {
-              [sty.buttonshowModal___1UgVliygWf]: hasVariant(
+              [sty.buttonshowModal___1UgVlUyJcM]: hasVariant(
                 variants,
                 "showModal",
                 "showModal"
@@ -332,7 +332,7 @@ function PlasmicNavbar__RenderFunc(props: {
 
           <Button
             className={classNames("__wab_instance", sty.button__eXzmm, {
-              [sty.buttonshowModal__eXzmmiygWf]: hasVariant(
+              [sty.buttonshowModal__eXzmmUyJcM]: hasVariant(
                 variants,
                 "showModal",
                 "showModal"
@@ -346,7 +346,7 @@ function PlasmicNavbar__RenderFunc(props: {
 
           <Button
             className={classNames("__wab_instance", sty.button__tp7Xx, {
-              [sty.buttonshowModal__tp7XxiygWf]: hasVariant(
+              [sty.buttonshowModal__tp7XxUyJcM]: hasVariant(
                 variants,
                 "showModal",
                 "showModal"
@@ -360,7 +360,7 @@ function PlasmicNavbar__RenderFunc(props: {
 
           <Button
             className={classNames("__wab_instance", sty.button__cFzWn, {
-              [sty.buttonshowModal__cFzWniygWf]: hasVariant(
+              [sty.buttonshowModal__cFzWnUyJcM]: hasVariant(
                 variants,
                 "showModal",
                 "showModal"
@@ -374,7 +374,7 @@ function PlasmicNavbar__RenderFunc(props: {
 
           <Button
             className={classNames("__wab_instance", sty.button__qaXs1, {
-              [sty.buttonshowModal__qaXs1IygWf]: hasVariant(
+              [sty.buttonshowModal__qaXs1UyJcM]: hasVariant(
                 variants,
                 "showModal",
                 "showModal"
@@ -387,7 +387,7 @@ function PlasmicNavbar__RenderFunc(props: {
 
           <Button
             className={classNames("__wab_instance", sty.button__assMv, {
-              [sty.buttonshowModal__assMviygWf]: hasVariant(
+              [sty.buttonshowModal__assMvUyJcM]: hasVariant(
                 variants,
                 "showModal",
                 "showModal"
@@ -401,7 +401,7 @@ function PlasmicNavbar__RenderFunc(props: {
 
           <Button
             className={classNames("__wab_instance", sty.button__lIhF4, {
-              [sty.buttonshowModal__lIhF4IygWf]: hasVariant(
+              [sty.buttonshowModal__lIhF4UyJcM]: hasVariant(
                 variants,
                 "showModal",
                 "showModal"

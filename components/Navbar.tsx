@@ -40,7 +40,6 @@ function Navbar_(props: NavbarProps, ref: HTMLElementRefOf<"div">) {
           setOpen(false);
         },
       }}
-      // modal={{style=width:0}}
     />
   );
 }
