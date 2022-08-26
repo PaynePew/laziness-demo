@@ -102,11 +102,13 @@ function PlasmicProjectCardPrimary__RenderFunc(props: {
   const $props = args;
 
   return (
-    <div
+    <p.Stack
+      as={"div"}
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
+      hasGap={true}
       className={classNames(
         projectcss.all,
         projectcss.root_reset,
@@ -179,7 +181,7 @@ function PlasmicProjectCardPrimary__RenderFunc(props: {
           value: args.description
         })}
       </div>
-    </div>
+    </p.Stack>
   ) as React.ReactElement | null;
 }
 

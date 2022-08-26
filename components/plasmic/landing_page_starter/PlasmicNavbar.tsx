@@ -47,11 +47,18 @@ import sty from "./PlasmicNavbar.module.css"; // plasmic-import: 2AU0qEyM1oCTCP/
 import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: Zu9y5vY-DbAu23/icon
 import HamburgerIcon from "./icons/PlasmicIcon__Hamburger"; // plasmic-import: S_mtU_iCMI9e-q/icon
 
-export type PlasmicNavbar__VariantMembers = {};
+export type PlasmicNavbar__VariantMembers = {
+  showModal: "showModal";
+};
 
-export type PlasmicNavbar__VariantsArgs = {};
+export type PlasmicNavbar__VariantsArgs = {
+  showModal?: MultiChoiceArg<"showModal">;
+};
+
 type VariantPropType = keyof PlasmicNavbar__VariantsArgs;
-export const PlasmicNavbar__VariantProps = new Array<VariantPropType>();
+export const PlasmicNavbar__VariantProps = new Array<VariantPropType>(
+  "showModal"
+);
 
 export type PlasmicNavbar__ArgsType = {};
 type ArgPropType = keyof PlasmicNavbar__ArgsType;
@@ -59,10 +66,14 @@ export const PlasmicNavbar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNavbar__OverridesType = {
   root?: p.Flex<"div">;
+  hamburger?: p.Flex<"div">;
   svg?: p.Flex<"svg">;
+  modal?: p.Flex<"div">;
+  closeIcon?: p.Flex<typeof p.PlasmicImg>;
 };
 
 export interface DefaultNavbarProps {
+  showModal?: MultiChoiceArg<"showModal">;
   className?: string;
 }
 
@@ -106,7 +117,8 @@ function PlasmicNavbar__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
-        sty.root
+        sty.root,
+        { [sty.rootshowModal]: hasVariant(variants, "showModal", "showModal") }
       )}
     >
       {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
@@ -187,31 +199,267 @@ function PlasmicNavbar__RenderFunc(props: {
       ) : null}
 
       {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
-        <div className={classNames(projectcss.all, sty.freeBox__pqNE)}>
+        <div
+          className={classNames(projectcss.all, sty.freeBox__pqNE, {
+            [sty.freeBoxshowModal__pqNEiygWf]: hasVariant(
+              variants,
+              "showModal",
+              "showModal"
+            )
+          })}
+        >
           <Logo className={classNames("__wab_instance", sty.logo__uJm9Z)} />
 
-          <HamburgerIcon
-            data-plasmic-name={"svg"}
-            data-plasmic-override={overrides.svg}
-            className={classNames(projectcss.all, sty.svg)}
-            role={"img"}
-          />
+          <div
+            data-plasmic-name={"hamburger"}
+            data-plasmic-override={overrides.hamburger}
+            className={classNames(projectcss.all, sty.hamburger)}
+          >
+            <HamburgerIcon
+              data-plasmic-name={"svg"}
+              data-plasmic-override={overrides.svg}
+              className={classNames(projectcss.all, sty.svg, {
+                [sty.svgshowModal]: hasVariant(
+                  variants,
+                  "showModal",
+                  "showModal"
+                )
+              })}
+              role={"img"}
+            />
+          </div>
         </div>
+      ) : null}
+
+      {true ? (
+        <div className={classNames(projectcss.all, sty.freeBox__a2Fh4)}>
+          <div className={classNames(projectcss.all, sty.freeBox__xA0Ge)}>
+            <Button
+              className={classNames("__wab_instance", sty.button__ofDdT)}
+              color={"navLink" as const}
+              link={"/" as const}
+            >
+              {"首頁"}
+            </Button>
+
+            <Button
+              className={classNames("__wab_instance", sty.button__dFyOs)}
+              color={"navLink" as const}
+              link={"/about" as const}
+            >
+              {"公司簡介"}
+            </Button>
+
+            <Button
+              className={classNames("__wab_instance", sty.button__p0M4F)}
+              color={"navLink" as const}
+              link={"/project" as const}
+            >
+              {"工程實績"}
+            </Button>
+          </div>
+
+          <Button
+            className={classNames("__wab_instance", sty.button___98EN)}
+            color={"navLink" as const}
+            link={"/services" as const}
+          >
+            {"服務項目"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__hoNCz)}
+            color={"navLink" as const}
+          >
+            {"價目表"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__oF1O2)}
+            color={"navLink" as const}
+            link={"/contact" as const}
+          >
+            {"聯絡我們"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__p82H)}
+            color={"navLink" as const}
+            outline={true}
+          >
+            {"會員資訊平台"}
+          </Button>
+        </div>
+      ) : null}
+
+      {(
+        hasVariant(variants, "showModal", "showModal") &&
+        hasVariant(globalVariants, "screen", "mobileOnly")
+          ? true
+          : true
+      ) ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"modal"}
+          data-plasmic-override={overrides.modal}
+          hasGap={true}
+          className={classNames(
+            projectcss.all,
+            sty.modal,
+            "modal-pop" as const,
+            {
+              [sty.modalshowModal]: hasVariant(
+                variants,
+                "showModal",
+                "showModal"
+              )
+            }
+          )}
+        >
+          <Button
+            className={classNames("__wab_instance", sty.button___1UgVl, {
+              [sty.buttonshowModal___1UgVliygWf]: hasVariant(
+                variants,
+                "showModal",
+                "showModal"
+              )
+            })}
+            color={"navLink" as const}
+            link={"/" as const}
+          >
+            {"首頁"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__eXzmm, {
+              [sty.buttonshowModal__eXzmmiygWf]: hasVariant(
+                variants,
+                "showModal",
+                "showModal"
+              )
+            })}
+            color={"navLink" as const}
+            link={"/about" as const}
+          >
+            {"公司簡介"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__tp7Xx, {
+              [sty.buttonshowModal__tp7XxiygWf]: hasVariant(
+                variants,
+                "showModal",
+                "showModal"
+              )
+            })}
+            color={"navLink" as const}
+            link={"/project" as const}
+          >
+            {"工程實績"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__cFzWn, {
+              [sty.buttonshowModal__cFzWniygWf]: hasVariant(
+                variants,
+                "showModal",
+                "showModal"
+              )
+            })}
+            color={"navLink" as const}
+            link={"/services" as const}
+          >
+            {"服務項目"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__qaXs1, {
+              [sty.buttonshowModal__qaXs1IygWf]: hasVariant(
+                variants,
+                "showModal",
+                "showModal"
+              )
+            })}
+            color={"navLink" as const}
+          >
+            {"價目表"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__assMv, {
+              [sty.buttonshowModal__assMviygWf]: hasVariant(
+                variants,
+                "showModal",
+                "showModal"
+              )
+            })}
+            color={"navLink" as const}
+            link={"/contact" as const}
+          >
+            {"聯絡我們"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__lIhF4, {
+              [sty.buttonshowModal__lIhF4IygWf]: hasVariant(
+                variants,
+                "showModal",
+                "showModal"
+              )
+            })}
+            color={"navLink" as const}
+            outline={true}
+          >
+            {"會員資訊平台"}
+          </Button>
+
+          <p.PlasmicImg
+            data-plasmic-name={"closeIcon"}
+            data-plasmic-override={overrides.closeIcon}
+            alt={""}
+            className={classNames(sty.closeIcon, {
+              [sty.closeIconshowModal]: hasVariant(
+                variants,
+                "showModal",
+                "showModal"
+              )
+            })}
+            displayHeight={"auto" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"100%" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"auto" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/laziness_demo/images/crossIcons8Multiply50Png.png",
+              fullWidth: 50,
+              fullHeight: 50,
+              aspectRatio: undefined
+            }}
+          />
+        </p.Stack>
       ) : null}
     </p.Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "svg"],
-  svg: ["svg"]
+  root: ["root", "hamburger", "svg", "modal", "closeIcon"],
+  hamburger: ["hamburger", "svg"],
+  svg: ["svg"],
+  modal: ["modal", "closeIcon"],
+  closeIcon: ["closeIcon"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  hamburger: "div";
   svg: "svg";
+  modal: "div";
+  closeIcon: typeof p.PlasmicImg;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -275,7 +523,10 @@ export const PlasmicNavbar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    hamburger: makeNodeComponent("hamburger"),
     svg: makeNodeComponent("svg"),
+    modal: makeNodeComponent("modal"),
+    closeIcon: makeNodeComponent("closeIcon"),
 
     // Metadata about props expected for PlasmicNavbar
     internalVariantProps: PlasmicNavbar__VariantProps,

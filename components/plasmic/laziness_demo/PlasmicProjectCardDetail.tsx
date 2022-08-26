@@ -247,7 +247,11 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
         </p.Stack>
       ) : null}
 
-      <div className={classNames(projectcss.all, sty.freeBox__dowBa)}>
+      <p.Stack
+        as={"div"}
+        hasGap={true}
+        className={classNames(projectcss.all, sty.freeBox__dowBa)}
+      >
         <h3
           data-plasmic-name={"h3"}
           data-plasmic-override={overrides.h3}
@@ -296,7 +300,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
             value: args.category
           })}
         </div>
-      </div>
+      </p.Stack>
     </p.Stack>
   ) as React.ReactElement | null;
 }

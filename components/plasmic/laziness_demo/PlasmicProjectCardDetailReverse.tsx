@@ -132,7 +132,11 @@ function PlasmicProjectCardDetailReverse__RenderFunc(props: {
         sty.root
       )}
     >
-      <div className={classNames(projectcss.all, sty.freeBox__y10O9)}>
+      <p.Stack
+        as={"div"}
+        hasGap={true}
+        className={classNames(projectcss.all, sty.freeBox__y10O9)}
+      >
         <h3
           data-plasmic-name={"h3"}
           data-plasmic-override={overrides.h3}
@@ -183,7 +187,7 @@ function PlasmicProjectCardDetailReverse__RenderFunc(props: {
             value: args.category
           })}
         </div>
-      </div>
+      </p.Stack>
 
       {true ? (
         <p.Stack

@@ -98,7 +98,7 @@
 .img__brqa3 > picture > img {
   object-fit: cover;
 }
-.img__brqa3 > .__wab_img-spacer > img {
+.img__brqa3 > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .h4 {
@@ -123,6 +123,7 @@
   flex-wrap: nowrap;
   align-items: stretch;
   align-content: stretch;
+  font-weight: 400;
   min-width: 0;
 }
 .root:hover .slotTargetDescription {

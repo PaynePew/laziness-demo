@@ -110,7 +110,7 @@
 .img__lSWs > picture > img {
   object-fit: cover;
 }
-.img__lSWs > .__wab_img-spacer > img {
+.img__lSWs > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .valueProp__sxKj:global(.__wab_instance) {
@@ -125,7 +125,7 @@
 .img__m0Gzc > picture > img {
   object-fit: cover;
 }
-.img__m0Gzc > .__wab_img-spacer > img {
+.img__m0Gzc > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .valueProp___3YGkq:global(.__wab_instance) {
@@ -140,7 +140,7 @@
 .img___9E28Z > picture > img {
   object-fit: cover;
 }
-.img___9E28Z > .__wab_img-spacer > img {
+.img___9E28Z > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .valueProp___48RBb:global(.__wab_instance) {
@@ -155,7 +155,7 @@
 .img__oKHop > picture > img {
   object-fit: cover;
 }
-.img__oKHop > .__wab_img-spacer > img {
+.img__oKHop > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .section {

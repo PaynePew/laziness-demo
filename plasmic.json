@@ -341,6 +341,45 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicProjectCardDetailReverse.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "S4wlbLQ7X44",
+          "name": "ContactBackup",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicContactBackup.tsx",
+          "importSpec": {
+            "modulePath": "../pages/contact-2.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicContactBackup.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "Om1BIURR5aO",
+          "name": "Price",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicPrice.tsx",
+          "importSpec": {
+            "modulePath": "../pages/price.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicPrice.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "3qFurrWtCkt",
+          "name": "Platform",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicPlatform.tsx",
+          "importSpec": {
+            "modulePath": "../pages/member.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicPlatform.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -615,11 +654,27 @@
           "id": "FyoylRWtm",
           "name": "apartment-bim",
           "filePath": "../public/plasmic/laziness_demo/images/apartmentBim.webp"
+        },
+        {
+          "id": "ZZjXqxlo5",
+          "name": "cross-icons8-multiply-50.png",
+          "filePath": "../public/plasmic/laziness_demo/images/crossIcons8Multiply50Png.png"
+        },
+        {
+          "id": "KfuRU34WM",
+          "name": "qr-test.svg",
+          "filePath": "../public/plasmic/laziness_demo/images/qrTestsvg.svg"
         }
       ],
       "indirect": false,
       "globalContextsFilePath": "plasmic/laziness_demo/PlasmicGlobalContextsProvider.tsx",
-      "codeComponents": []
+      "codeComponents": [
+        {
+          "id": "QPdd4nYh9r",
+          "name": "PlasmicHead",
+          "componentImportPath": "@plasmicapp/react-web"
+        }
+      ]
     },
     {
       "projectId": "8PtdGodUbexNYgkuyBUcWu",

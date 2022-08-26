@@ -213,6 +213,11 @@ function PlasmicValueProp__RenderFunc(props: {
                   "darkBackground",
                   "darkBackground"
                 ),
+                [sty.slotTargetTitleflatIcon]: hasVariant(
+                  variants,
+                  "flatIcon",
+                  "flatIcon"
+                ),
                 [sty.slotTargetTitlenoTitle]: hasVariant(
                   variants,
                   "noTitle",
@@ -236,6 +241,11 @@ function PlasmicValueProp__RenderFunc(props: {
               variants,
               "darkBackground",
               "darkBackground"
+            ),
+            [sty.slotTargetDescriptionflatIcon]: hasVariant(
+              variants,
+              "flatIcon",
+              "flatIcon"
             ),
             [sty.slotTargetDescriptionnoTitle]: hasVariant(
               variants,

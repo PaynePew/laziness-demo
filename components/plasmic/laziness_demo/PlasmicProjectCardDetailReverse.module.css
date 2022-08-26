@@ -12,14 +12,14 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  margin-left: calc(0px - 8px);
-  width: calc(100% + 8px);
+  margin-left: calc(0px - 12px);
+  width: calc(100% + 12px);
 }
 .root > :global(.__wab_flex-container) > *,
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
 .root > :global(.__wab_flex-container) > picture > img,
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
-  margin-left: 8px;
+  margin-left: 12px;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .root {
@@ -50,21 +50,43 @@
   }
 }
 .freeBox__y10O9 {
+  flex-direction: column;
   display: flex;
   position: relative;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
   width: 100%;
   height: 100%;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
 }
+.freeBox__y10O9 > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+}
 @media (min-width: 0px) and (max-width: 769px) {
-  .freeBox__y10O9 {
+  .freeBox__y10O9 > :global(.__wab_flex-container) {
     justify-content: space-evenly;
     align-items: flex-start;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+    margin-top: calc(0px - 8px);
+    height: calc(100% + 8px);
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox__y10O9 > :global(.__wab_flex-container) > *,
+  .freeBox__y10O9 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .freeBox__y10O9 > :global(.__wab_flex-container) > picture > img,
+  .freeBox__y10O9
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
+    margin-top: 8px;
   }
 }
 .h3 {
@@ -176,7 +198,7 @@
 .img__vZfxm > picture > img {
   object-fit: cover;
 }
-.img__vZfxm > .__wab_img-spacer > img {
+.img__vZfxm > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .freeBox__p29A8 {
@@ -209,7 +231,7 @@
 .img__v9RAk > picture > img {
   object-fit: cover;
 }
-.img__v9RAk > .__wab_img-spacer > img {
+.img__v9RAk > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__pRB9 {
@@ -222,7 +244,7 @@
 .img__pRB9 > picture > img {
   object-fit: cover;
 }
-.img__pRB9 > .__wab_img-spacer > img {
+.img__pRB9 > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__ll5Zg {
@@ -235,7 +257,7 @@
 .img__ll5Zg > picture > img {
   object-fit: cover;
 }
-.img__ll5Zg > .__wab_img-spacer > img {
+.img__ll5Zg > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__twU0V {
@@ -248,6 +270,6 @@
 .img__twU0V > picture > img {
   object-fit: cover;
 }
-.img__twU0V > .__wab_img-spacer > img {
+.img__twU0V > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }

@@ -21,6 +21,16 @@
       }
     },
     {
+      "name": "TCPrimary",
+      "type": "fontfamily",
+      "value": "Noto Serif TC",
+      "category": "fontfamily",
+      "meta": {
+        "projectId": "qtkpEraJg2gN978YDtMYaP",
+        "id": "P9QkuCpfM"
+      }
+    },
+    {
       "name": "UnnamedStyleToken",
       "type": "spacing",
       "value": "100%",

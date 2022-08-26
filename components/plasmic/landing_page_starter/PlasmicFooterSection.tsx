@@ -62,6 +62,7 @@ export const PlasmicFooterSection__ArgProps = new Array<ArgPropType>();
 export type PlasmicFooterSection__OverridesType = {
   root?: p.Flex<"div">;
   logo?: p.Flex<typeof Logo>;
+  img?: p.Flex<typeof p.PlasmicImg>;
 };
 
 export interface DefaultFooterSectionProps {
@@ -137,7 +138,7 @@ function PlasmicFooterSection__RenderFunc(props: {
                 sty.text__oHi0P
               )}
             >
-              {"Connect with us"}
+              {"社群平台"}
             </div>
 
             <p.Stack
@@ -166,80 +167,43 @@ function PlasmicFooterSection__RenderFunc(props: {
         <p.Stack
           as={"div"}
           hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__ycjpp)}
+          className={classNames(projectcss.all, sty.freeBox__i9Cu8)}
         >
           <div
             className={classNames(
               projectcss.all,
               projectcss.__wab_text,
-              sty.text__cTiEp
+              sty.text__ppuhR
             )}
           >
-            {"Product"}
+            {"懶得算"}
           </div>
 
           <Button
-            className={classNames("__wab_instance", sty.button__ryCt)}
+            className={classNames("__wab_instance", sty.button___8M04Q)}
             color={"navLink" as const}
             flat={true}
+            link={"/" as const}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__h9JMq
-              )}
-            >
-              {"Pricing"}
-            </div>
+            {"首頁"}
           </Button>
 
           <Button
-            className={classNames("__wab_instance", sty.button__jFOoe)}
+            className={classNames("__wab_instance", sty.button__lwzrx)}
             color={"navLink" as const}
             flat={true}
+            link={"/about" as const}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__bvRa
-              )}
-            >
-              {"Log in"}
-            </div>
+            {"公司簡介"}
           </Button>
 
           <Button
-            className={classNames("__wab_instance", sty.button__jmjPa)}
+            className={classNames("__wab_instance", sty.button__n3Pqe)}
             color={"navLink" as const}
             flat={true}
+            link={"/project" as const}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___4Wrx1
-              )}
-            >
-              {"Integrations"}
-            </div>
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button__bNizI)}
-            color={"navLink" as const}
-            flat={true}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__yPBwy
-              )}
-            >
-              {"Insights"}
-            </div>
+            {"工程實績"}
           </Button>
         </p.Stack>
 
@@ -255,71 +219,16 @@ function PlasmicFooterSection__RenderFunc(props: {
               sty.text___8Xjew
             )}
           >
-            {"Support"}
+            {"估價服務"}
           </div>
-
-          <Button
-            className={classNames("__wab_instance", sty.button__junuH)}
-            color={"navLink" as const}
-            flat={true}
-          >
-            {"Documentation"}
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button__n3Pqe)}
-            color={"navLink" as const}
-            flat={true}
-          >
-            {"FAQs"}
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button___3Lc6F)}
-            color={"navLink" as const}
-            flat={true}
-          >
-            {"Status"}
-          </Button>
-        </p.Stack>
-
-        <p.Stack
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__i9Cu8)}
-        >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__ppuhR
-            )}
-          >
-            {"Company"}
-          </div>
-
-          <Button
-            className={classNames("__wab_instance", sty.button___8M04Q)}
-            color={"navLink" as const}
-            flat={true}
-          >
-            {"About"}
-          </Button>
-
-          <Button
-            className={classNames("__wab_instance", sty.button__lwzrx)}
-            color={"navLink" as const}
-            flat={true}
-          >
-            {"Contact us"}
-          </Button>
 
           <Button
             className={classNames("__wab_instance", sty.button__lXnQj)}
             color={"navLink" as const}
             flat={true}
+            link={"/services" as const}
           >
-            {"Careers"}
+            {"服務項目"}
           </Button>
 
           <Button
@@ -327,17 +236,73 @@ function PlasmicFooterSection__RenderFunc(props: {
             color={"navLink" as const}
             flat={true}
           >
-            {"Media"}
+            {"價目表"}
           </Button>
         </p.Stack>
+
+        <p.Stack
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__ycjpp)}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__cTiEp
+            )}
+          >
+            {"進一步諮詢"}
+          </div>
+
+          <Button
+            className={classNames("__wab_instance", sty.button___3Lc6F)}
+            color={"navLink" as const}
+            flat={true}
+            link={"/contact" as const}
+          >
+            {"聯絡我們"}
+          </Button>
+
+          <Button
+            className={classNames("__wab_instance", sty.button__junuH)}
+            color={"navLink" as const}
+            flat={true}
+          >
+            {"會員資訊平台"}
+          </Button>
+        </p.Stack>
+
+        <div className={classNames(projectcss.all, sty.freeBox__hvWc1)}>
+          <p.PlasmicImg
+            data-plasmic-name={"img"}
+            data-plasmic-override={overrides.img}
+            alt={""}
+            className={classNames(sty.img)}
+            displayHeight={"auto" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"100%" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"auto" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/laziness_demo/images/qrTestsvg.svg",
+              fullWidth: 150,
+              fullHeight: 150,
+              aspectRatio: 1
+            }}
+          />
+        </div>
       </p.Stack>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "logo"],
-  logo: ["logo"]
+  root: ["root", "logo", "img"],
+  logo: ["logo"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -345,6 +310,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   logo: typeof Logo;
+  img: typeof p.PlasmicImg;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -409,6 +375,7 @@ export const PlasmicFooterSection = Object.assign(
   {
     // Helper components rendering sub-elements
     logo: makeNodeComponent("logo"),
+    img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicFooterSection
     internalVariantProps: PlasmicFooterSection__VariantProps,

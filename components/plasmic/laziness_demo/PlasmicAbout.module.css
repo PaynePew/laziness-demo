@@ -192,7 +192,7 @@
 .img__btUk9 > picture > img {
   object-fit: cover;
 }
-.img__btUk9 > .__wab_img-spacer > img {
+.img__btUk9 > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .columns___64W5Q {
@@ -289,7 +289,7 @@
 .img__sO33R > picture > img {
   object-fit: cover;
 }
-.img__sO33R > .__wab_img-spacer > img {
+.img__sO33R > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .column__fdW {

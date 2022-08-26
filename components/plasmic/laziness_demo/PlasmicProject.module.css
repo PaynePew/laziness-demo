@@ -58,6 +58,7 @@
   height: auto;
   padding-left: 32px;
   padding-right: 32px;
+  padding-bottom: 32px;
 }
 .projectSection > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -94,7 +95,7 @@
 .img__eivcK > picture > img {
   object-fit: cover;
 }
-.img__eivcK > .__wab_img-spacer > img {
+.img__eivcK > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__g3Cqm {
@@ -107,7 +108,7 @@
 .img__g3Cqm > picture > img {
   object-fit: cover;
 }
-.img__g3Cqm > .__wab_img-spacer > img {
+.img__g3Cqm > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__uj1F {
@@ -120,7 +121,7 @@
 .img__uj1F > picture > img {
   object-fit: cover;
 }
-.img__uj1F > .__wab_img-spacer > img {
+.img__uj1F > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__te3Zf {
@@ -133,7 +134,7 @@
 .img__te3Zf > picture > img {
   object-fit: cover;
 }
-.img__te3Zf > .__wab_img-spacer > img {
+.img__te3Zf > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__yrfNw {
@@ -146,7 +147,7 @@
 .img__yrfNw > picture > img {
   object-fit: cover;
 }
-.img__yrfNw > .__wab_img-spacer > img {
+.img__yrfNw > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .projectCardDetailReverse:global(.__wab_instance) {
@@ -161,7 +162,7 @@
 .img__g0KMb > picture > img {
   object-fit: cover;
 }
-.img__g0KMb > .__wab_img-spacer > img {
+.img__g0KMb > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__nxRDv {
@@ -174,7 +175,7 @@
 .img__nxRDv > picture > img {
   object-fit: cover;
 }
-.img__nxRDv > .__wab_img-spacer > img {
+.img__nxRDv > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img___7PMx {
@@ -187,7 +188,7 @@
 .img___7PMx > picture > img {
   object-fit: cover;
 }
-.img___7PMx > .__wab_img-spacer > img {
+.img___7PMx > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__j7Lx2 {
@@ -200,7 +201,7 @@
 .img__j7Lx2 > picture > img {
   object-fit: cover;
 }
-.img__j7Lx2 > .__wab_img-spacer > img {
+.img__j7Lx2 > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .img__fmeRn {
@@ -213,25 +214,62 @@
 .img__fmeRn > picture > img {
   object-fit: cover;
 }
-.img__fmeRn > .__wab_img-spacer > img {
+.img__fmeRn > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .freeBox__vQsK1 {
+  flex-direction: row;
   display: flex;
   position: relative;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: auto;
   max-width: var(--token-ENZjHcnmOJYy13);
   min-width: 0;
 }
+.freeBox__vQsK1 > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 12px);
+  width: calc(100% + 12px);
+}
+.freeBox__vQsK1 > :global(.__wab_flex-container) > *,
+.freeBox__vQsK1 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__vQsK1 > :global(.__wab_flex-container) > picture > img,
+.freeBox__vQsK1
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 12px;
+}
 @media (min-width: 0px) and (max-width: 769px) {
   .freeBox__vQsK1 {
     display: flex;
     flex-direction: column;
-    flex-column-gap: 0px;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox__vQsK1 > :global(.__wab_flex-container) {
+    flex-direction: column;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+    margin-top: calc(0px - 16px);
+    height: calc(100% + 16px);
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox__vQsK1 > :global(.__wab_flex-container) > *,
+  .freeBox__vQsK1 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .freeBox__vQsK1 > :global(.__wab_flex-container) > picture > img,
+  .freeBox__vQsK1
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
+    margin-top: 16px;
   }
 }
 .projectCardPrimary__nX0W:global(.__wab_instance) {
@@ -260,7 +298,7 @@
 .img___3SZgb > picture > img {
   object-fit: cover;
 }
-.img___3SZgb > .__wab_img-spacer > img {
+.img___3SZgb > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .projectCardPrimary__kJ8Zy:global(.__wab_instance) {
@@ -290,7 +328,7 @@
 .img > picture > img {
   object-fit: cover;
 }
-.img > .__wab_img-spacer > img {
+.img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .footerSection:global(.__wab_instance) {

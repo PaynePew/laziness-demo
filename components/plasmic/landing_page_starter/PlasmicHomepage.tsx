@@ -242,7 +242,11 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames(projectcss.all, sty.aboutSection)}
           >
             <div className={classNames(projectcss.all, sty.freeBox__gYXgv)}>
-              <div className={classNames(projectcss.all, sty.freeBox__eQxa)}>
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__eQxa)}
+              >
                 <h4
                   className={classNames(
                     projectcss.all,
@@ -290,7 +294,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     "在一件一件的工程估算中，累積出的完善體制，深知成本掌控的各項細節。懶得算，希望每位客戶都能在此輕鬆獲取精確的估算資料，讓辛苦的汗水皆有所獲。"
                   }
                 </div>
-              </div>
+              </p.Stack>
 
               <Button
                 className={classNames("__wab_instance", sty.button__cmlJc)}
@@ -310,7 +314,11 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames(projectcss.all, sty.contactSection)}
           >
             <div className={classNames(projectcss.all, sty.freeBox__ribUq)}>
-              <div className={classNames(projectcss.all, sty.freeBox__oYaqq)}>
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__oYaqq)}
+              >
                 <h4
                   className={classNames(
                     projectcss.all,
@@ -366,7 +374,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   {"聯絡我們"}
                 </Button>
-              </div>
+              </p.Stack>
 
               <div className={classNames(projectcss.all, sty.freeBox___4Zqdh)}>
                 <AboutCard

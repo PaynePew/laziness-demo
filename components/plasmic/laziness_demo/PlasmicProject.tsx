@@ -179,7 +179,11 @@ function PlasmicProject__RenderFunc(props: {
               )}
             />
 
-            <div className={classNames(projectcss.all, sty.freeBox__vQsK1)}>
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__vQsK1)}
+            >
               <ProjectCardPrimary
                 className={classNames(
                   "__wab_instance",
@@ -219,7 +223,7 @@ function PlasmicProject__RenderFunc(props: {
                   </div>
                 }
               />
-            </div>
+            </p.Stack>
           </p.Stack>
 
           <FooterSection
