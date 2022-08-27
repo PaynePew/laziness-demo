@@ -547,10 +547,20 @@
     dlv "^1.1.3"
     dset "^3.1.2"
 
+"@plasmicpkgs/plasmic-basic-components@^0.0.83":
+  version "0.0.83"
+  resolved "https://registry.yarnpkg.com/@plasmicpkgs/plasmic-basic-components/-/plasmic-basic-components-0.0.83.tgz#acb0a597a60b108ab624b63c1552c55becb2e747"
+  integrity sha512-mJr3uIHzst7faMmuObrNARvJMUIIRKYouRMUR7X7W2plns6OwKubi9SRJJoHNmIrdwUFEanLkrr5z383BzkU/g==
+
 "@plasmicpkgs/plasmic-embed-css@^0.1.57":
   version "0.1.57"
   resolved "https://registry.yarnpkg.com/@plasmicpkgs/plasmic-embed-css/-/plasmic-embed-css-0.1.57.tgz#d5f272e9cb04e9402066d929617369c3a7c3f0c5"
   integrity sha512-J8OyMDLS67t3r4CVonOx0OmPw60wviq2IC2JF2Is+eH90Fa6agPJxJWmZZJpDgyPj09QxugCksmDq1Y7d/k65A==
+
+"@plasmicpkgs/plasmic-nav@^0.0.48":
+  version "0.0.48"
+  resolved "https://registry.yarnpkg.com/@plasmicpkgs/plasmic-nav/-/plasmic-nav-0.0.48.tgz#d68c698d1030e527b3cef0e20b3ad4c210bf84cb"
+  integrity sha512-FY7RdNsCaAeb0isn7PUDALsUfSoTjcQDhQmRNSgWnfTrtXaN+FDhzEOE+fT+0ANXt21/BCQUF5ts1/gns3VvpQ==
 
 "@react-aria/checkbox@^3.5.0":
   version "3.5.0"
