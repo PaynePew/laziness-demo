@@ -151,6 +151,22 @@
   width: 24px;
   height: 24px;
 }
+.message:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg___7Hpsu {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.svg__rpkme {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
 .sendEmail:global(.__wab_instance) {
   position: relative;
   width: 100%;

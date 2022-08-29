@@ -393,6 +393,20 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicContactForm.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "YKrmeOP35_5",
+          "name": "TextArea",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicTextArea.tsx",
+          "importSpec": {
+            "modulePath": "TextArea.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicTextArea.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
         }
       ],
       "icons": [

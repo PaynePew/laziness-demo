@@ -36,6 +36,7 @@ import {
 } from "@plasmicapp/react-web";
 import Divider from "../../Divider"; // plasmic-import: cTOkkRidcYFrIe/component
 import TextInput from "../../TextInput"; // plasmic-import: f3MaxzneYzglDZ/component
+import TextArea from "../../TextArea"; // plasmic-import: YKrmeOP35_5/component
 import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -64,6 +65,7 @@ export type PlasmicContactForm__OverridesType = {
   fromName?: p.Flex<typeof TextInput>;
   phoneNumber?: p.Flex<typeof TextInput>;
   fromEmail?: p.Flex<typeof TextInput>;
+  message?: p.Flex<typeof TextArea>;
   sendEmail?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
 };
@@ -169,6 +171,13 @@ function PlasmicContactForm__RenderFunc(props: {
               className={classNames("__wab_instance", sty.fromEmail)}
               placeholder={"電子信箱*" as const}
             />
+
+            <TextArea
+              data-plasmic-name={"message"}
+              data-plasmic-override={overrides.message}
+              className={classNames("__wab_instance", sty.message)}
+              placeholder={"詢問內容*" as const}
+            />
           </p.Stack>
 
           <Button
@@ -216,6 +225,7 @@ const PlasmicDescendants = {
     "fromName",
     "phoneNumber",
     "fromEmail",
+    "message",
     "sendEmail",
     "svg"
   ],
@@ -224,12 +234,14 @@ const PlasmicDescendants = {
     "fromName",
     "phoneNumber",
     "fromEmail",
+    "message",
     "sendEmail",
     "svg"
   ],
   fromName: ["fromName"],
   phoneNumber: ["phoneNumber"],
   fromEmail: ["fromEmail"],
+  message: ["message"],
   sendEmail: ["sendEmail", "svg"],
   svg: ["svg"]
 } as const;
@@ -242,6 +254,7 @@ type NodeDefaultElementType = {
   fromName: typeof TextInput;
   phoneNumber: typeof TextInput;
   fromEmail: typeof TextInput;
+  message: typeof TextArea;
   sendEmail: typeof Button;
   svg: "svg";
 };
@@ -311,6 +324,7 @@ export const PlasmicContactForm = Object.assign(
     fromName: makeNodeComponent("fromName"),
     phoneNumber: makeNodeComponent("phoneNumber"),
     fromEmail: makeNodeComponent("fromEmail"),
+    message: makeNodeComponent("message"),
     sendEmail: makeNodeComponent("sendEmail"),
     svg: makeNodeComponent("svg"),
 

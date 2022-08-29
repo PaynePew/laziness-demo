@@ -42,6 +42,7 @@ function ContactForm_(props: ContactFormProps, ref: HTMLElementRefOf<"div">) {
       fromName={{ props: { name: "from_name", type: "text" } }}
       phoneNumber={{ props: { name: "phoneNumber", type: "tel" } }}
       fromEmail={{ props: { name: "from_email", type: "email" } }}
+      message={{ props: { name: "message" } }}
       // sendEmail={{
       //   onClick: handleSendEmail,
       // }}
