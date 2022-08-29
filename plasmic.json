@@ -380,6 +380,19 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicPlatform.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "Xyeaz66fEcw",
+          "name": "ContactForm",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicContactForm.tsx",
+          "importSpec": {
+            "modulePath": "ContactForm.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicContactForm.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -673,11 +686,6 @@
           "id": "QPdd4nYh9r",
           "name": "PlasmicHead",
           "componentImportPath": "@plasmicapp/react-web"
-        },
-        {
-          "id": "T1gis0Al7m",
-          "name": "GoogleMap",
-          "componentImportPath": "../components/GoogleMap"
         }
       ]
     },
@@ -733,7 +741,8 @@
           "name": "DataProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
@@ -752,7 +761,8 @@
           "name": "NavigationBar",
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

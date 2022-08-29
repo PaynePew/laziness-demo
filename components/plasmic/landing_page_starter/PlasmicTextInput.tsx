@@ -210,7 +210,10 @@ function PlasmicTextInput__RenderFunc(props: {
         disabled={
           hasVariant(variants, "isDisabled", "isDisabled") ? true : undefined
         }
+        id={"" as const}
+        name={"" as const}
         placeholder={args.placeholder}
+        role={"" as const}
         type={"text" as const}
         value={args.value}
       />

@@ -35,7 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import { GoogleMap } from "../../../../components/GoogleMap"; // plasmic-import: T1gis0Al7m/codeComponent
+import ContactForm from "../../ContactForm"; // plasmic-import: Xyeaz66fEcw/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import { useScreenVariants as useScreenVariantsnCpqQwRKrRf2Hx } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: nCpqQwRKrRf2Hx/globalVariant
@@ -59,7 +59,7 @@ export type PlasmicContact__OverridesType = {
   root?: p.Flex<"div">;
   headerHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
-  googleMap?: p.Flex<typeof GoogleMap>;
+  contactForm?: p.Flex<typeof ContactForm>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -181,13 +181,10 @@ function PlasmicContact__RenderFunc(props: {
               </div>
 
               <div className={classNames(projectcss.all, sty.freeBox___7OV3A)}>
-                <GoogleMap
-                  data-plasmic-name={"googleMap"}
-                  data-plasmic-override={overrides.googleMap}
-                  className={classNames("__wab_instance", sty.googleMap)}
-                  height={300 as const}
-                  location={"桃園高鐵" as const}
-                  width={600 as const}
+                <ContactForm
+                  data-plasmic-name={"contactForm"}
+                  data-plasmic-override={overrides.contactForm}
+                  className={classNames("__wab_instance", sty.contactForm)}
                 />
               </div>
             </div>
@@ -205,10 +202,10 @@ function PlasmicContact__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "headerHeroSection", "navbar", "googleMap", "footerSection"],
-  headerHeroSection: ["headerHeroSection", "navbar", "googleMap"],
+  root: ["root", "headerHeroSection", "navbar", "contactForm", "footerSection"],
+  headerHeroSection: ["headerHeroSection", "navbar", "contactForm"],
   navbar: ["navbar"],
-  googleMap: ["googleMap"],
+  contactForm: ["contactForm"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -218,7 +215,7 @@ type NodeDefaultElementType = {
   root: "div";
   headerHeroSection: "div";
   navbar: typeof Navbar;
-  googleMap: typeof GoogleMap;
+  contactForm: typeof ContactForm;
   footerSection: typeof FooterSection;
 };
 
@@ -285,7 +282,7 @@ export const PlasmicContact = Object.assign(
     // Helper components rendering sub-elements
     headerHeroSection: makeNodeComponent("headerHeroSection"),
     navbar: makeNodeComponent("navbar"),
-    googleMap: makeNodeComponent("googleMap"),
+    contactForm: makeNodeComponent("contactForm"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicContact
