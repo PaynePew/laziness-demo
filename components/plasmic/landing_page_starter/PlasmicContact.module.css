@@ -94,6 +94,29 @@
   max-width: 100%;
   position: relative;
 }
+.freeBox__tKPdM {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: var(--token-ENZjHcnmOJYy13);
+  min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox__tKPdM {
+    display: flex;
+    flex-direction: column;
+    flex-column-gap: 0px;
+  }
+}
+.googleMap:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
 .footerSection:global(.__wab_instance) {
   position: relative;
 }

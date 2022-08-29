@@ -7,7 +7,12 @@ interface GoogleMapAPI {
   height?: number;
 }
 
-function GoogleMap({ className, location, width, height }: GoogleMapAPI) {
+export function GoogleMap({
+  className,
+  location,
+  width,
+  height,
+}: GoogleMapAPI) {
   return (
     <div className={className}>
       <iframe
@@ -16,12 +21,10 @@ function GoogleMap({ className, location, width, height }: GoogleMapAPI) {
         style={{ border: 0, maxWidth: "100%" }}
         loading="lazy"
         allowFullScreen
-        referrerpolicy="no-referrer-when-downgrade"
+        referrerPolicy="no-referrer-when-downgrade"
         src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD78M-Wm7jw8EBXT6eg1AqiTUQWv6zn344
     &q=${location}`}
       ></iframe>
     </div>
   );
 }
-
-export default GoogleMap;

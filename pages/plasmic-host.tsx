@@ -1,7 +1,7 @@
 import * as React from "react";
 import Script from "next/script";
 import { PlasmicCanvasHost, registerComponent } from "@plasmicapp/host";
-import GoogleMap from "../components/GoogleMap";
+import { GoogleMap } from "../components/GoogleMap";
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -17,7 +17,7 @@ registerComponent(GoogleMap, {
     width: "number",
     height: "number",
   },
-  importPath: "../components/GoogleMap",
+  importPath: "./components/GoogleMap",
 });
 
 export default function PlasmicHost() {
