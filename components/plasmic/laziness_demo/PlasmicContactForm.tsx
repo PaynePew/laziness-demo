@@ -156,6 +156,7 @@ function PlasmicContactForm__RenderFunc(props: {
               className={classNames("__wab_instance", sty.fromName)}
               defaultValue={"" as const}
               placeholder={"姓名*" as const}
+              type={"text" as const}
             />
 
             <TextInput
@@ -163,6 +164,7 @@ function PlasmicContactForm__RenderFunc(props: {
               data-plasmic-override={overrides.phoneNumber}
               className={classNames("__wab_instance", sty.phoneNumber)}
               placeholder={"聯絡電話*" as const}
+              type={"text" as const}
             />
 
             <TextInput
@@ -170,6 +172,7 @@ function PlasmicContactForm__RenderFunc(props: {
               data-plasmic-override={overrides.fromEmail}
               className={classNames("__wab_instance", sty.fromEmail)}
               placeholder={"電子信箱*" as const}
+              type={"email" as const}
             />
 
             <TextArea

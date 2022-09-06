@@ -67,6 +67,8 @@ export type PlasmicTextInput__ArgsType = {
   placeholder?: string;
   endIcon?: React.ReactNode;
   startIcon?: React.ReactNode;
+  type?: string;
+  defaultValue?: any;
 };
 
 type ArgPropType = keyof PlasmicTextInput__ArgsType;
@@ -74,7 +76,9 @@ export const PlasmicTextInput__ArgProps = new Array<ArgPropType>(
   "value",
   "placeholder",
   "endIcon",
-  "startIcon"
+  "startIcon",
+  "type",
+  "defaultValue"
 );
 
 export type PlasmicTextInput__OverridesType = {
@@ -87,6 +91,8 @@ export type PlasmicTextInput__OverridesType = {
 export interface DefaultTextInputProps extends pp.BaseTextInputProps {
   value?: any;
   placeholder?: string;
+  type?: string;
+  defaultValue?: any;
 }
 
 function PlasmicTextInput__RenderFunc(props: {
@@ -114,7 +120,7 @@ function PlasmicTextInput__RenderFunc(props: {
 
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {
-      isTextInput: true
+      isTextInput: false
     });
 
   const triggers = {
@@ -214,7 +220,7 @@ function PlasmicTextInput__RenderFunc(props: {
         name={"" as const}
         placeholder={args.placeholder}
         role={"" as const}
-        type={"text" as const}
+        type={args.type}
         value={args.value}
       />
 

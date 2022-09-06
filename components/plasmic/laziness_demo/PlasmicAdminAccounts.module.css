@@ -75,7 +75,7 @@
   > img {
   margin-top: 64px;
 }
-.freeBox__uOToU {
+.freeBox___7JVqm {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -87,18 +87,81 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox__gNdPd {
+.freeBox__oBdzJ {
+  flex-direction: row;
   display: flex;
   position: relative;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: auto;
+  width: 100%;
   height: auto;
-  max-width: 350px;
+  min-width: 0;
+  padding: 8px;
 }
-.logInForm:global(.__wab_instance) {
-  max-width: 100%;
+.freeBox__oBdzJ > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 22px);
+  width: calc(100% + 22px);
+}
+.freeBox__oBdzJ > :global(.__wab_flex-container) > *,
+.freeBox__oBdzJ > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__oBdzJ > :global(.__wab_flex-container) > picture > img,
+.freeBox__oBdzJ
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 22px;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox__oBdzJ {
+    display: none;
+  }
+}
+.text__jDsyy {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.text__ivFkb {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.text___1Q7Iw {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.text__plwKk {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.text__yZlI {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.text__txs2U {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
+.accountCard:global(.__wab_instance) {
   position: relative;
 }
 .footerSection:global(.__wab_instance) {

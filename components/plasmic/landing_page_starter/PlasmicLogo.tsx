@@ -106,7 +106,7 @@ function PlasmicLogo__RenderFunc(props: {
         { [sty.root_50Opaque]: hasVariant(variants, "_50Opaque", "_50Opaque") }
       )}
       component={Link}
-      href={"/" as const}
+      href={`/`}
       platform={"nextjs"}
     >
       <p.PlasmicImg

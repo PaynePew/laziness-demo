@@ -41,19 +41,19 @@ import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKq
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../landing_page_starter/plasmic_landing_page_starter.module.css"; // plasmic-import: qtkpEraJg2gN978YDtMYaP/projectcss
-import sty from "./PlasmicPlatform.module.css"; // plasmic-import: 3qFurrWtCkt/css
+import sty from "./PlasmicLogIn.module.css"; // plasmic-import: 3qFurrWtCkt/css
 
-export type PlasmicPlatform__VariantMembers = {};
+export type PlasmicLogIn__VariantMembers = {};
 
-export type PlasmicPlatform__VariantsArgs = {};
-type VariantPropType = keyof PlasmicPlatform__VariantsArgs;
-export const PlasmicPlatform__VariantProps = new Array<VariantPropType>();
+export type PlasmicLogIn__VariantsArgs = {};
+type VariantPropType = keyof PlasmicLogIn__VariantsArgs;
+export const PlasmicLogIn__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicPlatform__ArgsType = {};
-type ArgPropType = keyof PlasmicPlatform__ArgsType;
-export const PlasmicPlatform__ArgProps = new Array<ArgPropType>();
+export type PlasmicLogIn__ArgsType = {};
+type ArgPropType = keyof PlasmicLogIn__ArgsType;
+export const PlasmicLogIn__ArgProps = new Array<ArgPropType>();
 
-export type PlasmicPlatform__OverridesType = {
+export type PlasmicLogIn__OverridesType = {
   root?: p.Flex<"div">;
   headerHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
@@ -63,12 +63,12 @@ export type PlasmicPlatform__OverridesType = {
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
-export interface DefaultPlatformProps {}
+export interface DefaultLogInProps {}
 
-function PlasmicPlatform__RenderFunc(props: {
-  variants: PlasmicPlatform__VariantsArgs;
-  args: PlasmicPlatform__ArgsType;
-  overrides: PlasmicPlatform__OverridesType;
+function PlasmicLogIn__RenderFunc(props: {
+  variants: PlasmicLogIn__VariantsArgs;
+  args: PlasmicLogIn__ArgsType;
+  overrides: PlasmicLogIn__OverridesType;
 
   forNode?: string;
 }) {
@@ -212,18 +212,18 @@ type NodeDefaultElementType = {
 
 type ReservedPropsType = "variants" | "args" | "overrides";
 type NodeOverridesType<T extends NodeNameType> = Pick<
-  PlasmicPlatform__OverridesType,
+  PlasmicLogIn__OverridesType,
   DescendantsType<T>
 >;
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
-    variants?: PlasmicPlatform__VariantsArgs;
-    args?: PlasmicPlatform__ArgsType;
+    variants?: PlasmicLogIn__VariantsArgs;
+    args?: PlasmicLogIn__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicPlatform__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } & Omit<PlasmicLogIn__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
-    Omit<PlasmicPlatform__ArgsType, ReservedPropsType> &
+    Omit<PlasmicLogIn__ArgsType, ReservedPropsType> &
     // Specify overrides for each element directly as props
     Omit<
       NodeOverridesType<T>,
@@ -245,13 +245,13 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         deriveRenderOpts(props, {
           name: nodeName,
           descendantNames: [...PlasmicDescendants[nodeName]],
-          internalArgPropNames: PlasmicPlatform__ArgProps,
-          internalVariantPropNames: PlasmicPlatform__VariantProps
+          internalArgPropNames: PlasmicLogIn__ArgProps,
+          internalVariantPropNames: PlasmicLogIn__VariantProps
         }),
       [props, nodeName]
     );
 
-    return PlasmicPlatform__RenderFunc({
+    return PlasmicLogIn__RenderFunc({
       variants,
       args,
       overrides,
@@ -259,15 +259,15 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
     });
   };
   if (nodeName === "root") {
-    func.displayName = "PlasmicPlatform";
+    func.displayName = "PlasmicLogIn";
   } else {
-    func.displayName = `PlasmicPlatform.${nodeName}`;
+    func.displayName = `PlasmicLogIn.${nodeName}`;
   }
   return func;
 }
 
-export const PlasmicPlatform = Object.assign(
-  // Top-level PlasmicPlatform renders the root element
+export const PlasmicLogIn = Object.assign(
+  // Top-level PlasmicLogIn renders the root element
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
@@ -278,11 +278,11 @@ export const PlasmicPlatform = Object.assign(
     logInForm: makeNodeComponent("logInForm"),
     footerSection: makeNodeComponent("footerSection"),
 
-    // Metadata about props expected for PlasmicPlatform
-    internalVariantProps: PlasmicPlatform__VariantProps,
-    internalArgProps: PlasmicPlatform__ArgProps
+    // Metadata about props expected for PlasmicLogIn
+    internalVariantProps: PlasmicLogIn__VariantProps,
+    internalArgProps: PlasmicLogIn__ArgProps
   }
 );
 
-export default PlasmicPlatform;
+export default PlasmicLogIn;
 /* prettier-ignore-end */
