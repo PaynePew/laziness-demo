@@ -139,8 +139,8 @@
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .freeBox__dMkDl > :global(.__wab_flex-container) {
-    margin-left: calc(0px - 24px);
-    width: calc(100% + 24px);
+    margin-left: calc(0px - 30px);
+    width: calc(100% + 30px);
     margin-top: calc(0px - 0px);
     height: calc(100% + 0px);
   }
@@ -154,7 +154,7 @@
     > :global(.__wab_slot)
     > picture
     > img {
-    margin-left: 24px;
+    margin-left: 30px;
     margin-top: 0px;
   }
 }
