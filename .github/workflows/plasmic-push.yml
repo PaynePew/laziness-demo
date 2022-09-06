@@ -28,7 +28,8 @@ jobs:
         with:
           key: lock-${{ hashFiles('package-lock.json', 'yarn.lock') }}
           path: node_modules
-      - names: Set env secret
+      - id: env secret
+        name: Set env secret
         with: # Set the secret as an input
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
@@ -40,7 +41,11 @@ jobs:
       - id: build
         name: Build Plasmic app
         uses: plasmicapp/plasmic-action@master
-        with:
+        env: # Or as an environment variable
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          SUPABASE_JWT_SECRET: ${{ secrets.SUPABASE_JWT_SECRET }}
+        with: 
           run: build
           branch: main
           skip_if_plasmic: true
