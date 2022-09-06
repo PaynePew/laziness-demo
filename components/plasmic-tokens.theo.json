@@ -101,6 +101,16 @@
       }
     },
     {
+      "name": "grid/grey",
+      "type": "color",
+      "value": "#0000001A",
+      "category": "color",
+      "meta": {
+        "projectId": "qtkpEraJg2gN978YDtMYaP",
+        "id": "yiRPxF8jU"
+      }
+    },
+    {
       "name": "light/blue",
       "type": "color",
       "value": "#007AFF",

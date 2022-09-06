@@ -608,6 +608,16 @@
           "id": "bpymhvy4a",
           "name": "Rolling1S200PxsvgIcon",
           "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__Rolling1S200Pxsvg.tsx"
+        },
+        {
+          "id": "w2tNVeXmfa",
+          "name": "PerspectiveGridStarWarsStylesvg2Icon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__PerspectiveGridStarWarsStylesvg2.tsx"
+        },
+        {
+          "id": "b_2HjN219O",
+          "name": "ImprovedPerspectiveGridsvgIcon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__ImprovedPerspectiveGridsvg.tsx"
         }
       ],
       "images": [
@@ -805,6 +815,26 @@
           "id": "KfuRU34WM",
           "name": "qr-test.svg",
           "filePath": "../public/plasmic/laziness_demo/images/qrTestsvg.svg"
+        },
+        {
+          "id": "g3VCayozA",
+          "name": "mountain.webp",
+          "filePath": "../public/plasmic/laziness_demo/images/mountainwebp.webp"
+        },
+        {
+          "id": "k9zku1fQV",
+          "name": "polygon.svg",
+          "filePath": "../public/plasmic/laziness_demo/images/polygonsvg.svg"
+        },
+        {
+          "id": "1xXnlKtJsr",
+          "name": "Perspective-Grid-Star-Wars-Style.svg",
+          "filePath": "../public/plasmic/laziness_demo/images/perspectiveGridStarWarsStylesvg.svg"
+        },
+        {
+          "id": "jE-xAm57o",
+          "name": "cloud-tree.webp",
+          "filePath": "../public/plasmic/laziness_demo/images/cloudTreewebp.webp"
         }
       ],
       "indirect": false,
@@ -896,6 +926,25 @@
         }
       ],
       "jsBundleThemes": []
+    },
+    {
+      "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
+      "projectApiToken": "DIkcfhBwjMCJSjcxfBkMuy4NImyytq5EWylxVcpS9t9EpdhnPQuBgBGxmk00AB1itMFa1KXTxOKnrjN2PN9nlA",
+      "projectName": "react-awesome-reveal",
+      "version": "3.2.0",
+      "cssFilePath": "plasmic/react_awesome_reveal/plasmic_react_awesome_reveal.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "R6s1FdhksG",
+          "name": "Reveal",
+          "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
+        }
+      ]
     }
   ],
   "globalVariants": {

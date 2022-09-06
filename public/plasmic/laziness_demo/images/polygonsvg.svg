@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 2560 1600" xml:space="preserve">
+  <pattern width="126" height="126" patternUnits="userSpaceOnUse" id="jcMOTmBh5a" viewBox="108.446 -182.867 126 126" overflow="visible">
+    <path fill="none" d="M108.446-182.867h126v126h-126z"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10" d="M252.998-75.211l36.898 36.897-36.898 36.898L216.1-38.314zm-125.999.001l36.898 36.897-36.898 36.898L90.1-38.313zm125.998-126l36.898 36.897-36.898 36.898-36.898-36.898z"/>
+    <g fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10">
+      <path d="M253.204-127.348v52.275L216.24-38.108h-52.276L127-75.073v-52.275l36.964-36.964h52.276z"/>
+      <path d="M126.998-201.21l36.898 36.898-36.898 36.898L90.1-164.312z" stroke-width="2"/>
+    </g>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10" d="M127.204-127.348v52.275L90.24-38.108H37.964L1-75.073v-52.275l36.964-36.964H90.24zm126-126v52.275l-36.964 36.965h-52.276L127-201.073v-52.275l36.964-36.964h52.276z"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10" d="M127.204-253.348v52.275L90.24-164.108H37.964L1-201.073v-52.275l36.964-36.964H90.24z"/>
+  </pattern>
+  <path fill="url(#jcMOTmBh5a)" d="M0 0h2560v1600H0z"/>
+</svg>

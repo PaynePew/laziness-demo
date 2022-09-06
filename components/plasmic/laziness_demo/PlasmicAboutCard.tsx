@@ -55,13 +55,15 @@ export type PlasmicAboutCard__ArgsType = {
   heading?: React.ReactNode;
   description?: React.ReactNode;
   image?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicAboutCard__ArgsType;
 export const PlasmicAboutCard__ArgProps = new Array<ArgPropType>(
   "heading",
   "description",
-  "image"
+  "image",
+  "children"
 );
 
 export type PlasmicAboutCard__OverridesType = {
@@ -70,13 +72,13 @@ export type PlasmicAboutCard__OverridesType = {
   link?: p.Flex<"a"> & Partial<LinkProps>;
   h4?: p.Flex<"h4">;
   h5?: p.Flex<"h5">;
-  button?: p.Flex<typeof Button>;
 };
 
 export interface DefaultAboutCardProps {
   heading?: React.ReactNode;
   description?: React.ReactNode;
   image?: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }
 
@@ -204,15 +206,21 @@ function PlasmicAboutCard__RenderFunc(props: {
               ) : null}
             </p.PlasmicLink>
 
-            <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
-              color={"primary" as const}
-              round={true}
-            >
-              {"聯絡我們"}
-            </Button>
+            <div className={classNames(projectcss.all, sty.freeBox__scTin)}>
+              {p.renderPlasmicSlot({
+                defaultContents: (
+                  <Button
+                    className={classNames("__wab_instance", sty.button__w5G4M)}
+                    color={"primary" as const}
+                    round={true}
+                  >
+                    {"服務項目"}
+                  </Button>
+                ),
+
+                value: args.children
+              })}
+            </div>
           </div>
         ) : null}
       </div>
@@ -221,12 +229,11 @@ function PlasmicAboutCard__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "root2", "link", "h4", "h5", "button"],
-  root2: ["root2", "link", "h4", "h5", "button"],
+  root: ["root", "root2", "link", "h4", "h5"],
+  root2: ["root2", "link", "h4", "h5"],
   link: ["link", "h4", "h5"],
   h4: ["h4"],
-  h5: ["h5"],
-  button: ["button"]
+  h5: ["h5"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -237,7 +244,6 @@ type NodeDefaultElementType = {
   link: "a";
   h4: "h4";
   h5: "h5";
-  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -305,7 +311,6 @@ export const PlasmicAboutCard = Object.assign(
     link: makeNodeComponent("link"),
     h4: makeNodeComponent("h4"),
     h5: makeNodeComponent("h5"),
-    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicAboutCard
     internalVariantProps: PlasmicAboutCard__VariantProps,

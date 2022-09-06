@@ -41,6 +41,8 @@
   --plasmic-token-unnamed-style-token: var(--token-6xnewts11);
   --token-P9QkuCpfM: Noto Serif TC;
   --plasmic-token-tc-primary: var(--token-P9QkuCpfM);
+  --token-yiRPxF8jU: #0000001a;
+  --plasmic-token-grid-grey: var(--token-yiRPxF8jU);
 }
 
 .plasmic_default_styles {
@@ -187,6 +189,8 @@
   --plasmic-mixin-medium-shadow_box-shadow: var(
     --mixin-FMCmbA9EjvhH9i_box-shadow
   );
+  --mixin-RfpgcA2G0_box-shadow: 0px 10px 10px 0px #0000000d;
+  --plasmic-mixin-shadow-navbar_box-shadow: var(--mixin-RfpgcA2G0_box-shadow);
 }
 
 :where(.all) {

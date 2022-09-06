@@ -18,7 +18,7 @@
   z-index: auto;
   background: #ffffff80;
   height: auto;
-  padding: 0px 32px 64px;
+  padding: 0px 0px 64px;
 }
 .headerHeroSection > :global(.__wab_flex-container) {
   flex-direction: column;

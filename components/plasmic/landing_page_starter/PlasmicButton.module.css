@@ -136,6 +136,10 @@
   box-shadow: 0px 0px 0px 1px var(--token-X_MubEhfhEbXKh);
   outline: none;
 }
+.rootround_color_primary:focus {
+  background: var(--token-X_MubEhfhEbXKh);
+  outline: none;
+}
 .slotTargetStartIcon {
   color: var(--token-iaRqcCmsjQJpYX);
 }
@@ -275,6 +279,49 @@
   > img,
 .root:focus
   .slotTargetChildren
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  outline: none;
+}
+.rootround_color_primary:focus .slotTargetChildrenround_color_primary {
+  color: var(--token-MZ-YfrFL4dQS-j);
+}
+.rootround_color_primary:focus .slotTargetChildrenround_color_primary > *,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > *,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > *,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > *,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > picture
+  > img,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > picture
+  > img,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
   > :global(.__wab_slot)
   > :global(.__wab_slot)
   > :global(.__wab_slot)

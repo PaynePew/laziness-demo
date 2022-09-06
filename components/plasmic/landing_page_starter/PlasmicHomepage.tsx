@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
 import AboutCard from "../../AboutCard"; // plasmic-import: _2BVlTZVvM/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
@@ -131,108 +132,192 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <p.Stack
-            as={"div"}
-            data-plasmic-name={"headerHeroSection"}
-            data-plasmic-override={overrides.headerHeroSection}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.headerHeroSection)}
-          >
-            <Navbar
-              data-plasmic-name={"navbar"}
-              data-plasmic-override={overrides.navbar}
-              className={classNames("__wab_instance", sty.navbar)}
-            />
-
+          {(
+            hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+          ) ? (
             <p.Stack
               as={"div"}
-              data-plasmic-name={"columns"}
-              data-plasmic-override={overrides.columns}
+              data-plasmic-name={"headerHeroSection"}
+              data-plasmic-override={overrides.headerHeroSection}
               hasGap={true}
-              className={classNames(projectcss.all, sty.columns)}
+              className={classNames(projectcss.all, sty.headerHeroSection)}
             >
-              <div
-                data-plasmic-name={"column"}
-                data-plasmic-override={overrides.column}
-                className={classNames(projectcss.all, sty.column)}
+              <Navbar
+                data-plasmic-name={"navbar"}
+                data-plasmic-override={overrides.navbar}
+                className={classNames("__wab_instance", sty.navbar)}
+              />
+
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"columns"}
+                data-plasmic-override={overrides.columns}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.columns)}
               >
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__dMkDl)}
+                <div
+                  data-plasmic-name={"column"}
+                  data-plasmic-override={overrides.column}
+                  className={classNames(projectcss.all, sty.column)}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__tSoKh,
-                      "vertical-word" as const
-                    )}
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__dMkDl)}
                   >
-                    {"有最好的回饋。​"}
-                  </div>
+                    <Reveal
+                      cascade={false}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.reveal__jm1Ei
+                      )}
+                      damping={undefined}
+                      delay={6600 as const}
+                      duration={2000 as const}
+                      effect={"fade" as const}
+                      reverse={false}
+                      triggerOnce={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__quhx4,
+                          "vertical-word" as const
+                        )}
+                      >
+                        {"有最好的回饋。​"}
+                      </div>
+                    </Reveal>
 
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eSfse,
-                      "vertical-word" as const
-                    )}
-                  >
-                    {"辛勤的汗水，​"}
-                  </div>
+                    <Reveal
+                      cascade={false}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.reveal__fRaUl
+                      )}
+                      damping={undefined}
+                      delay={5200 as const}
+                      duration={2000 as const}
+                      effect={"fade" as const}
+                      reverse={false}
+                      triggerOnce={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__eSfse,
+                          "vertical-word" as const
+                        )}
+                      >
+                        {"辛勤的汗水，​"}
+                      </div>
+                    </Reveal>
 
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__qzYz,
-                      "vertical-word" as const
-                    )}
-                  >
-                    {"讓我們的經驗幫助您，​"}
-                  </div>
+                    <Reveal
+                      cascade={false}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.reveal__dniWd
+                      )}
+                      damping={undefined}
+                      delay={3900 as const}
+                      duration={2000 as const}
+                      effect={"fade" as const}
+                      reverse={false}
+                      triggerOnce={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__qzYz,
+                          "vertical-word" as const
+                        )}
+                      >
+                        {"讓我們的經驗幫助您，​"}
+                      </div>
+                    </Reveal>
 
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__pvigX,
-                      "vertical-word" as const
-                    )}
-                  >
-                    {"一土一方，一吋一長。"}
-                  </div>
+                    <Reveal
+                      cascade={false}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.reveal__vwjPk
+                      )}
+                      damping={undefined}
+                      delay={2600 as const}
+                      duration={2000 as const}
+                      effect={"fade" as const}
+                      reverse={false}
+                      triggerOnce={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__pvigX,
+                          "vertical-word" as const
+                        )}
+                      >
+                        {"一土一方，一吋一長。"}
+                      </div>
+                    </Reveal>
 
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hp6B7,
-                      "vertical-word" as const
-                    )}
-                  >
-                    {"在每件工程中不斷累積，"}
-                  </div>
+                    <Reveal
+                      cascade={false}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.reveal__vNefP
+                      )}
+                      damping={undefined}
+                      delay={1300 as const}
+                      duration={2000 as const}
+                      effect={"fade" as const}
+                      reverse={false}
+                      triggerOnce={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__hp6B7,
+                          "vertical-word" as const
+                        )}
+                      >
+                        {"在每件工程中不斷累積，"}
+                      </div>
+                    </Reveal>
 
-                  <h3
-                    data-plasmic-name={"h3"}
-                    data-plasmic-override={overrides.h3}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h3,
-                      projectcss.__wab_text,
-                      sty.h3,
-                      "vertical-word" as const
-                    )}
-                  >
-                    {"更快速及精確的掌握"}
-                  </h3>
-                </p.Stack>
-              </div>
+                    <Reveal
+                      cascade={false}
+                      className={classNames("__wab_instance", sty.reveal__twEo)}
+                      damping={undefined}
+                      duration={2000 as const}
+                      effect={"fade" as const}
+                      reverse={false}
+                      triggerOnce={true}
+                    >
+                      <h3
+                        data-plasmic-name={"h3"}
+                        data-plasmic-override={overrides.h3}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h3,
+                          projectcss.__wab_text,
+                          sty.h3,
+                          "vertical-word" as const
+                        )}
+                      >
+                        {"更快速及精確的掌握"}
+                      </h3>
+                    </Reveal>
+                  </p.Stack>
+                </div>
+              </p.Stack>
             </p.Stack>
-          </p.Stack>
+          ) : null}
 
           <p.Stack
             as={"div"}
@@ -241,69 +326,78 @@ function PlasmicHomepage__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.aboutSection)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__gYXgv)}>
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__eQxa)}
-              >
-                <h4
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h4,
-                    projectcss.__wab_text,
-                    sty.h4___8NItU,
-                    "" as const
-                  )}
+            <Reveal
+              cascade={false}
+              className={classNames("__wab_instance", sty.reveal__jbvFs)}
+              direction={"right" as const}
+              effect={"fade" as const}
+              triggerOnce={true}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__gYXgv)}>
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__eQxa)}
                 >
-                  {"#懶得算，幫你精打細算"}
-                </h4>
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4___8NItU,
+                      "" as const
+                    )}
+                  >
+                    {"#懶得算，幫你精打細算"}
+                  </h4>
 
-                <h2
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.__wab_text,
-                    sty.h2__krYd6,
-                    "" as const
-                  )}
+                  <h2
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h2,
+                      projectcss.__wab_text,
+                      sty.h2__krYd6,
+                      "" as const
+                    )}
+                  >
+                    {"更快速及精確的掌握"}
+                  </h2>
+
+                  <h6
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h6,
+                      projectcss.__wab_text,
+                      sty.h6__quoig,
+                      "" as const
+                    )}
+                  >
+                    {"懶得算，幫你精打細算"}
+                  </h6>
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__bTOd
+                    )}
+                  >
+                    {
+                      "在一件一件的工程估算中，累積出的完善體制，深知成本掌控的各項細節。懶得算，希望每位客戶都能在此輕鬆獲取精確的估算資料，讓辛苦的汗水皆有所獲。"
+                    }
+                  </div>
+                </p.Stack>
+
+                <Button
+                  className={classNames("__wab_instance", sty.button__cmlJc)}
+                  color={"primary" as const}
+                  link={`/about`}
+                  round={true}
                 >
-                  {"更快速及精確的掌握"}
-                </h2>
-
-                <h6
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h6,
-                    projectcss.__wab_text,
-                    sty.h6__quoig,
-                    "" as const
-                  )}
-                >
-                  {"懶得算，幫你精打細算"}
-                </h6>
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__bTOd
-                  )}
-                >
-                  {
-                    "在一件一件的工程估算中，累積出的完善體制，深知成本掌控的各項細節。懶得算，希望每位客戶都能在此輕鬆獲取精確的估算資料，讓辛苦的汗水皆有所獲。"
-                  }
-                </div>
-              </p.Stack>
-
-              <Button
-                className={classNames("__wab_instance", sty.button__cmlJc)}
-                color={"primary" as const}
-                round={true}
-              >
-                {"關於我們"}
-              </Button>
-            </div>
+                  {"關於我們"}
+                </Button>
+              </div>
+            </Reveal>
           </p.Stack>
 
           <p.Stack
@@ -313,143 +407,208 @@ function PlasmicHomepage__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.contactSection)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__ribUq)}>
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__ribUq)}
+            >
+              <Reveal
+                className={classNames("__wab_instance", sty.reveal__oEYmC)}
+                direction={"left" as const}
+                triggerOnce={true}
+              >
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__oYaqq)}
+                >
+                  <h4
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h4,
+                      projectcss.__wab_text,
+                      sty.h4__xCmVw,
+                      "" as const
+                    )}
+                  >
+                    {"#各項施工圖配合"}
+                  </h4>
+
+                  <h2
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h2,
+                      projectcss.__wab_text,
+                      sty.h2__ipP,
+                      "" as const
+                    )}
+                  >
+                    {"專業營建管理系統"}
+                  </h2>
+
+                  <h6
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h6,
+                      projectcss.__wab_text,
+                      sty.h6__xjPvn,
+                      "" as const
+                    )}
+                  >
+                    {"從平面到3D圖型，一次搞定"}
+                  </h6>
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__w3S1G
+                    )}
+                  >
+                    {
+                      "汶源資訊所研發的一系列營建業ERP高階管理系統，自微軟DOS時代即已成熟普遍的被應用於臺灣的營建業市場，並普獲營建業界的認同、肯定與好評。(此為範例文字)"
+                    }
+                  </div>
+
+                  <Button
+                    className={classNames("__wab_instance", sty.button___2NPfY)}
+                    color={"primary" as const}
+                    link={`/contact`}
+                    round={true}
+                  >
+                    {"聯絡我們"}
+                  </Button>
+                </p.Stack>
+              </Reveal>
+
               <p.Stack
                 as={"div"}
                 hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__oYaqq)}
+                className={classNames(projectcss.all, sty.freeBox___4Zqdh)}
               >
-                <h4
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h4,
-                    projectcss.__wab_text,
-                    sty.h4__xCmVw,
-                    "" as const
-                  )}
+                <Reveal
+                  cascade={true}
+                  className={classNames("__wab_instance", sty.reveal__dpSjK)}
+                  direction={"right" as const}
+                  effect={"fade" as const}
+                  triggerOnce={true}
                 >
-                  {"#各項施工圖配合"}
-                </h4>
-
-                <h2
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.__wab_text,
-                    sty.h2__ipP,
-                    "" as const
-                  )}
-                >
-                  {"專業營建管理系統"}
-                </h2>
-
-                <h6
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h6,
-                    projectcss.__wab_text,
-                    sty.h6__xjPvn,
-                    "" as const
-                  )}
-                >
-                  {"從平面到3D圖型，一次搞定"}
-                </h6>
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__w3S1G
-                  )}
-                >
-                  {
-                    "汶源資訊所研發的一系列營建業ERP高階管理系統，自微軟DOS時代即已成熟普遍的被應用於臺灣的營建業市場，並普獲營建業界的認同、肯定與好評。(此為範例文字)"
-                  }
-                </div>
-
-                <Button
-                  className={classNames("__wab_instance", sty.button___2NPfY)}
-                  color={"primary" as const}
-                  round={true}
-                >
-                  {"聯絡我們"}
-                </Button>
-              </p.Stack>
-
-              <div className={classNames(projectcss.all, sty.freeBox___4Zqdh)}>
-                <AboutCard
-                  className={classNames("__wab_instance", sty.aboutCard__q0OIz)}
-                  description={
-                    <div
+                  <AboutCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.aboutCard__q0OIz
+                    )}
+                    description={
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__sslFf
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "結構估算(鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視)、裝修估算(室內及外裝修數量、分層、分戶)、工程預算書及標單編列。"
+                          : "結構估算(鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視)、裝修估算(室內及外裝修數量、分層、分戶)、工程預算書及標單編列。"}
+                      </div>
+                    }
+                    heading={"專業的服務項目"}
+                  >
+                    <Button
                       className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__sslFf
+                        "__wab_instance",
+                        sty.button___0C8WF
                       )}
+                      color={"primary" as const}
+                      link={`/services`}
+                      round={true}
                     >
-                      {hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "結構估算(鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視)、裝修估算(室內及外裝修數量、分層、分戶)、工程預算書及標單編列。"
-                        : "結構估算(鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視)、裝修估算(室內及外裝修數量、分層、分戶)、工程預算書及標單編列。"}
-                    </div>
-                  }
-                  heading={"專業的服務項目"}
-                />
+                      {"服務項目"}
+                    </Button>
+                  </AboutCard>
 
-                <AboutCard
-                  className={classNames("__wab_instance", sty.aboutCard__v3MYx)}
-                  description={
-                    "至今累積超過五十件以上工程估算案例，您可以從過往的專案了解我們對於估算的嚴格把關。"
-                  }
-                  heading={"不斷累積的專案經驗"}
-                  image={
-                    <p.PlasmicImg
-                      alt={""}
-                      className={classNames(sty.img__q51Ti)}
-                      displayHeight={"100%" as const}
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"100%" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"100%" as const}
-                      loading={"lazy" as const}
-                      src={{
-                        src: "/plasmic/laziness_demo/images/tower.webp",
-                        fullWidth: 5715,
-                        fullHeight: 3810,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  }
-                />
+                  <AboutCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.aboutCard__v3MYx
+                    )}
+                    description={
+                      "至今累積超過五十件以上工程估算案例，您可以從過往的專案了解我們對於估算的嚴格把關。"
+                    }
+                    heading={"不斷累積的專案經驗"}
+                    image={
+                      <p.PlasmicImg
+                        alt={""}
+                        className={classNames(sty.img__q51Ti)}
+                        displayHeight={"100%" as const}
+                        displayMaxHeight={"none" as const}
+                        displayMaxWidth={"100%" as const}
+                        displayMinHeight={"0" as const}
+                        displayMinWidth={"0" as const}
+                        displayWidth={"100%" as const}
+                        loading={"lazy" as const}
+                        src={{
+                          src: "/plasmic/laziness_demo/images/tower.webp",
+                          fullWidth: 5715,
+                          fullHeight: 3810,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    }
+                  >
+                    <Button
+                      className={classNames("__wab_instance", sty.button__azQ7)}
+                      color={"primary" as const}
+                      link={`/project`}
+                      round={true}
+                    >
+                      {"工程實績"}
+                    </Button>
+                  </AboutCard>
 
-                <AboutCard
-                  className={classNames("__wab_instance", sty.aboutCard__pRjb3)}
-                  description={
-                    "從RC、SRC/SC、SS，每層樓地板面積的收費皆清楚列出，在報價及後續流程上都有專人為您解釋，可以更專心在專案執行上。"
-                  }
-                  heading={"清楚的收費方式"}
-                  image={
-                    <p.PlasmicImg
-                      alt={""}
-                      className={classNames(sty.img__eLu5A)}
-                      displayHeight={"100%" as const}
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"100%" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"100%" as const}
-                      loading={"lazy" as const}
-                      src={{
-                        src: "/plasmic/laziness_demo/images/meeting1.webp",
-                        fullWidth: 7360,
-                        fullHeight: 4912,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  }
-                />
-              </div>
-            </div>
+                  <AboutCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.aboutCard__pRjb3
+                    )}
+                    description={
+                      "從RC、SRC/SC、SS，每層樓地板面積的收費皆清楚列出，在報價及後續流程上都有專人為您解釋，可以更專心在專案執行上。"
+                    }
+                    heading={"清楚的收費方式"}
+                    image={
+                      <p.PlasmicImg
+                        alt={""}
+                        className={classNames(sty.img__eLu5A)}
+                        displayHeight={"100%" as const}
+                        displayMaxHeight={"none" as const}
+                        displayMaxWidth={"100%" as const}
+                        displayMinHeight={"0" as const}
+                        displayMinWidth={"0" as const}
+                        displayWidth={"100%" as const}
+                        loading={"lazy" as const}
+                        src={{
+                          src: "/plasmic/laziness_demo/images/meeting1.webp",
+                          fullWidth: 7360,
+                          fullHeight: 4912,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    }
+                  >
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__rukeC
+                      )}
+                      color={"primary" as const}
+                      link={`/price`}
+                      round={true}
+                    >
+                      {"價目表"}
+                    </Button>
+                  </AboutCard>
+                </Reveal>
+              </p.Stack>
+            </p.Stack>
           </p.Stack>
 
           <FooterSection
