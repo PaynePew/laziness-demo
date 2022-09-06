@@ -512,7 +512,6 @@ function useBehavior<P extends pp.BaseButtonProps>(
       endIconSlot: "endIcon",
       root: "root"
     },
-
     ref
   );
 

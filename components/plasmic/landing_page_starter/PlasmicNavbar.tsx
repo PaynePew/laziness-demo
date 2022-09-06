@@ -135,7 +135,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button__aUsln)}
               color={"navLink" as const}
-              link={"/" as const}
+              link={`/`}
             >
               {"首頁"}
             </Button>
@@ -143,7 +143,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button__r3GGj)}
               color={"navLink" as const}
-              link={"/about" as const}
+              link={`/about`}
             >
               {"公司簡介"}
             </Button>
@@ -151,7 +151,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button__arOz5)}
               color={"navLink" as const}
-              link={"/project" as const}
+              link={`/project`}
             >
               {"工程實績"}
             </Button>
@@ -167,7 +167,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button__wyHno)}
               color={"navLink" as const}
-              link={"/services" as const}
+              link={`/services`}
             >
               {"服務項目"}
             </Button>
@@ -175,6 +175,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button__oDLgG)}
               color={"navLink" as const}
+              link={`/price`}
             >
               {"價目表"}
             </Button>
@@ -182,7 +183,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button___2G5Wu)}
               color={"navLink" as const}
-              link={"/contact" as const}
+              link={`/contact`}
             >
               {"聯絡我們"}
             </Button>
@@ -190,6 +191,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button__axQ7P)}
               color={"navLink" as const}
+              link={`/login`}
               outline={true}
             >
               {"會員資訊平台"}
@@ -237,7 +239,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button__ofDdT)}
               color={"navLink" as const}
-              link={"/" as const}
+              link={`/`}
             >
               {"首頁"}
             </Button>
@@ -245,7 +247,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button__dFyOs)}
               color={"navLink" as const}
-              link={"/about" as const}
+              link={`/about`}
             >
               {"公司簡介"}
             </Button>
@@ -253,7 +255,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button__p0M4F)}
               color={"navLink" as const}
-              link={"/project" as const}
+              link={`/project`}
             >
               {"工程實績"}
             </Button>
@@ -262,7 +264,7 @@ function PlasmicNavbar__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button___98EN)}
             color={"navLink" as const}
-            link={"/services" as const}
+            link={`/services`}
           >
             {"服務項目"}
           </Button>
@@ -277,7 +279,7 @@ function PlasmicNavbar__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__oF1O2)}
             color={"navLink" as const}
-            link={"/contact" as const}
+            link={`/contact`}
           >
             {"聯絡我們"}
           </Button>
@@ -325,7 +327,7 @@ function PlasmicNavbar__RenderFunc(props: {
               )
             })}
             color={"navLink" as const}
-            link={"/" as const}
+            link={`/`}
           >
             {"首頁"}
           </Button>
@@ -339,7 +341,7 @@ function PlasmicNavbar__RenderFunc(props: {
               )
             })}
             color={"navLink" as const}
-            link={"/about" as const}
+            link={`/about`}
           >
             {"公司簡介"}
           </Button>
@@ -353,7 +355,7 @@ function PlasmicNavbar__RenderFunc(props: {
               )
             })}
             color={"navLink" as const}
-            link={"/project" as const}
+            link={`/project`}
           >
             {"工程實績"}
           </Button>
@@ -367,7 +369,7 @@ function PlasmicNavbar__RenderFunc(props: {
               )
             })}
             color={"navLink" as const}
-            link={"/services" as const}
+            link={`/services`}
           >
             {"服務項目"}
           </Button>
@@ -394,7 +396,7 @@ function PlasmicNavbar__RenderFunc(props: {
               )
             })}
             color={"navLink" as const}
-            link={"/contact" as const}
+            link={`/contact`}
           >
             {"聯絡我們"}
           </Button>

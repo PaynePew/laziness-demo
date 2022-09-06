@@ -370,14 +370,145 @@
         },
         {
           "id": "3qFurrWtCkt",
-          "name": "Platform",
+          "name": "LogIn",
           "type": "managed",
           "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicPlatform.tsx",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicLogIn.tsx",
+          "importSpec": {
+            "modulePath": "../pages/login.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicLogIn.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "Xyeaz66fEcw",
+          "name": "ContactForm",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicContactForm.tsx",
+          "importSpec": {
+            "modulePath": "ContactForm.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicContactForm.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "YKrmeOP35_5",
+          "name": "TextArea",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicTextArea.tsx",
+          "importSpec": {
+            "modulePath": "TextArea.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicTextArea.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
+        },
+        {
+          "id": "CtTUSfG2PU6",
+          "name": "LogInForm",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicLogInForm.tsx",
+          "importSpec": {
+            "modulePath": "LogInForm.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicLogInForm.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "GGAMZHnNF_K",
+          "name": "Admin",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAdmin.tsx",
+          "importSpec": {
+            "modulePath": "../pages/admin.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicAdmin.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "krho14hlwT",
+          "name": "Member",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicMember.tsx",
           "importSpec": {
             "modulePath": "../pages/member.tsx"
           },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicPlatform.module.css",
+          "cssFilePath": "plasmic/laziness_demo/PlasmicMember.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "MYiOb2nF0s",
+          "name": "ResultCard",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicResultCard.tsx",
+          "importSpec": {
+            "modulePath": "ResultCard.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicResultCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "kctI_m0loCm",
+          "name": "AdminAccounts",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAdminAccounts.tsx",
+          "importSpec": {
+            "modulePath": "../pages/admin/accounts.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicAdminAccounts.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "0G2s1E43PqJ",
+          "name": "AdminResults",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAdminResults.tsx",
+          "importSpec": {
+            "modulePath": "../pages/admin/results.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicAdminResults.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "CKUgB3T9na",
+          "name": "AccountCard",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAccountCard.tsx",
+          "importSpec": {
+            "modulePath": "AccountCard.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicAccountCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "ReJzREwAZMA",
+          "name": "AdminSignUp",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAdminSignUp.tsx",
+          "importSpec": {
+            "modulePath": "../pages/admin/signup.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicAdminSignUp.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         }
@@ -467,6 +598,11 @@
           "id": "ht1qXa_D9QPUBn",
           "name": "ChecksvgIcon",
           "moduleFilePath": "plasmic/landing_page_starter/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "bpymhvy4a",
+          "name": "Rolling1S200PxsvgIcon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__Rolling1S200Pxsvg.tsx"
         }
       ],
       "images": [
@@ -673,6 +809,11 @@
           "id": "QPdd4nYh9r",
           "name": "PlasmicHead",
           "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "w2uxiFuhyB",
+          "name": "GoogleMap",
+          "componentImportPath": "./components/GoogleMap"
         }
       ]
     },
@@ -695,6 +836,59 @@
         }
       ],
       "jsBundleThemes": []
+    },
+    {
+      "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
+      "projectApiToken": "vXGGQpdi9fhcncabBdg8DcMRUbkz0iRW6HS1jzQufQR6QH0MasPwr9SX7ap4SsK3xXwwXmzZtglWGe0Rm2nw",
+      "projectName": "plasmic-basic-components",
+      "version": "3.3.0",
+      "cssFilePath": "plasmic/plasmic_basic_components/plasmic_plasmic_basic_components.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "CMDBvOhaI4s",
+          "name": "Iframe",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "RhitNJW5Zu-",
+          "name": "Video",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "PKldDYkH42",
+          "name": "Embed",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "D4RbnlpRXg3",
+          "name": "DataProvider",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        }
+      ]
+    },
+    {
+      "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
+      "projectApiToken": "uZp069FLSLNVA2dpWnqC3BUaj3flvtNBNXt6e1b67rm4Uh6lGHgYJ65FCBXlOFTB5KDW7RmmOxIAzgHYCg",
+      "projectName": "plasmic-nav",
+      "version": "0.2.0",
+      "cssFilePath": "plasmic/plasmic_nav/plasmic_plasmic_nav.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "jGx9tiKJoex",
+          "name": "NavigationBar",
+          "componentImportPath": "@plasmicpkgs/plasmic-nav"
+        }
+      ]
     }
   ],
   "globalVariants": {

@@ -24,7 +24,7 @@ export default function GlobalContextsProvider(
       css={
         embedCssProps && "css" in embedCssProps
           ? embedCssProps.css!
-          : ("/* CSS snippet */\r\n\r\n.vertical-word{\r\n    writing-mode: vertical-rl;\r\n}\r\n\r\n.modal-pop{\r\n    animation-name: popUp;\r\n    animation-duration:.5s;\r\n}\r\n\r\n@keyframes popUp{\r\n    from{\r\n        opacity:0;\r\n        transform: translate(0%,-40%);\r\n    }\r\n    to{\r\n        opacity:1;\r\n        transform:translate(0%,0%);\r\n}" as const)
+          : ("/* CSS snippet */\r\n\r\n.vertical-word{\r\n    writing-mode: vertical-rl;\r\n}\r\n\r\n.text-wrap{\r\nword-break: break-all;\r\n}\r\n\r\n.modal-pop{\r\n    animation-name: popUp;\r\n    animation-duration:.5s;\r\n}\r\n\r\n@keyframes popUp{\r\n    from{\r\n        opacity:0;\r\n        transform: translate(0%,-40%);\r\n    }\r\n    to{\r\n        opacity:1;\r\n        transform:translate(0%,0%);\r\n}" as const)
       }
     >
       {children}

@@ -183,7 +183,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             className={classNames("__wab_instance", sty.button___8M04Q)}
             color={"navLink" as const}
             flat={true}
-            link={"/" as const}
+            link={`/`}
           >
             {"首頁"}
           </Button>
@@ -192,7 +192,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             className={classNames("__wab_instance", sty.button__lwzrx)}
             color={"navLink" as const}
             flat={true}
-            link={"/about" as const}
+            link={`/about`}
           >
             {"公司簡介"}
           </Button>
@@ -201,7 +201,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             className={classNames("__wab_instance", sty.button__n3Pqe)}
             color={"navLink" as const}
             flat={true}
-            link={"/project" as const}
+            link={`/project`}
           >
             {"工程實績"}
           </Button>
@@ -226,7 +226,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             className={classNames("__wab_instance", sty.button__lXnQj)}
             color={"navLink" as const}
             flat={true}
-            link={"/services" as const}
+            link={`/services`}
           >
             {"服務項目"}
           </Button>
@@ -259,7 +259,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             className={classNames("__wab_instance", sty.button___3Lc6F)}
             color={"navLink" as const}
             flat={true}
-            link={"/contact" as const}
+            link={`/contact`}
           >
             {"聯絡我們"}
           </Button>
