@@ -819,11 +819,6 @@
           "id": "w2uxiFuhyB",
           "name": "GoogleMap",
           "componentImportPath": "./components/GoogleMap"
-        },
-        {
-          "id": "w2uxiFuhyB",
-          "name": "GoogleMap",
-          "componentImportPath": "./components/GoogleMap"
         }
       ]
     },
