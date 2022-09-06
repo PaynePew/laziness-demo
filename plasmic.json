@@ -603,6 +603,11 @@
           "id": "bpymhvy4a",
           "name": "Rolling1S200PxsvgIcon",
           "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__Rolling1S200Pxsvg.tsx"
+        },
+        {
+          "id": "bpymhvy4a",
+          "name": "Rolling1S200PxsvgIcon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__Rolling1S200Pxsvg.tsx"
         }
       ],
       "images": [
@@ -809,6 +814,11 @@
           "id": "QPdd4nYh9r",
           "name": "PlasmicHead",
           "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "w2uxiFuhyB",
+          "name": "GoogleMap",
+          "componentImportPath": "./components/GoogleMap"
         },
         {
           "id": "w2uxiFuhyB",
