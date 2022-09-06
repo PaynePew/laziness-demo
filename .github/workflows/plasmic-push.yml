@@ -12,6 +12,10 @@ jobs:
   job:
     name: Build and deploy
     runs-on: ubuntu-latest
+    env: # Or as an environment variable
+       NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+       NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+       SUPABASE_JWT_SECRET: ${{ secrets.SUPABASE_JWT_SECRET }}
     steps:
       - id: checkout
         name: Check out repository
@@ -33,14 +37,7 @@ jobs:
       - id: build
         name: Build Plasmic app
         uses: plasmicapp/plasmic-action@master
-        env: # Or as an environment variable
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-          SUPABASE_JWT_SECRET: ${{ secrets.SUPABASE_JWT_SECRET }}
         with: 
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-          SUPABASE_JWT_SECRET: ${{ secrets.SUPABASE_JWT_SECRET }}
           run: build
           branch: main
           skip_if_plasmic: true
