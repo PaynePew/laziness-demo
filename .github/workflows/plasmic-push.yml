@@ -12,10 +12,6 @@ jobs:
   job:
     name: Build and deploy
     runs-on: ubuntu-latest
-    env: # Or as an environment variable
-       NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-       NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-       SUPABASE_JWT_SECRET: ${{ secrets.SUPABASE_JWT_SECRET }}
     steps:
       - id: checkout
         name: Check out repository
@@ -34,6 +30,12 @@ jobs:
         with:
           key: lock-${{ hashFiles('package-lock.json', 'yarn.lock') }}
           path: node_modules
+      - id: before build setting
+        name: Set Env
+        env: # Or as an environment variable
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          SUPABASE_JWT_SECRET: ${{ secrets.SUPABASE_JWT_SECRET }}
       - id: build
         name: Build Plasmic app
         uses: plasmicapp/plasmic-action@master
