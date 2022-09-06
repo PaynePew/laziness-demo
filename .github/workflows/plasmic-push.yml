@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: [ main ]
 
 jobs:
   job:
@@ -28,13 +30,15 @@ jobs:
         with:
           key: lock-${{ hashFiles('package-lock.json', 'yarn.lock') }}
           path: node_modules
-      - id: build
-        name: Build Plasmic app
-        uses: plasmicapp/plasmic-action@master
+      - id: before build setting
+        name: Set Env
         env: # Or as an environment variable
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SUPABASE_JWT_SECRET: ${{ secrets.SUPABASE_JWT_SECRET }}
+      - id: build
+        name: Build Plasmic app
+        uses: plasmicapp/plasmic-action@master
         with: 
           run: build
           branch: main
