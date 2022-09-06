@@ -326,14 +326,18 @@ function PlasmicHomepage__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.aboutSection)}
           >
-            <Reveal
-              cascade={false}
-              className={classNames("__wab_instance", sty.reveal__jbvFs)}
-              direction={"right" as const}
-              effect={"fade" as const}
-              triggerOnce={true}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__gYXgv)}>
+            <div className={classNames(projectcss.all, sty.freeBox__gYXgv)}>
+              <Reveal
+                cascade={false}
+                className={classNames("__wab_instance", sty.reveal__jbvFs)}
+                direction={
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? ("up" as const)
+                    : ("left" as const)
+                }
+                effect={"fade" as const}
+                triggerOnce={true}
+              >
                 <p.Stack
                   as={"div"}
                   hasGap={true}
@@ -386,18 +390,18 @@ function PlasmicHomepage__RenderFunc(props: {
                       "在一件一件的工程估算中，累積出的完善體制，深知成本掌控的各項細節。懶得算，希望每位客戶都能在此輕鬆獲取精確的估算資料，讓辛苦的汗水皆有所獲。"
                     }
                   </div>
-                </p.Stack>
 
-                <Button
-                  className={classNames("__wab_instance", sty.button__cmlJc)}
-                  color={"primary" as const}
-                  link={`/about`}
-                  round={true}
-                >
-                  {"關於我們"}
-                </Button>
-              </div>
-            </Reveal>
+                  <Button
+                    className={classNames("__wab_instance", sty.button__cmlJc)}
+                    color={"primary" as const}
+                    link={`/about`}
+                    round={true}
+                  >
+                    {"關於我們"}
+                  </Button>
+                </p.Stack>
+              </Reveal>
+            </div>
           </p.Stack>
 
           <p.Stack
@@ -413,8 +417,13 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames(projectcss.all, sty.freeBox__ribUq)}
             >
               <Reveal
+                big={false}
                 className={classNames("__wab_instance", sty.reveal__oEYmC)}
-                direction={"left" as const}
+                direction={
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? ("up" as const)
+                    : ("right" as const)
+                }
                 triggerOnce={true}
               >
                 <p.Stack
@@ -489,7 +498,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 <Reveal
                   cascade={true}
                   className={classNames("__wab_instance", sty.reveal__dpSjK)}
-                  direction={"right" as const}
+                  direction={"up" as const}
                   effect={"fade" as const}
                   triggerOnce={true}
                 >
