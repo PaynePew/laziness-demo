@@ -5,6 +5,9 @@
   align-items: stretch;
   justify-content: flex-start;
 }
+.root_50Opaque {
+  background: #ffffff;
+}
 .img {
   object-fit: cover;
   width: 40px;

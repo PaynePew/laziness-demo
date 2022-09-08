@@ -15,6 +15,9 @@
     padding: 0px;
   }
 }
+.rootcard {
+  background: none;
+}
 .root2 {
   display: flex;
   flex-direction: column;
@@ -37,22 +40,6 @@
   filter: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-}
-.link {
-  position: relative;
-  display: flex;
-  width: 100%;
-  min-width: 0;
-}
-@media (min-width: 0px) and (max-width: 769px) {
-  .link {
-    width: 100%;
-    margin-bottom: 24px;
-    min-width: 0;
-  }
-}
-.root:hover .link {
-  filter: none;
 }
 .freeBox__ynqI {
   display: flex;
@@ -112,6 +99,34 @@
 .img__brqa3 > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
+.freeBox___5O2Ag {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 12px;
+}
+.freeBoxcard___5O2Agv6Dsw {
+  box-shadow: 0px 10px 10px 2px #0000000d;
+}
+.freeBox__c28J9 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0px;
+}
 .h4 {
   position: relative;
   width: 100%;
@@ -123,7 +138,7 @@
   min-width: 0;
 }
 .root:hover .slotTargetHeading {
-  color: var(--token-X_MubEhfhEbXKh);
+  color: var(--token-yoVhk9qgH);
 }
 .h5 {
   position: relative;
@@ -138,7 +153,7 @@
   min-width: 0;
 }
 .root:hover .slotTargetDescription {
-  color: var(--token-X_MubEhfhEbXKh);
+  color: var(--token-yoVhk9qgH);
 }
 .freeBox__scTin {
   display: flex;

@@ -399,7 +399,7 @@ function PlasmicLogInForm__RenderFunc(props: {
                   "isSignUpFlow"
                 )
               })}
-              color={"green" as const}
+              color={"red" as const}
               endIcon={
                 <WandIcon
                   className={classNames(projectcss.all, sty.svg___9Guzp)}

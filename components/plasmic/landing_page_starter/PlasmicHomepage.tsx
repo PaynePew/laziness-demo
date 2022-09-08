@@ -34,8 +34,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
+import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
 import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
 import AboutCard from "../../AboutCard"; // plasmic-import: _2BVlTZVvM/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
@@ -61,7 +61,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  headerHeroSection?: p.Flex<"div">;
+  homeHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
   columns?: p.Flex<"div">;
   column?: p.Flex<"div">;
@@ -132,15 +132,39 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
+          <Reveal
+            className={classNames("__wab_instance", sty.reveal__jEiUm)}
+            delay={1500 as const}
+            duration={2300 as const}
+            triggerOnce={true}
+          >
+            <p.PlasmicImg
+              alt={""}
+              className={classNames(sty.img__evma4)}
+              displayHeight={"792px" as const}
+              displayMaxHeight={"none" as const}
+              displayMaxWidth={"none" as const}
+              displayMinHeight={"0" as const}
+              displayMinWidth={"0" as const}
+              displayWidth={"auto" as const}
+              src={{
+                src: "/plasmic/laziness_demo/images/cloudTreewebp.webp",
+                fullWidth: 3556,
+                fullHeight: 4741,
+                aspectRatio: undefined
+              }}
+            />
+          </Reveal>
+
           {(
             hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
           ) ? (
             <p.Stack
               as={"div"}
-              data-plasmic-name={"headerHeroSection"}
-              data-plasmic-override={overrides.headerHeroSection}
+              data-plasmic-name={"homeHeroSection"}
+              data-plasmic-override={overrides.homeHeroSection}
               hasGap={true}
-              className={classNames(projectcss.all, sty.headerHeroSection)}
+              className={classNames(projectcss.all, sty.homeHeroSection)}
             >
               <Navbar
                 data-plasmic-name={"navbar"}
@@ -326,6 +350,39 @@ function PlasmicHomepage__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.aboutSection)}
           >
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__b7ZY)}
+              delay={2200 as const}
+              duration={2300 as const}
+              triggerOnce={true}
+            >
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img___8VRm5)}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? ("1032px" as const)
+                    : ("1276px" as const)
+                }
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? ("100%" as const)
+                    : ("1411px" as const)
+                }
+                loading={"lazy" as const}
+                src={{
+                  src: "/plasmic/laziness_demo/images/constructionpng.png",
+                  fullWidth: 1121,
+                  fullHeight: 1006,
+                  aspectRatio: undefined
+                }}
+              />
+            </Reveal>
+
             <div className={classNames(projectcss.all, sty.freeBox__gYXgv)}>
               <Reveal
                 cascade={false}
@@ -503,6 +560,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   triggerOnce={true}
                 >
                   <AboutCard
+                    card={true}
                     className={classNames(
                       "__wab_instance",
                       sty.aboutCard__q0OIz
@@ -521,6 +579,34 @@ function PlasmicHomepage__RenderFunc(props: {
                       </div>
                     }
                     heading={"專業的服務項目"}
+                    image={
+                      <p.PlasmicImg
+                        alt={""}
+                        className={classNames(sty.img__wgkYu)}
+                        displayHeight={"100%" as const}
+                        displayMaxHeight={"none" as const}
+                        displayMaxWidth={"100%" as const}
+                        displayMinHeight={"0" as const}
+                        displayMinWidth={"0" as const}
+                        displayWidth={"100%" as const}
+                        loading={"lazy" as const}
+                        src={
+                          hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? {
+                                src: "/plasmic/laziness_demo/images/professionalwebp.webp",
+                                fullWidth: 5066,
+                                fullHeight: 3377,
+                                aspectRatio: undefined
+                              }
+                            : {
+                                src: "/plasmic/laziness_demo/images/professionalwebp.webp",
+                                fullWidth: 5066,
+                                fullHeight: 3377,
+                                aspectRatio: undefined
+                              }
+                        }
+                      />
+                    }
                   >
                     <Button
                       className={classNames(
@@ -536,12 +622,23 @@ function PlasmicHomepage__RenderFunc(props: {
                   </AboutCard>
 
                   <AboutCard
+                    card={true}
                     className={classNames(
                       "__wab_instance",
                       sty.aboutCard__v3MYx
                     )}
                     description={
-                      "至今累積超過五十件以上工程估算案例，您可以從過往的專案了解我們對於估算的嚴格把關。"
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__g2JJk
+                        )}
+                      >
+                        {
+                          "至今累積超過五十件以上工程估算案例，您可以從過往的專案了解我們對於估算的嚴格把關。"
+                        }
+                      </div>
                     }
                     heading={"不斷累積的專案經驗"}
                     image={
@@ -575,6 +672,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   </AboutCard>
 
                   <AboutCard
+                    card={true}
                     className={classNames(
                       "__wab_instance",
                       sty.aboutCard__pRjb3
@@ -634,7 +732,7 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "headerHeroSection",
+    "homeHeroSection",
     "navbar",
     "columns",
     "column",
@@ -643,7 +741,7 @@ const PlasmicDescendants = {
     "contactSection",
     "footerSection"
   ],
-  headerHeroSection: ["headerHeroSection", "navbar", "columns", "column", "h3"],
+  homeHeroSection: ["homeHeroSection", "navbar", "columns", "column", "h3"],
   navbar: ["navbar"],
   columns: ["columns", "column", "h3"],
   column: ["column", "h3"],
@@ -657,7 +755,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  headerHeroSection: "div";
+  homeHeroSection: "div";
   navbar: typeof Navbar;
   columns: "div";
   column: "div";
@@ -728,7 +826,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    headerHeroSection: makeNodeComponent("headerHeroSection"),
+    homeHeroSection: makeNodeComponent("homeHeroSection"),
     navbar: makeNodeComponent("navbar"),
     columns: makeNodeComponent("columns"),
     column: makeNodeComponent("column"),

@@ -42,12 +42,17 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "../landing_page_starter/plasmic_landing_page_starter.module.css"; // plasmic-import: qtkpEraJg2gN978YDtMYaP/projectcss
 import sty from "./PlasmicProjectCardDetail.module.css"; // plasmic-import: UgNbjXEvxu8/css
 
-export type PlasmicProjectCardDetail__VariantMembers = {};
+export type PlasmicProjectCardDetail__VariantMembers = {
+  revers: "revers";
+};
 
-export type PlasmicProjectCardDetail__VariantsArgs = {};
+export type PlasmicProjectCardDetail__VariantsArgs = {
+  revers?: SingleBooleanChoiceArg<"revers">;
+};
+
 type VariantPropType = keyof PlasmicProjectCardDetail__VariantsArgs;
 export const PlasmicProjectCardDetail__VariantProps =
-  new Array<VariantPropType>();
+  new Array<VariantPropType>("revers");
 
 export type PlasmicProjectCardDetail__ArgsType = {
   projectImage?: React.ReactNode;
@@ -86,6 +91,7 @@ export interface DefaultProjectCardDetailProps {
   location?: React.ReactNode;
   categoryTitle?: React.ReactNode;
   category?: React.ReactNode;
+  revers?: SingleBooleanChoiceArg<"revers">;
   className?: string;
 }
 
@@ -129,16 +135,31 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
-        sty.root
+        sty.root,
+        { [sty.rootrevers]: hasVariant(variants, "revers", "revers") }
       )}
     >
       {true ? (
         <p.Stack
           as={"div"}
           hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__doWvV)}
+          className={classNames(projectcss.all, sty.freeBox__doWvV, {
+            [sty.freeBoxrevers__doWvVh81JN]: hasVariant(
+              variants,
+              "revers",
+              "revers"
+            )
+          })}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__r8WDs)}>
+          <div
+            className={classNames(projectcss.all, sty.freeBox__r8WDs, {
+              [sty.freeBoxrevers__r8WDSh81JN]: hasVariant(
+                variants,
+                "revers",
+                "revers"
+              )
+            })}
+          >
             {p.renderPlasmicSlot({
               defaultContents: (
                 <p.PlasmicImg
@@ -164,7 +185,15 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
             })}
           </div>
 
-          <div className={classNames(projectcss.all, sty.freeBox__vWeSq)}>
+          <div
+            className={classNames(projectcss.all, sty.freeBox__vWeSq, {
+              [sty.freeBoxrevers__vWeSQh81JN]: hasVariant(
+                variants,
+                "revers",
+                "revers"
+              )
+            })}
+          >
             {p.renderPlasmicSlot({
               defaultContents: (
                 <React.Fragment>
@@ -250,12 +279,20 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
       <p.Stack
         as={"div"}
         hasGap={true}
-        className={classNames(projectcss.all, sty.freeBox__dowBa)}
+        className={classNames(projectcss.all, sty.freeBox__dowBa, {
+          [sty.freeBoxrevers__dowBAh81JN]: hasVariant(
+            variants,
+            "revers",
+            "revers"
+          )
+        })}
       >
         <h3
           data-plasmic-name={"h3"}
           data-plasmic-override={overrides.h3}
-          className={classNames(projectcss.all, projectcss.h3, sty.h3)}
+          className={classNames(projectcss.all, projectcss.h3, sty.h3, {
+            [sty.h3revers]: hasVariant(variants, "revers", "revers")
+          })}
         >
           {p.renderPlasmicSlot({
             defaultContents: "高雄七期改建工程",
@@ -263,7 +300,15 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
           })}
         </h3>
 
-        <div className={classNames(projectcss.all, sty.freeBox__knD)}>
+        <div
+          className={classNames(projectcss.all, sty.freeBox__knD, {
+            [sty.freeBoxrevers__knDh81JN]: hasVariant(
+              variants,
+              "revers",
+              "revers"
+            )
+          })}
+        >
           {p.renderPlasmicSlot({
             defaultContents:
               "此次改建案總經費3.38 億元。預期新增五百坪室內空間 。從前期的標案，到最後的完工，所有的估算皆完整評估。該設施的總面積為 140,000 平方公尺。 具體工作範圍包括機械、電氣、管道和消防的成本分析。​",
@@ -272,7 +317,9 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
         </div>
 
         <h4
-          className={classNames(projectcss.all, projectcss.h4, sty.h4__xJerT)}
+          className={classNames(projectcss.all, projectcss.h4, sty.h4__xJerT, {
+            [sty.h4revers__xJerTh81JN]: hasVariant(variants, "revers", "revers")
+          })}
         >
           {p.renderPlasmicSlot({
             defaultContents: "地點:",
@@ -280,21 +327,41 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
           })}
         </h4>
 
-        <div className={classNames(projectcss.all, sty.freeBox__utyex)}>
+        <div
+          className={classNames(projectcss.all, sty.freeBox__utyex, {
+            [sty.freeBoxrevers__utyexh81JN]: hasVariant(
+              variants,
+              "revers",
+              "revers"
+            )
+          })}
+        >
           {p.renderPlasmicSlot({
             defaultContents: "高雄",
             value: args.location
           })}
         </div>
 
-        <h4 className={classNames(projectcss.all, projectcss.h4, sty.h4__uyXl)}>
+        <h4
+          className={classNames(projectcss.all, projectcss.h4, sty.h4__uyXl, {
+            [sty.h4revers__uyXlh81JN]: hasVariant(variants, "revers", "revers")
+          })}
+        >
           {p.renderPlasmicSlot({
             defaultContents: "項目:",
             value: args.categoryTitle
           })}
         </h4>
 
-        <div className={classNames(projectcss.all, sty.freeBox__zmDtG)}>
+        <div
+          className={classNames(projectcss.all, sty.freeBox__zmDtG, {
+            [sty.freeBoxrevers__zmDtGh81JN]: hasVariant(
+              variants,
+              "revers",
+              "revers"
+            )
+          })}
+        >
           {p.renderPlasmicSlot({
             defaultContents: "結構與裝修數量估算",
             value: args.category

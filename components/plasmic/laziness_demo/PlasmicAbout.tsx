@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import { useScreenVariants as useScreenVariantsnCpqQwRKrRf2Hx } from "../landing_page_starter/PlasmicGlobalVariant__Screen"; // plasmic-import: nCpqQwRKrRf2Hx/globalVariant
@@ -56,7 +57,7 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicAbout__OverridesType = {
   root?: p.Flex<"div">;
-  headerHeroSection?: p.Flex<"div">;
+  aboutHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   aboutSection?: p.Flex<"div">;
@@ -126,10 +127,10 @@ function PlasmicAbout__RenderFunc(props: {
         >
           <p.Stack
             as={"div"}
-            data-plasmic-name={"headerHeroSection"}
-            data-plasmic-override={overrides.headerHeroSection}
+            data-plasmic-name={"aboutHeroSection"}
+            data-plasmic-override={overrides.aboutHeroSection}
             hasGap={true}
-            className={classNames(projectcss.all, sty.headerHeroSection)}
+            className={classNames(projectcss.all, sty.aboutHeroSection)}
           >
             <Navbar
               data-plasmic-name={"navbar"}
@@ -137,18 +138,23 @@ function PlasmicAbout__RenderFunc(props: {
               className={classNames("__wab_instance", sty.navbar)}
             />
 
-            <h2
-              data-plasmic-name={"h2"}
-              data-plasmic-override={overrides.h2}
-              className={classNames(
-                projectcss.all,
-                projectcss.h2,
-                projectcss.__wab_text,
-                sty.h2
-              )}
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__nlFzz)}
+              triggerOnce={true}
             >
-              {"公司簡介"}
-            </h2>
+              <h2
+                data-plasmic-name={"h2"}
+                data-plasmic-override={overrides.h2}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h2,
+                  projectcss.__wab_text,
+                  sty.h2
+                )}
+              >
+                {"公司簡介"}
+              </h2>
+            </Reveal>
           </p.Stack>
 
           <p.Stack
@@ -158,107 +164,120 @@ function PlasmicAbout__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.aboutSection)}
           >
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.columns__ufLSg)}
+            <Reveal
+              cascade={false}
+              className={classNames("__wab_instance", sty.reveal__jYTk)}
+              direction={"up" as const}
+              triggerOnce={true}
             >
-              <div className={classNames(projectcss.all, sty.column__ojrKk)}>
-                <h3
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h3,
-                    projectcss.__wab_text,
-                    sty.h3__jphLi
-                  )}
-                >
-                  {"懶得算"}
-                </h3>
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.columns__ufLSg)}
+              >
+                <div className={classNames(projectcss.all, sty.column__ojrKk)}>
+                  <h3
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h3,
+                      projectcss.__wab_text,
+                      sty.h3__jphLi
+                    )}
+                  >
+                    {"懶得算"}
+                  </h3>
 
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__u8Ydb
-                  )}
-                >
-                  {
-                    "於84年成立至今已有20多年的經驗，除擁有數十位『經驗豐富之估算工程師』外，更採用『專業營建管理系統軟體設備，由建築圖面轉工程數量計算，全面3D透視圖電腦化操作』提供營造建設單位，精確的成本估算，在營建工程上節省成本人力及提高效率，以降低公司營運成本，創造利潤，協助企業再造，提昇企業競爭力 。"
-                  }
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__u8Ydb
+                    )}
+                  >
+                    {
+                      "於84年成立至今已有20多年的經驗，除擁有數十位『經驗豐富之估算工程師』外，更採用『專業營建管理系統軟體設備，由建築圖面轉工程數量計算，全面3D透視圖電腦化操作』提供營造建設單位，精確的成本估算，在營建工程上節省成本人力及提高效率，以降低公司營運成本，創造利潤，協助企業再造，提昇企業競爭力 。"
+                    }
+                  </div>
                 </div>
-              </div>
 
-              <div className={classNames(projectcss.all, sty.column__u7Ak)}>
-                <p.PlasmicImg
-                  alt={""}
-                  className={classNames(sty.img__btUk9)}
-                  displayHeight={"auto" as const}
-                  displayMaxHeight={"none" as const}
-                  displayMaxWidth={"100%" as const}
-                  displayMinHeight={"0" as const}
-                  displayMinWidth={"0" as const}
-                  displayWidth={"auto" as const}
-                  loading={"lazy" as const}
-                  src={{
-                    src: "/plasmic/laziness_demo/images/office4.webp",
-                    fullWidth: 6000,
-                    fullHeight: 4000,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
-            </p.Stack>
+                <div className={classNames(projectcss.all, sty.column__u7Ak)}>
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__btUk9)}
+                    displayHeight={"auto" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"100%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"auto" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: "/plasmic/laziness_demo/images/office4.webp",
+                      fullWidth: 6000,
+                      fullHeight: 4000,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+              </p.Stack>
+            </Reveal>
 
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.columns___64W5Q)}
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__zuE9I)}
+              direction={"up" as const}
+              triggerOnce={true}
             >
-              <div className={classNames(projectcss.all, sty.column__o8Tu)}>
-                <p.PlasmicImg
-                  alt={""}
-                  className={classNames(sty.img__sO33R)}
-                  displayHeight={"auto" as const}
-                  displayMaxHeight={"none" as const}
-                  displayMaxWidth={"100%" as const}
-                  displayMinHeight={"0" as const}
-                  displayMinWidth={"0" as const}
-                  displayWidth={"auto" as const}
-                  loading={"lazy" as const}
-                  src={{
-                    src: "/plasmic/laziness_demo/images/office4.webp",
-                    fullWidth: 6000,
-                    fullHeight: 4000,
-                    aspectRatio: undefined
-                  }}
-                />
-              </div>
-
-              <div className={classNames(projectcss.all, sty.column__fdW)}>
-                <h3
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h3,
-                    projectcss.__wab_text,
-                    sty.h3__qXJxN
-                  )}
-                >
-                  {"懶得算"}
-                </h3>
-
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__kicEo
-                  )}
-                >
-                  {
-                    "於84年成立至今已有20多年的經驗，除擁有數十位『經驗豐富之估算工程師』外，更採用『專業營建管理系統軟體設備，由建築圖面轉工程數量計算，全面3D透視圖電腦化操作』提供營造建設單位，精確的成本估算，在營建工程上節省成本人力及提高效率，以降低公司營運成本，創造利潤，協助企業再造，提昇企業競爭力 。"
-                  }
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.columns___64W5Q)}
+              >
+                <div className={classNames(projectcss.all, sty.column__o8Tu)}>
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__sO33R)}
+                    displayHeight={"auto" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"100%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"auto" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: "/plasmic/laziness_demo/images/office4.webp",
+                      fullWidth: 6000,
+                      fullHeight: 4000,
+                      aspectRatio: undefined
+                    }}
+                  />
                 </div>
-              </div>
-            </p.Stack>
+
+                <div className={classNames(projectcss.all, sty.column__fdW)}>
+                  <h3
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h3,
+                      projectcss.__wab_text,
+                      sty.h3__qXJxN
+                    )}
+                  >
+                    {"懶得算"}
+                  </h3>
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__kicEo
+                    )}
+                  >
+                    {
+                      "於84年成立至今已有20多年的經驗，除擁有數十位『經驗豐富之估算工程師』外，更採用『專業營建管理系統軟體設備，由建築圖面轉工程數量計算，全面3D透視圖電腦化操作』提供營造建設單位，精確的成本估算，在營建工程上節省成本人力及提高效率，以降低公司營運成本，創造利潤，協助企業再造，提昇企業競爭力 。"
+                    }
+                  </div>
+                </div>
+              </p.Stack>
+            </Reveal>
           </p.Stack>
 
           <FooterSection
@@ -275,13 +294,13 @@ function PlasmicAbout__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "headerHeroSection",
+    "aboutHeroSection",
     "navbar",
     "h2",
     "aboutSection",
     "footerSection"
   ],
-  headerHeroSection: ["headerHeroSection", "navbar", "h2"],
+  aboutHeroSection: ["aboutHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
   aboutSection: ["aboutSection"],
@@ -292,7 +311,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  headerHeroSection: "div";
+  aboutHeroSection: "div";
   navbar: typeof Navbar;
   h2: "h2";
   aboutSection: "div";
@@ -360,7 +379,7 @@ export const PlasmicAbout = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    headerHeroSection: makeNodeComponent("headerHeroSection"),
+    aboutHeroSection: makeNodeComponent("aboutHeroSection"),
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     aboutSection: makeNodeComponent("aboutSection"),

@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import ContactForm from "../../ContactForm"; // plasmic-import: Xyeaz66fEcw/component
 import { GoogleMap } from "../../GoogleMap"; // plasmic-import: w2uxiFuhyB/codeComponent
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
@@ -58,7 +59,7 @@ export const PlasmicContact__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicContact__OverridesType = {
   root?: p.Flex<"div">;
-  headerHeroSection?: p.Flex<"div">;
+  contactHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
   contactForm?: p.Flex<typeof ContactForm>;
   googleMap?: p.Flex<typeof GoogleMap>;
@@ -146,10 +147,10 @@ function PlasmicContact__RenderFunc(props: {
         >
           <p.Stack
             as={"div"}
-            data-plasmic-name={"headerHeroSection"}
-            data-plasmic-override={overrides.headerHeroSection}
+            data-plasmic-name={"contactHeroSection"}
+            data-plasmic-override={overrides.contactHeroSection}
             hasGap={true}
-            className={classNames(projectcss.all, sty.headerHeroSection)}
+            className={classNames(projectcss.all, sty.contactHeroSection)}
           >
             <Navbar
               data-plasmic-name={"navbar"}
@@ -159,49 +160,66 @@ function PlasmicContact__RenderFunc(props: {
 
             <div className={classNames(projectcss.all, sty.freeBox__do5Pz)}>
               <div className={classNames(projectcss.all, sty.freeBox__q6OGw)}>
-                <h2
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.__wab_text,
-                    sty.h2__uHv9U
-                  )}
+                <Reveal
+                  className={classNames("__wab_instance", sty.reveal__ovw6X)}
+                  triggerOnce={true}
                 >
-                  {"懶得算"}
-                </h2>
+                  <h2
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h2,
+                      projectcss.__wab_text,
+                      sty.h2__uHv9U
+                    )}
+                  >
+                    {"懶得算"}
+                  </h2>
 
-                <h2
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.h2,
-                    projectcss.__wab_text,
-                    sty.h2___3Ag4U
-                  )}
-                >
-                  {"幫你精算"}
-                </h2>
+                  <h2
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h2,
+                      projectcss.__wab_text,
+                      sty.h2___3Ag4U
+                    )}
+                  >
+                    {"幫你精算"}
+                  </h2>
+                </Reveal>
               </div>
 
               <div className={classNames(projectcss.all, sty.freeBox___7OV3A)}>
-                <ContactForm
-                  data-plasmic-name={"contactForm"}
-                  data-plasmic-override={overrides.contactForm}
-                  className={classNames("__wab_instance", sty.contactForm)}
-                />
+                <Reveal
+                  className={classNames("__wab_instance", sty.reveal__xbvs8)}
+                  triggerOnce={true}
+                >
+                  <ContactForm
+                    data-plasmic-name={"contactForm"}
+                    data-plasmic-override={overrides.contactForm}
+                    className={classNames("__wab_instance", sty.contactForm)}
+                  />
+                </Reveal>
               </div>
             </div>
-
-            <div className={classNames(projectcss.all, sty.freeBox__tKPdM)}>
-              <GoogleMap
-                data-plasmic-name={"googleMap"}
-                data-plasmic-override={overrides.googleMap}
-                className={classNames("__wab_instance", sty.googleMap)}
-                height={500 as const}
-                location={"桃園高鐵站" as const}
-                width={1140 as const}
-              />
-            </div>
           </p.Stack>
+
+          <div className={classNames(projectcss.all, sty.freeBox__el6C8)}>
+            <div className={classNames(projectcss.all, sty.freeBox__tKPdM)}>
+              <Reveal
+                className={classNames("__wab_instance", sty.reveal__jVsJn)}
+                triggerOnce={true}
+              >
+                <GoogleMap
+                  data-plasmic-name={"googleMap"}
+                  data-plasmic-override={overrides.googleMap}
+                  className={classNames("__wab_instance", sty.googleMap)}
+                  height={500 as const}
+                  location={"桃園高鐵站" as const}
+                  width={1140 as const}
+                />
+              </Reveal>
+            </div>
+          </div>
 
           <FooterSection
             data-plasmic-name={"footerSection"}
@@ -217,18 +235,13 @@ function PlasmicContact__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "headerHeroSection",
+    "contactHeroSection",
     "navbar",
     "contactForm",
     "googleMap",
     "footerSection"
   ],
-  headerHeroSection: [
-    "headerHeroSection",
-    "navbar",
-    "contactForm",
-    "googleMap"
-  ],
+  contactHeroSection: ["contactHeroSection", "navbar", "contactForm"],
   navbar: ["navbar"],
   contactForm: ["contactForm"],
   googleMap: ["googleMap"],
@@ -239,7 +252,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  headerHeroSection: "div";
+  contactHeroSection: "div";
   navbar: typeof Navbar;
   contactForm: typeof ContactForm;
   googleMap: typeof GoogleMap;
@@ -307,7 +320,7 @@ export const PlasmicContact = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    headerHeroSection: makeNodeComponent("headerHeroSection"),
+    contactHeroSection: makeNodeComponent("contactHeroSection"),
     navbar: makeNodeComponent("navbar"),
     contactForm: makeNodeComponent("contactForm"),
     googleMap: makeNodeComponent("googleMap"),

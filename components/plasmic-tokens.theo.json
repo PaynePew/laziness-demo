@@ -201,6 +201,66 @@
       }
     },
     {
+      "name": "logo",
+      "type": "color",
+      "value": "#EC6C34",
+      "category": "color",
+      "meta": {
+        "projectId": "qtkpEraJg2gN978YDtMYaP",
+        "id": "dqt4wm3od"
+      }
+    },
+    {
+      "name": "mono-primary-stage",
+      "type": "color",
+      "value": "#EBF1F4",
+      "category": "color",
+      "meta": {
+        "projectId": "qtkpEraJg2gN978YDtMYaP",
+        "id": "6OtHDQteM"
+      }
+    },
+    {
+      "name": "mono-stage",
+      "type": "color",
+      "value": "#FFFCFD00",
+      "category": "color",
+      "meta": {
+        "projectId": "qtkpEraJg2gN978YDtMYaP",
+        "id": "B2WXqQUsC"
+      }
+    },
+    {
+      "name": "primary-stage",
+      "type": "color",
+      "value": "#A55124",
+      "category": "color",
+      "meta": {
+        "projectId": "qtkpEraJg2gN978YDtMYaP",
+        "id": "yoVhk9qgH"
+      }
+    },
+    {
+      "name": "secondary-stage",
+      "type": "color",
+      "value": "#FFDECD",
+      "category": "color",
+      "meta": {
+        "projectId": "qtkpEraJg2gN978YDtMYaP",
+        "id": "6HGfBlsm9"
+      }
+    },
+    {
+      "name": "third-stage",
+      "type": "color",
+      "value": "#FFBE9C",
+      "category": "color",
+      "meta": {
+        "projectId": "qtkpEraJg2gN978YDtMYaP",
+        "id": "QUzneEVHW"
+      }
+    },
+    {
       "name": "white",
       "type": "color",
       "value": "#FFFFFF",
