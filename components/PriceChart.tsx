@@ -7,7 +7,7 @@ interface GoogleMapAPI {
   height?: number;
 }
 
-export function GoogleMap({
+export function PriceChart({
   className,
   location,
   width,

@@ -1,3 +1,4 @@
+const withTM = require("next-transpile-modules")(["echarts", "zrender"]);
 
 module.exports = {
   eslint: {
@@ -6,4 +7,5 @@ module.exports = {
   trailingSlash: true,
   // Your NextJS config.
 };
-    
+
+module.exports = withTM({});
