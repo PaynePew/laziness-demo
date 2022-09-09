@@ -35,8 +35,8 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import ProjectCardDetail from "../../ProjectCardDetail"; // plasmic-import: UgNbjXEvxu8/component
-import ProjectCardDetailReverse from "../../ProjectCardDetailReverse"; // plasmic-import: WueZ8IvzTBv/component
 import ProjectCardPrimary from "../../ProjectCardPrimary"; // plasmic-import: VqqXUhJrgP/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
@@ -59,13 +59,10 @@ export const PlasmicProject__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicProject__OverridesType = {
   root?: p.Flex<"div">;
-  headerHeroSection?: p.Flex<"div">;
+  projectHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   projectSection?: p.Flex<"div">;
-  projectCardDetail?: p.Flex<typeof ProjectCardDetail>;
-  projectCardDetailReverse?: p.Flex<typeof ProjectCardDetailReverse>;
-  img?: p.Flex<typeof p.PlasmicImg>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -132,10 +129,10 @@ function PlasmicProject__RenderFunc(props: {
         >
           <p.Stack
             as={"div"}
-            data-plasmic-name={"headerHeroSection"}
-            data-plasmic-override={overrides.headerHeroSection}
+            data-plasmic-name={"projectHeroSection"}
+            data-plasmic-override={overrides.projectHeroSection}
             hasGap={true}
-            className={classNames(projectcss.all, sty.headerHeroSection)}
+            className={classNames(projectcss.all, sty.projectHeroSection)}
           >
             <Navbar
               data-plasmic-name={"navbar"}
@@ -143,18 +140,41 @@ function PlasmicProject__RenderFunc(props: {
               className={classNames("__wab_instance", sty.navbar)}
             />
 
-            <h2
-              data-plasmic-name={"h2"}
-              data-plasmic-override={overrides.h2}
-              className={classNames(
-                projectcss.all,
-                projectcss.h2,
-                projectcss.__wab_text,
-                sty.h2
-              )}
+            <p.PlasmicImg
+              alt={""}
+              className={classNames(sty.img___8CtXf)}
+              displayHeight={"100%" as const}
+              displayMaxHeight={"none" as const}
+              displayMaxWidth={"100%" as const}
+              displayMinHeight={"0" as const}
+              displayMinWidth={"0" as const}
+              displayWidth={"100%" as const}
+              loading={"lazy" as const}
+              src={{
+                src: "/plasmic/laziness_demo/images/mountainwebp.webp",
+                fullWidth: 4000,
+                fullHeight: 6000,
+                aspectRatio: undefined
+              }}
+            />
+
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__oeH5)}
+              triggerOnce={true}
             >
-              {"工程實績"}
-            </h2>
+              <h2
+                data-plasmic-name={"h2"}
+                data-plasmic-override={overrides.h2}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h2,
+                  projectcss.__wab_text,
+                  sty.h2
+                )}
+              >
+                {"工程實績"}
+              </h2>
+            </Reveal>
           </p.Stack>
 
           <p.Stack
@@ -164,65 +184,117 @@ function PlasmicProject__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.projectSection)}
           >
-            <ProjectCardDetail
-              data-plasmic-name={"projectCardDetail"}
-              data-plasmic-override={overrides.projectCardDetail}
-              className={classNames("__wab_instance", sty.projectCardDetail)}
-            />
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal___4EgR3)}
+              direction={"up" as const}
+              triggerOnce={true}
+            >
+              <ProjectCardDetail
+                className={classNames(
+                  "__wab_instance",
+                  sty.projectCardDetail__j5WMy
+                )}
+              />
+            </Reveal>
 
-            <ProjectCardDetailReverse
-              data-plasmic-name={"projectCardDetailReverse"}
-              data-plasmic-override={overrides.projectCardDetailReverse}
-              className={classNames(
-                "__wab_instance",
-                sty.projectCardDetailReverse
-              )}
-            />
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__u6T1)}
+              direction={"up" as const}
+              triggerOnce={true}
+            >
+              <ProjectCardDetail
+                className={classNames(
+                  "__wab_instance",
+                  sty.projectCardDetail__kNLiV
+                )}
+                revers={true}
+              />
+            </Reveal>
 
             <p.Stack
               as={"div"}
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__vQsK1)}
             >
-              <ProjectCardPrimary
-                className={classNames(
-                  "__wab_instance",
-                  sty.projectCardPrimary__nX0W
-                )}
-                title={"桃園市大巨蛋改建估算"}
-              />
-
-              <ProjectCardPrimary
-                className={classNames(
-                  "__wab_instance",
-                  sty.projectCardPrimary__kJ8Zy
-                )}
-                projectImage={
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__l1Omf)}
-                  >
-                    <p.PlasmicImg
-                      data-plasmic-name={"img"}
-                      data-plasmic-override={overrides.img}
-                      alt={""}
-                      className={classNames(sty.img)}
-                      displayHeight={"100%" as const}
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"100%" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"100%" as const}
-                      loading={"lazy" as const}
-                      src={{
-                        src: "/plasmic/laziness_demo/images/bimStructure.webp",
-                        fullWidth: 7087,
-                        fullHeight: 5096,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
+              <Reveal
+                className={classNames("__wab_instance", sty.reveal__zIwrX)}
+                direction={
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? ("up" as const)
+                    : ("left" as const)
                 }
-              />
+                triggerOnce={true}
+              >
+                <ProjectCardPrimary
+                  className={classNames(
+                    "__wab_instance",
+                    sty.projectCardPrimary__nX0W
+                  )}
+                  location={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__c1I
+                      )}
+                    >
+                      {"青埔區|桃園市"}
+                    </div>
+                  }
+                  title={"桃園市大巨蛋改建估算"}
+                />
+              </Reveal>
+
+              <Reveal
+                className={classNames("__wab_instance", sty.reveal__cpxKt)}
+                direction={
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? ("up" as const)
+                    : ("right" as const)
+                }
+                triggerOnce={true}
+              >
+                <ProjectCardPrimary
+                  className={classNames(
+                    "__wab_instance",
+                    sty.projectCardPrimary__kJ8Zy
+                  )}
+                  location={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__w4Dy7
+                      )}
+                    >
+                      {"青埔區|桃園市"}
+                    </div>
+                  }
+                  projectImage={
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__l1Omf)}
+                    >
+                      <p.PlasmicImg
+                        alt={""}
+                        className={classNames(sty.img__xubhu)}
+                        displayHeight={"100%" as const}
+                        displayMaxHeight={"none" as const}
+                        displayMaxWidth={"100%" as const}
+                        displayMinHeight={"0" as const}
+                        displayMinWidth={"0" as const}
+                        displayWidth={"100%" as const}
+                        loading={"lazy" as const}
+                        src={{
+                          src: "/plasmic/laziness_demo/images/bimStructure.webp",
+                          fullWidth: 7087,
+                          fullHeight: 5096,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    </div>
+                  }
+                />
+              </Reveal>
             </p.Stack>
           </p.Stack>
 
@@ -240,27 +312,16 @@ function PlasmicProject__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "headerHeroSection",
+    "projectHeroSection",
     "navbar",
     "h2",
     "projectSection",
-    "projectCardDetail",
-    "projectCardDetailReverse",
-    "img",
     "footerSection"
   ],
-  headerHeroSection: ["headerHeroSection", "navbar", "h2"],
+  projectHeroSection: ["projectHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  projectSection: [
-    "projectSection",
-    "projectCardDetail",
-    "projectCardDetailReverse",
-    "img"
-  ],
-  projectCardDetail: ["projectCardDetail"],
-  projectCardDetailReverse: ["projectCardDetailReverse"],
-  img: ["img"],
+  projectSection: ["projectSection"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -268,13 +329,10 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  headerHeroSection: "div";
+  projectHeroSection: "div";
   navbar: typeof Navbar;
   h2: "h2";
   projectSection: "div";
-  projectCardDetail: typeof ProjectCardDetail;
-  projectCardDetailReverse: typeof ProjectCardDetailReverse;
-  img: typeof p.PlasmicImg;
   footerSection: typeof FooterSection;
 };
 
@@ -339,13 +397,10 @@ export const PlasmicProject = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    headerHeroSection: makeNodeComponent("headerHeroSection"),
+    projectHeroSection: makeNodeComponent("projectHeroSection"),
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     projectSection: makeNodeComponent("projectSection"),
-    projectCardDetail: makeNodeComponent("projectCardDetail"),
-    projectCardDetailReverse: makeNodeComponent("projectCardDetailReverse"),
-    img: makeNodeComponent("img"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicProject

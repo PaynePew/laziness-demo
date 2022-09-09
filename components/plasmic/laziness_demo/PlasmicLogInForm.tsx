@@ -399,7 +399,7 @@ function PlasmicLogInForm__RenderFunc(props: {
                   "isSignUpFlow"
                 )
               })}
-              color={"green" as const}
+              color={"red" as const}
               endIcon={
                 <WandIcon
                   className={classNames(projectcss.all, sty.svg___9Guzp)}
@@ -441,7 +441,15 @@ function PlasmicLogInForm__RenderFunc(props: {
             flat={true}
             link={`/contact`}
           >
-            {"工程估算問題，請直接聯絡我們"}
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__gnjTr
+              )}
+            >
+              {"工程估算問題，請直接聯絡我們"}
+            </div>
           </Button>
         </div>
       </div>

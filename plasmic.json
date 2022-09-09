@@ -252,19 +252,6 @@
           "componentType": "component"
         },
         {
-          "id": "Mn7zz55YD2Ma3v",
-          "name": "Backup",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicBackup.tsx",
-          "importSpec": {
-            "modulePath": "../pages/services-backup.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicBackup.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "_Sa5uF9FlTQ",
           "name": "About",
           "type": "managed",
@@ -328,32 +315,6 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicProjectCardDetail.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "WueZ8IvzTBv",
-          "name": "ProjectCardDetailReverse",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicProjectCardDetailReverse.tsx",
-          "importSpec": {
-            "modulePath": "ProjectCardDetailReverse.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicProjectCardDetailReverse.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "S4wlbLQ7X44",
-          "name": "ContactBackup",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicContactBackup.tsx",
-          "importSpec": {
-            "modulePath": "../pages/contact-2.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicContactBackup.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
         },
         {
           "id": "Om1BIURR5aO",
@@ -608,6 +569,21 @@
           "id": "bpymhvy4a",
           "name": "Rolling1S200PxsvgIcon",
           "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__Rolling1S200Pxsvg.tsx"
+        },
+        {
+          "id": "w2tNVeXmfa",
+          "name": "PerspectiveGridStarWarsStylesvg2Icon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__PerspectiveGridStarWarsStylesvg2.tsx"
+        },
+        {
+          "id": "b_2HjN219O",
+          "name": "ImprovedPerspectiveGridsvgIcon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__ImprovedPerspectiveGridsvg.tsx"
+        },
+        {
+          "id": "bGxn1nWR1",
+          "name": "PhonesvgIcon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__Phonesvg.tsx"
         }
       ],
       "images": [
@@ -805,6 +781,46 @@
           "id": "KfuRU34WM",
           "name": "qr-test.svg",
           "filePath": "../public/plasmic/laziness_demo/images/qrTestsvg.svg"
+        },
+        {
+          "id": "g3VCayozA",
+          "name": "mountain.webp",
+          "filePath": "../public/plasmic/laziness_demo/images/mountainwebp.webp"
+        },
+        {
+          "id": "k9zku1fQV",
+          "name": "polygon.svg",
+          "filePath": "../public/plasmic/laziness_demo/images/polygonsvg.svg"
+        },
+        {
+          "id": "1xXnlKtJsr",
+          "name": "Perspective-Grid-Star-Wars-Style.svg",
+          "filePath": "../public/plasmic/laziness_demo/images/perspectiveGridStarWarsStylesvg.svg"
+        },
+        {
+          "id": "jE-xAm57o",
+          "name": "cloud-tree.webp",
+          "filePath": "../public/plasmic/laziness_demo/images/cloudTreewebp.webp"
+        },
+        {
+          "id": "muV56DfsD",
+          "name": "construction-3.png",
+          "filePath": "../public/plasmic/laziness_demo/images/construction3Png.png"
+        },
+        {
+          "id": "pgF6Bkhld",
+          "name": "construction.png",
+          "filePath": "../public/plasmic/laziness_demo/images/constructionpng.png"
+        },
+        {
+          "id": "p7Fbcxgdy",
+          "name": "construction-2.png",
+          "filePath": "../public/plasmic/laziness_demo/images/construction2Png.png"
+        },
+        {
+          "id": "TWWQwmQE6",
+          "name": "professional.webp",
+          "filePath": "../public/plasmic/laziness_demo/images/professionalwebp.webp"
         }
       ],
       "indirect": false,
@@ -893,6 +909,26 @@
           "id": "jGx9tiKJoex",
           "name": "NavigationBar",
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
+        }
+      ],
+      "jsBundleThemes": []
+    },
+    {
+      "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
+      "projectApiToken": "DIkcfhBwjMCJSjcxfBkMuy4NImyytq5EWylxVcpS9t9EpdhnPQuBgBGxmk00AB1itMFa1KXTxOKnrjN2PN9nlA",
+      "projectName": "react-awesome-reveal",
+      "version": "3.2.0",
+      "cssFilePath": "plasmic/react_awesome_reveal/plasmic_react_awesome_reveal.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "R6s1FdhksG",
+          "name": "Reveal",
+          "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
       "jsBundleThemes": []

@@ -45,38 +45,47 @@ import sty from "./PlasmicAboutCard.module.css"; // plasmic-import: _2BVlTZVvM/c
 
 import AppleIcon from "../landing_page_starter/icons/PlasmicIcon__Apple"; // plasmic-import: Zu9y5vY-DbAu23/icon
 
-export type PlasmicAboutCard__VariantMembers = {};
+export type PlasmicAboutCard__VariantMembers = {
+  card: "card";
+};
 
-export type PlasmicAboutCard__VariantsArgs = {};
+export type PlasmicAboutCard__VariantsArgs = {
+  card?: SingleBooleanChoiceArg<"card">;
+};
+
 type VariantPropType = keyof PlasmicAboutCard__VariantsArgs;
-export const PlasmicAboutCard__VariantProps = new Array<VariantPropType>();
+export const PlasmicAboutCard__VariantProps = new Array<VariantPropType>(
+  "card"
+);
 
 export type PlasmicAboutCard__ArgsType = {
   heading?: React.ReactNode;
   description?: React.ReactNode;
   image?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicAboutCard__ArgsType;
 export const PlasmicAboutCard__ArgProps = new Array<ArgPropType>(
   "heading",
   "description",
-  "image"
+  "image",
+  "children"
 );
 
 export type PlasmicAboutCard__OverridesType = {
   root?: p.Flex<"div">;
   root2?: p.Flex<"div">;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
   h4?: p.Flex<"h4">;
   h5?: p.Flex<"h5">;
-  button?: p.Flex<typeof Button>;
 };
 
 export interface DefaultAboutCardProps {
   heading?: React.ReactNode;
   description?: React.ReactNode;
   image?: React.ReactNode;
+  children?: React.ReactNode;
+  card?: SingleBooleanChoiceArg<"card">;
   className?: string;
 }
 
@@ -119,100 +128,134 @@ function PlasmicAboutCard__RenderFunc(props: {
           projectcss.plasmic_default_styles,
           projectcss.plasmic_mixins,
           projectcss.plasmic_tokens,
-          sty.root
+          sty.root,
+          { [sty.rootcard]: hasVariant(variants, "card", "card") }
         )}
       >
         {true ? (
           <div
             data-plasmic-name={"root2"}
             data-plasmic-override={overrides.root2}
-            className={classNames(projectcss.all, sty.root2)}
+            className={classNames(projectcss.all, sty.root2, {
+              [sty.root2card]: hasVariant(variants, "card", "card")
+            })}
           >
-            <p.PlasmicLink
-              data-plasmic-name={"link"}
-              data-plasmic-override={overrides.link}
-              className={classNames(projectcss.all, projectcss.a, sty.link)}
-              component={Link}
-              platform={"nextjs"}
-            >
-              {(
-                hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__ynqI)}>
-                  {true ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__po5Ny)}
+            {(
+              hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+            ) ? (
+              <div className={classNames(projectcss.all, sty.freeBox__ynqI)}>
+                {true ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__po5Ny, {
+                      [sty.freeBoxcard__po5Nyv6Dsw]: hasVariant(
+                        variants,
+                        "card",
+                        "card"
+                      )
+                    })}
+                  >
+                    {p.renderPlasmicSlot({
+                      defaultContents: (
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img__brqa3)}
+                          displayHeight={"100%" as const}
+                          displayMaxHeight={"none" as const}
+                          displayMaxWidth={"100%" as const}
+                          displayMinHeight={"0" as const}
+                          displayMinWidth={"0" as const}
+                          displayWidth={"100%" as const}
+                          loading={"lazy" as const}
+                          src={{
+                            src: "/plasmic/laziness_demo/images/calculate.webp",
+                            fullWidth: 2848,
+                            fullHeight: 4272,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      ),
+
+                      value: args.image
+                    })}
+                  </div>
+                ) : null}
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___5O2Ag, {
+                    [sty.freeBoxcard___5O2Agv6Dsw]: hasVariant(
+                      variants,
+                      "card",
+                      "card"
+                    )
+                  })}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__c28J9)}
+                  >
+                    <h4
+                      data-plasmic-name={"h4"}
+                      data-plasmic-override={overrides.h4}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h4,
+                        sty.h4,
+                        { [sty.h4card]: hasVariant(variants, "card", "card") }
+                      )}
                     >
                       {p.renderPlasmicSlot({
-                        defaultContents: (
-                          <p.PlasmicImg
-                            alt={""}
-                            className={classNames(sty.img__brqa3)}
-                            displayHeight={"100%" as const}
-                            displayMaxHeight={"none" as const}
-                            displayMaxWidth={"100%" as const}
-                            displayMinHeight={"0" as const}
-                            displayMinWidth={"0" as const}
-                            displayWidth={"100%" as const}
-                            loading={"lazy" as const}
-                            src={{
-                              src: "/plasmic/laziness_demo/images/calculate.webp",
-                              fullWidth: 2848,
-                              fullHeight: 4272,
-                              aspectRatio: undefined
-                            }}
-                          />
-                        ),
-
-                        value: args.image
+                        defaultContents: "介紹標題",
+                        value: args.heading,
+                        className: classNames(sty.slotTargetHeading)
                       })}
-                    </div>
-                  ) : null}
+                    </h4>
 
-                  <h4
-                    data-plasmic-name={"h4"}
-                    data-plasmic-override={overrides.h4}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h4,
-                      sty.h4
-                    )}
+                    <h5
+                      data-plasmic-name={"h5"}
+                      data-plasmic-override={overrides.h5}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h5,
+                        sty.h5,
+                        { [sty.h5card]: hasVariant(variants, "card", "card") }
+                      )}
+                    >
+                      {p.renderPlasmicSlot({
+                        defaultContents: "介紹文字",
+                        value: args.description,
+                        className: classNames(sty.slotTargetDescription)
+                      })}
+                    </h5>
+                  </div>
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__scTin, {
+                      [sty.freeBoxcard__scTinV6Dsw]: hasVariant(
+                        variants,
+                        "card",
+                        "card"
+                      )
+                    })}
                   >
                     {p.renderPlasmicSlot({
-                      defaultContents: "介紹標題",
-                      value: args.heading,
-                      className: classNames(sty.slotTargetHeading)
-                    })}
-                  </h4>
+                      defaultContents: (
+                        <Button
+                          className={classNames(
+                            "__wab_instance",
+                            sty.button__w5G4M
+                          )}
+                          color={"primary" as const}
+                          round={true}
+                        >
+                          {"服務項目"}
+                        </Button>
+                      ),
 
-                  <h5
-                    data-plasmic-name={"h5"}
-                    data-plasmic-override={overrides.h5}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h5,
-                      sty.h5
-                    )}
-                  >
-                    {p.renderPlasmicSlot({
-                      defaultContents: "介紹文字",
-                      value: args.description,
-                      className: classNames(sty.slotTargetDescription)
+                      value: args.children
                     })}
-                  </h5>
+                  </div>
                 </div>
-              ) : null}
-            </p.PlasmicLink>
-
-            <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
-              color={"primary" as const}
-              round={true}
-            >
-              {"聯絡我們"}
-            </Button>
+              </div>
+            ) : null}
           </div>
         ) : null}
       </div>
@@ -221,12 +264,10 @@ function PlasmicAboutCard__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "root2", "link", "h4", "h5", "button"],
-  root2: ["root2", "link", "h4", "h5", "button"],
-  link: ["link", "h4", "h5"],
+  root: ["root", "root2", "h4", "h5"],
+  root2: ["root2", "h4", "h5"],
   h4: ["h4"],
-  h5: ["h5"],
-  button: ["button"]
+  h5: ["h5"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -234,10 +275,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   root2: "div";
-  link: "a";
   h4: "h4";
   h5: "h5";
-  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -302,10 +341,8 @@ export const PlasmicAboutCard = Object.assign(
   {
     // Helper components rendering sub-elements
     root2: makeNodeComponent("root2"),
-    link: makeNodeComponent("link"),
     h4: makeNodeComponent("h4"),
     h5: makeNodeComponent("h5"),
-    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicAboutCard
     internalVariantProps: PlasmicAboutCard__VariantProps,

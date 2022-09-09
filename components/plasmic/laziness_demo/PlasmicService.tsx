@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import ValueProp from "../../ValueProp"; // plasmic-import: JJc-2jC6k2mJoy/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
@@ -63,9 +64,9 @@ export const PlasmicService__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicService__OverridesType = {
   root?: p.Flex<"div">;
-  headerHeroSection?: p.Flex<"div">;
+  serviceHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
-  aboutSection?: p.Flex<"div">;
+  serviceSection?: p.Flex<"div">;
   columns?: p.Flex<"div">;
   processSection?: p.Flex<"div">;
   footerSection?: p.Flex<typeof FooterSection>;
@@ -134,10 +135,10 @@ function PlasmicService__RenderFunc(props: {
         >
           <p.Stack
             as={"div"}
-            data-plasmic-name={"headerHeroSection"}
-            data-plasmic-override={overrides.headerHeroSection}
+            data-plasmic-name={"serviceHeroSection"}
+            data-plasmic-override={overrides.serviceHeroSection}
             hasGap={true}
-            className={classNames(projectcss.all, sty.headerHeroSection)}
+            className={classNames(projectcss.all, sty.serviceHeroSection)}
           >
             <Navbar
               data-plasmic-name={"navbar"}
@@ -145,109 +146,125 @@ function PlasmicService__RenderFunc(props: {
               className={classNames("__wab_instance", sty.navbar)}
             />
 
-            <h2
-              className={classNames(
-                projectcss.all,
-                projectcss.h2,
-                projectcss.__wab_text,
-                sty.h2__gYpmx
-              )}
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__kQbO)}
+              effect={"fade" as const}
+              triggerOnce={true}
             >
-              {"服務項目"}
-            </h2>
+              <h2
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h2,
+                  projectcss.__wab_text,
+                  sty.h2__gYpmx
+                )}
+              >
+                {"服務項目"}
+              </h2>
+            </Reveal>
           </p.Stack>
 
           <p.Stack
             as={"div"}
-            data-plasmic-name={"aboutSection"}
-            data-plasmic-override={overrides.aboutSection}
+            data-plasmic-name={"serviceSection"}
+            data-plasmic-override={overrides.serviceSection}
             hasGap={true}
-            className={classNames(projectcss.all, sty.aboutSection)}
+            className={classNames(projectcss.all, sty.serviceSection)}
           >
-            <p.Stack
-              as={"div"}
-              data-plasmic-name={"columns"}
-              data-plasmic-override={overrides.columns}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.columns)}
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__zWdkQ)}
+              direction={"up" as const}
+              triggerOnce={true}
             >
-              <div className={classNames(projectcss.all, sty.column__saUls)}>
-                <div className={classNames(projectcss.all, sty.freeBox__r8KDg)}>
-                  <h2
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.__wab_text,
-                      sty.h2__aVjLi
-                    )}
-                  >
-                    {"結構估算"}
-                  </h2>
-
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"columns"}
+                data-plasmic-override={overrides.columns}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.columns)}
+              >
+                <div className={classNames(projectcss.all, sty.column__saUls)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__s0UbG
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__r8KDg)}
                   >
-                    {"鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視​"}
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__aVjLi
+                      )}
+                    >
+                      {"結構估算"}
+                    </h2>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__s0UbG
+                      )}
+                    >
+                      {"鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視​"}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className={classNames(projectcss.all, sty.column__fTnmj)}>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___0CJgD)}
-                >
-                  <h2
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.__wab_text,
-                      sty.h2___6MvU
-                    )}
-                  >
-                    {"裝修估算​"}
-                  </h2>
-
+                <div className={classNames(projectcss.all, sty.column__fTnmj)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xirU
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox___0CJgD)}
                   >
-                    {"室內及外裝修數量、分層、分戶​"}
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2___6MvU
+                      )}
+                    >
+                      {"裝修估算​"}
+                    </h2>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__xirU
+                      )}
+                    >
+                      {"室內及外裝修數量、分層、分戶​"}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className={classNames(projectcss.all, sty.column___8SfbJ)}>
-                <div className={classNames(projectcss.all, sty.freeBox__moHkB)}>
-                  <h2
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.__wab_text,
-                      sty.h2__ebXgw
-                    )}
-                  >
-                    {"工程預算書及標單編列​"}
-                  </h2>
-
+                <div className={classNames(projectcss.all, sty.column___8SfbJ)}>
                   <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__slJ9Q
-                    )}
+                    className={classNames(projectcss.all, sty.freeBox__moHkB)}
                   >
-                    {"室內及外裝修數量、分層、分戶​"}
+                    <h2
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.h2,
+                        projectcss.__wab_text,
+                        sty.h2__ebXgw
+                      )}
+                    >
+                      {"工程預算書及標單編列​"}
+                    </h2>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__slJ9Q
+                      )}
+                    >
+                      {"室內及外裝修數量、分層、分戶​"}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </p.Stack>
+              </p.Stack>
+            </Reveal>
           </p.Stack>
 
           <p.Stack
@@ -257,98 +274,121 @@ function PlasmicService__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.processSection)}
           >
-            <h2
-              className={classNames(
-                projectcss.all,
-                projectcss.h2,
-                projectcss.__wab_text,
-                sty.h2__mD6Im
-              )}
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__ewMsw)}
+              triggerOnce={true}
             >
-              {"估價流程"}
-            </h2>
+              <h2
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h2,
+                  projectcss.__wab_text,
+                  sty.h2__mD6Im
+                )}
+              >
+                {"估價流程"}
+              </h2>
+            </Reveal>
 
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__ofWnJ)}
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__gPx)}
+              direction={"up" as const}
+              triggerOnce={true}
             >
-              <ValueProp
-                card={true}
-                className={classNames("__wab_instance", sty.valueProp___77PhJ)}
-                description={"此階段以概算估價為主。"}
-                flatIcon={true}
-                icon={
-                  <TargetIcon
-                    className={classNames(projectcss.all, sty.svg___6VdHy)}
-                    role={"img"}
-                  />
-                }
-                title={"規劃階段估價"}
-              />
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__ofWnJ)}
+              >
+                <ValueProp
+                  card={true}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.valueProp___77PhJ
+                  )}
+                  description={"此階段以概算估價為主。"}
+                  flatIcon={true}
+                  icon={
+                    <TargetIcon
+                      className={classNames(projectcss.all, sty.svg___6VdHy)}
+                      role={"img"}
+                    />
+                  }
+                  title={"規劃階段估價"}
+                />
 
-              <ValueProp
-                card={true}
-                className={classNames("__wab_instance", sty.valueProp__vruOk)}
-                description={"又稱底價估價，此階段可分初步設計及完整設計"}
-                flatIcon={true}
-                icon={
-                  <CheckIcon
-                    className={classNames(projectcss.all, sty.svg__i8MhB)}
-                    role={"img"}
-                  />
-                }
-                title={"設計階段估價"}
-              />
+                <ValueProp
+                  card={true}
+                  className={classNames("__wab_instance", sty.valueProp__vruOk)}
+                  description={"又稱底價估價，此階段可分初步設計及完整設計"}
+                  flatIcon={true}
+                  icon={
+                    <CheckIcon
+                      className={classNames(projectcss.all, sty.svg__i8MhB)}
+                      role={"img"}
+                    />
+                  }
+                  title={"設計階段估價"}
+                />
 
-              <ValueProp
-                card={true}
-                className={classNames("__wab_instance", sty.valueProp__gotK4)}
-                description={"又稱投標估價，此階段以概算估價或詳細估價為主。"}
-                flatIcon={true}
-                icon={
-                  <CheckCircleIcon
-                    className={classNames(projectcss.all, sty.svg__yZeAz)}
-                    role={"img"}
-                  />
-                }
-                title={"投標階段估價"}
-              />
-            </p.Stack>
+                <ValueProp
+                  card={true}
+                  className={classNames("__wab_instance", sty.valueProp__gotK4)}
+                  description={"又稱投標估價，此階段以概算估價或詳細估價為主。"}
+                  flatIcon={true}
+                  icon={
+                    <CheckCircleIcon
+                      className={classNames(projectcss.all, sty.svg__yZeAz)}
+                      role={"img"}
+                    />
+                  }
+                  title={"投標階段估價"}
+                />
+              </p.Stack>
+            </Reveal>
 
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__m2FVg)}
+            <Reveal
+              className={classNames("__wab_instance", sty.reveal__fUrWy)}
+              direction={"up" as const}
+              triggerOnce={true}
             >
-              <ValueProp
-                card={true}
-                className={classNames("__wab_instance", sty.valueProp___1F5Op)}
-                description={"又稱施工估價，此階段以詳細估價為主。"}
-                flatIcon={true}
-                icon={
-                  <StrongIcon
-                    className={classNames(projectcss.all, sty.svg__gGfH)}
-                    role={"img"}
-                  />
-                }
-                title={"施工階段估價"}
-              />
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__m2FVg)}
+              >
+                <ValueProp
+                  card={true}
+                  className={classNames(
+                    "__wab_instance",
+                    sty.valueProp___1F5Op
+                  )}
+                  description={"又稱施工估價，此階段以詳細估價為主。"}
+                  flatIcon={true}
+                  icon={
+                    <StrongIcon
+                      className={classNames(projectcss.all, sty.svg__gGfH)}
+                      role={"img"}
+                    />
+                  }
+                  title={"施工階段估價"}
+                />
 
-              <ValueProp
-                card={true}
-                className={classNames("__wab_instance", sty.valueProp__uUrOr)}
-                description={"又稱期別估價或估驗，此階段以詳細估價為主。"}
-                flatIcon={true}
-                icon={
-                  <WandIcon
-                    className={classNames(projectcss.all, sty.svg___6QaNv)}
-                    role={"img"}
-                  />
-                }
-                title={"驗收階段估價"}
-              />
-            </p.Stack>
+                <ValueProp
+                  card={true}
+                  className={classNames("__wab_instance", sty.valueProp__uUrOr)}
+                  description={"又稱期別估價或估驗，此階段以詳細估價為主。"}
+                  flatIcon={true}
+                  icon={
+                    <WandIcon
+                      className={classNames(projectcss.all, sty.svg___6QaNv)}
+                      role={"img"}
+                    />
+                  }
+                  title={"驗收階段估價"}
+                />
+              </p.Stack>
+            </Reveal>
           </p.Stack>
 
           <FooterSection
@@ -365,16 +405,16 @@ function PlasmicService__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "headerHeroSection",
+    "serviceHeroSection",
     "navbar",
-    "aboutSection",
+    "serviceSection",
     "columns",
     "processSection",
     "footerSection"
   ],
-  headerHeroSection: ["headerHeroSection", "navbar"],
+  serviceHeroSection: ["serviceHeroSection", "navbar"],
   navbar: ["navbar"],
-  aboutSection: ["aboutSection", "columns"],
+  serviceSection: ["serviceSection", "columns"],
   columns: ["columns"],
   processSection: ["processSection"],
   footerSection: ["footerSection"]
@@ -384,9 +424,9 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  headerHeroSection: "div";
+  serviceHeroSection: "div";
   navbar: typeof Navbar;
-  aboutSection: "div";
+  serviceSection: "div";
   columns: "div";
   processSection: "div";
   footerSection: typeof FooterSection;
@@ -453,9 +493,9 @@ export const PlasmicService = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    headerHeroSection: makeNodeComponent("headerHeroSection"),
+    serviceHeroSection: makeNodeComponent("serviceHeroSection"),
     navbar: makeNodeComponent("navbar"),
-    aboutSection: makeNodeComponent("aboutSection"),
+    serviceSection: makeNodeComponent("serviceSection"),
     columns: makeNodeComponent("columns"),
     processSection: makeNodeComponent("processSection"),
     footerSection: makeNodeComponent("footerSection"),

@@ -236,7 +236,7 @@
   width: 45px;
   height: 45px;
   align-self: center;
-  color: var(--token-X_MubEhfhEbXKh);
+  color: var(--token-6HGfBlsm9);
   flex-shrink: 0;
   display: none;
 }
@@ -274,7 +274,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--token-VNQIEAd7RTdEab);
+  background: var(--token-6OtHDQteM);
   padding: 32px;
 }
 .text__mNuBn {
@@ -292,6 +292,9 @@
   height: 24px;
   position: relative;
   object-fit: cover;
+}
+.text__gnjTr {
+  color: var(--token-QUzneEVHW);
 }
 .svg__o95L1 {
   width: 24px;

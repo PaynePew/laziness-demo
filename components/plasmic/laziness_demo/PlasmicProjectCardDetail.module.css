@@ -10,7 +10,7 @@
 .root > :global(.__wab_flex-container) {
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   min-width: 0;
   margin-left: calc(0px - 12px);
   width: calc(100% + 12px);
@@ -41,6 +41,53 @@
   .root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
   .root > :global(.__wab_flex-container) > picture > img,
   .root
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 0px;
+    margin-top: 16px;
+  }
+}
+.rootrevers {
+  flex-direction: row-reverse;
+}
+.rootrevers > :global(.__wab_flex-container) {
+  flex-direction: row-reverse;
+  align-items: stretch;
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.rootrevers > :global(.__wab_flex-container) > *,
+.rootrevers > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.rootrevers > :global(.__wab_flex-container) > picture > img,
+.rootrevers
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 0px;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .rootrevers {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .rootrevers > :global(.__wab_flex-container) {
+    flex-direction: column;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+    margin-top: calc(0px - 16px);
+    height: calc(100% + 16px);
+  }
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .rootrevers > :global(.__wab_flex-container) > *,
+  .rootrevers > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .rootrevers > :global(.__wab_flex-container) > picture > img,
+  .rootrevers
     > :global(.__wab_flex-container)
     > :global(.__wab_slot)
     > picture
@@ -217,6 +264,31 @@
     margin-left: 0px;
     margin-top: 8px;
   }
+}
+.freeBoxrevers__dowBAh81JN {
+  flex-direction: column;
+  height: auto;
+}
+.freeBoxrevers__dowBAh81JN > :global(.__wab_flex-container) {
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  flex-direction: column;
+  margin-left: calc(0px - 0px);
+  width: calc(100% + 0px);
+}
+.freeBoxrevers__dowBAh81JN > :global(.__wab_flex-container) > *,
+.freeBoxrevers__dowBAh81JN
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > *,
+.freeBoxrevers__dowBAh81JN > :global(.__wab_flex-container) > picture > img,
+.freeBoxrevers__dowBAh81JN
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 0px;
 }
 .h3 {
   position: relative;

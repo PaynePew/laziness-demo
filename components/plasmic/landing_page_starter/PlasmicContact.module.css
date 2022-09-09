@@ -8,7 +8,7 @@
   min-width: 0;
   min-height: 0;
 }
-.headerHeroSection {
+.contactHeroSection {
   flex-direction: column;
   display: flex;
   position: relative;
@@ -17,19 +17,19 @@
   right: auto;
   z-index: auto;
   background: #ffffff80;
-  padding: 0px 32px 64px;
+  padding: 0px 0px 64px;
 }
-.headerHeroSection > :global(.__wab_flex-container) {
+.contactHeroSection > :global(.__wab_flex-container) {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   margin-top: calc(0px - 64px);
   height: calc(100% + 64px);
 }
-.headerHeroSection > :global(.__wab_flex-container) > *,
-.headerHeroSection > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.headerHeroSection > :global(.__wab_flex-container) > picture > img,
-.headerHeroSection
+.contactHeroSection > :global(.__wab_flex-container) > *,
+.contactHeroSection > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.contactHeroSection > :global(.__wab_flex-container) > picture > img,
+.contactHeroSection
   > :global(.__wab_flex-container)
   > :global(.__wab_slot)
   > picture
@@ -46,6 +46,7 @@
   height: auto;
   max-width: var(--token-ENZjHcnmOJYy13);
   min-width: 0;
+  padding: 32px;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .freeBox__do5Pz {
@@ -58,12 +59,17 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
   height: auto;
   max-width: 100%;
   min-width: 0;
+}
+.reveal__ovw6X:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
 }
 .h2__uHv9U {
   position: relative;
@@ -90,9 +96,26 @@
   max-width: 100%;
   min-width: 0;
 }
+.reveal__xbvs8:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
 .contactForm:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+}
+.freeBox__el6C8 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
 }
 .freeBox__tKPdM {
   display: flex;
@@ -111,6 +134,11 @@
     flex-direction: column;
     flex-column-gap: 0px;
   }
+}
+.reveal__jVsJn:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
 }
 .googleMap:global(.__wab_instance) {
   max-width: 100%;

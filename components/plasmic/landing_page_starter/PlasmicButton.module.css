@@ -94,7 +94,7 @@
   background: var(--token-c9yT9sHSyFiDN9);
 }
 .rootcolor_red {
-  background: var(--token-dtdSaZTrY3pRCl);
+  background: var(--token-dqt4wm3od);
 }
 .rootcolor_white {
   background: var(--token-MZ-YfrFL4dQS-j);
@@ -103,7 +103,7 @@
   background: var(--token-iaRqcCmsjQJpYX);
 }
 .rootround_color_primary {
-  border-color: var(--token-X_MubEhfhEbXKh);
+  border-color: var(--token-dqt4wm3od);
 }
 .root:hover {
   background: var(--token-VNQIEAd7RTdEab);
@@ -127,13 +127,22 @@
   background: var(--token-12ClBXUaKhv8Bn);
 }
 .rootround_color_primary:hover {
-  background: var(--token-X_MubEhfhEbXKh);
+  background: var(--token-dqt4wm3od);
 }
 .rootcolor_navLink_outline:hover {
-  border-color: var(--token-X_MubEhfhEbXKh);
+  border-color: var(--token-dqt4wm3od);
 }
 .root:focus {
   box-shadow: 0px 0px 0px 1px var(--token-X_MubEhfhEbXKh);
+  outline: none;
+}
+.rootcolor_navLink:focus {
+  box-shadow: 0px 0px 0px 1px var(--token-dqt4wm3od);
+  outline: none;
+}
+.rootround_color_primary:focus {
+  background: var(--token-dqt4wm3od);
+  box-shadow: 0px 0px 0px 1px var(--token-dqt4wm3od);
   outline: none;
 }
 .slotTargetStartIcon {
@@ -202,8 +211,11 @@
 .slotTargetChildrencolor_darkGray {
   color: var(--token-kSeYtbT9PdtATr);
 }
+.slotTargetChildrenround_color_primary {
+  color: var(--token-dqt4wm3od);
+}
 .rootcolor_navLink:hover .slotTargetChildrencolor_navLink {
-  color: var(--token-X_MubEhfhEbXKh);
+  color: var(--token-dqt4wm3od);
 }
 .rootcolor_navLink:hover
   .slotTargetChildrencolor_navLink
@@ -247,7 +259,7 @@
   color: var(--token-MZ-YfrFL4dQS-j);
 }
 .rootcolor_navLink_outline:hover .slotTargetChildrencolor_navLink_outline {
-  color: var(--token-X_MubEhfhEbXKh);
+  color: var(--token-dqt4wm3od);
 }
 .root:focus .slotTargetChildren {
   color: var(--token-X_MubEhfhEbXKh);
@@ -281,6 +293,92 @@
   > picture
   > img {
   outline: none;
+}
+.rootcolor_navLink:focus .slotTargetChildrencolor_navLink {
+  color: var(--token-dqt4wm3od);
+}
+.rootcolor_navLink:focus .slotTargetChildrencolor_navLink > *,
+.rootcolor_navLink:focus
+  .slotTargetChildrencolor_navLink
+  > :global(.__wab_slot)
+  > *,
+.rootcolor_navLink:focus
+  .slotTargetChildrencolor_navLink
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > *,
+.rootcolor_navLink:focus
+  .slotTargetChildrencolor_navLink
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > *,
+.rootcolor_navLink:focus .slotTargetChildrencolor_navLink > picture > img,
+.rootcolor_navLink:focus
+  .slotTargetChildrencolor_navLink
+  > :global(.__wab_slot)
+  > picture
+  > img,
+.rootcolor_navLink:focus
+  .slotTargetChildrencolor_navLink
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img,
+.rootcolor_navLink:focus
+  .slotTargetChildrencolor_navLink
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  outline: none;
+}
+.rootround_color_primary:focus .slotTargetChildrenround_color_primary {
+  color: var(--token-MZ-YfrFL4dQS-j);
+}
+.rootround_color_primary:focus .slotTargetChildrenround_color_primary > *,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > *,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > *,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > *,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > picture
+  > img,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > picture
+  > img,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img,
+.rootround_color_primary:focus
+  .slotTargetChildrenround_color_primary
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  outline: none;
+}
+.rootcolor_navLink:active .slotTargetChildrencolor_navLink {
+  color: var(--token-dqt4wm3od);
 }
 .slotTargetEndIcon {
   color: var(--token-iaRqcCmsjQJpYX);

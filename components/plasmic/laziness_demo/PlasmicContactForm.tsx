@@ -187,7 +187,7 @@ function PlasmicContactForm__RenderFunc(props: {
             data-plasmic-name={"sendEmail"}
             data-plasmic-override={overrides.sendEmail}
             className={classNames("__wab_instance", sty.sendEmail)}
-            color={"green" as const}
+            color={"red" as const}
             endIcon={
               <WandIcon
                 data-plasmic-name={"svg"}
