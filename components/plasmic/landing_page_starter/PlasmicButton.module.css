@@ -377,12 +377,9 @@
   > img {
   outline: none;
 }
-<<<<<<< HEAD
 .rootcolor_navLink:active .slotTargetChildrencolor_navLink {
   color: var(--token-dqt4wm3od);
 }
-=======
->>>>>>> c67f4bc5135c2b40c2676ed465c25e5f8d4a70ec
 .slotTargetEndIcon {
   color: var(--token-iaRqcCmsjQJpYX);
 }
