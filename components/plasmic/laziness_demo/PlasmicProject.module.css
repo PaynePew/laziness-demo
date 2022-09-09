@@ -17,9 +17,14 @@
   right: auto;
   z-index: auto;
   background: #ffffff80;
+<<<<<<< HEAD
   height: 50vh;
   flex-shrink: 0;
   padding: 0px;
+=======
+  height: auto;
+  padding: 0px 0px 64px;
+>>>>>>> c67f4bc5135c2b40c2676ed465c25e5f8d4a70ec
 }
 .projectHeroSection > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -38,6 +43,7 @@
   > img {
   margin-top: 64px;
 }
+<<<<<<< HEAD
 .img___8CtXf {
   position: absolute;
   object-fit: cover;
@@ -55,6 +61,8 @@
 .img___8CtXf > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
+=======
+>>>>>>> c67f4bc5135c2b40c2676ed465c25e5f8d4a70ec
 .reveal__oeH5:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
