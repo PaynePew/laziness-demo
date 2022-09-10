@@ -48,7 +48,7 @@ export type PlasmicButton__VariantMembers = {
   color:
     | "primary"
     | "green"
-    | "indigo"
+    | "pink"
     | "blue"
     | "red"
     | "white"
@@ -71,7 +71,7 @@ export type PlasmicButton__VariantsArgs = {
   color?: SingleChoiceArg<
     | "primary"
     | "green"
-    | "indigo"
+    | "pink"
     | "blue"
     | "red"
     | "white"
@@ -127,7 +127,7 @@ export interface DefaultButtonProps extends pp.BaseButtonProps {
   color?: SingleChoiceArg<
     | "primary"
     | "green"
-    | "indigo"
+    | "pink"
     | "blue"
     | "red"
     | "white"
@@ -191,11 +191,11 @@ function PlasmicButton__RenderFunc(props: {
           [sty.rootcolor_blue]: hasVariant(variants, "color", "blue"),
           [sty.rootcolor_darkGray]: hasVariant(variants, "color", "darkGray"),
           [sty.rootcolor_green]: hasVariant(variants, "color", "green"),
-          [sty.rootcolor_indigo]: hasVariant(variants, "color", "indigo"),
           [sty.rootcolor_navLink]: hasVariant(variants, "color", "navLink"),
           [sty.rootcolor_navLink_outline]:
             hasVariant(variants, "color", "navLink") &&
             hasVariant(variants, "outline", "outline"),
+          [sty.rootcolor_pink]: hasVariant(variants, "color", "pink"),
           [sty.rootcolor_red]: hasVariant(variants, "color", "red"),
           [sty.rootcolor_white]: hasVariant(variants, "color", "white"),
           [sty.rootextraSmallShadow]: hasVariant(
@@ -268,11 +268,6 @@ function PlasmicButton__RenderFunc(props: {
                 hasVariant(variants, "showStartIcon", "showStartIcon") &&
                 hasVariant(variants, "showEndIcon", "showEndIcon") &&
                 hasVariant(variants, "color", "green"),
-              [sty.slotTargetStartIconcolor_indigo]: hasVariant(
-                variants,
-                "color",
-                "indigo"
-              ),
               [sty.slotTargetStartIconcolor_link]: hasVariant(
                 variants,
                 "color",
@@ -282,6 +277,11 @@ function PlasmicButton__RenderFunc(props: {
                 variants,
                 "color",
                 "navLink"
+              ),
+              [sty.slotTargetStartIconcolor_pink]: hasVariant(
+                variants,
+                "color",
+                "pink"
               ),
               [sty.slotTargetStartIconcolor_red]: hasVariant(
                 variants,
@@ -337,11 +337,6 @@ function PlasmicButton__RenderFunc(props: {
                 "color",
                 "green"
               ),
-              [sty.slotTargetChildrencolor_indigo]: hasVariant(
-                variants,
-                "color",
-                "indigo"
-              ),
               [sty.slotTargetChildrencolor_link]: hasVariant(
                 variants,
                 "color",
@@ -355,6 +350,11 @@ function PlasmicButton__RenderFunc(props: {
               [sty.slotTargetChildrencolor_navLink_outline]:
                 hasVariant(variants, "color", "navLink") &&
                 hasVariant(variants, "outline", "outline"),
+              [sty.slotTargetChildrencolor_pink]: hasVariant(
+                variants,
+                "color",
+                "pink"
+              ),
               [sty.slotTargetChildrencolor_primary]: hasVariant(
                 variants,
                 "color",
@@ -441,11 +441,6 @@ function PlasmicButton__RenderFunc(props: {
                 "color",
                 "green"
               ),
-              [sty.slotTargetEndIconcolor_indigo]: hasVariant(
-                variants,
-                "color",
-                "indigo"
-              ),
               [sty.slotTargetEndIconcolor_link]: hasVariant(
                 variants,
                 "color",
@@ -455,6 +450,11 @@ function PlasmicButton__RenderFunc(props: {
                 variants,
                 "color",
                 "navLink"
+              ),
+              [sty.slotTargetEndIconcolor_pink]: hasVariant(
+                variants,
+                "color",
+                "pink"
               ),
               [sty.slotTargetEndIconcolor_red]: hasVariant(
                 variants,

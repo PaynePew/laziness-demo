@@ -1,11 +1,9 @@
 const withTM = require("next-transpile-modules")(["echarts", "zrender"]);
 
-module.exports = {
+module.exports = withTM({
   eslint: {
     ignoreDuringBuilds: true,
   },
   trailingSlash: true,
   // Your NextJS config.
-};
-
-module.exports = withTM({});
+});

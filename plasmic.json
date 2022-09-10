@@ -472,6 +472,19 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicAdminSignUp.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "d8mQqWAV6f",
+          "name": "PriceCalculator",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicPriceCalculator.tsx",
+          "importSpec": {
+            "modulePath": "PriceCalculator.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicPriceCalculator.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -835,6 +848,11 @@
           "id": "w2uxiFuhyB",
           "name": "GoogleMap",
           "componentImportPath": "./components/GoogleMap"
+        },
+        {
+          "id": "ZopKvLJJag",
+          "name": "PriceChart",
+          "componentImportPath": "./components/PriceChart"
         }
       ]
     },

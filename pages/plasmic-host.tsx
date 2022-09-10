@@ -2,6 +2,7 @@ import * as React from "react";
 import Script from "next/script";
 import { PlasmicCanvasHost, registerComponent } from "@plasmicapp/host";
 import { GoogleMap } from "../components/GoogleMap";
+import { PriceChart } from "../components/PriceChart";
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -18,6 +19,24 @@ registerComponent(GoogleMap, {
     height: "number",
   },
   importPath: "./components/GoogleMap",
+});
+registerComponent(PriceChart, {
+  name: "PriceChart",
+  props: {
+    width: {
+      type: "number",
+      defaultValue: 100,
+    },
+    height: {
+      type: "number",
+      defaultValue: 500,
+    },
+    maxWidth: {
+      type: "number",
+      defaultValue: 100,
+    },
+  },
+  importPath: "./components/PriceChart",
 });
 
 export default function PlasmicHost() {

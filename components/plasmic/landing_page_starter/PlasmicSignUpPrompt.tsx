@@ -197,7 +197,7 @@ function PlasmicSignUpPrompt__RenderFunc(props: {
 
           <Button
             className={classNames("__wab_instance", sty.button__xzGnz)}
-            color={"indigo" as const}
+            color={"pink" as const}
             endIcon={
               <WandIcon
                 className={classNames(projectcss.all, sty.svg___6R6FI)}

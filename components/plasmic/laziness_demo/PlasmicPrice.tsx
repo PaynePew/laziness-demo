@@ -35,7 +35,8 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import ValueProp from "../../ValueProp"; // plasmic-import: JJc-2jC6k2mJoy/component
+import PriceCalculator from "../../PriceCalculator"; // plasmic-import: d8mQqWAV6f/component
+import { PriceChart } from "../../PriceChart"; // plasmic-import: ZopKvLJJag/codeComponent
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import { useScreenVariants as useScreenVariantsnCpqQwRKrRf2Hx } from "../landing_page_starter/PlasmicGlobalVariant__Screen"; // plasmic-import: nCpqQwRKrRf2Hx/globalVariant
@@ -44,12 +45,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../landing_page_starter/plasmic_landing_page_starter.module.css"; // plasmic-import: qtkpEraJg2gN978YDtMYaP/projectcss
 import sty from "./PlasmicPrice.module.css"; // plasmic-import: Om1BIURR5aO/css
-
-import TargetIcon from "../landing_page_starter/icons/PlasmicIcon__Target"; // plasmic-import: Wt4zs8noN7sd2H/icon
-import CheckIcon from "../landing_page_starter/icons/PlasmicIcon__Check"; // plasmic-import: gHCuOW8JEryqrm/icon
-import CheckCircleIcon from "../landing_page_starter/icons/PlasmicIcon__CheckCircle"; // plasmic-import: _QAU6Sxfpz1Lu0/icon
-import StrongIcon from "../landing_page_starter/icons/PlasmicIcon__Strong"; // plasmic-import: nO_1wxfmPKvWbo/icon
-import WandIcon from "../landing_page_starter/icons/PlasmicIcon__Wand"; // plasmic-import: iQv5jNrYURIoDO/icon
 
 export type PlasmicPrice__VariantMembers = {};
 
@@ -63,11 +58,12 @@ export const PlasmicPrice__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPrice__OverridesType = {
   root?: p.Flex<"div">;
-  headerHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
-  aboutSection?: p.Flex<"div">;
-  columns?: p.Flex<"div">;
-  processSection?: p.Flex<"div">;
+  headerHeroSection?: p.Flex<"div">;
+  h2?: p.Flex<"h2">;
+  priceSection?: p.Flex<"div">;
+  priceCalculator?: p.Flex<typeof PriceCalculator>;
+  priceChart?: p.Flex<typeof PriceChart>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -132,225 +128,66 @@ function PlasmicPrice__RenderFunc(props: {
             sty.root
           )}
         >
-          <p.Stack
-            as={"div"}
-            data-plasmic-name={"headerHeroSection"}
-            data-plasmic-override={overrides.headerHeroSection}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.headerHeroSection)}
-          >
-            <Navbar
-              data-plasmic-name={"navbar"}
-              data-plasmic-override={overrides.navbar}
-              className={classNames("__wab_instance", sty.navbar)}
-            />
+          <Navbar
+            data-plasmic-name={"navbar"}
+            data-plasmic-override={overrides.navbar}
+            className={classNames("__wab_instance", sty.navbar)}
+          />
 
-            <h2
-              className={classNames(
-                projectcss.all,
-                projectcss.h2,
-                projectcss.__wab_text,
-                sty.h2__vPxBl
-              )}
-            >
-              {"價目表"}
-            </h2>
-          </p.Stack>
-
-          <p.Stack
-            as={"div"}
-            data-plasmic-name={"aboutSection"}
-            data-plasmic-override={overrides.aboutSection}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.aboutSection)}
-          >
+          {(
+            hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+          ) ? (
             <p.Stack
               as={"div"}
-              data-plasmic-name={"columns"}
-              data-plasmic-override={overrides.columns}
+              data-plasmic-name={"headerHeroSection"}
+              data-plasmic-override={overrides.headerHeroSection}
               hasGap={true}
-              className={classNames(projectcss.all, sty.columns)}
+              className={classNames(projectcss.all, sty.headerHeroSection)}
             >
-              <div className={classNames(projectcss.all, sty.column__wgTl)}>
-                <div className={classNames(projectcss.all, sty.freeBox__tczzb)}>
-                  <h2
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.__wab_text,
-                      sty.h2__zzefh
-                    )}
-                  >
-                    {"結構估算"}
-                  </h2>
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___2FAji
-                    )}
-                  >
-                    {"鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視​"}
-                  </div>
-                </div>
-              </div>
-
-              <div className={classNames(projectcss.all, sty.column__uaTYe)}>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___0LEzy)}
+              {(
+                hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+              ) ? (
+                <h2
+                  data-plasmic-name={"h2"}
+                  data-plasmic-override={overrides.h2}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h2,
+                    projectcss.__wab_text,
+                    sty.h2
+                  )}
                 >
-                  <h2
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.__wab_text,
-                      sty.h2__qLcSt
-                    )}
-                  >
-                    {"裝修估算​"}
-                  </h2>
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__i9UEc
-                    )}
-                  >
-                    {"室內及外裝修數量、分層、分戶​"}
-                  </div>
-                </div>
-              </div>
-
-              <div className={classNames(projectcss.all, sty.column__thPF)}>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___3I4Nu)}
-                >
-                  <h2
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.__wab_text,
-                      sty.h2__qpFG
-                    )}
-                  >
-                    {"工程預算書及標單編列​"}
-                  </h2>
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wWrtX
-                    )}
-                  >
-                    {"室內及外裝修數量、分層、分戶​"}
-                  </div>
-                </div>
-              </div>
+                  {"價目表"}
+                </h2>
+              ) : null}
             </p.Stack>
-          </p.Stack>
+          ) : null}
 
           <p.Stack
             as={"div"}
-            data-plasmic-name={"processSection"}
-            data-plasmic-override={overrides.processSection}
+            data-plasmic-name={"priceSection"}
+            data-plasmic-override={overrides.priceSection}
             hasGap={true}
-            className={classNames(projectcss.all, sty.processSection)}
+            className={classNames(projectcss.all, sty.priceSection)}
           >
-            <h2
-              className={classNames(
-                projectcss.all,
-                projectcss.h2,
-                projectcss.__wab_text,
-                sty.h2__xx15R
-              )}
-            >
-              {"估價流程"}
-            </h2>
-
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__yOncH)}
-            >
-              <ValueProp
-                card={true}
-                className={classNames("__wab_instance", sty.valueProp__tVyDj)}
-                description={"此階段以概算估價為主。"}
-                flatIcon={true}
-                icon={
-                  <TargetIcon
-                    className={classNames(projectcss.all, sty.svg__jaMsr)}
-                    role={"img"}
-                  />
-                }
-                title={"規劃階段估價"}
+            <div className={classNames(projectcss.all, sty.freeBox__ncMso)}>
+              <PriceCalculator
+                data-plasmic-name={"priceCalculator"}
+                data-plasmic-override={overrides.priceCalculator}
+                className={classNames("__wab_instance", sty.priceCalculator)}
               />
+            </div>
 
-              <ValueProp
-                card={true}
-                className={classNames("__wab_instance", sty.valueProp__fIuwN)}
-                description={"又稱底價估價，此階段可分初步設計及完整設計"}
-                flatIcon={true}
-                icon={
-                  <CheckIcon
-                    className={classNames(projectcss.all, sty.svg__no3HJ)}
-                    role={"img"}
-                  />
-                }
-                title={"設計階段估價"}
+            <div className={classNames(projectcss.all, sty.freeBox__nHRf)}>
+              <PriceChart
+                data-plasmic-name={"priceChart"}
+                data-plasmic-override={overrides.priceChart}
+                className={classNames("__wab_instance", sty.priceChart)}
+                height={500 as const}
+                maxWidth={100 as const}
+                width={100 as const}
               />
-
-              <ValueProp
-                card={true}
-                className={classNames("__wab_instance", sty.valueProp__b4M4J)}
-                description={"又稱投標估價，此階段以概算估價或詳細估價為主。"}
-                flatIcon={true}
-                icon={
-                  <CheckCircleIcon
-                    className={classNames(projectcss.all, sty.svg__mbsbG)}
-                    role={"img"}
-                  />
-                }
-                title={"投標階段估價"}
-              />
-            </p.Stack>
-
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__sTlE7)}
-            >
-              <ValueProp
-                card={true}
-                className={classNames("__wab_instance", sty.valueProp__jKtHr)}
-                description={"又稱施工估價，此階段以詳細估價為主。"}
-                flatIcon={true}
-                icon={
-                  <StrongIcon
-                    className={classNames(projectcss.all, sty.svg__ys9Fx)}
-                    role={"img"}
-                  />
-                }
-                title={"施工階段估價"}
-              />
-
-              <ValueProp
-                card={true}
-                className={classNames("__wab_instance", sty.valueProp__dpJ7T)}
-                description={"又稱期別估價或估驗，此階段以詳細估價為主。"}
-                flatIcon={true}
-                icon={
-                  <WandIcon
-                    className={classNames(projectcss.all, sty.svg__haNdB)}
-                    role={"img"}
-                  />
-                }
-                title={"驗收階段估價"}
-              />
-            </p.Stack>
+            </div>
           </p.Stack>
 
           <FooterSection
@@ -367,18 +204,20 @@ function PlasmicPrice__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "headerHeroSection",
     "navbar",
-    "aboutSection",
-    "columns",
-    "processSection",
+    "headerHeroSection",
+    "h2",
+    "priceSection",
+    "priceCalculator",
+    "priceChart",
     "footerSection"
   ],
-  headerHeroSection: ["headerHeroSection", "navbar"],
   navbar: ["navbar"],
-  aboutSection: ["aboutSection", "columns"],
-  columns: ["columns"],
-  processSection: ["processSection"],
+  headerHeroSection: ["headerHeroSection", "h2"],
+  h2: ["h2"],
+  priceSection: ["priceSection", "priceCalculator", "priceChart"],
+  priceCalculator: ["priceCalculator"],
+  priceChart: ["priceChart"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -386,11 +225,12 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  headerHeroSection: "div";
   navbar: typeof Navbar;
-  aboutSection: "div";
-  columns: "div";
-  processSection: "div";
+  headerHeroSection: "div";
+  h2: "h2";
+  priceSection: "div";
+  priceCalculator: typeof PriceCalculator;
+  priceChart: typeof PriceChart;
   footerSection: typeof FooterSection;
 };
 
@@ -455,11 +295,12 @@ export const PlasmicPrice = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    headerHeroSection: makeNodeComponent("headerHeroSection"),
     navbar: makeNodeComponent("navbar"),
-    aboutSection: makeNodeComponent("aboutSection"),
-    columns: makeNodeComponent("columns"),
-    processSection: makeNodeComponent("processSection"),
+    headerHeroSection: makeNodeComponent("headerHeroSection"),
+    h2: makeNodeComponent("h2"),
+    priceSection: makeNodeComponent("priceSection"),
+    priceCalculator: makeNodeComponent("priceCalculator"),
+    priceChart: makeNodeComponent("priceChart"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicPrice
