@@ -185,7 +185,7 @@ function PlasmicPrice__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.priceChart)}
                 height={500 as const}
                 maxWidth={100 as const}
-                width={100 as const}
+                width={undefined}
               />
             </div>
           </p.Stack>
