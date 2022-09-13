@@ -35,8 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import PriceCalculator from "../../PriceCalculator"; // plasmic-import: d8mQqWAV6f/component
-import { PriceChart } from "../../PriceChart"; // plasmic-import: ZopKvLJJag/codeComponent
+import Divider from "../../Divider"; // plasmic-import: cTOkkRidcYFrIe/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import { useScreenVariants as useScreenVariantsnCpqQwRKrRf2Hx } from "../landing_page_starter/PlasmicGlobalVariant__Screen"; // plasmic-import: nCpqQwRKrRf2Hx/globalVariant
@@ -62,8 +61,13 @@ export type PlasmicPrice__OverridesType = {
   headerHeroSection?: p.Flex<"div">;
   h2?: p.Flex<"h2">;
   priceSection?: p.Flex<"div">;
-  priceCalculator?: p.Flex<typeof PriceCalculator>;
-  priceChart?: p.Flex<typeof PriceChart>;
+  priceCard?: p.Flex<"div">;
+  subtitle?: p.Flex<"div">;
+  priceCard3?: p.Flex<"div">;
+  subtitle3?: p.Flex<"div">;
+  priceCard2?: p.Flex<"div">;
+  subtitle2?: p.Flex<"div">;
+  priceCard4?: p.Flex<"div">;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -163,32 +167,2583 @@ function PlasmicPrice__RenderFunc(props: {
             </p.Stack>
           ) : null}
 
-          <p.Stack
-            as={"div"}
-            data-plasmic-name={"priceSection"}
-            data-plasmic-override={overrides.priceSection}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.priceSection)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__ncMso)}>
-              <PriceCalculator
-                data-plasmic-name={"priceCalculator"}
-                data-plasmic-override={overrides.priceCalculator}
-                className={classNames("__wab_instance", sty.priceCalculator)}
-              />
-            </div>
+          {(
+            hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+          ) ? (
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"priceSection"}
+              data-plasmic-override={overrides.priceSection}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.priceSection)}
+            >
+              <div
+                data-plasmic-name={"priceCard"}
+                data-plasmic-override={overrides.priceCard}
+                className={classNames(projectcss.all, sty.priceCard)}
+              >
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : true
+                ) ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___1Oi4E)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__kdRdm
+                      )}
+                    >
+                      {"鋼筋、模板、混凝土"}
+                    </div>
 
-            <div className={classNames(projectcss.all, sty.freeBox__nHRf)}>
-              <PriceChart
-                data-plasmic-name={"priceChart"}
-                data-plasmic-override={overrides.priceChart}
-                className={classNames("__wab_instance", sty.priceChart)}
-                height={500 as const}
-                maxWidth={100 as const}
-                width={undefined}
-              />
-            </div>
-          </p.Stack>
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__vlOOz
+                        )}
+                      >
+                        {"透天/公寓"}
+                      </div>
+                    ) : null}
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__wywtb
+                        )}
+                      >
+                        {"大樓"}
+                      </div>
+                    ) : null}
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__hX1Jc
+                        )}
+                      >
+                        {"廠房"}
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                <Divider
+                  className={classNames("__wab_instance", sty.divider__uzTXr)}
+                />
+
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : false
+                ) ? (
+                  <div
+                    data-plasmic-name={"subtitle"}
+                    data-plasmic-override={overrides.subtitle}
+                    className={classNames(projectcss.all, sty.subtitle)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__wh30T
+                      )}
+                    >
+                      {"鋼筋、模板、混凝土"}
+                    </div>
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___8Hsux
+                        )}
+                      >
+                        {"透天/公寓"}
+                      </div>
+                    ) : null}
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___9Fnur
+                        )}
+                      >
+                        {"大樓"}
+                      </div>
+                    ) : null}
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__kwIqW
+                        )}
+                      >
+                        {"廠房"}
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : true
+                ) ? (
+                  <Divider
+                    className={classNames("__wab_instance", sty.divider__xPv8E)}
+                  />
+                ) : null}
+
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : true
+                ) ? (
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox___3WbhO)}
+                  >
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <p.Stack
+                        as={"div"}
+                        hasGap={true}
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__kxQsM
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__hvyzd
+                          )}
+                        >
+                          {"RC"}
+                        </div>
+
+                        {(
+                          hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? true
+                            : true
+                        ) ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__peRRm
+                            )}
+                          >
+                            {(
+                              hasVariant(globalVariants, "screen", "mobileOnly")
+                                ? true
+                                : false
+                            ) ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox___8Rtrs
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__kF8Tg
+                                  )}
+                                >
+                                  {"透天/公寓"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text___2JoM0
+                                  )}
+                                >
+                                  {"大樓"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__as4Sf
+                                  )}
+                                >
+                                  {"廠房"}
+                                </div>
+                              </div>
+                            ) : null}
+
+                            {(
+                              hasVariant(globalVariants, "screen", "mobileOnly")
+                                ? true
+                                : false
+                            ) ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__l9Nvi
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__zbs9N
+                                  )}
+                                >
+                                  {"一棟6,000~20,000"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__jX83W
+                                  )}
+                                >
+                                  {"約4~8元/m2"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__ahxs1
+                                  )}
+                                >
+                                  {"約7~12元/m2"}
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        ) : null}
+                      </p.Stack>
+                    ) : null}
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : false
+                    ) ? (
+                      <p.Stack
+                        as={"div"}
+                        hasGap={true}
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__flfYz
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__boRIk
+                          )}
+                        >
+                          {"SS"}
+                        </div>
+
+                        {(
+                          hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? true
+                            : true
+                        ) ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox___6OjTg
+                            )}
+                          >
+                            {(
+                              hasVariant(globalVariants, "screen", "mobileOnly")
+                                ? true
+                                : false
+                            ) ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__mqcKi
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__kfl02
+                                  )}
+                                >
+                                  {"透天/公寓"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__k85YH
+                                  )}
+                                >
+                                  {"大樓"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__ypYUp
+                                  )}
+                                >
+                                  {"廠房"}
+                                </div>
+                              </div>
+                            ) : null}
+
+                            {(
+                              hasVariant(globalVariants, "screen", "mobileOnly")
+                                ? true
+                                : false
+                            ) ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__uSq3
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text___0ElM
+                                  )}
+                                >
+                                  {hasVariant(
+                                    globalVariants,
+                                    "screen",
+                                    "mobileOnly"
+                                  )
+                                    ? "依圖面報價"
+                                    : "依圖面報價"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__tw3Qc
+                                  )}
+                                >
+                                  {"依圖面報價"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__nBf89
+                                  )}
+                                >
+                                  {"約5~10元/m2"}
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        ) : null}
+                      </p.Stack>
+                    ) : null}
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : false
+                    ) ? (
+                      <p.Stack
+                        as={"div"}
+                        hasGap={true}
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__oxJ64
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__srphL
+                          )}
+                        >
+                          {"SRC"}
+                        </div>
+
+                        {(
+                          hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? true
+                            : true
+                        ) ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__btRKt
+                            )}
+                          >
+                            {(
+                              hasVariant(globalVariants, "screen", "mobileOnly")
+                                ? true
+                                : false
+                            ) ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__yZxa2
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__lyywU
+                                  )}
+                                >
+                                  {"透天/公寓"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__vXAyQ
+                                  )}
+                                >
+                                  {"大樓"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__hNDqj
+                                  )}
+                                >
+                                  {"廠房"}
+                                </div>
+                              </div>
+                            ) : null}
+
+                            {(
+                              hasVariant(globalVariants, "screen", "mobileOnly")
+                                ? true
+                                : false
+                            ) ? (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__kHo2
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text___2Cgi
+                                  )}
+                                >
+                                  {"依圖面報價"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text___9FbjM
+                                  )}
+                                >
+                                  {"依圖面報價"}
+                                </div>
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__p4DJc
+                                  )}
+                                >
+                                  {"約10~15元/m2"}
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        ) : null}
+                      </p.Stack>
+                    ) : null}
+                  </p.Stack>
+                ) : null}
+
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : false
+                ) ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__sdpkJ)}
+                  >
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__xMjQg
+                        )}
+                      >
+                        {"透天/公寓"}
+                      </div>
+                    ) : null}
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__w9EQq
+                        )}
+                      >
+                        {"大樓"}
+                      </div>
+                    ) : null}
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___5Ld4T
+                        )}
+                      >
+                        {"廠房"}
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : false
+                ) ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__ueJg)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__u1Ybu
+                      )}
+                    >
+                      {"透天/公寓"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___8Ftym
+                      )}
+                    >
+                      {"大樓"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__izFyo
+                      )}
+                    >
+                      {"廠房"}
+                    </div>
+                  </div>
+                ) : null}
+
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : true
+                ) ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__fnQo)}
+                  >
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox___2Wmn
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__dIgU
+                          )}
+                        >
+                          {"RC"}
+                        </div>
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__sWPzc
+                          )}
+                        >
+                          {"一棟6,000~20,000元"}
+                        </div>
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__dj0So
+                          )}
+                        >
+                          {"約4~8元/m2"}
+                        </div>
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__p2PIh
+                          )}
+                        >
+                          {"約7~12元/m2"}
+                        </div>
+                      </div>
+                    ) : null}
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox___22A8
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__hkWaB
+                          )}
+                        >
+                          {"SS"}
+                        </div>
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__waxsk
+                          )}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "依圖面報價"
+                            : "依圖面報價"}
+                        </div>
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___2Uo2Z
+                          )}
+                        >
+                          {"依圖面報價"}
+                        </div>
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__qZLg
+                          )}
+                        >
+                          {"約5~10元/m2"}
+                        </div>
+                      </div>
+                    ) : null}
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__g7Axy
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__zuJc0
+                          )}
+                        >
+                          {"SRC"}
+                        </div>
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___8RB22
+                          )}
+                        >
+                          {"依圖面報價"}
+                        </div>
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__qwf3K
+                          )}
+                        >
+                          {"依圖面報價"}
+                        </div>
+
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___1JbpW
+                          )}
+                        >
+                          {"約10~15元/m2"}
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                <div className={classNames(projectcss.all, sty.freeBox__anx9V)}>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dno51
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "備註事項:"
+                      : "備註事項:"}
+                  </div>
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
+                  ) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__uAo1
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? "備註事項:"
+                        : "大樓不滿2000m2，以15,000元報價"}
+                    </div>
+                  ) : null}
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___350Na
+                      )}
+                    >
+                      {"1.大樓不滿2000m2，以15,000元報價"}
+                    </div>
+                  ) : null}
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__aclRm
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "2.廠房不滿1000m2，以10,000元報價"
+                      : "廠房不滿1000m2，以10,000元報價"}
+                  </div>
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__o4Ki
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "3.如有二工及拆棟等特殊需求另行報價"
+                      : "如有二工及拆棟等特殊需求另行報價"}
+                  </div>
+
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__reUq5
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "4.樓地板面積超過10000m2，另有優惠價格"
+                      : "樓地板面積超過10000m2，另有優惠價格"}
+                  </div>
+                </div>
+              </div>
+
+              {(
+                hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? true
+                  : false
+              ) ? (
+                <div
+                  data-plasmic-name={"priceCard3"}
+                  data-plasmic-override={overrides.priceCard3}
+                  className={classNames(projectcss.all, sty.priceCard3)}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
+                  ) ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__nijm6)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__lndxl
+                        )}
+                      >
+                        {"鋼筋、模板、混凝土"}
+                      </div>
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__j8DVi
+                          )}
+                        >
+                          {"透天/公寓"}
+                        </div>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___76EMc
+                          )}
+                        >
+                          {"大樓"}
+                        </div>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__iACb
+                          )}
+                        >
+                          {"廠房"}
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"subtitle3"}
+                      data-plasmic-override={overrides.subtitle3}
+                      className={classNames(projectcss.all, sty.subtitle3)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___4J8F3
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "預算書"
+                          : "鋼筋、模板、混凝土"}
+                      </div>
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___5QgLg
+                          )}
+                        >
+                          {"透天/公寓"}
+                        </div>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__aCsd4
+                          )}
+                        >
+                          {"大樓"}
+                        </div>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__zWb4R
+                          )}
+                        >
+                          {"廠房"}
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
+                  ) ? (
+                    <Divider
+                      className={classNames(
+                        "__wab_instance",
+                        sty.divider__kdYKo
+                      )}
+                    />
+                  ) : null}
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
+                  ) ? (
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__vnPgf)}
+                    >
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <p.Stack
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__jsNiy
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__vzOzy
+                            )}
+                          >
+                            {"RC"}
+                          </div>
+
+                          {(
+                            hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? true
+                              : true
+                          ) ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__nCxWu
+                              )}
+                            >
+                              {(
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobileOnly"
+                                )
+                                  ? true
+                                  : false
+                              ) ? (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__quvSf
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text___0XJxW
+                                    )}
+                                  >
+                                    {"透天/公寓"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text___70Lo
+                                    )}
+                                  >
+                                    {"大樓"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text___2L6Li
+                                    )}
+                                  >
+                                    {"廠房"}
+                                  </div>
+                                </div>
+                              ) : null}
+
+                              {(
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobileOnly"
+                                )
+                                  ? true
+                                  : false
+                              ) ? (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__juCu6
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__z2LzS
+                                    )}
+                                  >
+                                    {"一戶8,000~22,000"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__kqaF6
+                                    )}
+                                  >
+                                    {"約8~12元/m2"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__yC2NB
+                                    )}
+                                  >
+                                    {"約10~18元/m2"}
+                                  </div>
+                                </div>
+                              ) : null}
+                            </div>
+                          ) : null}
+                        </p.Stack>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : false
+                      ) ? (
+                        <p.Stack
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__pjXxm
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__hQtv8
+                            )}
+                          >
+                            {"SS"}
+                          </div>
+
+                          {(
+                            hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? true
+                              : true
+                          ) ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__bsXuz
+                              )}
+                            >
+                              {(
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobileOnly"
+                                )
+                                  ? true
+                                  : false
+                              ) ? (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__zgXj6
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__j2ZJl
+                                    )}
+                                  >
+                                    {"透天/公寓"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__poAZj
+                                    )}
+                                  >
+                                    {"大樓"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__k37E1
+                                    )}
+                                  >
+                                    {"廠房"}
+                                  </div>
+                                </div>
+                              ) : null}
+
+                              {(
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobileOnly"
+                                )
+                                  ? true
+                                  : false
+                              ) ? (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__waVsW
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__t88Ws
+                                    )}
+                                  >
+                                    {hasVariant(
+                                      globalVariants,
+                                      "screen",
+                                      "mobileOnly"
+                                    )
+                                      ? "依圖面報價"
+                                      : "依圖面報價"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__exgx
+                                    )}
+                                  >
+                                    {"依圖面報價"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__ijct
+                                    )}
+                                  >
+                                    {"約8~15元/m2"}
+                                  </div>
+                                </div>
+                              ) : null}
+                            </div>
+                          ) : null}
+                        </p.Stack>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : false
+                      ) ? (
+                        <p.Stack
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__vNstx
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__jQPzV
+                            )}
+                          >
+                            {"SRC"}
+                          </div>
+
+                          {(
+                            hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? true
+                              : true
+                          ) ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__lu4Rc
+                              )}
+                            >
+                              {(
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobileOnly"
+                                )
+                                  ? true
+                                  : false
+                              ) ? (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__kkvrx
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__uJr18
+                                    )}
+                                  >
+                                    {"透天/公寓"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__y0We6
+                                    )}
+                                  >
+                                    {"大樓"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__eLW
+                                    )}
+                                  >
+                                    {"廠房"}
+                                  </div>
+                                </div>
+                              ) : null}
+
+                              {(
+                                hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobileOnly"
+                                )
+                                  ? true
+                                  : false
+                              ) ? (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__zGd5E
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__x4MNf
+                                    )}
+                                  >
+                                    {"依圖面報價"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__dvOpc
+                                    )}
+                                  >
+                                    {"依圖面報價"}
+                                  </div>
+
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__dbeW6
+                                    )}
+                                  >
+                                    {"約15~26元/m2"}
+                                  </div>
+                                </div>
+                              ) : null}
+                            </div>
+                          ) : null}
+                        </p.Stack>
+                      ) : null}
+                    </p.Stack>
+                  ) : null}
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__tlkhq)}
+                    >
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__bOgw3
+                          )}
+                        >
+                          {"透天/公寓"}
+                        </div>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__xsXxd
+                          )}
+                        >
+                          {"大樓"}
+                        </div>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text___1SrC6
+                          )}
+                        >
+                          {"廠房"}
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__nspKn)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__jboE
+                        )}
+                      >
+                        {"透天/公寓"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__tBq5P
+                        )}
+                      >
+                        {"大樓"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__hqAYg
+                        )}
+                      >
+                        {"廠房"}
+                      </div>
+                    </div>
+                  ) : null}
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
+                  ) ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__yOgFy)}
+                    >
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__g3M3G
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__bhZps
+                            )}
+                          >
+                            {"RC"}
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__geTI
+                            )}
+                          >
+                            {"一棟6,000~20,000"}
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___3Lbz4
+                            )}
+                          >
+                            {"約4~8元/m2"}
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__e0Bsj
+                            )}
+                          >
+                            {"約7~12元/m2"}
+                          </div>
+                        </div>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__ur5Xe
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__gPaei
+                            )}
+                          >
+                            {"SS"}
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__vwFls
+                            )}
+                          >
+                            {hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? "依圖面報價"
+                              : "依圖面報價"}
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__gzcYv
+                            )}
+                          >
+                            {"依圖面報價"}
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__dCtdu
+                            )}
+                          >
+                            {"約5~10元/m2"}
+                          </div>
+                        </div>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__l3WnO
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__zeYqi
+                            )}
+                          >
+                            {"SRC"}
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__fiK
+                            )}
+                          >
+                            {"依圖面報價"}
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__qers8
+                            )}
+                          >
+                            {"依圖面報價"}
+                          </div>
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__hw4Ag
+                            )}
+                          >
+                            {"約10~15元/m2"}
+                          </div>
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__yy2YJ)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__xPjyy
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? "備註事項:"
+                        : "大樓不滿2000m2，以15,000元報價"}
+                    </div>
+
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : false
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__cpXj
+                        )}
+                      >
+                        {"1.大樓不滿2000m2，以25,000元報價"}
+                      </div>
+                    ) : null}
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__mbbDt
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? "2.廠房不滿1000m2，以15,000元報價"
+                        : "廠房不滿1000m2，以10,000元報價"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___9SyEw
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? "3.如有二工、裝修表及拆棟等特殊需求另行報價"
+                        : "如有二工及拆棟等特殊需求另行報價"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__sjOxQ
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? "4.樓地板面積超過10000m2，另有優惠價格"
+                        : "樓地板面積超過10000m2，另有優惠價格"}
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+
+              {(
+                hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? true
+                  : false
+              ) ? (
+                <div
+                  data-plasmic-name={"priceCard2"}
+                  data-plasmic-override={overrides.priceCard2}
+                  className={classNames(projectcss.all, sty.priceCard2)}
+                >
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : false
+                  ) ? (
+                    <div
+                      data-plasmic-name={"subtitle2"}
+                      data-plasmic-override={overrides.subtitle2}
+                      className={classNames(projectcss.all, sty.subtitle2)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__kwyjI
+                        )}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "預算書"
+                          : "鋼筋、模板、混凝土"}
+                      </div>
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__omuuX
+                          )}
+                        >
+                          {"透天/公寓"}
+                        </div>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__kUhT
+                          )}
+                        >
+                          {"大樓"}
+                        </div>
+                      ) : null}
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__jp4S
+                          )}
+                        >
+                          {"廠房"}
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+
+                  <Divider
+                    className={classNames("__wab_instance", sty.divider__vFrf)}
+                  />
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : true
+                  ) ? (
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__lDEy9)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___8Ne2V
+                        )}
+                      >
+                        {"RC"}
+                      </div>
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__yq00K
+                          )}
+                        >
+                          {(
+                            hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? true
+                              : false
+                          ) ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__tWqq
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__uxe4K
+                                )}
+                              >
+                                {"透天/公寓"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__q86
+                                )}
+                              >
+                                {"大樓"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__s62GT
+                                )}
+                              >
+                                {"廠房"}
+                              </div>
+                            </div>
+                          ) : null}
+
+                          {(
+                            hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? true
+                              : false
+                          ) ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__a4GqB
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__f59Dv
+                                )}
+                              >
+                                {"一戶8,000~22,000"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__ltM
+                                )}
+                              >
+                                {"約8~12元/m2"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__hlSqe
+                                )}
+                              >
+                                {"約10~18元/m2"}
+                              </div>
+                            </div>
+                          ) : null}
+                        </div>
+                      ) : null}
+                    </p.Stack>
+                  ) : null}
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : false
+                  ) ? (
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__rg2Uh)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__bMZzP
+                        )}
+                      >
+                        {"SS"}
+                      </div>
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__jlHOr
+                          )}
+                        >
+                          {(
+                            hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? true
+                              : false
+                          ) ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox___3FDri
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___0Uqbz
+                                )}
+                              >
+                                {"透天/公寓"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__h1Q19
+                                )}
+                              >
+                                {"大樓"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__caPVc
+                                )}
+                              >
+                                {"廠房"}
+                              </div>
+                            </div>
+                          ) : null}
+
+                          {(
+                            hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? true
+                              : false
+                          ) ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__h451V
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__jWqA
+                                )}
+                              >
+                                {hasVariant(
+                                  globalVariants,
+                                  "screen",
+                                  "mobileOnly"
+                                )
+                                  ? "依圖面報價"
+                                  : "依圖面報價"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___9PbDx
+                                )}
+                              >
+                                {"依圖面報價"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__wQftu
+                                )}
+                              >
+                                {"約8~15元/m2"}
+                              </div>
+                            </div>
+                          ) : null}
+                        </div>
+                      ) : null}
+                    </p.Stack>
+                  ) : null}
+
+                  {(
+                    hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? true
+                      : false
+                  ) ? (
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__dC5Ap)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__lmfx4
+                        )}
+                      >
+                        {"SRC"}
+                      </div>
+
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__d4Zk
+                          )}
+                        >
+                          {(
+                            hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? true
+                              : false
+                          ) ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__fxGuf
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__hYz1U
+                                )}
+                              >
+                                {"透天/公寓"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__aByHd
+                                )}
+                              >
+                                {"大樓"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___34Ckv
+                                )}
+                              >
+                                {"廠房"}
+                              </div>
+                            </div>
+                          ) : null}
+
+                          {(
+                            hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? true
+                              : false
+                          ) ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__sx31E
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__wVfFa
+                                )}
+                              >
+                                {"依圖面報價"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__yc16W
+                                )}
+                              >
+                                {"依圖面報價"}
+                              </div>
+
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text___6YuD1
+                                )}
+                              >
+                                {"約15~26元/m2"}
+                              </div>
+                            </div>
+                          ) : null}
+                        </div>
+                      ) : null}
+                    </p.Stack>
+                  ) : null}
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__oHdTb)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__j68UV
+                      )}
+                    >
+                      {"大樓不滿2000m2，以25,000元報價"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__bEorb
+                      )}
+                    >
+                      {"廠房不滿1000m2，以15,000元報價"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__pJcCf
+                      )}
+                    >
+                      {"如有二工、裝修表及拆棟等特殊需求另行報價"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___8N9Yh
+                      )}
+                    >
+                      {"樓地板面積超過10000m2，另有優惠價格"}
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+
+              {(
+                hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+              ) ? (
+                <div
+                  data-plasmic-name={"priceCard4"}
+                  data-plasmic-override={overrides.priceCard4}
+                  className={classNames(projectcss.all, sty.priceCard4)}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__szPgb)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__rOhCa
+                      )}
+                    >
+                      {"預算書"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__gpjpo
+                      )}
+                    >
+                      {"透天/公寓"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__xs2V
+                      )}
+                    >
+                      {"大樓"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__rtIlf
+                      )}
+                    >
+                      {"廠房"}
+                    </div>
+                  </div>
+
+                  <Divider
+                    className={classNames("__wab_instance", sty.divider__zrQqT)}
+                  />
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__jr8I3)}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__gSkkL)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___7NW3B
+                        )}
+                      >
+                        {"RC"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___05EzA
+                        )}
+                      >
+                        {"一戶8,000~22,000元"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__engEm
+                        )}
+                      >
+                        {"約8~12元/m2"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__db4Y0
+                        )}
+                      >
+                        {"約10~18元/m2"}
+                      </div>
+                    </div>
+
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__zc3Rp)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__td79L
+                        )}
+                      >
+                        {"SS"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__bUsYl
+                        )}
+                      >
+                        {"依圖面報價"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__ynZFu
+                        )}
+                      >
+                        {"依圖面報價"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__w9Cb1
+                        )}
+                      >
+                        {"約8~15元/m2"}
+                      </div>
+                    </div>
+
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__rhCww)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__z9Gle
+                        )}
+                      >
+                        {"SRC"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__oatot
+                        )}
+                      >
+                        {"依圖面報價"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__yex0O
+                        )}
+                      >
+                        {"依圖面報價"}
+                      </div>
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__wr75V
+                        )}
+                      >
+                        {"約15~26元/m2"}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__meRw)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__cb1Rh
+                      )}
+                    >
+                      {"備註事項:"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__ylKld
+                      )}
+                    >
+                      {"大樓不滿2000m2，以25,000元報價"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__yNpFj
+                      )}
+                    >
+                      {"廠房不滿1000m2，以15,000元報價"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__fu9KR
+                      )}
+                    >
+                      {"如有二工、裝修表及拆棟等特殊需求另行報價"}
+                    </div>
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__osyFn
+                      )}
+                    >
+                      {"樓地板面積超過10000m2，另有優惠價格"}
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+            </p.Stack>
+          ) : null}
 
           <FooterSection
             data-plasmic-name={"footerSection"}
@@ -208,16 +2763,35 @@ const PlasmicDescendants = {
     "headerHeroSection",
     "h2",
     "priceSection",
-    "priceCalculator",
-    "priceChart",
+    "priceCard",
+    "subtitle",
+    "priceCard3",
+    "subtitle3",
+    "priceCard2",
+    "subtitle2",
+    "priceCard4",
     "footerSection"
   ],
   navbar: ["navbar"],
   headerHeroSection: ["headerHeroSection", "h2"],
   h2: ["h2"],
-  priceSection: ["priceSection", "priceCalculator", "priceChart"],
-  priceCalculator: ["priceCalculator"],
-  priceChart: ["priceChart"],
+  priceSection: [
+    "priceSection",
+    "priceCard",
+    "subtitle",
+    "priceCard3",
+    "subtitle3",
+    "priceCard2",
+    "subtitle2",
+    "priceCard4"
+  ],
+  priceCard: ["priceCard", "subtitle"],
+  subtitle: ["subtitle"],
+  priceCard3: ["priceCard3", "subtitle3"],
+  subtitle3: ["subtitle3"],
+  priceCard2: ["priceCard2", "subtitle2"],
+  subtitle2: ["subtitle2"],
+  priceCard4: ["priceCard4"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -229,8 +2803,13 @@ type NodeDefaultElementType = {
   headerHeroSection: "div";
   h2: "h2";
   priceSection: "div";
-  priceCalculator: typeof PriceCalculator;
-  priceChart: typeof PriceChart;
+  priceCard: "div";
+  subtitle: "div";
+  priceCard3: "div";
+  subtitle3: "div";
+  priceCard2: "div";
+  subtitle2: "div";
+  priceCard4: "div";
   footerSection: typeof FooterSection;
 };
 
@@ -299,8 +2878,13 @@ export const PlasmicPrice = Object.assign(
     headerHeroSection: makeNodeComponent("headerHeroSection"),
     h2: makeNodeComponent("h2"),
     priceSection: makeNodeComponent("priceSection"),
-    priceCalculator: makeNodeComponent("priceCalculator"),
-    priceChart: makeNodeComponent("priceChart"),
+    priceCard: makeNodeComponent("priceCard"),
+    subtitle: makeNodeComponent("subtitle"),
+    priceCard3: makeNodeComponent("priceCard3"),
+    subtitle3: makeNodeComponent("subtitle3"),
+    priceCard2: makeNodeComponent("priceCard2"),
+    subtitle2: makeNodeComponent("subtitle2"),
+    priceCard4: makeNodeComponent("priceCard4"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicPrice
