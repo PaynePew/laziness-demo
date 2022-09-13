@@ -3,45 +3,281 @@
 import * as React from "react";
 import {
   PlasmicPriceCalculator,
-  DefaultPriceCalculatorProps
+  DefaultPriceCalculatorProps,
 } from "./plasmic/laziness_demo/PlasmicPriceCalculator";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import { randomBytes } from "crypto";
 
-// Your component props start with props for variants and slots you defined
-// in Plasmic, but you can add more here, like event handlers that you can
-// attach to named nodes in your component.
-//
-// If you don't want to expose certain variants or slots as a prop, you can use
-// Omit to hide them:
-//
-// interface PriceCalculatorProps extends Omit<DefaultPriceCalculatorProps, "hideProps1"|"hideProp2"> {
-//   // etc.
-// }
-//
-// You can also stop extending from DefaultPriceCalculatorProps altogether and have
-// total control over the props for your component.
 export interface PriceCalculatorProps extends DefaultPriceCalculatorProps {}
+
+interface AreaInput {
+  [key: string]: number | string;
+}
+
+interface ChargeTable {
+  basic: {
+    rc: number[];
+    src: number[];
+    ss: number[];
+  };
+  furnish: {
+    rc: number[];
+    src: number[];
+    ss: number[];
+  };
+}
+
+type MethodNames = "basic" | "furnish";
+type CategoryNames = "rc" | "src" | "ss";
 
 function PriceCalculator_(
   props: PriceCalculatorProps,
   ref: HTMLElementRefOf<"div">
 ) {
-  // Use PlasmicPriceCalculator to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicPriceCalculator are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, we are just piping all PriceCalculatorProps here, but feel free
-  // to do whatever works for you.
+  const {
+    rcMin = 8500,
+    rcSecond = 13200,
+    rcThird = 15750,
+    rcMax = 39000,
+    srcMin = 9500,
+    srcSecond = 16200,
+    srcThird = 22750,
+    srcMax = 59000,
+    ssMin = 9250,
+    ssSecond = 15450,
+    ssThird = 21000,
+    ssMax = 54000,
+    rcFurMin = 15950,
+    rcFurSecond = 24600,
+    rcFurThird = 29400,
+    rcFurMax = 74000,
+    srcFurMin = 16800,
+    srcFurSecond = 27150,
+    srcFurThird = 35350,
+    srcFurMax = 91000,
+    ssFurMin = 16600,
+    ssFurSecond = 26550,
+    ssFurThird = 33950,
+    ssFurMax = 87000,
+  } = props;
+  const [area, setArea] = React.useState<AreaInput>({});
+  const [method, setMethod] = React.useState<MethodNames>("basic");
+  const [category, setCategory] = React.useState<CategoryNames>("rc");
+  const [charge, setCharge] = React.useState<ChargeTable>({
+    basic: {
+      rc: [rcMin, rcSecond, rcThird, rcMax],
+      src: [srcMin, srcSecond, srcThird, srcMax],
+      ss: [ssMin, ssSecond, ssThird, ssMax],
+    },
+    furnish: {
+      rc: [rcFurMin, rcFurSecond, rcFurThird, rcFurMax],
+      src: [srcFurMin, srcFurSecond, srcFurThird, srcFurMax],
+      ss: [ssFurMin, ssFurSecond, ssFurThird, ssFurMax],
+    },
+  });
 
-  return <PlasmicPriceCalculator root={{ ref }} {...props} />;
+  const rangeTable = [1500 - 500, 3500 - 1500, 10000 - 3500, 10000];
+
+  // React.useEffect(() => {
+  //   const tempCharge: ChargeTable = {
+  //     basic: {
+  //       rc: [
+  //         rcMin,
+  //         rcSecond - rcMin,
+  //         rcThird - rcSecond,
+  //         rcMax - rcThird,
+  //         rcMax,
+  //       ],
+  //       src: [
+  //         srcMin,
+  //         srcSecond - srcMin,
+  //         srcThird - srcSecond,
+  //         srcMax - srcThird,
+  //         srcMax,
+  //       ],
+  //       ss: [
+  //         ssMin,
+  //         ssSecond - ssMin,
+  //         ssThird - ssSecond,
+  //         ssMax - ssThird,
+  //         ssMax,
+  //       ],
+  //     },
+  //     furnish: {
+  //       rc: [
+  //         rcFurMin,
+  //         rcFurSecond - rcFurMin,
+  //         rcFurThird - rcFurSecond,
+  //         rcFurMax - rcFurThird,
+  //         rcFurMax,
+  //       ],
+  //       src: [
+  //         srcFurMin,
+  //         srcFurSecond - srcFurMin,
+  //         srcFurThird - srcFurSecond,
+  //         srcFurMax - srcFurThird,
+  //         srcFurMax,
+  //       ],
+  //       ss: [
+  //         ssFurMin,
+  //         ssFurSecond - ssFurMin,
+  //         ssFurThird - ssFurSecond,
+  //         ssFurMax - ssFurThird,
+  //         ssFurMax,
+  //       ],
+  //     },
+  //   };
+  //   setCharge(tempCharge);
+  // }, [
+  //   rcMin,
+  //   rcSecond,
+  //   rcThird,
+  //   rcMax,
+  //   srcMin,
+  //   srcSecond,
+  //   srcThird,
+  //   srcMax,
+  //   ssMin,
+  //   ssSecond,
+  //   ssThird,
+  //   ssMax,
+  //   rcFurMin,
+  //   rcFurSecond,
+  //   rcFurThird,
+  //   rcFurMax,
+  //   srcFurMin,
+  //   srcFurSecond,
+  //   srcFurThird,
+  //   srcFurMax,
+  //   ssFurMin,
+  //   ssFurSecond,
+  //   ssFurThird,
+  //   ssFurMax,
+  // ]);
+
+  const handleAreaInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setArea((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const afterSubmit = () => {
+    console.log("areaSecond", +area.areaSecond);
+    console.log("area.areaThird", +area.areaThird);
+    console.log("area.areaFourth,", +area.areaFourth);
+    console.log("area.areaMax", +area.areaMax);
+    let tempChartData = [
+      { value: charge[method][category][0], name: "500m3(含)以下" },
+      {
+        value:
+          (charge[method][category][1] -
+            charge[method][category][0] / rangeTable[0]) *
+            (+area.areaSecond - 500) +
+          charge[method][category][0],
+        name: "500~1500m3(含)以下",
+      },
+      {
+        value:
+          (charge[method][category][2] -
+            charge[method][category][1] / rangeTable[1]) *
+            (+area.areaThird - 1500) +
+          charge[method][category][1],
+        name: "1500~3500m3(含)以下",
+      },
+      {
+        value:
+          (charge[method][category][3] -
+            charge[method][category][2] / rangeTable[2]) *
+            (+area.areaFourth - 3500) +
+          charge[method][category][2],
+        name: "3500~10000m3(含)以下",
+      },
+      {
+        value: (charge[method][category][3] / rangeTable[3]) * +area.areaMax,
+        name: "10000m3以上",
+      },
+    ];
+    console.log(tempChartData);
+    // tempChartData = [{charge?[method]?[category] : }]
+  };
+
+  return (
+    <PlasmicPriceCalculator
+      root={{ ref }}
+      {...props}
+      areaInputMin={{
+        name: "areaMin",
+        value: area.areaMin || "",
+        onChange: (e) => {
+          handleAreaInput(e);
+        },
+      }}
+      areaInputSecond={{
+        name: "areaSecond",
+        value: area.areaSecond || "",
+        onChange: (e) => {
+          handleAreaInput(e);
+        },
+      }}
+      areaInputThird={{
+        name: "areaThird",
+        value: area.areaThird || "",
+        onChange: (e) => {
+          handleAreaInput(e);
+        },
+      }}
+      areaInputFourth={{
+        name: "areaFourth",
+        value: area.areaFourth || "",
+        onChange: (e) => {
+          handleAreaInput(e);
+        },
+      }}
+      areaInputMax={{
+        name: "areaMax",
+        value: area.areaMax || "",
+        onChange: (e) => {
+          handleAreaInput(e);
+        },
+      }}
+      structureButton={{
+        color: method === "basic" ? "red" : "pink",
+        onClick: () => {
+          setMethod("basic");
+        },
+      }}
+      furnishButton={{
+        color: method === "furnish" ? "red" : "pink",
+        onClick: () => {
+          setMethod("furnish");
+        },
+      }}
+      rcButton={{
+        color: category === "rc" ? "red" : "pink",
+        onClick: () => {
+          setCategory("rc");
+        },
+      }}
+      srcButton={{
+        color: category === "src" ? "red" : "pink",
+        onClick: () => {
+          setCategory("src");
+        },
+      }}
+      ssButon={{
+        color: category === "ss" ? "red" : "pink",
+        onClick: () => {
+          setCategory("ss");
+        },
+      }}
+      calculateButton={{
+        onClick: () => {
+          afterSubmit();
+        },
+      }}
+    />
+  );
 }
 
 const PriceCalculator = React.forwardRef(PriceCalculator_);

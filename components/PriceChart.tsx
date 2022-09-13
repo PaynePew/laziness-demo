@@ -1,23 +1,24 @@
 import { PlasmicCanvasContext } from "@plasmicapp/host";
 import { useEffect, useState } from "react";
-import ReactEChartsCore from "echarts-for-react/lib/core";
+// import ReactEChartsCore from "echarts-for-react/lib/core";
+import ReactECharts from "echarts-for-react";
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
-import * as echarts from "echarts/core";
+// import * as echarts from "echarts/core";
 // Import charts, all with Chart suffix
-import { PieChart, PieSeriesOption } from "echarts/charts";
+// import { PieChart, PieSeriesOption } from "echarts/charts";
 // import components, all suffixed with Component
-import {
-  TooltipComponent,
-  TooltipComponentOption,
-  TitleComponent,
-  TitleComponentOption,
-  LegendComponent,
-  LegendComponentOption,
-  VisualMapComponent,
-  VisualMapComponentOption,
-} from "echarts/components";
-// Import renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
-import { CanvasRenderer } from "echarts/renderers";
+// import {
+//   TooltipComponent,
+//   TooltipComponentOption,
+//   TitleComponent,
+//   TitleComponentOption,
+//   LegendComponent,
+//   LegendComponentOption,
+//   VisualMapComponent,
+//   VisualMapComponentOption,
+// } from "echarts/components";
+// // Import renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
+// import { CanvasRenderer } from "echarts/renderers";
 
 interface PriceChartType {
   className?: string;
@@ -26,22 +27,22 @@ interface PriceChartType {
   maxWidth?: number;
 }
 
-type ECOption = echarts.ComposeOption<
-  | PieSeriesOption
-  | TitleComponentOption
-  | TooltipComponentOption
-  | VisualMapComponentOption
-  | LegendComponentOption
->;
+// type ECOption = echarts.ComposeOption<
+//   | PieSeriesOption
+//   | TitleComponentOption
+//   | TooltipComponentOption
+//   | VisualMapComponentOption
+//   | LegendComponentOption
+// >;
 
-echarts.use([
-  PieChart,
-  TitleComponent,
-  TooltipComponent,
-  CanvasRenderer,
-  LegendComponent,
-  VisualMapComponent,
-]);
+// echarts.use([
+//   PieChart,
+//   TitleComponent,
+//   TooltipComponent,
+//   CanvasRenderer,
+//   LegendComponent,
+//   VisualMapComponent,
+// ]);
 
 export function PriceChart({
   className,
@@ -49,9 +50,10 @@ export function PriceChart({
   height,
   maxWidth,
 }: PriceChartType) {
-  const [option, setOption] = useState<ECOption>({});
+  // const [option, setOption] = useState<ECOption>({});
+  const [option, setOption] = useState({});
   useEffect(() => {
-    const eChartOption: ECOption = {
+    const eChartOption = {
       backgroundColor: "#ffff",
       title: {
         text: "建築估價",
@@ -114,7 +116,7 @@ export function PriceChart({
           },
           animationType: "scale",
           animationEasing: "elasticOut",
-          animationDelay: function (idx) {
+          animationDelay: function (idx: any) {
             return Math.random() * 200;
           },
         },
@@ -126,8 +128,8 @@ export function PriceChart({
   return (
     <div className={className}>
       {option && (
-        <ReactEChartsCore
-          echarts={echarts}
+        <ReactECharts
+          // echarts={echarts}
           option={option}
           notMerge={true}
           lazyUpdate={true}
