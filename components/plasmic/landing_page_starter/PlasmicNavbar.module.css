@@ -197,9 +197,24 @@
   position: relative;
   object-fit: cover;
 }
+.logoContainer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 240px;
+  height: 48px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
 .logo__ioShS:global(.__wab_instance) {
   width: 240px;
   height: 80px;
+  position: absolute;
+  left: 0px;
+  top: -15px;
+  align-self: auto;
   flex-shrink: 0;
 }
 .freeBox__wdExf {
