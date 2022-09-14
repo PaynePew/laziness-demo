@@ -239,6 +239,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             className={classNames("__wab_instance", sty.button__sEiyd)}
             color={"navLink" as const}
             flat={true}
+            link={`/price`}
           >
             {"價目表"}
           </Button>
@@ -272,6 +273,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             className={classNames("__wab_instance", sty.button__junuH)}
             color={"navLink" as const}
             flat={true}
+            link={`/login`}
           >
             {"會員資訊平台"}
           </Button>

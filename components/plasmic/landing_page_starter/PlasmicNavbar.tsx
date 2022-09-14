@@ -393,6 +393,7 @@ function PlasmicNavbar__RenderFunc(props: {
               )
             })}
             color={"navLink" as const}
+            link={`/price`}
           >
             {"價目表"}
           </Button>
@@ -420,6 +421,7 @@ function PlasmicNavbar__RenderFunc(props: {
               )
             })}
             color={"navLink" as const}
+            link={`/login`}
             outline={true}
           >
             {"會員資訊平台"}
