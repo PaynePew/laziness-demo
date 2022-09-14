@@ -89,7 +89,10 @@ function PlasmicPrice2__RenderFunc(props: {
     [props.args]
   );
 
-  const $props = args;
+  const $props = {
+    ...args,
+    ...variants
+  };
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()

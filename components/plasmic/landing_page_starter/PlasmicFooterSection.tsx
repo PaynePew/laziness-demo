@@ -89,7 +89,10 @@ function PlasmicFooterSection__RenderFunc(props: {
     [props.args]
   );
 
-  const $props = args;
+  const $props = {
+    ...args,
+    ...variants
+  };
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
@@ -124,6 +127,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             data-plasmic-name={"logo"}
             data-plasmic-override={overrides.logo}
             _50Opaque={true}
+            className={classNames("__wab_instance", sty.logo)}
           />
 
           <p.Stack
@@ -235,6 +239,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             className={classNames("__wab_instance", sty.button__sEiyd)}
             color={"navLink" as const}
             flat={true}
+            link={`/price`}
           >
             {"價目表"}
           </Button>
@@ -268,6 +273,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             className={classNames("__wab_instance", sty.button__junuH)}
             color={"navLink" as const}
             flat={true}
+            link={`/login`}
           >
             {"會員資訊平台"}
           </Button>

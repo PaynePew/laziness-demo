@@ -40,6 +40,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_landing_page_starter.module.css"; // plasmic-import: qtkpEraJg2gN978YDtMYaP/projectcss
 import sty from "./PlasmicLogo.module.css"; // plasmic-import: kosXDNVVRUk_WE/css
 
+import 懶得算LogoIco04彩色橫排Figmasvg2Icon from "../laziness_demo/icons/PlasmicIcon__\u61F6\u5F97\u7B97LogoIco04\u5F69\u8272\u6A6B\u6392Figmasvg2"; // plasmic-import: BalLK2-Rd/icon
+
 export type PlasmicLogo__VariantMembers = {
   _50Opaque: "_50Opaque";
 };
@@ -59,7 +61,7 @@ export const PlasmicLogo__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLogo__OverridesType = {
   root?: p.Flex<"a"> & Partial<LinkProps>;
-  img?: p.Flex<typeof p.PlasmicImg>;
+  svg?: p.Flex<"svg">;
 };
 
 export interface DefaultLogoProps {
@@ -87,7 +89,10 @@ function PlasmicLogo__RenderFunc(props: {
     [props.args]
   );
 
-  const $props = args;
+  const $props = {
+    ...args,
+    ...variants
+  };
 
   return (
     <p.PlasmicLink
@@ -109,40 +114,26 @@ function PlasmicLogo__RenderFunc(props: {
       href={`/`}
       platform={"nextjs"}
     >
-      <p.PlasmicImg
-        data-plasmic-name={"img"}
-        data-plasmic-override={overrides.img}
-        alt={""}
-        className={classNames(sty.img, {
-          [sty.img_50Opaque]: hasVariant(variants, "_50Opaque", "_50Opaque")
-        })}
-        displayHeight={"40px" as const}
-        displayMaxHeight={"none" as const}
-        displayMaxWidth={"none" as const}
-        displayMinHeight={"0" as const}
-        displayMinWidth={"0" as const}
-        displayWidth={"40px" as const}
-        src={{
-          src: "/plasmic/landing_page_starter/images/logo.svg",
-          fullWidth: 150,
-          fullHeight: 150,
-          aspectRatio: 1
-        }}
+      <懶得算LogoIco04彩色橫排Figmasvg2Icon
+        data-plasmic-name={"svg"}
+        data-plasmic-override={overrides.svg}
+        className={classNames(projectcss.all, sty.svg)}
+        role={"img"}
       />
     </p.PlasmicLink>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img"],
-  img: ["img"]
+  root: ["root", "svg"],
+  svg: ["svg"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "a";
-  img: typeof p.PlasmicImg;
+  svg: "svg";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -206,7 +197,7 @@ export const PlasmicLogo = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    img: makeNodeComponent("img"),
+    svg: makeNodeComponent("svg"),
 
     // Metadata about props expected for PlasmicLogo
     internalVariantProps: PlasmicLogo__VariantProps,

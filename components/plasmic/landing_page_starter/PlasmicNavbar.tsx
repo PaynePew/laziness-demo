@@ -66,6 +66,7 @@ export const PlasmicNavbar__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNavbar__OverridesType = {
   root?: p.Flex<"div">;
+  logoContainer?: p.Flex<"div">;
   hamburger?: p.Flex<"div">;
   svg?: p.Flex<"svg">;
   modal?: p.Flex<"div">;
@@ -97,7 +98,10 @@ function PlasmicNavbar__RenderFunc(props: {
     [props.args]
   );
 
-  const $props = args;
+  const $props = {
+    ...args,
+    ...variants
+  };
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
@@ -157,7 +161,13 @@ function PlasmicNavbar__RenderFunc(props: {
             </Button>
           </p.Stack>
 
-          <Logo className={classNames("__wab_instance", sty.logo__ioShS)} />
+          <div
+            data-plasmic-name={"logoContainer"}
+            data-plasmic-override={overrides.logoContainer}
+            className={classNames(projectcss.all, sty.logoContainer)}
+          >
+            <Logo className={classNames("__wab_instance", sty.logo__ioShS)} />
+          </div>
 
           <p.Stack
             as={"div"}
@@ -383,6 +393,7 @@ function PlasmicNavbar__RenderFunc(props: {
               )
             })}
             color={"navLink" as const}
+            link={`/price`}
           >
             {"價目表"}
           </Button>
@@ -410,6 +421,7 @@ function PlasmicNavbar__RenderFunc(props: {
               )
             })}
             color={"navLink" as const}
+            link={`/login`}
             outline={true}
           >
             {"會員資訊平台"}
@@ -447,7 +459,8 @@ function PlasmicNavbar__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "hamburger", "svg", "modal", "closeIcon"],
+  root: ["root", "logoContainer", "hamburger", "svg", "modal", "closeIcon"],
+  logoContainer: ["logoContainer"],
   hamburger: ["hamburger", "svg"],
   svg: ["svg"],
   modal: ["modal", "closeIcon"],
@@ -458,6 +471,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  logoContainer: "div";
   hamburger: "div";
   svg: "svg";
   modal: "div";
@@ -525,6 +539,7 @@ export const PlasmicNavbar = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    logoContainer: makeNodeComponent("logoContainer"),
     hamburger: makeNodeComponent("hamburger"),
     svg: makeNodeComponent("svg"),
     modal: makeNodeComponent("modal"),
