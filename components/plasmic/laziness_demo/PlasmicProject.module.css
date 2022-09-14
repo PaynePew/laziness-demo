@@ -17,9 +17,8 @@
   right: auto;
   z-index: auto;
   background: #ffffff80;
-  height: 50vh;
-  flex-shrink: 0;
-  padding: 0px;
+  height: auto;
+  padding: 0px 0px 64px;
 }
 .projectHeroSection > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -37,23 +36,6 @@
   > picture
   > img {
   margin-top: 64px;
-}
-.img___8CtXf {
-  position: absolute;
-  object-fit: cover;
-  max-width: 100%;
-  left: 0px;
-  top: 0px;
-  height: 100%;
-  width: 100%;
-  min-width: 0;
-  min-height: 0;
-}
-.img___8CtXf > picture > img {
-  object-fit: cover;
-}
-.img___8CtXf > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
 }
 .reveal__oeH5:global(.__wab_instance) {
   max-width: 100%;
@@ -359,7 +341,7 @@
   max-width: 100%;
   min-width: 0;
 }
-.img__xubhu {
+.img {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -368,10 +350,10 @@
   min-width: 0;
   min-height: 0;
 }
-.img__xubhu > picture > img {
+.img > picture > img {
   object-fit: cover;
 }
-.img__xubhu > :global(.__wab_img-spacer) > img {
+.img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .text__w4Dy7 {

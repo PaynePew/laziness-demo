@@ -63,6 +63,7 @@ export type PlasmicProject__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   projectSection?: p.Flex<"div">;
+  img?: p.Flex<typeof p.PlasmicImg>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -88,7 +89,10 @@ function PlasmicProject__RenderFunc(props: {
     [props.args]
   );
 
-  const $props = args;
+  const $props = {
+    ...args,
+    ...variants
+  };
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
@@ -138,24 +142,6 @@ function PlasmicProject__RenderFunc(props: {
               data-plasmic-name={"navbar"}
               data-plasmic-override={overrides.navbar}
               className={classNames("__wab_instance", sty.navbar)}
-            />
-
-            <p.PlasmicImg
-              alt={""}
-              className={classNames(sty.img___8CtXf)}
-              displayHeight={"100%" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"100%" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"100%" as const}
-              loading={"lazy" as const}
-              src={{
-                src: "/plasmic/laziness_demo/images/mountainwebp.webp",
-                fullWidth: 4000,
-                fullHeight: 6000,
-                aspectRatio: undefined
-              }}
             />
 
             <Reveal
@@ -275,8 +261,10 @@ function PlasmicProject__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__l1Omf)}
                     >
                       <p.PlasmicImg
+                        data-plasmic-name={"img"}
+                        data-plasmic-override={overrides.img}
                         alt={""}
-                        className={classNames(sty.img__xubhu)}
+                        className={classNames(sty.img)}
                         displayHeight={"100%" as const}
                         displayMaxHeight={"none" as const}
                         displayMaxWidth={"100%" as const}
@@ -316,12 +304,14 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "projectSection",
+    "img",
     "footerSection"
   ],
   projectHeroSection: ["projectHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  projectSection: ["projectSection"],
+  projectSection: ["projectSection", "img"],
+  img: ["img"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -333,6 +323,7 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   projectSection: "div";
+  img: typeof p.PlasmicImg;
   footerSection: typeof FooterSection;
 };
 
@@ -401,6 +392,7 @@ export const PlasmicProject = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     projectSection: makeNodeComponent("projectSection"),
+    img: makeNodeComponent("img"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicProject

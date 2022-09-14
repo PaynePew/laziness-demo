@@ -85,6 +85,11 @@
   > img {
   margin-top: 32px;
 }
+.logo:global(.__wab_instance) {
+  width: 140px;
+  height: 50px;
+  flex-shrink: 0;
+}
 .freeBox__caMX {
   flex-direction: column;
   display: flex;

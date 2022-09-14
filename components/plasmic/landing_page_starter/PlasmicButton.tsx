@@ -164,7 +164,10 @@ function PlasmicButton__RenderFunc(props: {
     [props.args]
   );
 
-  const $props = args;
+  const $props = {
+    ...args,
+    ...variants
+  };
 
   return (
     <p.Stack

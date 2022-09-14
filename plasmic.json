@@ -610,6 +610,26 @@
           "id": "bGxn1nWR1",
           "name": "PhonesvgIcon",
           "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__Phonesvg.tsx"
+        },
+        {
+          "id": "Cu3c6FbXn",
+          "name": "懶得算LogoIco03白色橫排0913Osvg2Icon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__懶得算LogoIco03白色橫排0913Osvg2.tsx"
+        },
+        {
+          "id": "lDiLRicSz",
+          "name": "懶得算LogoIco02彩色直排0913OsvgIcon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__懶得算LogoIco02彩色直排0913Osvg.tsx"
+        },
+        {
+          "id": "dw3kxwY8T",
+          "name": "懶得算LogoIco01白色直排0913OsvgIcon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__懶得算LogoIco01白色直排0913Osvg.tsx"
+        },
+        {
+          "id": "BalLK2-Rd",
+          "name": "懶得算LogoIco04彩色橫排Figmasvg2Icon",
+          "moduleFilePath": "plasmic/laziness_demo/icons/PlasmicIcon__懶得算LogoIco04彩色橫排Figmasvg2.tsx"
         }
       ],
       "images": [
@@ -847,6 +867,21 @@
           "id": "TWWQwmQE6",
           "name": "professional.webp",
           "filePath": "../public/plasmic/laziness_demo/images/professionalwebp.webp"
+        },
+        {
+          "id": "oCYz22QT7",
+          "name": "懶得算_logo_ico_03_白色橫排_0913_O.svg",
+          "filePath": "../public/plasmic/laziness_demo/images/懶得算LogoIco03白色橫排0913Osvg.svg"
+        },
+        {
+          "id": "O26ZRHgd3I",
+          "name": "懶得算_logo_ico_02_彩色直排_0913_O.svg 2",
+          "filePath": "../public/plasmic/laziness_demo/images/懶得算LogoIco02彩色直排0913Osvg2.svg"
+        },
+        {
+          "id": "GgcdSYaN5",
+          "name": "懶得算_logo_ico_04_彩色橫排-figma.svg",
+          "filePath": "../public/plasmic/laziness_demo/images/懶得算LogoIco04彩色橫排Figmasvg.svg"
         }
       ],
       "indirect": false,
