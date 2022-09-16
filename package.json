@@ -18,6 +18,7 @@
     "@plasmicpkgs/plasmic-nav": "^0.0.48",
     "@plasmicpkgs/react-awesome-reveal": "^3.8.78",
     "@supabase/auth-helpers-nextjs": "^0.2.8",
+    "@supabase/auth-helpers-react": "^0.2.4",
     "@supabase/supabase-js": "^2.0.0-rc.7",
     "echarts": "^5.3.3",
     "echarts-for-react": "^3.0.2",
