@@ -86,13 +86,14 @@ function RegisterForm_(props: RegisterFormProps, ref: HTMLElementRefOf<"div">) {
                   },
                 },
               });
-              console.log('authfunction',authFunction)
+              console.log("authfunction", authFunction);
             } else {
               console.log("loginflow");
               authFunction = await supabase.auth.signInWithPassword({
                 email,
                 password,
               });
+              console.log(authFunction);
             }
             const { error } = authFunction;
             console.log("error", error);

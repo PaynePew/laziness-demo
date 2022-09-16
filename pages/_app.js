@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
+import { supabase } from "../utils/supabaseClient";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -17,6 +18,22 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
+  // useEffect(() => {
+  //   const { data: authListener } = supabase.auth.onAuthStateChange(
+  //     async (event, session) => {
+  //       await fetch("/api/set-auth-cookie", {
+  //         method: "POST",
+  //         headers: new Headers({ "content-Type": "application/json" }),
+  //         body: JSON.stringify({ session, event }),
+  //       });
+  //     }
+  //   );
+  //   return () => {
+  //     authListener?.unsubscribe();
+  //   };
+  // });
+
   return (
     <>
       <Script
