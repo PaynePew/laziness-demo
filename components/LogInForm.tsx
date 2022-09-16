@@ -26,7 +26,7 @@ function LogInForm_(props: LogInFormProps, ref: HTMLElementRefOf<"div">) {
       isLoading={loading}
       emailInput={{
         value: email,
-        onChange: (e) => setEmail(e.target.value), 
+        onChange: (e) => setEmail(e.target.value),
       }}
       passwordInput={{
         value: password,
@@ -40,9 +40,7 @@ function LogInForm_(props: LogInFormProps, ref: HTMLElementRefOf<"div">) {
           try {
             let authFunction;
             if (props.isSignUpFlow) {
-              console.log("inside isSignUp");
               authFunction = await supabase.auth.signUp({ email, password });
-              console.log("auth", authFunction);
             } else {
               authFunction = await supabase.auth.signInWithPassword({
                 email,
@@ -55,7 +53,7 @@ function LogInForm_(props: LogInFormProps, ref: HTMLElementRefOf<"div">) {
               setAuthError(error);
               return;
             }
-            router.replace("/");
+            // router.replace("/member");
           } catch (err: any) {
             setAuthError(err);
           } finally {

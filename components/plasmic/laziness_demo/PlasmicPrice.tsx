@@ -107,11 +107,19 @@ function PlasmicPrice__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"價目表"}</title>
+        <title key="title">{PlasmicPrice.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"價目表"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicPrice.pageMetadata.title}
+        />
 
-        <meta key="twitter:title" name="twitter:title" content={"價目表"} />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicPrice.pageMetadata.title}
+        />
       </Head>
 
       <style>{`
@@ -2892,7 +2900,15 @@ export const PlasmicPrice = Object.assign(
 
     // Metadata about props expected for PlasmicPrice
     internalVariantProps: PlasmicPrice__VariantProps,
-    internalArgProps: PlasmicPrice__ArgProps
+    internalArgProps: PlasmicPrice__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "價目表",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

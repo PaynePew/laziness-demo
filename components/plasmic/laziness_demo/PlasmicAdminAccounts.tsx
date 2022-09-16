@@ -101,11 +101,19 @@ function PlasmicAdminAccounts__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"後台管理"}</title>
+        <title key="title">{PlasmicAdminAccounts.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"後台管理"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicAdminAccounts.pageMetadata.title}
+        />
 
-        <meta key="twitter:title" name="twitter:title" content={"後台管理"} />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicAdminAccounts.pageMetadata.title}
+        />
       </Head>
 
       <style>{`
@@ -354,7 +362,15 @@ export const PlasmicAdminAccounts = Object.assign(
 
     // Metadata about props expected for PlasmicAdminAccounts
     internalVariantProps: PlasmicAdminAccounts__VariantProps,
-    internalArgProps: PlasmicAdminAccounts__ArgProps
+    internalArgProps: PlasmicAdminAccounts__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "後台管理",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

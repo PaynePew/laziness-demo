@@ -357,19 +357,6 @@
           "plumeType": "text-input"
         },
         {
-          "id": "CtTUSfG2PU6",
-          "name": "LogInForm",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicLogInForm.tsx",
-          "importSpec": {
-            "modulePath": "LogInForm.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicLogInForm.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "GGAMZHnNF_K",
           "name": "Admin",
           "type": "managed",
@@ -435,19 +422,6 @@
           "componentType": "page"
         },
         {
-          "id": "0G2s1E43PqJ",
-          "name": "AdminResults",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAdminResults.tsx",
-          "importSpec": {
-            "modulePath": "../pages/admin/results.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicAdminResults.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "CKUgB3T9na",
           "name": "AccountCard",
           "type": "managed",
@@ -498,6 +472,45 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicPrice2.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "0G2s1E43PqJ",
+          "name": "AdminReport",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAdminReport.tsx",
+          "importSpec": {
+            "modulePath": "../pages/admin/report.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicAdminReport.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "m5br8UXZfbX",
+          "name": "SignUpForm",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicSignUpForm.tsx",
+          "importSpec": {
+            "modulePath": "SignUpForm.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicSignUpForm.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "CtTUSfG2PU6",
+          "name": "RegisterForm",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicRegisterForm.tsx",
+          "importSpec": {
+            "modulePath": "RegisterForm.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicRegisterForm.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

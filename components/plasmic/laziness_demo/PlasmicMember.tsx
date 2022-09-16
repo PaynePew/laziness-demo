@@ -95,14 +95,18 @@ function PlasmicMember__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"會員資訊平台"}</title>
+        <title key="title">{PlasmicMember.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"會員資訊平台"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicMember.pageMetadata.title}
+        />
 
         <meta
           key="twitter:title"
           name="twitter:title"
-          content={"會員資訊平台"}
+          content={PlasmicMember.pageMetadata.title}
         />
       </Head>
 
@@ -279,7 +283,15 @@ export const PlasmicMember = Object.assign(
 
     // Metadata about props expected for PlasmicMember
     internalVariantProps: PlasmicMember__VariantProps,
-    internalArgProps: PlasmicMember__ArgProps
+    internalArgProps: PlasmicMember__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "會員資訊平台",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

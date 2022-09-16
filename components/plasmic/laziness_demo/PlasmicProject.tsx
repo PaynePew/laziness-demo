@@ -103,11 +103,19 @@ function PlasmicProject__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"工程實績"}</title>
+        <title key="title">{PlasmicProject.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"工程實績"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicProject.pageMetadata.title}
+        />
 
-        <meta key="twitter:title" name="twitter:title" content={"工程實績"} />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicProject.pageMetadata.title}
+        />
       </Head>
 
       <style>{`
@@ -397,7 +405,15 @@ export const PlasmicProject = Object.assign(
 
     // Metadata about props expected for PlasmicProject
     internalVariantProps: PlasmicProject__VariantProps,
-    internalArgProps: PlasmicProject__ArgProps
+    internalArgProps: PlasmicProject__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "工程實績",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

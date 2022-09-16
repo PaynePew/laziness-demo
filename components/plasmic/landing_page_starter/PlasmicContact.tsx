@@ -102,28 +102,36 @@ function PlasmicContact__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"聯絡我們"}</title>
+        <title key="title">{PlasmicContact.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"聯絡我們"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicContact.pageMetadata.title}
+        />
 
-        <meta key="twitter:title" name="twitter:title" content={"聯絡我們"} />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicContact.pageMetadata.title}
+        />
 
         <meta
           key="description"
           name="description"
-          content={"工程估算，請聯絡我們"}
+          content={PlasmicContact.pageMetadata.description}
         />
 
         <meta
           key="og:description"
           property="og:description"
-          content={"工程估算，請聯絡我們"}
+          content={PlasmicContact.pageMetadata.description}
         />
 
         <meta
           key="twitter:description"
           name="twitter:description"
-          content={"工程估算，請聯絡我們"}
+          content={PlasmicContact.pageMetadata.description}
         />
       </Head>
 
@@ -331,7 +339,15 @@ export const PlasmicContact = Object.assign(
 
     // Metadata about props expected for PlasmicContact
     internalVariantProps: PlasmicContact__VariantProps,
-    internalArgProps: PlasmicContact__ArgProps
+    internalArgProps: PlasmicContact__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "聯絡我們",
+      description: "工程估算，請聯絡我們",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

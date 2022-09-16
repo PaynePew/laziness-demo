@@ -35,7 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import LogInForm from "../../LogInForm"; // plasmic-import: CtTUSfG2PU6/component
+import SignUpForm from "../../SignUpForm"; // plasmic-import: m5br8UXZfbX/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -60,7 +60,7 @@ export type PlasmicAdminSignUp__OverridesType = {
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
-  logInForm?: p.Flex<typeof LogInForm>;
+  signUpForm?: p.Flex<typeof SignUpForm>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -96,11 +96,19 @@ function PlasmicAdminSignUp__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"後台管理"}</title>
+        <title key="title">{PlasmicAdminSignUp.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"後台管理"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicAdminSignUp.pageMetadata.title}
+        />
 
-        <meta key="twitter:title" name="twitter:title" content={"後台管理"} />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicAdminSignUp.pageMetadata.title}
+        />
       </Head>
 
       <style>{`
@@ -163,11 +171,10 @@ function PlasmicAdminSignUp__RenderFunc(props: {
               data-plasmic-override={overrides.freeBox}
               className={classNames(projectcss.all, sty.freeBox)}
             >
-              <LogInForm
-                data-plasmic-name={"logInForm"}
-                data-plasmic-override={overrides.logInForm}
-                className={classNames("__wab_instance", sty.logInForm)}
-                isSignUpFlow={true}
+              <SignUpForm
+                data-plasmic-name={"signUpForm"}
+                data-plasmic-override={overrides.signUpForm}
+                className={classNames("__wab_instance", sty.signUpForm)}
               />
             </div>
           </p.Stack>
@@ -191,15 +198,15 @@ const PlasmicDescendants = {
     "h2",
     "accountSection",
     "freeBox",
-    "logInForm",
+    "signUpForm",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection", "freeBox", "logInForm"],
-  freeBox: ["freeBox", "logInForm"],
-  logInForm: ["logInForm"],
+  accountSection: ["accountSection", "freeBox", "signUpForm"],
+  freeBox: ["freeBox", "signUpForm"],
+  signUpForm: ["signUpForm"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -212,7 +219,7 @@ type NodeDefaultElementType = {
   h2: "h2";
   accountSection: "div";
   freeBox: "div";
-  logInForm: typeof LogInForm;
+  signUpForm: typeof SignUpForm;
   footerSection: typeof FooterSection;
 };
 
@@ -282,12 +289,20 @@ export const PlasmicAdminSignUp = Object.assign(
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
     freeBox: makeNodeComponent("freeBox"),
-    logInForm: makeNodeComponent("logInForm"),
+    signUpForm: makeNodeComponent("signUpForm"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicAdminSignUp
     internalVariantProps: PlasmicAdminSignUp__VariantProps,
-    internalArgProps: PlasmicAdminSignUp__ArgProps
+    internalArgProps: PlasmicAdminSignUp__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "後台管理",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

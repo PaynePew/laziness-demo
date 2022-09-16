@@ -96,11 +96,19 @@ function PlasmicAdmin__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"後台管理"}</title>
+        <title key="title">{PlasmicAdmin.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"後台管理"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicAdmin.pageMetadata.title}
+        />
 
-        <meta key="twitter:title" name="twitter:title" content={"後台管理"} />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicAdmin.pageMetadata.title}
+        />
       </Head>
 
       <style>{`
@@ -183,7 +191,7 @@ function PlasmicAdmin__RenderFunc(props: {
                 <Button
                   className={classNames("__wab_instance", sty.button__eh2Wj)}
                   color={"blue" as const}
-                  link={`/admin/results`}
+                  link={`/admin/report`}
                 >
                   <div
                     className={classNames(
@@ -322,7 +330,15 @@ export const PlasmicAdmin = Object.assign(
 
     // Metadata about props expected for PlasmicAdmin
     internalVariantProps: PlasmicAdmin__VariantProps,
-    internalArgProps: PlasmicAdmin__ArgProps
+    internalArgProps: PlasmicAdmin__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "後台管理",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 
