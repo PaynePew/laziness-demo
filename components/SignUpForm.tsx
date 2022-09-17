@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useRouter } from "next/router";
-import { supabase } from "../utils/supabaseClient";
+import { supabaseClient } from "@supabase/auth-helpers-nextjs";
 import { AuthError } from "@supabase/supabase-js";
 
 import {
@@ -68,7 +68,7 @@ function SignUpForm_(props: SignUpFormProps, ref: HTMLElementRefOf<"div">) {
           try {
             let authFunction;
             console.log("inside isSignUp");
-            authFunction = await supabase.auth.signUp({ email, password });
+            authFunction = await supabaseClient.auth.signUp({ email, password });
             console.log("auth", authFunction);
 
             const { error } = authFunction;
@@ -94,7 +94,7 @@ function SignUpForm_(props: SignUpFormProps, ref: HTMLElementRefOf<"div">) {
           try {
             let authFunction;
             console.log("inside isSignUp");
-            authFunction = await supabase.auth.signUp({ email, password });
+            authFunction = await supabaseClient.auth.signUp({ email, password });
             console.log("auth", authFunction);
             const { error } = authFunction;
             console.log("error", error);

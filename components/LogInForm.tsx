@@ -5,7 +5,7 @@ import {
   DefaultLogInFormProps,
 } from "./plasmic/laziness_demo/PlasmicLogInForm";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
-import { supabase } from "../utils/supabaseClient";
+import { supabaseClient } from "@supabase/auth-helpers-nextjs";
 import { AuthError } from "@supabase/supabase-js";
 
 export interface LogInFormProps extends DefaultLogInFormProps {}
@@ -40,9 +40,9 @@ function LogInForm_(props: LogInFormProps, ref: HTMLElementRefOf<"div">) {
           try {
             let authFunction;
             if (props.isSignUpFlow) {
-              authFunction = await supabase.auth.signUp({ email, password });
+              authFunction = await supabaseClient.auth.signUp({ email, password });
             } else {
-              authFunction = await supabase.auth.signInWithPassword({
+              authFunction = await supabaseClient.auth.signInWithPassword({
                 email,
                 password,
               });

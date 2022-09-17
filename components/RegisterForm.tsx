@@ -6,7 +6,7 @@ import {
   DefaultRegisterFormProps,
 } from "./plasmic/laziness_demo/PlasmicRegisterForm";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
-import { supabase } from "../utils/supabaseClient";
+import { supabaseClient } from "@supabase/auth-helpers-nextjs";
 import { AuthError } from "@supabase/supabase-js";
 
 export interface RegisterFormProps extends DefaultRegisterFormProps {}
@@ -73,7 +73,7 @@ function RegisterForm_(props: RegisterFormProps, ref: HTMLElementRefOf<"div">) {
             if (isSignUp) {
               // todo!!! error handling
               // todo!!! email confirm page
-              authFunction = await supabase.auth.signUp({
+              authFunction = await supabaseClient.auth.signUp({
                 email,
                 password,
                 options: {
@@ -89,7 +89,7 @@ function RegisterForm_(props: RegisterFormProps, ref: HTMLElementRefOf<"div">) {
               console.log("authfunction", authFunction);
             } else {
               console.log("loginflow");
-              authFunction = await supabase.auth.signInWithPassword({
+              authFunction = await supabaseClient.auth.signInWithPassword({
                 email,
                 password,
               });
