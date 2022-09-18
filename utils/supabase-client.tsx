@@ -14,7 +14,7 @@ export const getIsAdmin = async () => {
 
 export const getUsers = async () => {
   let { data, error } = await supabaseClient
-    .from("profiles_private")
+    .from<Profile_Private>("profiles_private")
     .select("*");
 
   if (error) {

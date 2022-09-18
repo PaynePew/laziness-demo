@@ -1,18 +1,21 @@
 import "../styles/globals.css";
 import { PlasmicRootProvider } from "@plasmicapp/react-web";
 import GlobalContextsProvider from "../components/plasmic/laziness_demo/PlasmicGlobalContextsProvider";
+
 import { useEffect } from "react";
 import Script from "next/script";
 import { useRouter } from "next/router";
+import { AppProps } from "next/app";
+
 import * as gtag from "../lib/gtag";
 import { UserProvider } from "@supabase/auth-helpers-react";
 import { supabaseClient } from "@supabase/auth-helpers-nextjs";
 import { CustomUserContextProvider } from "../utils/useUser";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: string) => {
       gtag.pageview(url);
     };
     router.events.on("routeChangeComplete", handleRouteChange);
