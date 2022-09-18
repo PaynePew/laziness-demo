@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
 import { UserProvider } from "@supabase/auth-helpers-react";
 import { supabaseClient } from "@supabase/auth-helpers-nextjs";
+import { CustomUserContextProvider } from "../utils/useUser";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -43,7 +44,9 @@ function MyApp({ Component, pageProps }) {
       <PlasmicRootProvider>
         <GlobalContextsProvider>
           <UserProvider supabaseClient={supabaseClient}>
-            <Component {...pageProps} />
+            <CustomUserContextProvider supabaseClient={supabaseClient}>
+              <Component {...pageProps} />
+            </CustomUserContextProvider>
           </UserProvider>
         </GlobalContextsProvider>
       </PlasmicRootProvider>

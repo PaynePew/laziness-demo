@@ -7,7 +7,10 @@ import {
 } from "./plasmic/laziness_demo/PlasmicRegisterForm";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { supabaseClient } from "@supabase/auth-helpers-nextjs";
-import { AuthError } from "@supabase/supabase-js";
+// import { supabaseClient } from "@supabase/auth-helpers-nextjs";
+import { ApiError } from "@supabase/supabase-js";
+import { useUser } from "../utils/useUser";
+import { useUser as useSupaUser, User } from "@supabase/auth-helpers-react";
 
 export interface RegisterFormProps extends DefaultRegisterFormProps {}
 
@@ -20,7 +23,7 @@ function RegisterForm_(props: RegisterFormProps, ref: HTMLElementRefOf<"div">) {
   const [jobtitle, setJobtitle] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [address, setAddress] = React.useState("");
-  const [authError, setAuthError] = React.useState<AuthError>();
+  const [authError, setAuthError] = React.useState<ApiError | null>(null);
   const [loading, setLoading] = React.useState(false);
   const [isSignUp, setIsSignUp] = React.useState(false);
 
@@ -67,16 +70,18 @@ function RegisterForm_(props: RegisterFormProps, ref: HTMLElementRefOf<"div">) {
         onClick: async (e) => {
           e.preventDefault();
           setLoading(true);
-          setAuthError(undefined);
+          setAuthError(null);
           try {
             let authFunction;
             if (isSignUp) {
               // todo!!! error handling
               // todo!!! email confirm page
-              authFunction = await supabaseClient.auth.signUp({
-                email,
-                password,
-                options: {
+              authFunction = await supabaseClient.auth.signUp(
+                {
+                  email,
+                  password,
+                },
+                {
                   data: {
                     user_name: name,
                     company: company,
@@ -84,16 +89,16 @@ function RegisterForm_(props: RegisterFormProps, ref: HTMLElementRefOf<"div">) {
                     phone: phone,
                     address: address,
                   },
-                },
-              });
+                }
+              );
               console.log("authfunction", authFunction);
             } else {
               console.log("loginflow");
-              authFunction = await supabaseClient.auth.signInWithPassword({
+              authFunction = await supabaseClient.auth.signIn({
                 email,
                 password,
               });
-              console.log(authFunction);
+              console.log("authFunction", authFunction);
             }
             const { error } = authFunction;
             console.log("error", error);
