@@ -36,12 +36,15 @@ import {
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
 import ResultCard from "../../ResultCard"; // plasmic-import: MYiOb2nF0s/component
+import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../landing_page_starter/plasmic_landing_page_starter.module.css"; // plasmic-import: qtkpEraJg2gN978YDtMYaP/projectcss
 import sty from "./PlasmicMember.module.css"; // plasmic-import: krho14hlwT/css
+
+import AppleIcon from "../landing_page_starter/icons/PlasmicIcon__Apple"; // plasmic-import: Zu9y5vY-DbAu23/icon
 
 export type PlasmicMember__VariantMembers = {};
 
@@ -60,6 +63,7 @@ export type PlasmicMember__OverridesType = {
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
   resultCard?: p.Flex<typeof ResultCard>;
+  logOutButton?: p.Flex<typeof Button>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -170,6 +174,15 @@ function PlasmicMember__RenderFunc(props: {
               data-plasmic-override={overrides.resultCard}
               className={classNames("__wab_instance", sty.resultCard)}
             />
+
+            <Button
+              data-plasmic-name={"logOutButton"}
+              data-plasmic-override={overrides.logOutButton}
+              className={classNames("__wab_instance", sty.logOutButton)}
+              color={"red" as const}
+            >
+              {"登出"}
+            </Button>
           </p.Stack>
 
           <FooterSection
@@ -191,13 +204,15 @@ const PlasmicDescendants = {
     "h2",
     "accountSection",
     "resultCard",
+    "logOutButton",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection", "resultCard"],
+  accountSection: ["accountSection", "resultCard", "logOutButton"],
   resultCard: ["resultCard"],
+  logOutButton: ["logOutButton"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -210,6 +225,7 @@ type NodeDefaultElementType = {
   h2: "h2";
   accountSection: "div";
   resultCard: typeof ResultCard;
+  logOutButton: typeof Button;
   footerSection: typeof FooterSection;
 };
 
@@ -279,6 +295,7 @@ export const PlasmicMember = Object.assign(
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
     resultCard: makeNodeComponent("resultCard"),
+    logOutButton: makeNodeComponent("logOutButton"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicMember

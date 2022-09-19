@@ -27,9 +27,9 @@ export const CustomUserContextProvider = (props: Props) => {
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
 
   useEffect(() => {
-    console.log("CustomUserContext Count");
     if (user && !isLoadingData && !userDetails) {
       setIsloadingData(true);
+      console.log("CustomUserContext Count");
       getUserDetails(user).then((result) => {
         setUserDetails(result);
       });

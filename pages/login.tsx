@@ -5,25 +5,27 @@ import * as ph from "@plasmicapp/host";
 import GlobalContextsProvider from "../components/plasmic/laziness_demo/PlasmicGlobalContextsProvider";
 import { ScreenVariantProvider } from "../components/plasmic/landing_page_starter/PlasmicGlobalVariant__Screen";
 import { PlasmicLogIn } from "../components/plasmic/laziness_demo/PlasmicLogIn";
+import { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
+import { getUser } from "@supabase/auth-helpers-nextjs";
+import { useUser as useSupaUser } from "@supabase/auth-helpers-react";
+import { useUser } from "../utils/useUser";
+import { getIsAdmin } from "../utils/supabase-server";
 
 function LogIn() {
-  // Use PlasmicLogIn to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicLogIn are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, PlasmicLogIn is wrapped by your project's global
-  // variant context providers. These wrappers may be moved to
-  // Next.js Custom App component
-  // (https://nextjs.org/docs/advanced-features/custom-app).
+  const router = useRouter();
+  // const { user, isLoading } = useSupaUser();
+  const { userDetails, isLoading } = useUser();
+  React.useEffect(() => {
+    if (userDetails && !isLoading) {
+      if (userDetails.isadmin) {
+        router.replace("/admin");
+        return;
+      }
+      router.replace("/member");
+    }
+  }, [userDetails]);
+
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
@@ -37,3 +39,38 @@ function LogIn() {
 }
 
 export default LogIn;
+
+// export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+//   const { user } = await getUser(ctx);
+//   const isAdmin = await getIsAdmin(ctx);
+//   console.log("user", user);
+//   console.log("isAdmin", isAdmin);
+//   if (user) {
+//     if (isAdmin) {
+//       return {
+//         redirect: { permanent: false, destination: "/admin" },
+//       };
+//     }
+//     return {
+//       redirect: { permanent: false, destination: "/member" },
+//     };
+//   }
+//   return {
+//     props: {},
+//   };
+// };
+
+// export const getServerSideProps = withPageAuth({
+//   redirectTo: "/login",
+//   async getServerSideProps(ctx) {
+//     const isAdmin = await getIsAdmin(ctx);
+//     if (isAdmin) {
+//       return {
+//         redirect: { permanent: false, destination: "/admin" },
+//       };
+//     }
+//     return {
+//       props: {},
+//     };
+//   },
+// });

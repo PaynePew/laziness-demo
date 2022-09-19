@@ -2,17 +2,7 @@ import { supabaseClient } from "@supabase/auth-helpers-nextjs";
 import { User } from "@supabase/auth-helpers-react";
 import { Profile_Private, UserDetails } from "../types";
 
-export const getIsAdmin = async () => {
-  let { data, error } = await supabaseClient.rpc("get_is_admin");
-
-  if (error) {
-    console.error(error);
-    throw error;
-  }
-  return data;
-};
-
-export const getUsers = async () => {
+export const getUsers = async (): Promise<UserDetails[] | null> => {
   let { data, error } = await supabaseClient
     .from<Profile_Private>("profiles_private")
     .select("*");
@@ -21,7 +11,6 @@ export const getUsers = async () => {
     console.error(error);
     throw error;
   }
-  console.log("users", data);
   return data;
 };
 
@@ -36,4 +25,12 @@ export const getUserDetails = async (user: User): Promise<UserDetails> => {
     throw error;
   }
   return data;
+};
+
+export const signOut = async () => {
+  const { error } = await supabaseClient.auth.signOut();
+  if (error) {
+    console.error(error);
+    throw error;
+  }
 };

@@ -180,6 +180,27 @@
   position: relative;
   object-fit: cover;
 }
+.logOutButton:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.svg__bjEo {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+}
+.text__s6JLb {
+  font-weight: 700;
+}
+.svg__wGbFa {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+}
 .footerSection:global(.__wab_instance) {
   position: relative;
 }

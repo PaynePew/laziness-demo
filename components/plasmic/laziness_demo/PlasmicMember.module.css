@@ -78,6 +78,22 @@
 .resultCard:global(.__wab_instance) {
   position: relative;
 }
+.logOutButton:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg___6HvDo {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+}
+.svg___8EDHq {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+}
 .footerSection:global(.__wab_instance) {
   position: relative;
 }

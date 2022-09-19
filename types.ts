@@ -8,6 +8,6 @@ export interface Profile_Private {
   phone?: string;
   email: string;
   address?: string;
-  isAdmin: boolean;
+  isadmin: boolean;
 }
 export interface UserDetails extends Profile_Private {}

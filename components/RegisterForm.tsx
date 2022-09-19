@@ -7,10 +7,8 @@ import {
 } from "./plasmic/laziness_demo/PlasmicRegisterForm";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { supabaseClient } from "@supabase/auth-helpers-nextjs";
-// import { supabaseClient } from "@supabase/auth-helpers-nextjs";
 import { ApiError } from "@supabase/supabase-js";
-import { useUser } from "../utils/useUser";
-import { useUser as useSupaUser, User } from "@supabase/auth-helpers-react";
+import { getURL } from "../utils/helpers";
 
 export interface RegisterFormProps extends DefaultRegisterFormProps {}
 
@@ -89,15 +87,21 @@ function RegisterForm_(props: RegisterFormProps, ref: HTMLElementRefOf<"div">) {
                     phone: phone,
                     address: address,
                   },
+                  // redirectTo is only for OAuth, further extension
+                  redirectTo: getURL(),
                 }
               );
               console.log("authfunction", authFunction);
             } else {
-              console.log("loginflow");
-              authFunction = await supabaseClient.auth.signIn({
-                email,
-                password,
-              });
+              console.log("loginflow", getURL());
+              authFunction = await supabaseClient.auth.signIn(
+                {
+                  email,
+                  password,
+                },
+                // redirectTo is only for OAuth, further extension
+                { redirectTo: getURL() }
+              );
               console.log("authFunction", authFunction);
             }
             const { error } = authFunction;
@@ -106,7 +110,6 @@ function RegisterForm_(props: RegisterFormProps, ref: HTMLElementRefOf<"div">) {
               setAuthError(error);
               return;
             }
-            // router.replace("/member");
           } catch (err: any) {
             setAuthError(err);
           } finally {

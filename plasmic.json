@@ -914,6 +914,11 @@
           "id": "ZopKvLJJag",
           "name": "PriceChart",
           "componentImportPath": "./components/PriceChart"
+        },
+        {
+          "id": "cGyIacytvy",
+          "name": "Fetcher",
+          "componentImportPath": "@plasmicapp/data-sources"
         }
       ]
     },

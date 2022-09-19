@@ -6,34 +6,58 @@ import GlobalContextsProvider from "../components/plasmic/laziness_demo/PlasmicG
 import { ScreenVariantProvider } from "../components/plasmic/landing_page_starter/PlasmicGlobalVariant__Screen";
 import { PlasmicAdmin } from "../components/plasmic/laziness_demo/PlasmicAdmin";
 import { useRouter } from "next/router";
+import { withPageAuth } from "@supabase/auth-helpers-nextjs";
+import { getIsAdmin } from "../utils/supabase-server";
+import { signOut } from "../utils/supabase-client";
+import { useUser } from "../utils/useUser";
+import { GetServerSidePropsContext } from "next";
 
 function Admin() {
-  // Use PlasmicAdmin to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicAdmin are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, PlasmicAdmin is wrapped by your project's global
-  // variant context providers. These wrappers may be moved to
-  // Next.js Custom App component
-  // (https://nextjs.org/docs/advanced-features/custom-app).
+  const router = useRouter();
+
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
         params={useRouter().query}
         query={useRouter().query}
       >
-        <PlasmicAdmin />
+        <PlasmicAdmin
+          logOutButton={{
+            onClick: () =>
+              signOut().then((_result) => router.replace("/login")),
+          }}
+        />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
   );
 }
 
 export default Admin;
+
+export const getServerSideProps = withPageAuth({
+  redirectTo: "/login",
+  async getServerSideProps(ctx) {
+    const isAdmin = await getIsAdmin(ctx);
+    if (!isAdmin) {
+      return {
+        redirect: { permanent: false, destination: "/" },
+      };
+    }
+    return {
+      props: {},
+    };
+  },
+});
+
+// export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+//   const isAdmin = await getIsAdmin(ctx);
+//   console.log("isAdmin", isAdmin);
+//   if (!isAdmin) {
+//     return {
+//       redirect: { permanent: false, destination: "/" },
+//     };
+//   }
+//   return {
+//     props: {},
+//   };
+// };

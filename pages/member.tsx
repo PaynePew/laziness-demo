@@ -6,8 +6,18 @@ import GlobalContextsProvider from "../components/plasmic/laziness_demo/PlasmicG
 import { ScreenVariantProvider } from "../components/plasmic/landing_page_starter/PlasmicGlobalVariant__Screen";
 import { PlasmicMember } from "../components/plasmic/laziness_demo/PlasmicMember";
 import { useRouter } from "next/router";
+import {
+  supabaseClient,
+  supabaseServerClient,
+  withPageAuth,
+  getUser,
+} from "@supabase/auth-helpers-nextjs";
+import { getIsAdmin } from "../utils/supabase-server";
+import { signOut } from "../utils/supabase-client";
 
 function Member() {
+  const router = useRouter();
+
 
   return (
     <GlobalContextsProvider>
@@ -15,10 +25,30 @@ function Member() {
         params={useRouter().query}
         query={useRouter().query}
       >
-        <PlasmicMember />
+        <PlasmicMember
+          logOutButton={{
+            onClick: () =>
+              signOut().then((_result) => router.replace("/login")),
+          }}
+        />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
   );
 }
 
 export default Member;
+
+export const getServerSideProps = withPageAuth({
+  redirectTo: "/login",
+  async getServerSideProps(ctx) {
+    const isAdmin = await getIsAdmin(ctx);
+    if (isAdmin) {
+      return {
+        redirect: { permanent: false, destination: "/admin" },
+      };
+    }
+    return {
+      props: {},
+    };
+  },
+});

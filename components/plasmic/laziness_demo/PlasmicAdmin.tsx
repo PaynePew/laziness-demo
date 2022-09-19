@@ -61,6 +61,7 @@ export type PlasmicAdmin__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
+  logOutButton?: p.Flex<typeof Button>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -219,6 +220,23 @@ function PlasmicAdmin__RenderFunc(props: {
                     {"新增會員資料"}
                   </div>
                 </Button>
+
+                <Button
+                  data-plasmic-name={"logOutButton"}
+                  data-plasmic-override={overrides.logOutButton}
+                  className={classNames("__wab_instance", sty.logOutButton)}
+                  color={"navLink" as const}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__s6JLb
+                    )}
+                  >
+                    {"登出"}
+                  </div>
+                </Button>
               </p.Stack>
             </div>
           </p.Stack>
@@ -241,12 +259,14 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "accountSection",
+    "logOutButton",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection"],
+  accountSection: ["accountSection", "logOutButton"],
+  logOutButton: ["logOutButton"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -258,6 +278,7 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   accountSection: "div";
+  logOutButton: typeof Button;
   footerSection: typeof FooterSection;
 };
 
@@ -326,6 +347,7 @@ export const PlasmicAdmin = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
+    logOutButton: makeNodeComponent("logOutButton"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicAdmin
