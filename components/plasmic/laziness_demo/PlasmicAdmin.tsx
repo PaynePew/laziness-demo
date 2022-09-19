@@ -206,22 +206,6 @@ function PlasmicAdmin__RenderFunc(props: {
                 </Button>
 
                 <Button
-                  className={classNames("__wab_instance", sty.button__dfBCj)}
-                  color={"pink" as const}
-                  link={`/admin/signup`}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zvgoM
-                    )}
-                  >
-                    {"新增會員資料"}
-                  </div>
-                </Button>
-
-                <Button
                   data-plasmic-name={"logOutButton"}
                   data-plasmic-override={overrides.logOutButton}
                   className={classNames("__wab_instance", sty.logOutButton)}

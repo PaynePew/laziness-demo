@@ -134,19 +134,6 @@
           "componentType": "component"
         },
         {
-          "id": "kaaNaks9l5Jr0_",
-          "name": "Testimonial",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/landing_page_starter/PlasmicTestimonial.tsx",
-          "importSpec": {
-            "modulePath": "Testimonial.tsx"
-          },
-          "cssFilePath": "plasmic/landing_page_starter/PlasmicTestimonial.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "6XRBcj5dbKAqQ0",
           "name": "CallToActionSection",
           "type": "managed",
@@ -435,19 +422,6 @@
           "componentType": "component"
         },
         {
-          "id": "ReJzREwAZMA",
-          "name": "AdminSignUp",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAdminSignUp.tsx",
-          "importSpec": {
-            "modulePath": "../pages/admin/signup.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicAdminSignUp.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "d8mQqWAV6f",
           "name": "PriceCalculator",
           "type": "managed",
@@ -485,19 +459,6 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicAdminReport.module.css",
           "scheme": "blackbox",
           "componentType": "page"
-        },
-        {
-          "id": "m5br8UXZfbX",
-          "name": "SignUpForm",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicSignUpForm.tsx",
-          "importSpec": {
-            "modulePath": "SignUpForm.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicSignUpForm.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
         },
         {
           "id": "CtTUSfG2PU6",

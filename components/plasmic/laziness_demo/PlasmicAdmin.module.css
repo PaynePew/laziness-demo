@@ -159,27 +159,6 @@
   position: relative;
   object-fit: cover;
 }
-.button__dfBCj:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-  width: 100%;
-  min-width: 0;
-}
-.svg__rbPuJ {
-  width: 24px;
-  height: 24px;
-  position: relative;
-  object-fit: cover;
-}
-.text__zvgoM {
-  font-weight: 700;
-}
-.svg__iPgw {
-  width: 24px;
-  height: 24px;
-  position: relative;
-  object-fit: cover;
-}
 .logOutButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
