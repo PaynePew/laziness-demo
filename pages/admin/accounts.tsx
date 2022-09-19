@@ -6,24 +6,14 @@ import GlobalContextsProvider from "../../components/plasmic/laziness_demo/Plasm
 import { ScreenVariantProvider } from "../../components/plasmic/landing_page_starter/PlasmicGlobalVariant__Screen";
 import { PlasmicAdminAccounts } from "../../components/plasmic/laziness_demo/PlasmicAdminAccounts";
 import { useRouter } from "next/router";
+import { getIsAdmin, getUsers } from "../../utils/supabase-server";
+import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
+import { UserDetails } from "../../types";
 
-function AdminAccounts() {
-  // Use PlasmicAdminAccounts to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicAdminAccounts are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, PlasmicAdminAccounts is wrapped by your project's global
-  // variant context providers. These wrappers may be moved to
-  // Next.js Custom App component
-  // (https://nextjs.org/docs/advanced-features/custom-app).
+function AdminAccounts({
+  users,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  console.log("all users", users);
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
@@ -37,3 +27,16 @@ function AdminAccounts() {
 }
 
 export default AdminAccounts;
+
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  const isAdmin = await getIsAdmin(ctx);
+  if (!isAdmin) {
+    return {
+      redirect: { permanent: false, destination: "/" },
+    };
+  }
+  const users = await getUsers(ctx);
+  return {
+    props: { users },
+  };
+};

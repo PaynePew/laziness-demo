@@ -11,7 +11,24 @@ export const getIsAdmin = async (ctx: GetServerSidePropsContext) => {
   return data;
 };
 
-export const getUserDetails = async (user: User): Promise<UserDetails> => {
+export const getUsers = async (
+  ctx: GetServerSidePropsContext
+): Promise<UserDetails[] | null> => {
+  let { data, error } = await supabaseServerClient(ctx)
+    .from<Profile_Private>("profiles_private")
+    .select("*");
+
+  if (error) {
+    console.error(error);
+    throw error;
+  }
+  return data;
+};
+
+export const getUserDetails = async (
+  user: User,
+  ctx: GetServerSidePropsContext
+): Promise<UserDetails> => {
   const { data, error } = await supabaseServerClient(ctx)
     .from<Profile_Private>("profiles_private")
     .select("*")

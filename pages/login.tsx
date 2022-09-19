@@ -5,16 +5,12 @@ import * as ph from "@plasmicapp/host";
 import GlobalContextsProvider from "../components/plasmic/laziness_demo/PlasmicGlobalContextsProvider";
 import { ScreenVariantProvider } from "../components/plasmic/landing_page_starter/PlasmicGlobalVariant__Screen";
 import { PlasmicLogIn } from "../components/plasmic/laziness_demo/PlasmicLogIn";
-import { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
-import { getUser } from "@supabase/auth-helpers-nextjs";
-import { useUser as useSupaUser } from "@supabase/auth-helpers-react";
 import { useUser } from "../utils/useUser";
-import { getIsAdmin } from "../utils/supabase-server";
+import LoadingPage from "../components/LoadingPage";
 
 function LogIn() {
   const router = useRouter();
-  // const { user, isLoading } = useSupaUser();
   const { userDetails, isLoading } = useUser();
   React.useEffect(() => {
     if (userDetails && !isLoading) {
@@ -23,8 +19,9 @@ function LogIn() {
         return;
       }
       router.replace("/member");
+      return;
     }
-  }, [userDetails]);
+  }, [userDetails, isLoading]);
 
   return (
     <GlobalContextsProvider>
@@ -32,45 +29,11 @@ function LogIn() {
         params={useRouter().query}
         query={useRouter().query}
       >
-        <PlasmicLogIn />
+        {/* todo:!!!if client side loading render not working and dont want to use swr, try server side */}
+        {userDetails ? <LoadingPage /> : <PlasmicLogIn />}
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
   );
 }
 
 export default LogIn;
-
-// export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-//   const { user } = await getUser(ctx);
-//   const isAdmin = await getIsAdmin(ctx);
-//   console.log("user", user);
-//   console.log("isAdmin", isAdmin);
-//   if (user) {
-//     if (isAdmin) {
-//       return {
-//         redirect: { permanent: false, destination: "/admin" },
-//       };
-//     }
-//     return {
-//       redirect: { permanent: false, destination: "/member" },
-//     };
-//   }
-//   return {
-//     props: {},
-//   };
-// };
-
-// export const getServerSideProps = withPageAuth({
-//   redirectTo: "/login",
-//   async getServerSideProps(ctx) {
-//     const isAdmin = await getIsAdmin(ctx);
-//     if (isAdmin) {
-//       return {
-//         redirect: { permanent: false, destination: "/admin" },
-//       };
-//     }
-//     return {
-//       props: {},
-//     };
-//   },
-// });

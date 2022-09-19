@@ -511,6 +511,19 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicRegisterForm.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "2-E2zw9NpK",
+          "name": "LoadingPage",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicLoadingPage.tsx",
+          "importSpec": {
+            "modulePath": "LoadingPage.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicLoadingPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

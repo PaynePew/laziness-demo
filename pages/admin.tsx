@@ -7,9 +7,9 @@ import { ScreenVariantProvider } from "../components/plasmic/landing_page_starte
 import { PlasmicAdmin } from "../components/plasmic/laziness_demo/PlasmicAdmin";
 import { useRouter } from "next/router";
 import { withPageAuth } from "@supabase/auth-helpers-nextjs";
-import { getIsAdmin } from "../utils/supabase-server";
 import { signOut } from "../utils/supabase-client";
 import { useUser } from "../utils/useUser";
+import { getIsAdmin } from "../utils/supabase-server";
 import { GetServerSidePropsContext } from "next";
 
 function Admin() {
@@ -33,31 +33,15 @@ function Admin() {
 }
 
 export default Admin;
-
-export const getServerSideProps = withPageAuth({
-  redirectTo: "/login",
-  async getServerSideProps(ctx) {
-    const isAdmin = await getIsAdmin(ctx);
-    if (!isAdmin) {
-      return {
-        redirect: { permanent: false, destination: "/" },
-      };
-    }
+// todo: !!try to merge nested page isAdmin logic
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  const isAdmin = await getIsAdmin(ctx);
+  if (!isAdmin) {
     return {
-      props: {},
+      redirect: { permanent: false, destination: "/" },
     };
-  },
-});
-
-// export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-//   const isAdmin = await getIsAdmin(ctx);
-//   console.log("isAdmin", isAdmin);
-//   if (!isAdmin) {
-//     return {
-//       redirect: { permanent: false, destination: "/" },
-//     };
-//   }
-//   return {
-//     props: {},
-//   };
-// };
+  }
+  return {
+    props: {},
+  };
+};

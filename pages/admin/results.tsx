@@ -6,6 +6,8 @@ import GlobalContextsProvider from "../../components/plasmic/laziness_demo/Plasm
 import { ScreenVariantProvider } from "../../components/plasmic/landing_page_starter/PlasmicGlobalVariant__Screen";
 import { PlasmicAdminResults } from "../../components/plasmic/laziness_demo/PlasmicAdminResults";
 import { useRouter } from "next/router";
+import { getIsAdmin } from "../../utils/supabase-server";
+import { GetServerSidePropsContext } from "next";
 
 function AdminResults() {
   // Use PlasmicAdminResults to render this component as it was
@@ -37,3 +39,15 @@ function AdminResults() {
 }
 
 export default AdminResults;
+
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  const isAdmin = await getIsAdmin(ctx);
+  if (!isAdmin) {
+    return {
+      redirect: { permanent: false, destination: "/" },
+    };
+  }
+  return {
+    props: {},
+  };
+};
