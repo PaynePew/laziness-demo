@@ -61,6 +61,7 @@ export type PlasmicAdminAccounts__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
+  accountCardList?: p.Flex<"div">;
   accountCard?: p.Flex<typeof AccountCard>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
@@ -242,12 +243,29 @@ function PlasmicAdminAccounts__RenderFunc(props: {
                 </p.Stack>
               ) : null}
 
-              <AccountCard
-                data-plasmic-name={"accountCard"}
-                data-plasmic-override={overrides.accountCard}
-                className={classNames("__wab_instance", sty.accountCard)}
-                email={"nlpam06@gmail.com"}
-              />
+              <div
+                data-plasmic-name={"accountCardList"}
+                data-plasmic-override={overrides.accountCardList}
+                className={classNames(projectcss.all, sty.accountCardList)}
+              >
+                <AccountCard
+                  data-plasmic-name={"accountCard"}
+                  data-plasmic-override={overrides.accountCard}
+                  className={classNames("__wab_instance", sty.accountCard)}
+                  email={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__luzNr,
+                        "text-wrap" as const
+                      )}
+                    >
+                      {"nlpam06@gmail.com"}
+                    </div>
+                  }
+                />
+              </div>
             </div>
           </p.Stack>
 
@@ -269,13 +287,15 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "accountSection",
+    "accountCardList",
     "accountCard",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection", "accountCard"],
+  accountSection: ["accountSection", "accountCardList", "accountCard"],
+  accountCardList: ["accountCardList", "accountCard"],
   accountCard: ["accountCard"],
   footerSection: ["footerSection"]
 } as const;
@@ -288,6 +308,7 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   accountSection: "div";
+  accountCardList: "div";
   accountCard: typeof AccountCard;
   footerSection: typeof FooterSection;
 };
@@ -357,6 +378,7 @@ export const PlasmicAdminAccounts = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
+    accountCardList: makeNodeComponent("accountCardList"),
     accountCard: makeNodeComponent("accountCard"),
     footerSection: makeNodeComponent("footerSection"),
 

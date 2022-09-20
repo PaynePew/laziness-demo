@@ -383,19 +383,6 @@
           "componentType": "page"
         },
         {
-          "id": "MYiOb2nF0s",
-          "name": "ResultCard",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicResultCard.tsx",
-          "importSpec": {
-            "modulePath": "ResultCard.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicResultCard.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "kctI_m0loCm",
           "name": "AdminAccounts",
           "type": "managed",
@@ -483,6 +470,19 @@
             "modulePath": "LoadingPage.tsx"
           },
           "cssFilePath": "plasmic/laziness_demo/PlasmicLoadingPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "MYiOb2nF0s",
+          "name": "ReportCard",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicReportCard.tsx",
+          "importSpec": {
+            "modulePath": "ReportCard.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicReportCard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }

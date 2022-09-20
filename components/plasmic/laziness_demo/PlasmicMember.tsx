@@ -35,7 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import ResultCard from "../../ResultCard"; // plasmic-import: MYiOb2nF0s/component
+import ReportCard from "../../ReportCard"; // plasmic-import: MYiOb2nF0s/component
 import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
@@ -62,7 +62,7 @@ export type PlasmicMember__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
-  resultCard?: p.Flex<typeof ResultCard>;
+  reportCard?: p.Flex<typeof ReportCard>;
   logOutButton?: p.Flex<typeof Button>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
@@ -169,10 +169,10 @@ function PlasmicMember__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.accountSection)}
           >
-            <ResultCard
-              data-plasmic-name={"resultCard"}
-              data-plasmic-override={overrides.resultCard}
-              className={classNames("__wab_instance", sty.resultCard)}
+            <ReportCard
+              data-plasmic-name={"reportCard"}
+              data-plasmic-override={overrides.reportCard}
+              className={classNames("__wab_instance", sty.reportCard)}
             />
 
             <Button
@@ -203,15 +203,15 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "accountSection",
-    "resultCard",
+    "reportCard",
     "logOutButton",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection", "resultCard", "logOutButton"],
-  resultCard: ["resultCard"],
+  accountSection: ["accountSection", "reportCard", "logOutButton"],
+  reportCard: ["reportCard"],
   logOutButton: ["logOutButton"],
   footerSection: ["footerSection"]
 } as const;
@@ -224,7 +224,7 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   accountSection: "div";
-  resultCard: typeof ResultCard;
+  reportCard: typeof ReportCard;
   logOutButton: typeof Button;
   footerSection: typeof FooterSection;
 };
@@ -294,7 +294,7 @@ export const PlasmicMember = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
-    resultCard: makeNodeComponent("resultCard"),
+    reportCard: makeNodeComponent("reportCard"),
     logOutButton: makeNodeComponent("logOutButton"),
     footerSection: makeNodeComponent("footerSection"),
 

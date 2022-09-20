@@ -75,7 +75,7 @@
   > img {
   margin-top: 64px;
 }
-.resultCard:global(.__wab_instance) {
+.reportCard:global(.__wab_instance) {
   position: relative;
 }
 .logOutButton:global(.__wab_instance) {

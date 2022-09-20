@@ -35,15 +35,13 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
+import ReportCard from "../../ReportCard"; // plasmic-import: MYiOb2nF0s/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../landing_page_starter/plasmic_landing_page_starter.module.css"; // plasmic-import: qtkpEraJg2gN978YDtMYaP/projectcss
 import sty from "./PlasmicAdminReport.module.css"; // plasmic-import: 0G2s1E43PqJ/css
-
-import AppleIcon from "../landing_page_starter/icons/PlasmicIcon__Apple"; // plasmic-import: Zu9y5vY-DbAu23/icon
 
 export type PlasmicAdminReport__VariantMembers = {};
 
@@ -61,6 +59,8 @@ export type PlasmicAdminReport__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
+  freeBox?: p.Flex<"div">;
+  reportCard?: p.Flex<typeof ReportCard>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -166,42 +166,16 @@ function PlasmicAdminReport__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.accountSection)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox___0CAvP)}>
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__z9Eq4)}
-              >
-                <Button
-                  className={classNames("__wab_instance", sty.button___7FJio)}
-                  color={"green" as const}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eFgv
-                    )}
-                  >
-                    {"會員資料管理"}
-                  </div>
-                </Button>
-
-                <Button
-                  className={classNames("__wab_instance", sty.button__lWjfD)}
-                  color={"blue" as const}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__g15Uh
-                    )}
-                  >
-                    {"估算成果上傳"}
-                  </div>
-                </Button>
-              </p.Stack>
+            <div
+              data-plasmic-name={"freeBox"}
+              data-plasmic-override={overrides.freeBox}
+              className={classNames(projectcss.all, sty.freeBox)}
+            >
+              <ReportCard
+                data-plasmic-name={"reportCard"}
+                data-plasmic-override={overrides.reportCard}
+                className={classNames("__wab_instance", sty.reportCard)}
+              />
             </div>
           </p.Stack>
 
@@ -223,12 +197,16 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "accountSection",
+    "freeBox",
+    "reportCard",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection"],
+  accountSection: ["accountSection", "freeBox", "reportCard"],
+  freeBox: ["freeBox", "reportCard"],
+  reportCard: ["reportCard"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -240,6 +218,8 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   accountSection: "div";
+  freeBox: "div";
+  reportCard: typeof ReportCard;
   footerSection: typeof FooterSection;
 };
 
@@ -308,6 +288,8 @@ export const PlasmicAdminReport = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
+    freeBox: makeNodeComponent("freeBox"),
+    reportCard: makeNodeComponent("reportCard"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicAdminReport

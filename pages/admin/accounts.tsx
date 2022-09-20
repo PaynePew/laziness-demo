@@ -9,18 +9,31 @@ import { useRouter } from "next/router";
 import { getIsAdmin, getUsers } from "../../utils/supabase-server";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import { UserDetails } from "../../types";
+import AccountCard from "../../components/AccountCard";
 
 function AdminAccounts({
   users,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log("all users", users);
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
         params={useRouter().query}
         query={useRouter().query}
       >
-        <PlasmicAdminAccounts />
+        <PlasmicAdminAccounts
+          accountCardList={{
+            children: users.map((user: UserDetails) => (
+              <AccountCard
+                key={user.id}
+                name={user.user_name}
+                company={user.company}
+                email={user.email}
+                phoneNumber={user.phone}
+                address={user.address}
+              />
+            )),
+          }}
+        />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
   );
