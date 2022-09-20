@@ -35,7 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import ReportCard from "../../ReportCard"; // plasmic-import: MYiOb2nF0s/component
+import DashboardProjectCard from "../../DashboardProjectCard"; // plasmic-import: MYiOb2nF0s/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -59,8 +59,8 @@ export type PlasmicAdminReport__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
-  freeBox?: p.Flex<"div">;
-  reportCard?: p.Flex<typeof ReportCard>;
+  projectCardList?: p.Flex<"div">;
+  dashboardProjectCard?: p.Flex<typeof DashboardProjectCard>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -166,17 +166,22 @@ function PlasmicAdminReport__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.accountSection)}
           >
-            <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"projectCardList"}
+              data-plasmic-override={overrides.projectCardList}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.projectCardList)}
             >
-              <ReportCard
-                data-plasmic-name={"reportCard"}
-                data-plasmic-override={overrides.reportCard}
-                className={classNames("__wab_instance", sty.reportCard)}
+              <DashboardProjectCard
+                data-plasmic-name={"dashboardProjectCard"}
+                data-plasmic-override={overrides.dashboardProjectCard}
+                className={classNames(
+                  "__wab_instance",
+                  sty.dashboardProjectCard
+                )}
               />
-            </div>
+            </p.Stack>
           </p.Stack>
 
           <FooterSection
@@ -197,16 +202,16 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "accountSection",
-    "freeBox",
-    "reportCard",
+    "projectCardList",
+    "dashboardProjectCard",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection", "freeBox", "reportCard"],
-  freeBox: ["freeBox", "reportCard"],
-  reportCard: ["reportCard"],
+  accountSection: ["accountSection", "projectCardList", "dashboardProjectCard"],
+  projectCardList: ["projectCardList", "dashboardProjectCard"],
+  dashboardProjectCard: ["dashboardProjectCard"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -218,8 +223,8 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   accountSection: "div";
-  freeBox: "div";
-  reportCard: typeof ReportCard;
+  projectCardList: "div";
+  dashboardProjectCard: typeof DashboardProjectCard;
   footerSection: typeof FooterSection;
 };
 
@@ -288,8 +293,8 @@ export const PlasmicAdminReport = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
-    freeBox: makeNodeComponent("freeBox"),
-    reportCard: makeNodeComponent("reportCard"),
+    projectCardList: makeNodeComponent("projectCardList"),
+    dashboardProjectCard: makeNodeComponent("dashboardProjectCard"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicAdminReport

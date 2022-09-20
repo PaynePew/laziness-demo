@@ -475,14 +475,14 @@
         },
         {
           "id": "MYiOb2nF0s",
-          "name": "ReportCard",
+          "name": "DashboardProjectCard",
           "type": "managed",
           "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicReportCard.tsx",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicDashboardProjectCard.tsx",
           "importSpec": {
-            "modulePath": "ReportCard.tsx"
+            "modulePath": "DashboardProjectCard.tsx"
           },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicReportCard.module.css",
+          "cssFilePath": "plasmic/laziness_demo/PlasmicDashboardProjectCard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }

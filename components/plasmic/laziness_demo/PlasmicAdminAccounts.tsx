@@ -243,9 +243,11 @@ function PlasmicAdminAccounts__RenderFunc(props: {
                 </p.Stack>
               ) : null}
 
-              <div
+              <p.Stack
+                as={"div"}
                 data-plasmic-name={"accountCardList"}
                 data-plasmic-override={overrides.accountCardList}
+                hasGap={true}
                 className={classNames(projectcss.all, sty.accountCardList)}
               >
                 <AccountCard
@@ -264,8 +266,9 @@ function PlasmicAdminAccounts__RenderFunc(props: {
                       {"nlpam06@gmail.com"}
                     </div>
                   }
+                  isProjectView={true}
                 />
-              </div>
+              </p.Stack>
             </div>
           </p.Stack>
 

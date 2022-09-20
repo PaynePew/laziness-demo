@@ -35,7 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import ReportCard from "../../ReportCard"; // plasmic-import: MYiOb2nF0s/component
+import DashboardProjectCard from "../../DashboardProjectCard"; // plasmic-import: MYiOb2nF0s/component
 import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
@@ -62,8 +62,10 @@ export type PlasmicMember__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
-  reportCard?: p.Flex<typeof ReportCard>;
+  dashboardProjectCard?: p.Flex<typeof DashboardProjectCard>;
+  freeBox?: p.Flex<"div">;
   logOutButton?: p.Flex<typeof Button>;
+  logOutButton2?: p.Flex<typeof Button>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -169,20 +171,37 @@ function PlasmicMember__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.accountSection)}
           >
-            <ReportCard
-              data-plasmic-name={"reportCard"}
-              data-plasmic-override={overrides.reportCard}
-              className={classNames("__wab_instance", sty.reportCard)}
+            <DashboardProjectCard
+              data-plasmic-name={"dashboardProjectCard"}
+              data-plasmic-override={overrides.dashboardProjectCard}
+              className={classNames("__wab_instance", sty.dashboardProjectCard)}
             />
 
-            <Button
-              data-plasmic-name={"logOutButton"}
-              data-plasmic-override={overrides.logOutButton}
-              className={classNames("__wab_instance", sty.logOutButton)}
-              color={"red" as const}
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"freeBox"}
+              data-plasmic-override={overrides.freeBox}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox)}
             >
-              {"登出"}
-            </Button>
+              <Button
+                data-plasmic-name={"logOutButton"}
+                data-plasmic-override={overrides.logOutButton}
+                className={classNames("__wab_instance", sty.logOutButton)}
+                color={"red" as const}
+              >
+                {"管理帳號"}
+              </Button>
+
+              <Button
+                data-plasmic-name={"logOutButton2"}
+                data-plasmic-override={overrides.logOutButton2}
+                className={classNames("__wab_instance", sty.logOutButton2)}
+                color={"red" as const}
+              >
+                {"登出"}
+              </Button>
+            </p.Stack>
           </p.Stack>
 
           <FooterSection
@@ -203,16 +222,26 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "accountSection",
-    "reportCard",
+    "dashboardProjectCard",
+    "freeBox",
     "logOutButton",
+    "logOutButton2",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection", "reportCard", "logOutButton"],
-  reportCard: ["reportCard"],
+  accountSection: [
+    "accountSection",
+    "dashboardProjectCard",
+    "freeBox",
+    "logOutButton",
+    "logOutButton2"
+  ],
+  dashboardProjectCard: ["dashboardProjectCard"],
+  freeBox: ["freeBox", "logOutButton", "logOutButton2"],
   logOutButton: ["logOutButton"],
+  logOutButton2: ["logOutButton2"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -224,8 +253,10 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   accountSection: "div";
-  reportCard: typeof ReportCard;
+  dashboardProjectCard: typeof DashboardProjectCard;
+  freeBox: "div";
   logOutButton: typeof Button;
+  logOutButton2: typeof Button;
   footerSection: typeof FooterSection;
 };
 
@@ -294,8 +325,10 @@ export const PlasmicMember = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
-    reportCard: makeNodeComponent("reportCard"),
+    dashboardProjectCard: makeNodeComponent("dashboardProjectCard"),
+    freeBox: makeNodeComponent("freeBox"),
     logOutButton: makeNodeComponent("logOutButton"),
+    logOutButton2: makeNodeComponent("logOutButton2"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicMember

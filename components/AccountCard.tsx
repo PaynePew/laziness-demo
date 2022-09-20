@@ -10,19 +10,16 @@ import { UserDetails } from "../types";
 
 export interface AccountCardProps extends DefaultAccountCardProps {}
 
-function AccountCard_(
-  props: AccountCardProps,
-  ref: HTMLElementRefOf<"div">
-) {
+function AccountCard_(props: AccountCardProps, ref: HTMLElementRefOf<"div">) {
+  const [isProjectView, setIsProjectView] = React.useState(false);
   return (
     <PlasmicAccountCard
+      isProjectView={isProjectView}
       root={{ ref }}
       {...props}
-      // company={user.company}
-      // name={user.user_name}
-      // phoneNumber={user.phone}
-      // address={user.address}
-      // email={user.email}
+      toggleButton={{
+        onClick: () => setIsProjectView(!isProjectView),
+      }}
     />
   );
 }

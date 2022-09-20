@@ -34,6 +34,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
+import DashboardProjectCard from "../../DashboardProjectCard"; // plasmic-import: MYiOb2nF0s/component
 
 import { useScreenVariants as useScreenVariantsnCpqQwRKrRf2Hx } from "../landing_page_starter/PlasmicGlobalVariant__Screen"; // plasmic-import: nCpqQwRKrRf2Hx/globalVariant
 
@@ -42,11 +44,21 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "../landing_page_starter/plasmic_landing_page_starter.module.css"; // plasmic-import: qtkpEraJg2gN978YDtMYaP/projectcss
 import sty from "./PlasmicAccountCard.module.css"; // plasmic-import: CKUgB3T9na/css
 
-export type PlasmicAccountCard__VariantMembers = {};
+import ChevronRightIcon from "../landing_page_starter/icons/PlasmicIcon__ChevronRight"; // plasmic-import: yLX3owivRxFuO1/icon
+import AppleIcon from "../landing_page_starter/icons/PlasmicIcon__Apple"; // plasmic-import: Zu9y5vY-DbAu23/icon
 
-export type PlasmicAccountCard__VariantsArgs = {};
+export type PlasmicAccountCard__VariantMembers = {
+  isProjectView: "isProjectView";
+};
+
+export type PlasmicAccountCard__VariantsArgs = {
+  isProjectView?: SingleBooleanChoiceArg<"isProjectView">;
+};
+
 type VariantPropType = keyof PlasmicAccountCard__VariantsArgs;
-export const PlasmicAccountCard__VariantProps = new Array<VariantPropType>();
+export const PlasmicAccountCard__VariantProps = new Array<VariantPropType>(
+  "isProjectView"
+);
 
 export type PlasmicAccountCard__ArgsType = {
   email?: React.ReactNode;
@@ -69,6 +81,11 @@ export const PlasmicAccountCard__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicAccountCard__OverridesType = {
   root?: p.Flex<"div">;
+  toggleButton?: p.Flex<"svg">;
+  editButton?: p.Flex<typeof Button>;
+  createProjectButton?: p.Flex<typeof Button>;
+  projectStack?: p.Flex<"div">;
+  dashboardProjectCard?: p.Flex<typeof DashboardProjectCard>;
 };
 
 export interface DefaultAccountCardProps {
@@ -78,6 +95,7 @@ export interface DefaultAccountCardProps {
   jobTitle?: React.ReactNode;
   phoneNumber?: React.ReactNode;
   address?: React.ReactNode;
+  isProjectView?: SingleBooleanChoiceArg<"isProjectView">;
   className?: string;
 }
 
@@ -124,72 +142,251 @@ function PlasmicAccountCard__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
-        sty.root
+        sty.root,
+        {
+          [sty.rootisProjectView]: hasVariant(
+            variants,
+            "isProjectView",
+            "isProjectView"
+          )
+        }
       )}
     >
-      <div className={classNames(projectcss.all, sty.freeBox__aOatv)}>
-        {p.renderPlasmicSlot({
-          defaultContents: "其相資訊工作室",
-          value: args.company
-        })}
-      </div>
+      {(
+        hasVariant(variants, "isProjectView", "isProjectView") ? true : true
+      ) ? (
+        <div
+          className={classNames(projectcss.all, sty.freeBox__vOdfl, {
+            [sty.freeBoxisProjectView__vOdflTrcB4]: hasVariant(
+              variants,
+              "isProjectView",
+              "isProjectView"
+            )
+          })}
+        >
+          <ChevronRightIcon
+            data-plasmic-name={"toggleButton"}
+            data-plasmic-override={overrides.toggleButton}
+            className={classNames(
+              projectcss.all,
+              sty.toggleButton,
+              "cursor-hover" as const,
+              {
+                [sty.toggleButtonisProjectView]: hasVariant(
+                  variants,
+                  "isProjectView",
+                  "isProjectView"
+                )
+              }
+            )}
+            role={"img"}
+          />
 
-      <div className={classNames(projectcss.all, sty.freeBox___77Luy)}>
-        {p.renderPlasmicSlot({
-          defaultContents: "潘南霖",
-          value: args.name,
-          className: classNames(sty.slotTargetName)
-        })}
-      </div>
+          <div
+            className={classNames(projectcss.all, sty.freeBox__aOatv, {
+              [sty.freeBoxisProjectView__aOatvTrcB4]: hasVariant(
+                variants,
+                "isProjectView",
+                "isProjectView"
+              )
+            })}
+          >
+            {p.renderPlasmicSlot({
+              defaultContents: "其相資訊工作室",
+              value: args.company
+            })}
+          </div>
 
-      <div className={classNames(projectcss.all, sty.freeBox___2PEge)}>
-        {p.renderPlasmicSlot({
-          defaultContents: "工程師",
-          value: args.jobTitle
-        })}
-      </div>
+          <div
+            className={classNames(projectcss.all, sty.freeBox___77Luy, {
+              [sty.freeBoxisProjectView___77LuyTrcB4]: hasVariant(
+                variants,
+                "isProjectView",
+                "isProjectView"
+              )
+            })}
+          >
+            {p.renderPlasmicSlot({
+              defaultContents: "潘南霖",
+              value: args.name,
+              className: classNames(sty.slotTargetName)
+            })}
+          </div>
 
-      <div
-        className={classNames(
-          projectcss.all,
-          sty.freeBox__wc02L,
-          "text-wrap" as const
-        )}
-      >
-        {true
-          ? p.renderPlasmicSlot({
-              defaultContents: "nlpam06@gmail.com",
-              value: args.email,
-              className: classNames(sty.slotTargetEmail)
-            })
-          : null}
-      </div>
+          <div
+            className={classNames(projectcss.all, sty.freeBox___2PEge, {
+              [sty.freeBoxisProjectView___2PEgeTrcB4]: hasVariant(
+                variants,
+                "isProjectView",
+                "isProjectView"
+              )
+            })}
+          >
+            {p.renderPlasmicSlot({
+              defaultContents: "工程師",
+              value: args.jobTitle
+            })}
+          </div>
 
-      <div className={classNames(projectcss.all, sty.freeBox___3Bg96)}>
-        {p.renderPlasmicSlot({
-          defaultContents: "0933-147-195",
-          value: args.phoneNumber
-        })}
-      </div>
+          <div
+            className={classNames(
+              projectcss.all,
+              sty.freeBox__wc02L,
+              "text-wrap" as const,
+              {
+                [sty.freeBoxisProjectView__wc02LTrcB4]: hasVariant(
+                  variants,
+                  "isProjectView",
+                  "isProjectView"
+                )
+              }
+            )}
+          >
+            {true
+              ? p.renderPlasmicSlot({
+                  defaultContents: "nlpam06@gmail.com",
+                  value: args.email,
+                  className: classNames(sty.slotTargetEmail)
+                })
+              : null}
+          </div>
 
-      <div className={classNames(projectcss.all, sty.freeBox___2DQkd)}>
-        {p.renderPlasmicSlot({
-          defaultContents: "桃園市八德區介壽路二段1233巷48弄16衖二號三樓",
-          value: args.address
-        })}
-      </div>
+          <div
+            className={classNames(projectcss.all, sty.freeBox___3Bg96, {
+              [sty.freeBoxisProjectView___3Bg96TrcB4]: hasVariant(
+                variants,
+                "isProjectView",
+                "isProjectView"
+              )
+            })}
+          >
+            {p.renderPlasmicSlot({
+              defaultContents: "0933-147-195",
+              value: args.phoneNumber
+            })}
+          </div>
+
+          <div
+            className={classNames(projectcss.all, sty.freeBox___2DQkd, {
+              [sty.freeBoxisProjectView___2DQkdTrcB4]: hasVariant(
+                variants,
+                "isProjectView",
+                "isProjectView"
+              )
+            })}
+          >
+            {p.renderPlasmicSlot({
+              defaultContents: "桃園市八德區介壽路二段1233巷48弄16衖二號三樓",
+              value: args.address
+            })}
+          </div>
+        </div>
+      ) : null}
+
+      {(
+        hasVariant(variants, "isProjectView", "isProjectView") ? true : true
+      ) ? (
+        <p.Stack
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__x1Qw5, {
+            [sty.freeBoxisProjectView__x1Qw5TrcB4]: hasVariant(
+              variants,
+              "isProjectView",
+              "isProjectView"
+            )
+          })}
+        >
+          <Button
+            data-plasmic-name={"editButton"}
+            data-plasmic-override={overrides.editButton}
+            className={classNames("__wab_instance", sty.editButton, {
+              [sty.editButtonisProjectView]: hasVariant(
+                variants,
+                "isProjectView",
+                "isProjectView"
+              )
+            })}
+            color={"red" as const}
+            extraSmallShadow={true}
+          >
+            {"編輯"}
+          </Button>
+
+          <Button
+            data-plasmic-name={"createProjectButton"}
+            data-plasmic-override={overrides.createProjectButton}
+            className={classNames("__wab_instance", sty.createProjectButton, {
+              [sty.createProjectButtonisProjectView]: hasVariant(
+                variants,
+                "isProjectView",
+                "isProjectView"
+              )
+            })}
+            color={"red" as const}
+            extraSmallShadow={true}
+          >
+            {"新增專案"}
+          </Button>
+        </p.Stack>
+      ) : null}
+
+      {(
+        hasVariant(variants, "isProjectView", "isProjectView") ? true : true
+      ) ? (
+        <div
+          data-plasmic-name={"projectStack"}
+          data-plasmic-override={overrides.projectStack}
+          className={classNames(projectcss.all, sty.projectStack, {
+            [sty.projectStackisProjectView]: hasVariant(
+              variants,
+              "isProjectView",
+              "isProjectView"
+            )
+          })}
+        >
+          <DashboardProjectCard
+            data-plasmic-name={"dashboardProjectCard"}
+            data-plasmic-override={overrides.dashboardProjectCard}
+            className={classNames("__wab_instance", sty.dashboardProjectCard, {
+              [sty.dashboardProjectCardisProjectView]: hasVariant(
+                variants,
+                "isProjectView",
+                "isProjectView"
+              )
+            })}
+          />
+        </div>
+      ) : null}
     </p.Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: [
+    "root",
+    "toggleButton",
+    "editButton",
+    "createProjectButton",
+    "projectStack",
+    "dashboardProjectCard"
+  ],
+  toggleButton: ["toggleButton"],
+  editButton: ["editButton"],
+  createProjectButton: ["createProjectButton"],
+  projectStack: ["projectStack", "dashboardProjectCard"],
+  dashboardProjectCard: ["dashboardProjectCard"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  toggleButton: "svg";
+  editButton: typeof Button;
+  createProjectButton: typeof Button;
+  projectStack: "div";
+  dashboardProjectCard: typeof DashboardProjectCard;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -253,6 +450,11 @@ export const PlasmicAccountCard = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    toggleButton: makeNodeComponent("toggleButton"),
+    editButton: makeNodeComponent("editButton"),
+    createProjectButton: makeNodeComponent("createProjectButton"),
+    projectStack: makeNodeComponent("projectStack"),
+    dashboardProjectCard: makeNodeComponent("dashboardProjectCard"),
 
     // Metadata about props expected for PlasmicAccountCard
     internalVariantProps: PlasmicAccountCard__VariantProps,
