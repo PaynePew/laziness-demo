@@ -6,19 +6,92 @@ import {
   DefaultAccountCardProps,
 } from "./plasmic/laziness_demo/PlasmicAccountCard";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import useSWR, { Fetcher } from "swr";
 import { UserDetails } from "../types";
+import { useUser } from "../utils/useUser";
+import { createProject } from "../utils/supabase-client";
 
 export interface AccountCardProps extends DefaultAccountCardProps {}
 
+const fetcher: Fetcher<UserDetails, string> = (url) =>
+  fetch(url).then((res) => res.json());
+
 function AccountCard_(props: AccountCardProps, ref: HTMLElementRefOf<"div">) {
+  const { isLoading, userDetails } = useUser();
   const [isProjectView, setIsProjectView] = React.useState(false);
+  const [isCreateProject, setIsCreateProject] = React.useState(false);
+  const [isError, setIsError] = React.useState(false);
+  const [projectName, setProjectName] = React.useState("");
+  const [price, setPrice] = React.useState("");
+  const [description, setDescription] = React.useState("");
+  const [supabaseError, setSupabaseError] = React.useState<string | null>(null);
+
+  // const { data, error } = useSWR("/api/projects", fetcher);
+
+  const handleCreateProject = async () => {
+    // todo: handle form error(not null and text limit)
+    setSupabaseError(null);
+    setIsError(false);
+    if (!projectName) {
+      setIsError(true);
+      setSupabaseError("請輸入專案名稱");
+      console.log("error", supabaseError);
+      return;
+    }
+    if (!isLoading && userDetails?.isadmin) {
+      const error = await createProject(
+        projectName,
+        +price,
+        description,
+        userDetails.id
+      );
+      if (error) {
+        setSupabaseError(error);
+        setIsError(true);
+        return;
+      }
+      setIsCreateProject(false);
+    }
+    setSupabaseError("沒有創立專案的權限");
+    setIsError(true);
+
+    // await fetch("/api/projects", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ projectName, price, description }),
+    // });
+  };
+
   return (
     <PlasmicAccountCard
       isProjectView={isProjectView}
+      isCreateProject={isCreateProject && isProjectView}
+      isError={isError && isCreateProject && isProjectView}
       root={{ ref }}
       {...props}
+      errorMessage={supabaseError}
       toggleButton={{
         onClick: () => setIsProjectView(!isProjectView),
+      }}
+      createProjectButton={{
+        onClick: () => setIsCreateProject(!isCreateProject),
+      }}
+      projectNameInput={{
+        value: projectName,
+        onChange: (e) => setProjectName(e.target.value),
+      }}
+      priceInput={{
+        value: price,
+        onChange: (e) => setPrice(e.target.value),
+      }}
+      descriptionInput={{
+        value: description,
+        onChange: (e) => setDescription(e.target.value),
+      }}
+      submitProjectButton={{
+        onClick: () => handleCreateProject(),
       }}
     />
   );

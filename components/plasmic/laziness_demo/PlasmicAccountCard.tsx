@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
+import TextInput from "../../TextInput"; // plasmic-import: f3MaxzneYzglDZ/component
 import DashboardProjectCard from "../../DashboardProjectCard"; // plasmic-import: MYiOb2nF0s/component
 
 import { useScreenVariants as useScreenVariantsnCpqQwRKrRf2Hx } from "../landing_page_starter/PlasmicGlobalVariant__Screen"; // plasmic-import: nCpqQwRKrRf2Hx/globalVariant
@@ -46,18 +47,26 @@ import sty from "./PlasmicAccountCard.module.css"; // plasmic-import: CKUgB3T9na
 
 import ChevronRightIcon from "../landing_page_starter/icons/PlasmicIcon__ChevronRight"; // plasmic-import: yLX3owivRxFuO1/icon
 import AppleIcon from "../landing_page_starter/icons/PlasmicIcon__Apple"; // plasmic-import: Zu9y5vY-DbAu23/icon
+import SearchIcon from "../landing_page_starter/icons/PlasmicIcon__Search"; // plasmic-import: lDxLgl1XFFiQRC/icon
+import CheckIcon from "../landing_page_starter/icons/PlasmicIcon__Check"; // plasmic-import: gHCuOW8JEryqrm/icon
 
 export type PlasmicAccountCard__VariantMembers = {
   isProjectView: "isProjectView";
+  isCreateProject: "isCreateProject";
+  isError: "isError";
 };
 
 export type PlasmicAccountCard__VariantsArgs = {
   isProjectView?: SingleBooleanChoiceArg<"isProjectView">;
+  isCreateProject?: SingleBooleanChoiceArg<"isCreateProject">;
+  isError?: SingleBooleanChoiceArg<"isError">;
 };
 
 type VariantPropType = keyof PlasmicAccountCard__VariantsArgs;
 export const PlasmicAccountCard__VariantProps = new Array<VariantPropType>(
-  "isProjectView"
+  "isProjectView",
+  "isCreateProject",
+  "isError"
 );
 
 export type PlasmicAccountCard__ArgsType = {
@@ -67,6 +76,7 @@ export type PlasmicAccountCard__ArgsType = {
   jobTitle?: React.ReactNode;
   phoneNumber?: React.ReactNode;
   address?: React.ReactNode;
+  errorMessage?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicAccountCard__ArgsType;
@@ -76,7 +86,8 @@ export const PlasmicAccountCard__ArgProps = new Array<ArgPropType>(
   "name",
   "jobTitle",
   "phoneNumber",
-  "address"
+  "address",
+  "errorMessage"
 );
 
 export type PlasmicAccountCard__OverridesType = {
@@ -84,6 +95,10 @@ export type PlasmicAccountCard__OverridesType = {
   toggleButton?: p.Flex<"svg">;
   editButton?: p.Flex<typeof Button>;
   createProjectButton?: p.Flex<typeof Button>;
+  submitProjectButton?: p.Flex<typeof Button>;
+  projectNameInput?: p.Flex<typeof TextInput>;
+  priceInput?: p.Flex<typeof TextInput>;
+  descriptionInput?: p.Flex<typeof TextInput>;
   projectStack?: p.Flex<"div">;
   dashboardProjectCard?: p.Flex<typeof DashboardProjectCard>;
 };
@@ -95,7 +110,10 @@ export interface DefaultAccountCardProps {
   jobTitle?: React.ReactNode;
   phoneNumber?: React.ReactNode;
   address?: React.ReactNode;
+  errorMessage?: React.ReactNode;
   isProjectView?: SingleBooleanChoiceArg<"isProjectView">;
+  isCreateProject?: SingleBooleanChoiceArg<"isCreateProject">;
+  isError?: SingleBooleanChoiceArg<"isError">;
   className?: string;
 }
 
@@ -144,6 +162,12 @@ function PlasmicAccountCard__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root,
         {
+          [sty.rootisCreateProject]: hasVariant(
+            variants,
+            "isCreateProject",
+            "isCreateProject"
+          ),
+          [sty.rootisError]: hasVariant(variants, "isError", "isError"),
           [sty.rootisProjectView]: hasVariant(
             variants,
             "isProjectView",
@@ -157,6 +181,19 @@ function PlasmicAccountCard__RenderFunc(props: {
       ) ? (
         <div
           className={classNames(projectcss.all, sty.freeBox__vOdfl, {
+            [sty.freeBoxisCreateProject__vOdflFiRto]: hasVariant(
+              variants,
+              "isCreateProject",
+              "isCreateProject"
+            ),
+            [sty.freeBoxisError__vOdfl08Nok]: hasVariant(
+              variants,
+              "isError",
+              "isError"
+            ),
+            [sty.freeBoxisError_isCreateProject__vOdfl08NokFiRto]:
+              hasVariant(variants, "isCreateProject", "isCreateProject") &&
+              hasVariant(variants, "isError", "isError"),
             [sty.freeBoxisProjectView__vOdflTrcB4]: hasVariant(
               variants,
               "isProjectView",
@@ -172,6 +209,16 @@ function PlasmicAccountCard__RenderFunc(props: {
               sty.toggleButton,
               "cursor-hover" as const,
               {
+                [sty.toggleButtonisCreateProject]: hasVariant(
+                  variants,
+                  "isCreateProject",
+                  "isCreateProject"
+                ),
+                [sty.toggleButtonisError]: hasVariant(
+                  variants,
+                  "isError",
+                  "isError"
+                ),
                 [sty.toggleButtonisProjectView]: hasVariant(
                   variants,
                   "isProjectView",
@@ -284,12 +331,34 @@ function PlasmicAccountCard__RenderFunc(props: {
       ) : null}
 
       {(
-        hasVariant(variants, "isProjectView", "isProjectView") ? true : true
+        hasVariant(variants, "isError", "isError")
+          ? true
+          : hasVariant(variants, "isCreateProject", "isCreateProject")
+          ? true
+          : hasVariant(variants, "isProjectView", "isProjectView")
+          ? true
+          : true
       ) ? (
         <p.Stack
           as={"div"}
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__x1Qw5, {
+            [sty.freeBoxisCreateProject__x1Qw5FiRto]: hasVariant(
+              variants,
+              "isCreateProject",
+              "isCreateProject"
+            ),
+            [sty.freeBoxisCreateProject_isProjectView__x1Qw5FiRtoTrcB4]:
+              hasVariant(variants, "isProjectView", "isProjectView") &&
+              hasVariant(variants, "isCreateProject", "isCreateProject"),
+            [sty.freeBoxisError__x1Qw508Nok]: hasVariant(
+              variants,
+              "isError",
+              "isError"
+            ),
+            [sty.freeBoxisError_isCreateProject__x1Qw508NokFiRto]:
+              hasVariant(variants, "isCreateProject", "isCreateProject") &&
+              hasVariant(variants, "isError", "isError"),
             [sty.freeBoxisProjectView__x1Qw5TrcB4]: hasVariant(
               variants,
               "isProjectView",
@@ -297,47 +366,265 @@ function PlasmicAccountCard__RenderFunc(props: {
             )
           })}
         >
-          <Button
-            data-plasmic-name={"editButton"}
-            data-plasmic-override={overrides.editButton}
-            className={classNames("__wab_instance", sty.editButton, {
-              [sty.editButtonisProjectView]: hasVariant(
-                variants,
-                "isProjectView",
-                "isProjectView"
-              )
-            })}
-            color={"red" as const}
-            extraSmallShadow={true}
-          >
-            {"編輯"}
-          </Button>
+          {(
+            hasVariant(variants, "isError", "isError")
+              ? true
+              : hasVariant(variants, "isCreateProject", "isCreateProject")
+              ? true
+              : true
+          ) ? (
+            <Button
+              data-plasmic-name={"editButton"}
+              data-plasmic-override={overrides.editButton}
+              className={classNames("__wab_instance", sty.editButton, {
+                [sty.editButtonisCreateProject]: hasVariant(
+                  variants,
+                  "isCreateProject",
+                  "isCreateProject"
+                ),
+                [sty.editButtonisError]: hasVariant(
+                  variants,
+                  "isError",
+                  "isError"
+                ),
+                [sty.editButtonisProjectView]: hasVariant(
+                  variants,
+                  "isProjectView",
+                  "isProjectView"
+                )
+              })}
+              color={"red" as const}
+              extraSmallShadow={true}
+            >
+              {"編輯"}
+            </Button>
+          ) : null}
 
-          <Button
-            data-plasmic-name={"createProjectButton"}
-            data-plasmic-override={overrides.createProjectButton}
-            className={classNames("__wab_instance", sty.createProjectButton, {
-              [sty.createProjectButtonisProjectView]: hasVariant(
-                variants,
-                "isProjectView",
-                "isProjectView"
-              )
-            })}
-            color={"red" as const}
-            extraSmallShadow={true}
-          >
-            {"新增專案"}
-          </Button>
+          {(
+            hasVariant(variants, "isError", "isError")
+              ? true
+              : hasVariant(variants, "isCreateProject", "isCreateProject")
+              ? true
+              : true
+          ) ? (
+            <Button
+              data-plasmic-name={"createProjectButton"}
+              data-plasmic-override={overrides.createProjectButton}
+              className={classNames("__wab_instance", sty.createProjectButton, {
+                [sty.createProjectButtonisCreateProject]: hasVariant(
+                  variants,
+                  "isCreateProject",
+                  "isCreateProject"
+                ),
+                [sty.createProjectButtonisError]: hasVariant(
+                  variants,
+                  "isError",
+                  "isError"
+                ),
+                [sty.createProjectButtonisProjectView]: hasVariant(
+                  variants,
+                  "isProjectView",
+                  "isProjectView"
+                )
+              })}
+              color={"red" as const}
+              extraSmallShadow={true}
+            >
+              {hasVariant(variants, "isError", "isError")
+                ? "取消"
+                : hasVariant(variants, "isCreateProject", "isCreateProject")
+                ? "取消"
+                : "新增專案"}
+            </Button>
+          ) : null}
+
+          {(
+            hasVariant(variants, "isProjectView", "isProjectView") &&
+            hasVariant(variants, "isCreateProject", "isCreateProject")
+              ? true
+              : hasVariant(variants, "isProjectView", "isProjectView")
+              ? true
+              : true
+          ) ? (
+            <Button
+              data-plasmic-name={"submitProjectButton"}
+              data-plasmic-override={overrides.submitProjectButton}
+              className={classNames("__wab_instance", sty.submitProjectButton, {
+                [sty.submitProjectButtonisCreateProject]: hasVariant(
+                  variants,
+                  "isCreateProject",
+                  "isCreateProject"
+                ),
+                [sty.submitProjectButtonisCreateProject_isProjectView]:
+                  hasVariant(variants, "isProjectView", "isProjectView") &&
+                  hasVariant(variants, "isCreateProject", "isCreateProject"),
+                [sty.submitProjectButtonisError]: hasVariant(
+                  variants,
+                  "isError",
+                  "isError"
+                ),
+                [sty.submitProjectButtonisProjectView]: hasVariant(
+                  variants,
+                  "isProjectView",
+                  "isProjectView"
+                )
+              })}
+              color={"red" as const}
+              extraSmallShadow={true}
+            >
+              {hasVariant(variants, "isError", "isError")
+                ? "建立專案"
+                : hasVariant(variants, "isCreateProject", "isCreateProject")
+                ? "建立專案"
+                : "新增專案"}
+            </Button>
+          ) : null}
+
+          {(
+            hasVariant(variants, "isCreateProject", "isCreateProject") &&
+            hasVariant(variants, "isError", "isError")
+              ? true
+              : hasVariant(variants, "isCreateProject", "isCreateProject")
+              ? true
+              : hasVariant(variants, "isProjectView", "isProjectView")
+              ? true
+              : true
+          ) ? (
+            <div
+              className={classNames(projectcss.all, sty.freeBox__cbxjf, {
+                [sty.freeBoxisCreateProject__cbxjfFiRto]: hasVariant(
+                  variants,
+                  "isCreateProject",
+                  "isCreateProject"
+                ),
+                [sty.freeBoxisError__cbxjf08Nok]: hasVariant(
+                  variants,
+                  "isError",
+                  "isError"
+                ),
+                [sty.freeBoxisError_isCreateProject__cbxjf08NokFiRto]:
+                  hasVariant(variants, "isCreateProject", "isCreateProject") &&
+                  hasVariant(variants, "isError", "isError"),
+                [sty.freeBoxisProjectView__cbxjfTrcB4]: hasVariant(
+                  variants,
+                  "isProjectView",
+                  "isProjectView"
+                )
+              })}
+            >
+              {p.renderPlasmicSlot({
+                defaultContents: "錯誤訊息",
+                value: args.errorMessage,
+                className: classNames(sty.slotTargetErrorMessage, {
+                  [sty.slotTargetErrorMessageisCreateProject]: hasVariant(
+                    variants,
+                    "isCreateProject",
+                    "isCreateProject"
+                  ),
+                  [sty.slotTargetErrorMessageisError]: hasVariant(
+                    variants,
+                    "isError",
+                    "isError"
+                  ),
+                  [sty.slotTargetErrorMessageisProjectView]: hasVariant(
+                    variants,
+                    "isProjectView",
+                    "isProjectView"
+                  )
+                })
+              })}
+            </div>
+          ) : null}
         </p.Stack>
       ) : null}
 
       {(
-        hasVariant(variants, "isProjectView", "isProjectView") ? true : true
+        hasVariant(variants, "isError", "isError")
+          ? true
+          : hasVariant(variants, "isCreateProject", "isCreateProject")
+          ? true
+          : true
+      ) ? (
+        <p.Stack
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox___83XVg, {
+            [sty.freeBoxisCreateProject___83XVgFiRto]: hasVariant(
+              variants,
+              "isCreateProject",
+              "isCreateProject"
+            ),
+            [sty.freeBoxisError___83XVg08Nok]: hasVariant(
+              variants,
+              "isError",
+              "isError"
+            )
+          })}
+        >
+          <TextInput
+            data-plasmic-name={"projectNameInput"}
+            data-plasmic-override={overrides.projectNameInput}
+            className={classNames("__wab_instance", sty.projectNameInput, {
+              [sty.projectNameInputisCreateProject]: hasVariant(
+                variants,
+                "isCreateProject",
+                "isCreateProject"
+              )
+            })}
+            placeholder={"專案名稱*" as const}
+          />
+
+          <TextInput
+            data-plasmic-name={"priceInput"}
+            data-plasmic-override={overrides.priceInput}
+            className={classNames("__wab_instance", sty.priceInput, {
+              [sty.priceInputisCreateProject]: hasVariant(
+                variants,
+                "isCreateProject",
+                "isCreateProject"
+              )
+            })}
+            placeholder={"總金額" as const}
+          />
+
+          <TextInput
+            data-plasmic-name={"descriptionInput"}
+            data-plasmic-override={overrides.descriptionInput}
+            className={classNames("__wab_instance", sty.descriptionInput, {
+              [sty.descriptionInputisCreateProject]: hasVariant(
+                variants,
+                "isCreateProject",
+                "isCreateProject"
+              )
+            })}
+            placeholder={"備註" as const}
+          />
+        </p.Stack>
+      ) : null}
+
+      {(
+        hasVariant(variants, "isError", "isError")
+          ? true
+          : hasVariant(variants, "isCreateProject", "isCreateProject")
+          ? true
+          : hasVariant(variants, "isProjectView", "isProjectView")
+          ? true
+          : true
       ) ? (
         <div
           data-plasmic-name={"projectStack"}
           data-plasmic-override={overrides.projectStack}
           className={classNames(projectcss.all, sty.projectStack, {
+            [sty.projectStackisCreateProject]: hasVariant(
+              variants,
+              "isCreateProject",
+              "isCreateProject"
+            ),
+            [sty.projectStackisError]: hasVariant(
+              variants,
+              "isError",
+              "isError"
+            ),
             [sty.projectStackisProjectView]: hasVariant(
               variants,
               "isProjectView",
@@ -349,6 +636,11 @@ function PlasmicAccountCard__RenderFunc(props: {
             data-plasmic-name={"dashboardProjectCard"}
             data-plasmic-override={overrides.dashboardProjectCard}
             className={classNames("__wab_instance", sty.dashboardProjectCard, {
+              [sty.dashboardProjectCardisCreateProject]: hasVariant(
+                variants,
+                "isCreateProject",
+                "isCreateProject"
+              ),
               [sty.dashboardProjectCardisProjectView]: hasVariant(
                 variants,
                 "isProjectView",
@@ -368,12 +660,20 @@ const PlasmicDescendants = {
     "toggleButton",
     "editButton",
     "createProjectButton",
+    "submitProjectButton",
+    "projectNameInput",
+    "priceInput",
+    "descriptionInput",
     "projectStack",
     "dashboardProjectCard"
   ],
   toggleButton: ["toggleButton"],
   editButton: ["editButton"],
   createProjectButton: ["createProjectButton"],
+  submitProjectButton: ["submitProjectButton"],
+  projectNameInput: ["projectNameInput"],
+  priceInput: ["priceInput"],
+  descriptionInput: ["descriptionInput"],
   projectStack: ["projectStack", "dashboardProjectCard"],
   dashboardProjectCard: ["dashboardProjectCard"]
 } as const;
@@ -385,6 +685,10 @@ type NodeDefaultElementType = {
   toggleButton: "svg";
   editButton: typeof Button;
   createProjectButton: typeof Button;
+  submitProjectButton: typeof Button;
+  projectNameInput: typeof TextInput;
+  priceInput: typeof TextInput;
+  descriptionInput: typeof TextInput;
   projectStack: "div";
   dashboardProjectCard: typeof DashboardProjectCard;
 };
@@ -453,6 +757,10 @@ export const PlasmicAccountCard = Object.assign(
     toggleButton: makeNodeComponent("toggleButton"),
     editButton: makeNodeComponent("editButton"),
     createProjectButton: makeNodeComponent("createProjectButton"),
+    submitProjectButton: makeNodeComponent("submitProjectButton"),
+    projectNameInput: makeNodeComponent("projectNameInput"),
+    priceInput: makeNodeComponent("priceInput"),
+    descriptionInput: makeNodeComponent("descriptionInput"),
     projectStack: makeNodeComponent("projectStack"),
     dashboardProjectCard: makeNodeComponent("dashboardProjectCard"),
 

@@ -11,3 +11,18 @@ export interface Profile_Private {
   isadmin: boolean;
 }
 export interface UserDetails extends Profile_Private {}
+
+export interface Projects {
+  id: string;
+  created_at?: Date;
+  project_name: string;
+  price: number;
+  description: string;
+  status: number;
+}
+
+export interface Projects_Users {
+  id: string; //primary key
+  project_id: string;
+  user_id: string;
+}

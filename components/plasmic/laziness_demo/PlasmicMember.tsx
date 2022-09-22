@@ -64,8 +64,8 @@ export type PlasmicMember__OverridesType = {
   accountSection?: p.Flex<"div">;
   dashboardProjectCard?: p.Flex<typeof DashboardProjectCard>;
   freeBox?: p.Flex<"div">;
-  logOutButton?: p.Flex<typeof Button>;
-  logOutButton2?: p.Flex<typeof Button>;
+  manageButton?: p.Flex<typeof Button>;
+  signOutButton?: p.Flex<typeof Button>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -185,18 +185,18 @@ function PlasmicMember__RenderFunc(props: {
               className={classNames(projectcss.all, sty.freeBox)}
             >
               <Button
-                data-plasmic-name={"logOutButton"}
-                data-plasmic-override={overrides.logOutButton}
-                className={classNames("__wab_instance", sty.logOutButton)}
+                data-plasmic-name={"manageButton"}
+                data-plasmic-override={overrides.manageButton}
+                className={classNames("__wab_instance", sty.manageButton)}
                 color={"red" as const}
               >
                 {"管理帳號"}
               </Button>
 
               <Button
-                data-plasmic-name={"logOutButton2"}
-                data-plasmic-override={overrides.logOutButton2}
-                className={classNames("__wab_instance", sty.logOutButton2)}
+                data-plasmic-name={"signOutButton"}
+                data-plasmic-override={overrides.signOutButton}
+                className={classNames("__wab_instance", sty.signOutButton)}
                 color={"red" as const}
               >
                 {"登出"}
@@ -224,8 +224,8 @@ const PlasmicDescendants = {
     "accountSection",
     "dashboardProjectCard",
     "freeBox",
-    "logOutButton",
-    "logOutButton2",
+    "manageButton",
+    "signOutButton",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
@@ -235,13 +235,13 @@ const PlasmicDescendants = {
     "accountSection",
     "dashboardProjectCard",
     "freeBox",
-    "logOutButton",
-    "logOutButton2"
+    "manageButton",
+    "signOutButton"
   ],
   dashboardProjectCard: ["dashboardProjectCard"],
-  freeBox: ["freeBox", "logOutButton", "logOutButton2"],
-  logOutButton: ["logOutButton"],
-  logOutButton2: ["logOutButton2"],
+  freeBox: ["freeBox", "manageButton", "signOutButton"],
+  manageButton: ["manageButton"],
+  signOutButton: ["signOutButton"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -255,8 +255,8 @@ type NodeDefaultElementType = {
   accountSection: "div";
   dashboardProjectCard: typeof DashboardProjectCard;
   freeBox: "div";
-  logOutButton: typeof Button;
-  logOutButton2: typeof Button;
+  manageButton: typeof Button;
+  signOutButton: typeof Button;
   footerSection: typeof FooterSection;
 };
 
@@ -327,8 +327,8 @@ export const PlasmicMember = Object.assign(
     accountSection: makeNodeComponent("accountSection"),
     dashboardProjectCard: makeNodeComponent("dashboardProjectCard"),
     freeBox: makeNodeComponent("freeBox"),
-    logOutButton: makeNodeComponent("logOutButton"),
-    logOutButton2: makeNodeComponent("logOutButton2"),
+    manageButton: makeNodeComponent("manageButton"),
+    signOutButton: makeNodeComponent("signOutButton"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicMember

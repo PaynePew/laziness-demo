@@ -106,7 +106,7 @@
   > img {
   margin-left: 12px;
 }
-.logOutButton:global(.__wab_instance) {
+.manageButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
@@ -122,7 +122,7 @@
   position: relative;
   object-fit: cover;
 }
-.logOutButton2:global(.__wab_instance) {
+.signOutButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }

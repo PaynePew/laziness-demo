@@ -41,7 +41,7 @@ function Member() {
           <LoadingPage />
         ) : (
           <PlasmicMember
-            logOutButton={{
+            signOutButton={{
               onClick: () =>
                 signOut().then((_result) => router.replace("/login")),
             }}

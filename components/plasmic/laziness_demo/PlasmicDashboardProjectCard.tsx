@@ -311,7 +311,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
         {(
           hasVariant(variants, "isProjectDetailView", "isProjectDetailView")
             ? true
-            : false
+            : true
         ) ? (
           <div
             className={classNames(projectcss.all, sty.freeBox__xUJap, {
@@ -331,7 +331,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
                 sty.statusTitle
               )}
             >
-              {"備註"}
+              {"狀態"}
             </div>
 
             <div

@@ -40,3 +40,4 @@ export const getUserDetails = async (
   }
   return data;
 };
+
