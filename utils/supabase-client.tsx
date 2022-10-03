@@ -46,7 +46,7 @@ export const createProject = async (
       price,
       description,
     };
-
+    // todo: project should belong to owners
     const { data: createdProjectData, error: creatProjectError } =
       await supabaseClient
         .from<Projects>("projects")

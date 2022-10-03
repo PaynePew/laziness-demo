@@ -24,6 +24,7 @@ function AdminAccounts({
           accountCardList={{
             children: users.map((user: UserDetails) => (
               <AccountCard
+                userId={user.id}
                 key={user.id}
                 name={user.user_name}
                 company={user.company}

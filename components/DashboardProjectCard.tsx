@@ -6,6 +6,11 @@ import {
   DefaultDashboardProjectCardProps,
 } from "./plasmic/laziness_demo/PlasmicDashboardProjectCard";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import useSWR, { Fetcher } from "swr";
+import { Projects } from "../types";
+
+const fetcher: Fetcher<Projects, string> = (url) =>
+  fetch(url, { method: "GET" }).then((res) => res.json());
 
 export interface DashboardProjectCardProps
   extends DefaultDashboardProjectCardProps {}
@@ -15,6 +20,8 @@ function DashboardProjectCard_(
   ref: HTMLElementRefOf<"div">
 ) {
   const [isProjectDetailView, setIsProjectDetailView] = React.useState(false);
+  // const { data, error } = useSWR("/api/getProjects", fetcher);
+  // console.log(data);
 
   return (
     <PlasmicDashboardProjectCard

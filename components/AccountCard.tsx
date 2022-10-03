@@ -7,14 +7,14 @@ import {
 } from "./plasmic/laziness_demo/PlasmicAccountCard";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import useSWR, { Fetcher } from "swr";
-import { UserDetails } from "../types";
+// import { UserDetails } from "../types";
 import { useUser } from "../utils/useUser";
 import { createProject } from "../utils/supabase-client";
 
 export interface AccountCardProps extends DefaultAccountCardProps {}
 
-const fetcher: Fetcher<UserDetails, string> = (url) =>
-  fetch(url).then((res) => res.json());
+// const fetcher: Fetcher<UserDetails, string> = (url) =>
+//   fetch(url, { method: "GET" }).then((res) => res.json());
 
 function AccountCard_(props: AccountCardProps, ref: HTMLElementRefOf<"div">) {
   const { isLoading, userDetails } = useUser();
@@ -25,8 +25,11 @@ function AccountCard_(props: AccountCardProps, ref: HTMLElementRefOf<"div">) {
   const [price, setPrice] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [supabaseError, setSupabaseError] = React.useState<string | null>(null);
+  const userId = props.userId;
 
-  // const { data, error } = useSWR("/api/projects", fetcher);
+  // const { data, error } = useSWR("/api/getProjects", fetcher);
+  // console.log(data);
+  const handleQueryProjects = async () => {};
 
   const handleCreateProject = async () => {
     // todo: handle form error(not null and text limit)
@@ -38,12 +41,12 @@ function AccountCard_(props: AccountCardProps, ref: HTMLElementRefOf<"div">) {
       console.log("error", supabaseError);
       return;
     }
-    if (!isLoading && userDetails?.isadmin) {
+    if (!isLoading && userDetails?.isadmin && userId) {
       const error = await createProject(
         projectName,
         +price,
         description,
-        userDetails.id
+        userId
       );
       if (error) {
         setSupabaseError(error);

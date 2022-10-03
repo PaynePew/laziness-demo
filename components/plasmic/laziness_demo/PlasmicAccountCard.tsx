@@ -77,6 +77,7 @@ export type PlasmicAccountCard__ArgsType = {
   phoneNumber?: React.ReactNode;
   address?: React.ReactNode;
   errorMessage?: React.ReactNode;
+  userId?: string;
 };
 
 type ArgPropType = keyof PlasmicAccountCard__ArgsType;
@@ -87,7 +88,8 @@ export const PlasmicAccountCard__ArgProps = new Array<ArgPropType>(
   "jobTitle",
   "phoneNumber",
   "address",
-  "errorMessage"
+  "errorMessage",
+  "userId"
 );
 
 export type PlasmicAccountCard__OverridesType = {
@@ -111,6 +113,7 @@ export interface DefaultAccountCardProps {
   phoneNumber?: React.ReactNode;
   address?: React.ReactNode;
   errorMessage?: React.ReactNode;
+  userId?: string;
   isProjectView?: SingleBooleanChoiceArg<"isProjectView">;
   isCreateProject?: SingleBooleanChoiceArg<"isCreateProject">;
   isError?: SingleBooleanChoiceArg<"isError">;
@@ -200,6 +203,7 @@ function PlasmicAccountCard__RenderFunc(props: {
               "isProjectView"
             )
           })}
+          id={"" as const}
         >
           <ChevronRightIcon
             data-plasmic-name={"toggleButton"}
