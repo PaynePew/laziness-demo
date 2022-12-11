@@ -63,7 +63,6 @@ export type PlasmicProject__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   projectSection?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -93,6 +92,10 @@ function PlasmicProject__RenderFunc(props: {
     ...args,
     ...variants
   };
+
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
@@ -184,10 +187,38 @@ function PlasmicProject__RenderFunc(props: {
               triggerOnce={true}
             >
               <ProjectCardDetail
+                category={null}
+                categoryTitle={null}
                 className={classNames(
                   "__wab_instance",
                   sty.projectCardDetail__j5WMy
                 )}
+                description={
+                  "工程結構：鋼骨結構+RC鋼筋混凝土\n建築樓層：4棟；L棟地上4層；N棟地上3層；M棟地上2層；K棟地上4層"
+                }
+                location={null}
+                locationTitle={null}
+                projectImage={
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__eivcK)}
+                    displayHeight={"auto" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"100%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"auto" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: "/plasmic/laziness_demo/images/水美工程觀音資源回收廠增建工程jpg.jpeg",
+                      fullWidth: 805,
+                      fullHeight: 410,
+                      aspectRatio: undefined
+                    }}
+                  />
+                }
+                projectSubImage={null}
+                title={"水美工程觀音資源回收廠增建工程"}
               />
             </Reveal>
 
@@ -197,11 +228,123 @@ function PlasmicProject__RenderFunc(props: {
               triggerOnce={true}
             >
               <ProjectCardDetail
+                category={null}
+                categoryTitle={null}
                 className={classNames(
                   "__wab_instance",
                   sty.projectCardDetail__kNLiV
                 )}
+                description={
+                  "工程結構：RC鋼筋混凝土\n建築樓層：地下3層，地上1層"
+                }
+                location={null}
+                locationTitle={null}
+                projectImage={
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__v96BG)}
+                    displayHeight={"auto" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"100%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"auto" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: "/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程jpg.jpeg",
+                      fullWidth: 805,
+                      fullHeight: 220,
+                      aspectRatio: undefined
+                    }}
+                  />
+                }
+                projectSubImage={
+                  <React.Fragment>
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img__iZssk)}
+                      displayHeight={"auto" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"auto" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: "/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程1Jpg.jpeg",
+                        fullWidth: 206,
+                        fullHeight: 125,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img___1LQnW)}
+                      displayHeight={"auto" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"auto" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: "/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程2Jpg.jpeg",
+                        fullWidth: 204,
+                        fullHeight: 124,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img__l8Jb)}
+                      displayHeight={"auto" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"auto" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: "/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程3Jpg.jpeg",
+                        fullWidth: 199,
+                        fullHeight: 124,
+                        aspectRatio: undefined
+                      }}
+                    />
+
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img__sLPdF)}
+                      displayHeight={"auto" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"auto" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: "/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程4Jpg.jpeg",
+                        fullWidth: 204,
+                        fullHeight: 121,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </React.Fragment>
+                }
                 revers={true}
+                title={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__nnuka
+                    )}
+                  >
+                    {"三重區重陽公園停車場新建統包工程"}
+                  </div>
+                }
               />
             </Reveal>
 
@@ -224,6 +367,7 @@ function PlasmicProject__RenderFunc(props: {
                     "__wab_instance",
                     sty.projectCardPrimary__nX0W
                   )}
+                  description={null}
                   location={
                     <div
                       className={classNames(
@@ -232,10 +376,34 @@ function PlasmicProject__RenderFunc(props: {
                         sty.text__c1I
                       )}
                     >
-                      {"青埔區|桃園市"}
+                      {"工程結構：RC鋼筋混凝土"}
                     </div>
                   }
-                  title={"桃園市大巨蛋改建估算"}
+                  projectImage={
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__yFef)}
+                    >
+                      <p.PlasmicImg
+                        alt={""}
+                        className={classNames(sty.img___3SZgb)}
+                        displayHeight={"100%" as const}
+                        displayMaxHeight={"none" as const}
+                        displayMaxWidth={"100%" as const}
+                        displayMinHeight={"0" as const}
+                        displayMinWidth={"0" as const}
+                        displayWidth={"100%" as const}
+                        loading={"lazy" as const}
+                        src={{
+                          src: "/plasmic/laziness_demo/images/大園區五塊厝集合住宅新建工程jpg.jpeg",
+                          fullWidth: 607,
+                          fullHeight: 215,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    </div>
+                  }
+                  subtitle={"建築樓層：2棟；地下2層，地上１1層"}
+                  title={"大園區五塊厝段集合住宅新建工程"}
                 />
               </Reveal>
 
@@ -253,6 +421,7 @@ function PlasmicProject__RenderFunc(props: {
                     "__wab_instance",
                     sty.projectCardPrimary__kJ8Zy
                   )}
+                  description={null}
                   location={
                     <div
                       className={classNames(
@@ -261,7 +430,7 @@ function PlasmicProject__RenderFunc(props: {
                         sty.text__w4Dy7
                       )}
                     >
-                      {"青埔區|桃園市"}
+                      {"工程結構：RC鋼筋混凝土"}
                     </div>
                   }
                   projectImage={
@@ -269,10 +438,8 @@ function PlasmicProject__RenderFunc(props: {
                       className={classNames(projectcss.all, sty.freeBox__l1Omf)}
                     >
                       <p.PlasmicImg
-                        data-plasmic-name={"img"}
-                        data-plasmic-override={overrides.img}
                         alt={""}
-                        className={classNames(sty.img)}
+                        className={classNames(sty.img__xubhu)}
                         displayHeight={"100%" as const}
                         displayMaxHeight={"none" as const}
                         displayMaxWidth={"100%" as const}
@@ -281,14 +448,16 @@ function PlasmicProject__RenderFunc(props: {
                         displayWidth={"100%" as const}
                         loading={"lazy" as const}
                         src={{
-                          src: "/plasmic/laziness_demo/images/bimStructure.webp",
-                          fullWidth: 7087,
-                          fullHeight: 5096,
+                          src: "/plasmic/laziness_demo/images/威鈞君藏集合式住宅案jpg.jpeg",
+                          fullWidth: 604,
+                          fullHeight: 195,
                           aspectRatio: undefined
                         }}
                       />
                     </div>
                   }
+                  subtitle={"建築樓層：地下３層，地上１９層"}
+                  title={"威鈞君藏集合式住宅案"}
                 />
               </Reveal>
             </p.Stack>
@@ -312,14 +481,12 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "projectSection",
-    "img",
     "footerSection"
   ],
   projectHeroSection: ["projectHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  projectSection: ["projectSection", "img"],
-  img: ["img"],
+  projectSection: ["projectSection"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -331,7 +498,6 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   projectSection: "div";
-  img: typeof p.PlasmicImg;
   footerSection: typeof FooterSection;
 };
 
@@ -400,7 +566,6 @@ export const PlasmicProject = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     projectSection: makeNodeComponent("projectSection"),
-    img: makeNodeComponent("img"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicProject

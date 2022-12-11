@@ -178,17 +178,6 @@
     margin-top: 0px;
   }
 }
-.reveal__jm1Ei:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: relative;
-  width: auto;
-}
-.text__quhx4 {
-  position: relative;
-  width: auto;
-  height: auto;
-}
 .reveal__fRaUl:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -204,7 +193,6 @@
   max-width: 100%;
   object-fit: cover;
   position: relative;
-  width: auto;
 }
 .text__qzYz {
   position: relative;
@@ -215,7 +203,6 @@
   max-width: 100%;
   object-fit: cover;
   position: relative;
-  width: auto;
 }
 .text__pvigX {
   position: relative;

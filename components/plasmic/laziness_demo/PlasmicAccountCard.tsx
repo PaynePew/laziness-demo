@@ -145,6 +145,35 @@ function PlasmicAccountCard__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "isProjectView",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.isProjectView
+      },
+
+      {
+        path: "isCreateProject",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.isCreateProject
+      },
+
+      {
+        path: "isError",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.isError
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });
@@ -166,39 +195,37 @@ function PlasmicAccountCard__RenderFunc(props: {
         sty.root,
         {
           [sty.rootisCreateProject]: hasVariant(
-            variants,
+            $state,
             "isCreateProject",
             "isCreateProject"
           ),
-          [sty.rootisError]: hasVariant(variants, "isError", "isError"),
+          [sty.rootisError]: hasVariant($state, "isError", "isError"),
           [sty.rootisProjectView]: hasVariant(
-            variants,
+            $state,
             "isProjectView",
             "isProjectView"
           )
         }
       )}
     >
-      {(
-        hasVariant(variants, "isProjectView", "isProjectView") ? true : true
-      ) ? (
+      {(hasVariant($state, "isProjectView", "isProjectView") ? true : true) ? (
         <div
           className={classNames(projectcss.all, sty.freeBox__vOdfl, {
             [sty.freeBoxisCreateProject__vOdflFiRto]: hasVariant(
-              variants,
+              $state,
               "isCreateProject",
               "isCreateProject"
             ),
             [sty.freeBoxisError__vOdfl08Nok]: hasVariant(
-              variants,
+              $state,
               "isError",
               "isError"
             ),
             [sty.freeBoxisError_isCreateProject__vOdfl08NokFiRto]:
-              hasVariant(variants, "isCreateProject", "isCreateProject") &&
-              hasVariant(variants, "isError", "isError"),
+              hasVariant($state, "isCreateProject", "isCreateProject") &&
+              hasVariant($state, "isError", "isError"),
             [sty.freeBoxisProjectView__vOdflTrcB4]: hasVariant(
-              variants,
+              $state,
               "isProjectView",
               "isProjectView"
             )
@@ -214,17 +241,17 @@ function PlasmicAccountCard__RenderFunc(props: {
               "cursor-hover" as const,
               {
                 [sty.toggleButtonisCreateProject]: hasVariant(
-                  variants,
+                  $state,
                   "isCreateProject",
                   "isCreateProject"
                 ),
                 [sty.toggleButtonisError]: hasVariant(
-                  variants,
+                  $state,
                   "isError",
                   "isError"
                 ),
                 [sty.toggleButtonisProjectView]: hasVariant(
-                  variants,
+                  $state,
                   "isProjectView",
                   "isProjectView"
                 )
@@ -236,7 +263,7 @@ function PlasmicAccountCard__RenderFunc(props: {
           <div
             className={classNames(projectcss.all, sty.freeBox__aOatv, {
               [sty.freeBoxisProjectView__aOatvTrcB4]: hasVariant(
-                variants,
+                $state,
                 "isProjectView",
                 "isProjectView"
               )
@@ -251,7 +278,7 @@ function PlasmicAccountCard__RenderFunc(props: {
           <div
             className={classNames(projectcss.all, sty.freeBox___77Luy, {
               [sty.freeBoxisProjectView___77LuyTrcB4]: hasVariant(
-                variants,
+                $state,
                 "isProjectView",
                 "isProjectView"
               )
@@ -267,7 +294,7 @@ function PlasmicAccountCard__RenderFunc(props: {
           <div
             className={classNames(projectcss.all, sty.freeBox___2PEge, {
               [sty.freeBoxisProjectView___2PEgeTrcB4]: hasVariant(
-                variants,
+                $state,
                 "isProjectView",
                 "isProjectView"
               )
@@ -286,7 +313,7 @@ function PlasmicAccountCard__RenderFunc(props: {
               "text-wrap" as const,
               {
                 [sty.freeBoxisProjectView__wc02LTrcB4]: hasVariant(
-                  variants,
+                  $state,
                   "isProjectView",
                   "isProjectView"
                 )
@@ -305,7 +332,7 @@ function PlasmicAccountCard__RenderFunc(props: {
           <div
             className={classNames(projectcss.all, sty.freeBox___3Bg96, {
               [sty.freeBoxisProjectView___3Bg96TrcB4]: hasVariant(
-                variants,
+                $state,
                 "isProjectView",
                 "isProjectView"
               )
@@ -320,7 +347,7 @@ function PlasmicAccountCard__RenderFunc(props: {
           <div
             className={classNames(projectcss.all, sty.freeBox___2DQkd, {
               [sty.freeBoxisProjectView___2DQkdTrcB4]: hasVariant(
-                variants,
+                $state,
                 "isProjectView",
                 "isProjectView"
               )
@@ -335,11 +362,11 @@ function PlasmicAccountCard__RenderFunc(props: {
       ) : null}
 
       {(
-        hasVariant(variants, "isError", "isError")
+        hasVariant($state, "isError", "isError")
           ? true
-          : hasVariant(variants, "isCreateProject", "isCreateProject")
+          : hasVariant($state, "isCreateProject", "isCreateProject")
           ? true
-          : hasVariant(variants, "isProjectView", "isProjectView")
+          : hasVariant($state, "isProjectView", "isProjectView")
           ? true
           : true
       ) ? (
@@ -348,32 +375,32 @@ function PlasmicAccountCard__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__x1Qw5, {
             [sty.freeBoxisCreateProject__x1Qw5FiRto]: hasVariant(
-              variants,
+              $state,
               "isCreateProject",
               "isCreateProject"
             ),
             [sty.freeBoxisCreateProject_isProjectView__x1Qw5FiRtoTrcB4]:
-              hasVariant(variants, "isProjectView", "isProjectView") &&
-              hasVariant(variants, "isCreateProject", "isCreateProject"),
+              hasVariant($state, "isProjectView", "isProjectView") &&
+              hasVariant($state, "isCreateProject", "isCreateProject"),
             [sty.freeBoxisError__x1Qw508Nok]: hasVariant(
-              variants,
+              $state,
               "isError",
               "isError"
             ),
             [sty.freeBoxisError_isCreateProject__x1Qw508NokFiRto]:
-              hasVariant(variants, "isCreateProject", "isCreateProject") &&
-              hasVariant(variants, "isError", "isError"),
+              hasVariant($state, "isCreateProject", "isCreateProject") &&
+              hasVariant($state, "isError", "isError"),
             [sty.freeBoxisProjectView__x1Qw5TrcB4]: hasVariant(
-              variants,
+              $state,
               "isProjectView",
               "isProjectView"
             )
           })}
         >
           {(
-            hasVariant(variants, "isError", "isError")
+            hasVariant($state, "isError", "isError")
               ? true
-              : hasVariant(variants, "isCreateProject", "isCreateProject")
+              : hasVariant($state, "isCreateProject", "isCreateProject")
               ? true
               : true
           ) ? (
@@ -382,17 +409,17 @@ function PlasmicAccountCard__RenderFunc(props: {
               data-plasmic-override={overrides.editButton}
               className={classNames("__wab_instance", sty.editButton, {
                 [sty.editButtonisCreateProject]: hasVariant(
-                  variants,
+                  $state,
                   "isCreateProject",
                   "isCreateProject"
                 ),
                 [sty.editButtonisError]: hasVariant(
-                  variants,
+                  $state,
                   "isError",
                   "isError"
                 ),
                 [sty.editButtonisProjectView]: hasVariant(
-                  variants,
+                  $state,
                   "isProjectView",
                   "isProjectView"
                 )
@@ -405,9 +432,9 @@ function PlasmicAccountCard__RenderFunc(props: {
           ) : null}
 
           {(
-            hasVariant(variants, "isError", "isError")
+            hasVariant($state, "isError", "isError")
               ? true
-              : hasVariant(variants, "isCreateProject", "isCreateProject")
+              : hasVariant($state, "isCreateProject", "isCreateProject")
               ? true
               : true
           ) ? (
@@ -416,17 +443,17 @@ function PlasmicAccountCard__RenderFunc(props: {
               data-plasmic-override={overrides.createProjectButton}
               className={classNames("__wab_instance", sty.createProjectButton, {
                 [sty.createProjectButtonisCreateProject]: hasVariant(
-                  variants,
+                  $state,
                   "isCreateProject",
                   "isCreateProject"
                 ),
                 [sty.createProjectButtonisError]: hasVariant(
-                  variants,
+                  $state,
                   "isError",
                   "isError"
                 ),
                 [sty.createProjectButtonisProjectView]: hasVariant(
-                  variants,
+                  $state,
                   "isProjectView",
                   "isProjectView"
                 )
@@ -434,19 +461,19 @@ function PlasmicAccountCard__RenderFunc(props: {
               color={"red" as const}
               extraSmallShadow={true}
             >
-              {hasVariant(variants, "isError", "isError")
+              {hasVariant($state, "isError", "isError")
                 ? "取消"
-                : hasVariant(variants, "isCreateProject", "isCreateProject")
+                : hasVariant($state, "isCreateProject", "isCreateProject")
                 ? "取消"
                 : "新增專案"}
             </Button>
           ) : null}
 
           {(
-            hasVariant(variants, "isProjectView", "isProjectView") &&
-            hasVariant(variants, "isCreateProject", "isCreateProject")
+            hasVariant($state, "isProjectView", "isProjectView") &&
+            hasVariant($state, "isCreateProject", "isCreateProject")
               ? true
-              : hasVariant(variants, "isProjectView", "isProjectView")
+              : hasVariant($state, "isProjectView", "isProjectView")
               ? true
               : true
           ) ? (
@@ -455,20 +482,20 @@ function PlasmicAccountCard__RenderFunc(props: {
               data-plasmic-override={overrides.submitProjectButton}
               className={classNames("__wab_instance", sty.submitProjectButton, {
                 [sty.submitProjectButtonisCreateProject]: hasVariant(
-                  variants,
+                  $state,
                   "isCreateProject",
                   "isCreateProject"
                 ),
                 [sty.submitProjectButtonisCreateProject_isProjectView]:
-                  hasVariant(variants, "isProjectView", "isProjectView") &&
-                  hasVariant(variants, "isCreateProject", "isCreateProject"),
+                  hasVariant($state, "isProjectView", "isProjectView") &&
+                  hasVariant($state, "isCreateProject", "isCreateProject"),
                 [sty.submitProjectButtonisError]: hasVariant(
-                  variants,
+                  $state,
                   "isError",
                   "isError"
                 ),
                 [sty.submitProjectButtonisProjectView]: hasVariant(
-                  variants,
+                  $state,
                   "isProjectView",
                   "isProjectView"
                 )
@@ -476,41 +503,41 @@ function PlasmicAccountCard__RenderFunc(props: {
               color={"red" as const}
               extraSmallShadow={true}
             >
-              {hasVariant(variants, "isError", "isError")
+              {hasVariant($state, "isError", "isError")
                 ? "建立專案"
-                : hasVariant(variants, "isCreateProject", "isCreateProject")
+                : hasVariant($state, "isCreateProject", "isCreateProject")
                 ? "建立專案"
                 : "新增專案"}
             </Button>
           ) : null}
 
           {(
-            hasVariant(variants, "isCreateProject", "isCreateProject") &&
-            hasVariant(variants, "isError", "isError")
+            hasVariant($state, "isCreateProject", "isCreateProject") &&
+            hasVariant($state, "isError", "isError")
               ? true
-              : hasVariant(variants, "isCreateProject", "isCreateProject")
+              : hasVariant($state, "isCreateProject", "isCreateProject")
               ? true
-              : hasVariant(variants, "isProjectView", "isProjectView")
+              : hasVariant($state, "isProjectView", "isProjectView")
               ? true
               : true
           ) ? (
             <div
               className={classNames(projectcss.all, sty.freeBox__cbxjf, {
                 [sty.freeBoxisCreateProject__cbxjfFiRto]: hasVariant(
-                  variants,
+                  $state,
                   "isCreateProject",
                   "isCreateProject"
                 ),
                 [sty.freeBoxisError__cbxjf08Nok]: hasVariant(
-                  variants,
+                  $state,
                   "isError",
                   "isError"
                 ),
                 [sty.freeBoxisError_isCreateProject__cbxjf08NokFiRto]:
-                  hasVariant(variants, "isCreateProject", "isCreateProject") &&
-                  hasVariant(variants, "isError", "isError"),
+                  hasVariant($state, "isCreateProject", "isCreateProject") &&
+                  hasVariant($state, "isError", "isError"),
                 [sty.freeBoxisProjectView__cbxjfTrcB4]: hasVariant(
-                  variants,
+                  $state,
                   "isProjectView",
                   "isProjectView"
                 )
@@ -521,17 +548,17 @@ function PlasmicAccountCard__RenderFunc(props: {
                 value: args.errorMessage,
                 className: classNames(sty.slotTargetErrorMessage, {
                   [sty.slotTargetErrorMessageisCreateProject]: hasVariant(
-                    variants,
+                    $state,
                     "isCreateProject",
                     "isCreateProject"
                   ),
                   [sty.slotTargetErrorMessageisError]: hasVariant(
-                    variants,
+                    $state,
                     "isError",
                     "isError"
                   ),
                   [sty.slotTargetErrorMessageisProjectView]: hasVariant(
-                    variants,
+                    $state,
                     "isProjectView",
                     "isProjectView"
                   )
@@ -543,9 +570,9 @@ function PlasmicAccountCard__RenderFunc(props: {
       ) : null}
 
       {(
-        hasVariant(variants, "isError", "isError")
+        hasVariant($state, "isError", "isError")
           ? true
-          : hasVariant(variants, "isCreateProject", "isCreateProject")
+          : hasVariant($state, "isCreateProject", "isCreateProject")
           ? true
           : true
       ) ? (
@@ -554,12 +581,12 @@ function PlasmicAccountCard__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox___83XVg, {
             [sty.freeBoxisCreateProject___83XVgFiRto]: hasVariant(
-              variants,
+              $state,
               "isCreateProject",
               "isCreateProject"
             ),
             [sty.freeBoxisError___83XVg08Nok]: hasVariant(
-              variants,
+              $state,
               "isError",
               "isError"
             )
@@ -570,7 +597,7 @@ function PlasmicAccountCard__RenderFunc(props: {
             data-plasmic-override={overrides.projectNameInput}
             className={classNames("__wab_instance", sty.projectNameInput, {
               [sty.projectNameInputisCreateProject]: hasVariant(
-                variants,
+                $state,
                 "isCreateProject",
                 "isCreateProject"
               )
@@ -583,7 +610,7 @@ function PlasmicAccountCard__RenderFunc(props: {
             data-plasmic-override={overrides.priceInput}
             className={classNames("__wab_instance", sty.priceInput, {
               [sty.priceInputisCreateProject]: hasVariant(
-                variants,
+                $state,
                 "isCreateProject",
                 "isCreateProject"
               )
@@ -596,7 +623,7 @@ function PlasmicAccountCard__RenderFunc(props: {
             data-plasmic-override={overrides.descriptionInput}
             className={classNames("__wab_instance", sty.descriptionInput, {
               [sty.descriptionInputisCreateProject]: hasVariant(
-                variants,
+                $state,
                 "isCreateProject",
                 "isCreateProject"
               )
@@ -607,11 +634,11 @@ function PlasmicAccountCard__RenderFunc(props: {
       ) : null}
 
       {(
-        hasVariant(variants, "isError", "isError")
+        hasVariant($state, "isError", "isError")
           ? true
-          : hasVariant(variants, "isCreateProject", "isCreateProject")
+          : hasVariant($state, "isCreateProject", "isCreateProject")
           ? true
-          : hasVariant(variants, "isProjectView", "isProjectView")
+          : hasVariant($state, "isProjectView", "isProjectView")
           ? true
           : true
       ) ? (
@@ -620,17 +647,13 @@ function PlasmicAccountCard__RenderFunc(props: {
           data-plasmic-override={overrides.projectStack}
           className={classNames(projectcss.all, sty.projectStack, {
             [sty.projectStackisCreateProject]: hasVariant(
-              variants,
+              $state,
               "isCreateProject",
               "isCreateProject"
             ),
-            [sty.projectStackisError]: hasVariant(
-              variants,
-              "isError",
-              "isError"
-            ),
+            [sty.projectStackisError]: hasVariant($state, "isError", "isError"),
             [sty.projectStackisProjectView]: hasVariant(
-              variants,
+              $state,
               "isProjectView",
               "isProjectView"
             )
@@ -641,12 +664,12 @@ function PlasmicAccountCard__RenderFunc(props: {
             data-plasmic-override={overrides.dashboardProjectCard}
             className={classNames("__wab_instance", sty.dashboardProjectCard, {
               [sty.dashboardProjectCardisCreateProject]: hasVariant(
-                variants,
+                $state,
                 "isCreateProject",
                 "isCreateProject"
               ),
               [sty.dashboardProjectCardisProjectView]: hasVariant(
-                variants,
+                $state,
                 "isProjectView",
                 "isProjectView"
               )

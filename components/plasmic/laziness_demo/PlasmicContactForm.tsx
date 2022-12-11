@@ -34,10 +34,10 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Divider from "../../Divider"; // plasmic-import: cTOkkRidcYFrIe/component
 import TextInput from "../../TextInput"; // plasmic-import: f3MaxzneYzglDZ/component
 import TextArea from "../../TextArea"; // plasmic-import: YKrmeOP35_5/component
 import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
+import Divider from "../../Divider"; // plasmic-import: cTOkkRidcYFrIe/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -68,6 +68,7 @@ export type PlasmicContactForm__OverridesType = {
   message?: p.Flex<typeof TextArea>;
   sendEmail?: p.Flex<typeof Button>;
   svg?: p.Flex<"svg">;
+  divider?: p.Flex<typeof Divider>;
 };
 
 export interface DefaultContactFormProps {
@@ -99,6 +100,10 @@ function PlasmicContactForm__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <p.Stack
       as={"div"}
@@ -129,10 +134,6 @@ function PlasmicContactForm__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.freeBox___9VagJ)}
           >
-            <Divider
-              className={classNames("__wab_instance", sty.divider__iqAAk)}
-            />
-
             <div
               className={classNames(
                 projectcss.all,
@@ -140,12 +141,8 @@ function PlasmicContactForm__RenderFunc(props: {
                 sty.text__gYx1
               )}
             >
-              {"Or"}
+              {"請留下想詢問的事項，我們會盡快與您聯絡"}
             </div>
-
-            <Divider
-              className={classNames("__wab_instance", sty.divider___5LlW)}
-            />
           </p.Stack>
 
           <p.Stack
@@ -204,7 +201,11 @@ function PlasmicContactForm__RenderFunc(props: {
           </Button>
         </p.Stack>
 
-        <Divider className={classNames("__wab_instance", sty.divider__lFtbd)} />
+        <Divider
+          data-plasmic-name={"divider"}
+          data-plasmic-override={overrides.divider}
+          className={classNames("__wab_instance", sty.divider)}
+        />
 
         <div className={classNames(projectcss.all, sty.freeBox___3V1Qb)}>
           <div
@@ -214,9 +215,7 @@ function PlasmicContactForm__RenderFunc(props: {
               sty.text__qbjef
             )}
           >
-            {
-              "A cras sagittis odio vestibulum pulvinar a eget hendrerit id vestibulum a leo sociosqu dictumst dictumst natoque magnis parturient."
-            }
+            {"營業時間:8:00AM~17:00PM"}
           </div>
         </div>
       </div>
@@ -233,7 +232,8 @@ const PlasmicDescendants = {
     "fromEmail",
     "message",
     "sendEmail",
-    "svg"
+    "svg",
+    "divider"
   ],
   requestForm: [
     "requestForm",
@@ -249,7 +249,8 @@ const PlasmicDescendants = {
   fromEmail: ["fromEmail"],
   message: ["message"],
   sendEmail: ["sendEmail", "svg"],
-  svg: ["svg"]
+  svg: ["svg"],
+  divider: ["divider"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -263,6 +264,7 @@ type NodeDefaultElementType = {
   message: typeof TextArea;
   sendEmail: typeof Button;
   svg: "svg";
+  divider: typeof Divider;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -333,6 +335,7 @@ export const PlasmicContactForm = Object.assign(
     message: makeNodeComponent("message"),
     sendEmail: makeNodeComponent("sendEmail"),
     svg: makeNodeComponent("svg"),
+    divider: makeNodeComponent("divider"),
 
     // Metadata about props expected for PlasmicContactForm
     internalVariantProps: PlasmicContactForm__VariantProps,

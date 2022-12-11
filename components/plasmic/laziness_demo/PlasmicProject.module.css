@@ -106,58 +106,6 @@
 .img__eivcK > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.img__g3Cqm {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  flex-shrink: 1;
-  flex-grow: 0;
-}
-.img__g3Cqm > picture > img {
-  object-fit: cover;
-}
-.img__g3Cqm > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.img__uj1F {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  flex-shrink: 1;
-  flex-grow: 0;
-}
-.img__uj1F > picture > img {
-  object-fit: cover;
-}
-.img__uj1F > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.img__te3Zf {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  flex-shrink: 1;
-  flex-grow: 0;
-}
-.img__te3Zf > picture > img {
-  object-fit: cover;
-}
-.img__te3Zf > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.img__yrfNw {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  flex-shrink: 1;
-  flex-grow: 0;
-}
-.img__yrfNw > picture > img {
-  object-fit: cover;
-}
-.img__yrfNw > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .reveal__u6T1:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -228,6 +176,9 @@
 }
 .img__sLPdF > :global(.__wab_img-spacer) > img {
   object-fit: cover;
+}
+.text__nnuka {
+  height: auto;
 }
 .freeBox__vQsK1 {
   flex-direction: row;
@@ -341,7 +292,7 @@
   max-width: 100%;
   min-width: 0;
 }
-.img {
+.img__xubhu {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -350,10 +301,10 @@
   min-width: 0;
   min-height: 0;
 }
-.img > picture > img {
+.img__xubhu > picture > img {
   object-fit: cover;
 }
-.img > :global(.__wab_img-spacer) > img {
+.img__xubhu > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .text__w4Dy7 {

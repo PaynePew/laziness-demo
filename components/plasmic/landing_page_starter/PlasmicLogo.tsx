@@ -94,6 +94,23 @@ function PlasmicLogo__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "_50Opaque",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props._50Opaque
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <p.PlasmicLink
       data-plasmic-name={"root"}
@@ -108,7 +125,7 @@ function PlasmicLogo__RenderFunc(props: {
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
         sty.root,
-        { [sty.root_50Opaque]: hasVariant(variants, "_50Opaque", "_50Opaque") }
+        { [sty.root_50Opaque]: hasVariant($state, "_50Opaque", "_50Opaque") }
       )}
       component={Link}
       href={`/`}

@@ -118,6 +118,29 @@ function PlasmicPriceCard__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "primary",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.primary
+      },
+
+      {
+        path: "borders",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.borders
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <div
       data-plasmic-name={"root"}
@@ -132,17 +155,13 @@ function PlasmicPriceCard__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root,
         {
-          [sty.rootborders_flatLeft]: hasVariant(
-            variants,
-            "borders",
-            "flatLeft"
-          ),
+          [sty.rootborders_flatLeft]: hasVariant($state, "borders", "flatLeft"),
           [sty.rootborders_flatRight]: hasVariant(
-            variants,
+            $state,
             "borders",
             "flatRight"
           ),
-          [sty.rootprimary]: hasVariant(variants, "primary", "primary")
+          [sty.rootprimary]: hasVariant($state, "primary", "primary")
         }
       )}
     >
@@ -250,7 +269,7 @@ function PlasmicPriceCard__RenderFunc(props: {
           data-plasmic-name={"button"}
           data-plasmic-override={overrides.button}
           color={
-            hasVariant(variants, "primary", "primary")
+            hasVariant($state, "primary", "primary")
               ? ("green" as const)
               : ("white" as const)
           }

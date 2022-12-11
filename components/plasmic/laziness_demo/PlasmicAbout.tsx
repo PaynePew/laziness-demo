@@ -61,6 +61,10 @@ export type PlasmicAbout__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   aboutSection?: p.Flex<"div">;
+  columns?: p.Flex<"div">;
+  h3?: p.Flex<"h3">;
+  text?: p.Flex<"div">;
+  img?: p.Flex<typeof p.PlasmicImg>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -90,6 +94,10 @@ function PlasmicAbout__RenderFunc(props: {
     ...args,
     ...variants
   };
+
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
@@ -183,38 +191,46 @@ function PlasmicAbout__RenderFunc(props: {
             >
               <p.Stack
                 as={"div"}
+                data-plasmic-name={"columns"}
+                data-plasmic-override={overrides.columns}
                 hasGap={true}
-                className={classNames(projectcss.all, sty.columns__ufLSg)}
+                className={classNames(projectcss.all, sty.columns)}
               >
                 <div className={classNames(projectcss.all, sty.column__ojrKk)}>
                   <h3
+                    data-plasmic-name={"h3"}
+                    data-plasmic-override={overrides.h3}
                     className={classNames(
                       projectcss.all,
                       projectcss.h3,
                       projectcss.__wab_text,
-                      sty.h3__jphLi
+                      sty.h3
                     )}
                   >
                     {"懶得算"}
                   </h3>
 
                   <div
+                    data-plasmic-name={"text"}
+                    data-plasmic-override={overrides.text}
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__u8Ydb
+                      sty.text
                     )}
                   >
                     {
-                      "於84年成立至今已有20多年的經驗，除擁有數十位『經驗豐富之估算工程師』外，更採用『專業營建管理系統軟體設備，由建築圖面轉工程數量計算，全面3D透視圖電腦化操作』提供營造建設單位，精確的成本估算，在營建工程上節省成本人力及提高效率，以降低公司營運成本，創造利潤，協助企業再造，提昇企業競爭力 。"
+                      "近年因國際情勢不穩定與疫情改變市場供應鏈生態，越來越多的台商回流。台灣政府也大力鼓勵台商回台設廠提出投資方案，相對帶動了國內廠房新建工程案的大幅增加。對於現行營造工程之投標亂象。本公司憑藉甲級營造管理證照及土木技師顧問，再加上本公司的專業團隊及實務經驗，將提供客戶更精準的資訊工法及最實務之工程標單，分析其差異但不干涉決標，以達到客戶最理想化之工程預算。"
                     }
                   </div>
                 </div>
 
                 <div className={classNames(projectcss.all, sty.column__u7Ak)}>
                   <p.PlasmicImg
+                    data-plasmic-name={"img"}
+                    data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img__btUk9)}
+                    className={classNames(sty.img)}
                     displayHeight={"auto" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"100%" as const}
@@ -229,63 +245,6 @@ function PlasmicAbout__RenderFunc(props: {
                       aspectRatio: undefined
                     }}
                   />
-                </div>
-              </p.Stack>
-            </Reveal>
-
-            <Reveal
-              className={classNames("__wab_instance", sty.reveal__zuE9I)}
-              direction={"up" as const}
-              triggerOnce={true}
-            >
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.columns___64W5Q)}
-              >
-                <div className={classNames(projectcss.all, sty.column__o8Tu)}>
-                  <p.PlasmicImg
-                    alt={""}
-                    className={classNames(sty.img__sO33R)}
-                    displayHeight={"auto" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"100%" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"auto" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: "/plasmic/laziness_demo/images/office4.webp",
-                      fullWidth: 6000,
-                      fullHeight: 4000,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </div>
-
-                <div className={classNames(projectcss.all, sty.column__fdW)}>
-                  <h3
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h3,
-                      projectcss.__wab_text,
-                      sty.h3__qXJxN
-                    )}
-                  >
-                    {"懶得算"}
-                  </h3>
-
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kicEo
-                    )}
-                  >
-                    {
-                      "於84年成立至今已有20多年的經驗，除擁有數十位『經驗豐富之估算工程師』外，更採用『專業營建管理系統軟體設備，由建築圖面轉工程數量計算，全面3D透視圖電腦化操作』提供營造建設單位，精確的成本估算，在營建工程上節省成本人力及提高效率，以降低公司營運成本，創造利潤，協助企業再造，提昇企業競爭力 。"
-                    }
-                  </div>
                 </div>
               </p.Stack>
             </Reveal>
@@ -309,12 +268,20 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "aboutSection",
+    "columns",
+    "h3",
+    "text",
+    "img",
     "footerSection"
   ],
   aboutHeroSection: ["aboutHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  aboutSection: ["aboutSection"],
+  aboutSection: ["aboutSection", "columns", "h3", "text", "img"],
+  columns: ["columns", "h3", "text", "img"],
+  h3: ["h3"],
+  text: ["text"],
+  img: ["img"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -326,6 +293,10 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   aboutSection: "div";
+  columns: "div";
+  h3: "h3";
+  text: "div";
+  img: typeof p.PlasmicImg;
   footerSection: typeof FooterSection;
 };
 
@@ -394,6 +365,10 @@ export const PlasmicAbout = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     aboutSection: makeNodeComponent("aboutSection"),
+    columns: makeNodeComponent("columns"),
+    h3: makeNodeComponent("h3"),
+    text: makeNodeComponent("text"),
+    img: makeNodeComponent("img"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicAbout

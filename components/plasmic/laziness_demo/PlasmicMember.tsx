@@ -96,6 +96,10 @@ function PlasmicMember__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <React.Fragment>
       <Head>
@@ -175,6 +179,7 @@ function PlasmicMember__RenderFunc(props: {
               data-plasmic-name={"dashboardProjectCard"}
               data-plasmic-override={overrides.dashboardProjectCard}
               className={classNames("__wab_instance", sty.dashboardProjectCard)}
+              isProjectDetailView={true}
             />
 
             <p.Stack

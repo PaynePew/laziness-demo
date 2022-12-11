@@ -111,6 +111,23 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "isProjectDetailView",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.isProjectDetailView
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });
@@ -132,7 +149,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
         sty.root,
         {
           [sty.rootisProjectDetailView]: hasVariant(
-            variants,
+            $state,
             "isProjectDetailView",
             "isProjectDetailView"
           )
@@ -142,7 +159,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
       <div
         className={classNames(projectcss.all, sty.freeBox__kDeGf, {
           [sty.freeBoxisProjectDetailView__kDeGffc3Aw]: hasVariant(
-            variants,
+            $state,
             "isProjectDetailView",
             "isProjectDetailView"
           )
@@ -157,7 +174,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
             "cursor-hover" as const,
             {
               [sty.toggleButtonisProjectDetailView]: hasVariant(
-                variants,
+                $state,
                 "isProjectDetailView",
                 "isProjectDetailView"
               )
@@ -169,7 +186,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
         <div
           className={classNames(projectcss.all, sty.freeBox__k7Xv8, {
             [sty.freeBoxisProjectDetailView__k7Xv8Fc3Aw]: hasVariant(
-              variants,
+              $state,
               "isProjectDetailView",
               "isProjectDetailView"
             )
@@ -184,7 +201,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
               sty.title,
               {
                 [sty.titleisProjectDetailView]: hasVariant(
-                  variants,
+                  $state,
                   "isProjectDetailView",
                   "isProjectDetailView"
                 )
@@ -203,7 +220,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
               sty.name,
               {
                 [sty.nameisProjectDetailView]: hasVariant(
-                  variants,
+                  $state,
                   "isProjectDetailView",
                   "isProjectDetailView"
                 )
@@ -217,7 +234,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
         <div
           className={classNames(projectcss.all, sty.freeBox__oYrc3, {
             [sty.freeBoxisProjectDetailView__oYrc3Fc3Aw]: hasVariant(
-              variants,
+              $state,
               "isProjectDetailView",
               "isProjectDetailView"
             )
@@ -277,7 +294,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
         <div
           className={classNames(projectcss.all, sty.freeBox__bNeK, {
             [sty.freeBoxisProjectDetailView__bNeKfc3Aw]: hasVariant(
-              variants,
+              $state,
               "isProjectDetailView",
               "isProjectDetailView"
             )
@@ -309,14 +326,14 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
         </div>
 
         {(
-          hasVariant(variants, "isProjectDetailView", "isProjectDetailView")
+          hasVariant($state, "isProjectDetailView", "isProjectDetailView")
             ? true
             : true
         ) ? (
           <div
             className={classNames(projectcss.all, sty.freeBox__xUJap, {
               [sty.freeBoxisProjectDetailView__xUJapFc3Aw]: hasVariant(
-                variants,
+                $state,
                 "isProjectDetailView",
                 "isProjectDetailView"
               )
@@ -350,7 +367,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
       </div>
 
       {(
-        hasVariant(variants, "isProjectDetailView", "isProjectDetailView")
+        hasVariant($state, "isProjectDetailView", "isProjectDetailView")
           ? true
           : true
       ) ? (
@@ -359,7 +376,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
           data-plasmic-override={overrides.memberStack}
           className={classNames(projectcss.all, sty.memberStack, {
             [sty.memberStackisProjectDetailView]: hasVariant(
-              variants,
+              $state,
               "isProjectDetailView",
               "isProjectDetailView"
             )
@@ -374,7 +391,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
               sty.text,
               {
                 [sty.textisProjectDetailView]: hasVariant(
-                  variants,
+                  $state,
                   "isProjectDetailView",
                   "isProjectDetailView"
                 )
@@ -393,7 +410,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
               sty.memberName,
               {
                 [sty.memberNameisProjectDetailView]: hasVariant(
-                  variants,
+                  $state,
                   "isProjectDetailView",
                   "isProjectDetailView"
                 )
@@ -406,7 +423,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
       ) : null}
 
       {(
-        hasVariant(variants, "isProjectDetailView", "isProjectDetailView")
+        hasVariant($state, "isProjectDetailView", "isProjectDetailView")
           ? true
           : true
       ) ? (
@@ -415,7 +432,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__nC6H, {
             [sty.freeBoxisProjectDetailView__nC6Hfc3Aw]: hasVariant(
-              variants,
+              $state,
               "isProjectDetailView",
               "isProjectDetailView"
             )
@@ -424,7 +441,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button___8G8Zh, {
               [sty.buttonisProjectDetailView___8G8ZhFc3Aw]: hasVariant(
-                variants,
+                $state,
                 "isProjectDetailView",
                 "isProjectDetailView"
               )
@@ -437,7 +454,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__vGjvj, {
               [sty.buttonisProjectDetailView__vGjvjFc3Aw]: hasVariant(
-                variants,
+                $state,
                 "isProjectDetailView",
                 "isProjectDetailView"
               )
@@ -450,7 +467,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__aBlR, {
               [sty.buttonisProjectDetailView__aBlRfc3Aw]: hasVariant(
-                variants,
+                $state,
                 "isProjectDetailView",
                 "isProjectDetailView"
               )
@@ -463,7 +480,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__jrP1O, {
               [sty.buttonisProjectDetailView__jrP1OFc3Aw]: hasVariant(
-                variants,
+                $state,
                 "isProjectDetailView",
                 "isProjectDetailView"
               )
@@ -476,7 +493,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
       ) : null}
 
       {(
-        hasVariant(variants, "isProjectDetailView", "isProjectDetailView")
+        hasVariant($state, "isProjectDetailView", "isProjectDetailView")
           ? true
           : false
       ) ? (
@@ -485,7 +502,7 @@ function PlasmicDashboardProjectCard__RenderFunc(props: {
           data-plasmic-override={overrides.fileStack}
           className={classNames(projectcss.all, sty.fileStack, {
             [sty.fileStackisProjectDetailView]: hasVariant(
-              variants,
+              $state,
               "isProjectDetailView",
               "isProjectDetailView"
             )

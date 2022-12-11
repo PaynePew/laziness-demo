@@ -121,6 +121,47 @@ function PlasmicValueProp__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "flatIcon",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.flatIcon
+      },
+
+      {
+        path: "vertical",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.vertical
+      },
+
+      {
+        path: "card",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.card
+      },
+
+      {
+        path: "noTitle",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.noTitle
+      },
+
+      {
+        path: "darkBackground",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.darkBackground
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <p.Stack
       as={"div"}
@@ -137,13 +178,13 @@ function PlasmicValueProp__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root,
         {
-          [sty.rootcard]: hasVariant(variants, "card", "card"),
-          [sty.rootflatIcon]: hasVariant(variants, "flatIcon", "flatIcon"),
-          [sty.rootnoTitle]: hasVariant(variants, "noTitle", "noTitle"),
-          [sty.rootvertical]: hasVariant(variants, "vertical", "vertical"),
+          [sty.rootcard]: hasVariant($state, "card", "card"),
+          [sty.rootflatIcon]: hasVariant($state, "flatIcon", "flatIcon"),
+          [sty.rootnoTitle]: hasVariant($state, "noTitle", "noTitle"),
+          [sty.rootvertical]: hasVariant($state, "vertical", "vertical"),
           [sty.rootvertical_card]:
-            hasVariant(variants, "card", "card") &&
-            hasVariant(variants, "vertical", "vertical")
+            hasVariant($state, "card", "card") &&
+            hasVariant($state, "vertical", "vertical")
         }
       )}
     >
@@ -151,20 +192,20 @@ function PlasmicValueProp__RenderFunc(props: {
         data-plasmic-name={"iconContainer"}
         data-plasmic-override={overrides.iconContainer}
         className={classNames(projectcss.all, sty.iconContainer, {
-          [sty.iconContainercard]: hasVariant(variants, "card", "card"),
+          [sty.iconContainercard]: hasVariant($state, "card", "card"),
           [sty.iconContainerflatIcon]: hasVariant(
-            variants,
+            $state,
             "flatIcon",
             "flatIcon"
           ),
           [sty.iconContainervertical]: hasVariant(
-            variants,
+            $state,
             "vertical",
             "vertical"
           ),
           [sty.iconContainervertical_card]:
-            hasVariant(variants, "card", "card") &&
-            hasVariant(variants, "vertical", "vertical")
+            hasVariant($state, "card", "card") &&
+            hasVariant($state, "vertical", "vertical")
         })}
       >
         {p.renderPlasmicSlot({
@@ -195,34 +236,34 @@ function PlasmicValueProp__RenderFunc(props: {
         hasGap={true}
         className={classNames(projectcss.all, sty.contentContainer, {
           [sty.contentContainerflatIcon]: hasVariant(
-            variants,
+            $state,
             "flatIcon",
             "flatIcon"
           ),
           [sty.contentContainernoTitle]: hasVariant(
-            variants,
+            $state,
             "noTitle",
             "noTitle"
           )
         })}
       >
-        {(hasVariant(variants, "noTitle", "noTitle") ? false : true)
+        {(hasVariant($state, "noTitle", "noTitle") ? false : true)
           ? p.renderPlasmicSlot({
               defaultContents: "Label",
               value: args.title,
               className: classNames(sty.slotTargetTitle, {
                 [sty.slotTargetTitledarkBackground]: hasVariant(
-                  variants,
+                  $state,
                   "darkBackground",
                   "darkBackground"
                 ),
                 [sty.slotTargetTitleflatIcon]: hasVariant(
-                  variants,
+                  $state,
                   "flatIcon",
                   "flatIcon"
                 ),
                 [sty.slotTargetTitlenoTitle]: hasVariant(
-                  variants,
+                  $state,
                   "noTitle",
                   "noTitle"
                 )
@@ -235,23 +276,19 @@ function PlasmicValueProp__RenderFunc(props: {
             "Porttitor feugiat a scelerisque nullam parturient vestibulum tempor a litora suscipit arcu potenti varius venenatis venenatis dapibus fames adipiscing in in taciti.",
           value: args.description,
           className: classNames(sty.slotTargetDescription, {
-            [sty.slotTargetDescriptioncard]: hasVariant(
-              variants,
-              "card",
-              "card"
-            ),
+            [sty.slotTargetDescriptioncard]: hasVariant($state, "card", "card"),
             [sty.slotTargetDescriptiondarkBackground]: hasVariant(
-              variants,
+              $state,
               "darkBackground",
               "darkBackground"
             ),
             [sty.slotTargetDescriptionflatIcon]: hasVariant(
-              variants,
+              $state,
               "flatIcon",
               "flatIcon"
             ),
             [sty.slotTargetDescriptionnoTitle]: hasVariant(
-              variants,
+              $state,
               "noTitle",
               "noTitle"
             )

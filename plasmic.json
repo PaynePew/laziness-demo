@@ -882,6 +882,46 @@
           "id": "GgcdSYaN5",
           "name": "懶得算_logo_ico_04_彩色橫排-figma.svg",
           "filePath": "../public/plasmic/laziness_demo/images/懶得算LogoIco04彩色橫排Figmasvg.svg"
+        },
+        {
+          "id": "HwVX9F5dH",
+          "name": "大園區五塊厝集合住宅新建工程.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/大園區五塊厝集合住宅新建工程jpg.jpeg"
+        },
+        {
+          "id": "onFN3Fl5L",
+          "name": "威鈞君藏集合式住宅案.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/威鈞君藏集合式住宅案jpg.jpeg"
+        },
+        {
+          "id": "5_7dTsV4B",
+          "name": "三重區重陽公園停車場新建統包工程-4.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程4Jpg.jpeg"
+        },
+        {
+          "id": "3EXyALPeV",
+          "name": "三重區重陽公園停車場新建統包工程.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程jpg.jpeg"
+        },
+        {
+          "id": "bD80Xygrs",
+          "name": "三重區重陽公園停車場新建統包工程-1.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程1Jpg.jpeg"
+        },
+        {
+          "id": "C_XIbYwbR",
+          "name": "三重區重陽公園停車場新建統包工程-2.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程2Jpg.jpeg"
+        },
+        {
+          "id": "fofZtdlnk",
+          "name": "三重區重陽公園停車場新建統包工程-3.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程3Jpg.jpeg"
+        },
+        {
+          "id": "POyKO24Xy",
+          "name": "水美工程觀音資源回收廠增建工程.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/水美工程觀音資源回收廠增建工程jpg.jpeg"
         }
       ],
       "indirect": false,
@@ -905,7 +945,7 @@
         {
           "id": "cGyIacytvy",
           "name": "Fetcher",
-          "componentImportPath": "@plasmicapp/data-sources"
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ]
     },
@@ -926,8 +966,7 @@
           "name": "EmbedCss",
           "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -961,8 +1000,7 @@
           "name": "DataProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
@@ -981,8 +1019,7 @@
           "name": "NavigationBar",
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -1001,8 +1038,7 @@
           "name": "Reveal",
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     }
   ],
   "globalVariants": {

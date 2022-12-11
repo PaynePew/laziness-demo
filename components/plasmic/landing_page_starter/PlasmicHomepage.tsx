@@ -98,6 +98,10 @@ function PlasmicHomepage__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });
@@ -204,31 +208,6 @@ function PlasmicHomepage__RenderFunc(props: {
                       cascade={false}
                       className={classNames(
                         "__wab_instance",
-                        sty.reveal__jm1Ei
-                      )}
-                      damping={undefined}
-                      delay={6600 as const}
-                      duration={2000 as const}
-                      effect={"fade" as const}
-                      reverse={false}
-                      triggerOnce={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__quhx4,
-                          "vertical-word" as const
-                        )}
-                      >
-                        {"有最好的回饋。​"}
-                      </div>
-                    </Reveal>
-
-                    <Reveal
-                      cascade={false}
-                      className={classNames(
-                        "__wab_instance",
                         sty.reveal__fRaUl
                       )}
                       damping={undefined}
@@ -246,7 +225,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           "vertical-word" as const
                         )}
                       >
-                        {"辛勤的汗水，​"}
+                        {"慵懶，​也可以與眾不同"}
                       </div>
                     </Reveal>
 
@@ -271,7 +250,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           "vertical-word" as const
                         )}
                       >
-                        {"讓我們的經驗幫助您，​"}
+                        {"精心打造完美極致，​"}
                       </div>
                     </Reveal>
 
@@ -296,7 +275,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           "vertical-word" as const
                         )}
                       >
-                        {"一土一方，一吋一長。"}
+                        {"盡心思考，悉心感受。"}
                       </div>
                     </Reveal>
 
@@ -321,7 +300,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           "vertical-word" as const
                         )}
                       >
-                        {"在每件工程中不斷累積，"}
+                        {"揮灑工程的汗水，成就工程的永恆"}
                       </div>
                     </Reveal>
 
@@ -345,7 +324,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           "vertical-word" as const
                         )}
                       >
-                        {"更快速及精確的掌握"}
+                        {"精算工程的價值，享受工程的奧妙"}
                       </h3>
                     </Reveal>
                   </p.Stack>
@@ -455,7 +434,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {
-                      "在一件一件的工程估算中，累積出的完善體制，深知成本掌控的各項細節。懶得算，希望每位客戶都能在此輕鬆獲取精確的估算資料，讓辛苦的汗水皆有所獲。"
+                      "工程預算為影響工程之脈絡，細心的清圖及釋疑，讓工程執行更為流暢，成本控制更為精確，工程品質更有保障。"
                     }
                   </div>
 
@@ -508,7 +487,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       "" as const
                     )}
                   >
-                    {"#各項施工圖配合"}
+                    {"#堅強專業的團隊"}
                   </h4>
 
                   <h2
@@ -520,7 +499,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       "" as const
                     )}
                   >
-                    {"專業營建管理系統"}
+                    {"專業營建管理"}
                   </h2>
 
                   <h6
@@ -543,7 +522,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {
-                      "汶源資訊所研發的一系列營建業ERP高階管理系統，自微軟DOS時代即已成熟普遍的被應用於臺灣的營建業市場，並普獲營建業界的認同、肯定與好評。(此為範例文字)"
+                      "本公司配有甲級工程營造管理證照，更擁有土木技師顧問，再藉由本公司優秀的估算人員，組成堅強無比專業的團隊。"
                     }
                   </div>
 
@@ -566,7 +545,6 @@ function PlasmicHomepage__RenderFunc(props: {
                 <Reveal
                   cascade={true}
                   className={classNames("__wab_instance", sty.reveal__dpSjK)}
-                  direction={"up" as const}
                   effect={"fade" as const}
                   triggerOnce={true}
                 >
@@ -586,7 +564,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       >
                         {hasVariant(globalVariants, "screen", "mobileOnly")
                           ? "結構估算(鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視)、裝修估算(室內及外裝修數量、分層、分戶)、工程預算書及標單編列。"
-                          : "結構估算(鋼筋、模板、混凝土數量估算、鋼筋施工圖檢視)、裝修估算(室內及外裝修數量、分層、分戶)、工程預算書及標單編列。"}
+                          : "結構體估算(鋼構、鋼筋、模板、混凝土數量)"}
                       </div>
                     }
                     heading={"專業的服務項目"}
@@ -646,9 +624,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           sty.text__g2JJk
                         )}
                       >
-                        {
-                          "至今累積超過五十件以上工程估算案例，您可以從過往的專案了解我們對於估算的嚴格把關。"
-                        }
+                        {"裝修估算(室內及外裝修數量)"}
                       </div>
                     }
                     heading={"不斷累積的專案經驗"}
@@ -688,9 +664,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       "__wab_instance",
                       sty.aboutCard__pRjb3
                     )}
-                    description={
-                      "從RC、SRC/SC、SS，每層樓地板面積的收費皆清楚列出，在報價及後續流程上都有專人為您解釋，可以更專心在專案執行上。"
-                    }
+                    description={"工程預算書及標單編列製作"}
                     heading={"清楚的收費方式"}
                     image={
                       <p.PlasmicImg

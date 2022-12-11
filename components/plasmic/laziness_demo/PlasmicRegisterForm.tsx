@@ -125,6 +125,35 @@ function PlasmicRegisterForm__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "isSignUpFlow",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.isSignUpFlow
+      },
+
+      {
+        path: "isLoading",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.isLoading
+      },
+
+      {
+        path: "isError",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.isError
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <p.Stack
       as={"div"}
@@ -141,13 +170,13 @@ function PlasmicRegisterForm__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root,
         {
-          [sty.rootisError]: hasVariant(variants, "isError", "isError"),
-          [sty.rootisLoading]: hasVariant(variants, "isLoading", "isLoading"),
+          [sty.rootisError]: hasVariant($state, "isError", "isError"),
+          [sty.rootisLoading]: hasVariant($state, "isLoading", "isLoading"),
           [sty.rootisLoading_isSignUpFlow]:
-            hasVariant(variants, "isSignUpFlow", "isSignUpFlow") &&
-            hasVariant(variants, "isLoading", "isLoading"),
+            hasVariant($state, "isSignUpFlow", "isSignUpFlow") &&
+            hasVariant($state, "isLoading", "isLoading"),
           [sty.rootisSignUpFlow]: hasVariant(
-            variants,
+            $state,
             "isSignUpFlow",
             "isSignUpFlow"
           )
@@ -162,7 +191,7 @@ function PlasmicRegisterForm__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.requestForm, {
             [sty.requestFormisSignUpFlow]: hasVariant(
-              variants,
+              $state,
               "isSignUpFlow",
               "isSignUpFlow"
             )
@@ -192,11 +221,11 @@ function PlasmicRegisterForm__RenderFunc(props: {
             />
           </p.Stack>
 
-          {(hasVariant(variants, "isError", "isError") ? true : true) ? (
+          {(hasVariant($state, "isError", "isError") ? true : true) ? (
             <div
               className={classNames(projectcss.all, sty.freeBox__dfaRb, {
                 [sty.freeBoxisError__dfaRbXmpE]: hasVariant(
-                  variants,
+                  $state,
                   "isError",
                   "isError"
                 )
@@ -207,7 +236,7 @@ function PlasmicRegisterForm__RenderFunc(props: {
                 value: args.errorMessage,
                 className: classNames(sty.slotTargetErrorMessage, {
                   [sty.slotTargetErrorMessageisError]: hasVariant(
-                    variants,
+                    $state,
                     "isError",
                     "isError"
                   )
@@ -226,12 +255,12 @@ function PlasmicRegisterForm__RenderFunc(props: {
               data-plasmic-override={overrides.emailInput}
               className={classNames("__wab_instance", sty.emailInput, {
                 [sty.emailInputisError]: hasVariant(
-                  variants,
+                  $state,
                   "isError",
                   "isError"
                 ),
                 [sty.emailInputisSignUpFlow]: hasVariant(
-                  variants,
+                  $state,
                   "isSignUpFlow",
                   "isSignUpFlow"
                 )
@@ -246,7 +275,7 @@ function PlasmicRegisterForm__RenderFunc(props: {
               data-plasmic-override={overrides.passwordInput}
               className={classNames("__wab_instance", sty.passwordInput, {
                 [sty.passwordInputisSignUpFlow]: hasVariant(
-                  variants,
+                  $state,
                   "isSignUpFlow",
                   "isSignUpFlow"
                 )
@@ -256,21 +285,19 @@ function PlasmicRegisterForm__RenderFunc(props: {
             />
 
             {(
-              hasVariant(variants, "isSignUpFlow", "isSignUpFlow")
-                ? true
-                : false
+              hasVariant($state, "isSignUpFlow", "isSignUpFlow") ? true : false
             ) ? (
               <TextInput
                 data-plasmic-name={"nameInput"}
                 data-plasmic-override={overrides.nameInput}
                 className={classNames("__wab_instance", sty.nameInput, {
                   [sty.nameInputisError]: hasVariant(
-                    variants,
+                    $state,
                     "isError",
                     "isError"
                   ),
                   [sty.nameInputisSignUpFlow]: hasVariant(
-                    variants,
+                    $state,
                     "isSignUpFlow",
                     "isSignUpFlow"
                   )
@@ -282,21 +309,19 @@ function PlasmicRegisterForm__RenderFunc(props: {
             ) : null}
 
             {(
-              hasVariant(variants, "isSignUpFlow", "isSignUpFlow")
-                ? true
-                : false
+              hasVariant($state, "isSignUpFlow", "isSignUpFlow") ? true : false
             ) ? (
               <TextInput
                 data-plasmic-name={"companyInput"}
                 data-plasmic-override={overrides.companyInput}
                 className={classNames("__wab_instance", sty.companyInput, {
                   [sty.companyInputisError]: hasVariant(
-                    variants,
+                    $state,
                     "isError",
                     "isError"
                   ),
                   [sty.companyInputisSignUpFlow]: hasVariant(
-                    variants,
+                    $state,
                     "isSignUpFlow",
                     "isSignUpFlow"
                   )
@@ -308,21 +333,19 @@ function PlasmicRegisterForm__RenderFunc(props: {
             ) : null}
 
             {(
-              hasVariant(variants, "isSignUpFlow", "isSignUpFlow")
-                ? true
-                : false
+              hasVariant($state, "isSignUpFlow", "isSignUpFlow") ? true : false
             ) ? (
               <TextInput
                 data-plasmic-name={"jobTitleInput"}
                 data-plasmic-override={overrides.jobTitleInput}
                 className={classNames("__wab_instance", sty.jobTitleInput, {
                   [sty.jobTitleInputisError]: hasVariant(
-                    variants,
+                    $state,
                     "isError",
                     "isError"
                   ),
                   [sty.jobTitleInputisSignUpFlow]: hasVariant(
-                    variants,
+                    $state,
                     "isSignUpFlow",
                     "isSignUpFlow"
                   )
@@ -334,21 +357,19 @@ function PlasmicRegisterForm__RenderFunc(props: {
             ) : null}
 
             {(
-              hasVariant(variants, "isSignUpFlow", "isSignUpFlow")
-                ? true
-                : false
+              hasVariant($state, "isSignUpFlow", "isSignUpFlow") ? true : false
             ) ? (
               <TextInput
                 data-plasmic-name={"phoneNumberInput"}
                 data-plasmic-override={overrides.phoneNumberInput}
                 className={classNames("__wab_instance", sty.phoneNumberInput, {
                   [sty.phoneNumberInputisError]: hasVariant(
-                    variants,
+                    $state,
                     "isError",
                     "isError"
                   ),
                   [sty.phoneNumberInputisSignUpFlow]: hasVariant(
-                    variants,
+                    $state,
                     "isSignUpFlow",
                     "isSignUpFlow"
                   )
@@ -360,21 +381,19 @@ function PlasmicRegisterForm__RenderFunc(props: {
             ) : null}
 
             {(
-              hasVariant(variants, "isSignUpFlow", "isSignUpFlow")
-                ? true
-                : false
+              hasVariant($state, "isSignUpFlow", "isSignUpFlow") ? true : false
             ) ? (
               <TextInput
                 data-plasmic-name={"addressInput"}
                 data-plasmic-override={overrides.addressInput}
                 className={classNames("__wab_instance", sty.addressInput, {
                   [sty.addressInputisError]: hasVariant(
-                    variants,
+                    $state,
                     "isError",
                     "isError"
                   ),
                   [sty.addressInputisSignUpFlow]: hasVariant(
-                    variants,
+                    $state,
                     "isSignUpFlow",
                     "isSignUpFlow"
                   )
@@ -386,11 +405,11 @@ function PlasmicRegisterForm__RenderFunc(props: {
             ) : null}
           </p.Stack>
 
-          {(hasVariant(variants, "isLoading", "isLoading") ? true : true) ? (
+          {(hasVariant($state, "isLoading", "isLoading") ? true : true) ? (
             <Rolling1S200PxsvgIcon
               className={classNames(projectcss.all, sty.svg__hZs5C, {
                 [sty.svgisLoading__hZs5Ctfjup]: hasVariant(
-                  variants,
+                  $state,
                   "isLoading",
                   "isLoading"
                 )
@@ -399,18 +418,18 @@ function PlasmicRegisterForm__RenderFunc(props: {
             />
           ) : null}
 
-          {(hasVariant(variants, "isLoading", "isLoading") ? true : true) ? (
+          {(hasVariant($state, "isLoading", "isLoading") ? true : true) ? (
             <Button
               data-plasmic-name={"submitButton"}
               data-plasmic-override={overrides.submitButton}
               className={classNames("__wab_instance", sty.submitButton, {
                 [sty.submitButtonisLoading]: hasVariant(
-                  variants,
+                  $state,
                   "isLoading",
                   "isLoading"
                 ),
                 [sty.submitButtonisSignUpFlow]: hasVariant(
-                  variants,
+                  $state,
                   "isSignUpFlow",
                   "isSignUpFlow"
                 )
@@ -423,7 +442,7 @@ function PlasmicRegisterForm__RenderFunc(props: {
                 />
               }
             >
-              {hasVariant(variants, "isSignUpFlow", "isSignUpFlow")
+              {hasVariant($state, "isSignUpFlow", "isSignUpFlow")
                 ? "註冊"
                 : "登入"}
             </Button>
@@ -438,7 +457,7 @@ function PlasmicRegisterForm__RenderFunc(props: {
             data-plasmic-override={overrides.toggleForm}
             className={classNames("__wab_instance", sty.toggleForm, {
               [sty.toggleFormisSignUpFlow]: hasVariant(
-                variants,
+                $state,
                 "isSignUpFlow",
                 "isSignUpFlow"
               )
@@ -452,14 +471,14 @@ function PlasmicRegisterForm__RenderFunc(props: {
                 sty.text__vXtie,
                 {
                   [sty.textisSignUpFlow__vXtieuphR8]: hasVariant(
-                    variants,
+                    $state,
                     "isSignUpFlow",
                     "isSignUpFlow"
                   )
                 }
               )}
             >
-              {hasVariant(variants, "isSignUpFlow", "isSignUpFlow")
+              {hasVariant($state, "isSignUpFlow", "isSignUpFlow")
                 ? "帳號登入"
                 : "帳號註冊"}
             </div>
@@ -480,7 +499,7 @@ function PlasmicRegisterForm__RenderFunc(props: {
             data-plasmic-override={overrides.button}
             className={classNames("__wab_instance", sty.button, {
               [sty.buttonisSignUpFlow]: hasVariant(
-                variants,
+                $state,
                 "isSignUpFlow",
                 "isSignUpFlow"
               )

@@ -93,6 +93,10 @@ function PlasmicContact__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });
@@ -197,6 +201,87 @@ function PlasmicContact__RenderFunc(props: {
                     {"幫你精算"}
                   </h2>
                 </Reveal>
+
+                <Reveal
+                  className={classNames("__wab_instance", sty.reveal__mNtKq)}
+                  triggerOnce={true}
+                >
+                  {true ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__hqj48)}
+                    >
+                      <div
+                        className={classNames(projectcss.all, sty.freeBox__t0R)}
+                      >
+                        <h5
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h5,
+                            projectcss.__wab_text,
+                            sty.h5__zRmH0
+                          )}
+                        >
+                          {"連絡電話:"}
+                        </h5>
+
+                        <h6
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h6,
+                            projectcss.__wab_text,
+                            sty.h6__myDRi
+                          )}
+                        >
+                          {"03-xxxxxxxx"}
+                        </h6>
+
+                        <h5
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h5,
+                            projectcss.__wab_text,
+                            sty.h5___2KaKy
+                          )}
+                        >
+                          {"地址:"}
+                        </h5>
+
+                        <h6
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h6,
+                            projectcss.__wab_text,
+                            sty.h6__eBKd
+                          )}
+                        >
+                          {"桃園市大園區橫峰里大成路1段2號6樓"}
+                        </h6>
+
+                        <h5
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h5,
+                            projectcss.__wab_text,
+                            sty.h5__eEsBa
+                          )}
+                        >
+                          {"電子信箱:"}
+                        </h5>
+
+                        <h6
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h6,
+                            projectcss.__wab_text,
+                            sty.h6___9ADr2
+                          )}
+                        >
+                          {"lazylazy999999@gmail.com"}
+                        </h6>
+                      </div>
+                    </div>
+                  ) : null}
+                </Reveal>
               </div>
 
               <div className={classNames(projectcss.all, sty.freeBox___7OV3A)}>
@@ -225,7 +310,7 @@ function PlasmicContact__RenderFunc(props: {
                   data-plasmic-override={overrides.googleMap}
                   className={classNames("__wab_instance", sty.googleMap)}
                   height={500 as const}
-                  location={"桃園高鐵站" as const}
+                  location={"桃園市大園區橫峰里大成路1段2號6樓" as const}
                   width={1140 as const}
                 />
               </Reveal>

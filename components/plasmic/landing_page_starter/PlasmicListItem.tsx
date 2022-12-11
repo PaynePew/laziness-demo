@@ -106,6 +106,29 @@ function PlasmicListItem__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "bottomBorder",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.bottomBorder
+      },
+
+      {
+        path: "leftCheck",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.leftCheck
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <p.Stack
       as={"div"}
@@ -123,16 +146,16 @@ function PlasmicListItem__RenderFunc(props: {
         sty.root,
         {
           [sty.rootbottomBorder_dark]: hasVariant(
-            variants,
+            $state,
             "bottomBorder",
             "dark"
           ),
           [sty.rootbottomBorder_light]: hasVariant(
-            variants,
+            $state,
             "bottomBorder",
             "light"
           ),
-          [sty.rootleftCheck]: hasVariant(variants, "leftCheck", "leftCheck")
+          [sty.rootleftCheck]: hasVariant($state, "leftCheck", "leftCheck")
         }
       )}
     >

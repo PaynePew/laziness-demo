@@ -120,6 +120,23 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "revers",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.revers
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });
@@ -139,7 +156,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
         sty.root,
-        { [sty.rootrevers]: hasVariant(variants, "revers", "revers") }
+        { [sty.rootrevers]: hasVariant($state, "revers", "revers") }
       )}
     >
       {true ? (
@@ -148,7 +165,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__doWvV, {
             [sty.freeBoxrevers__doWvVh81JN]: hasVariant(
-              variants,
+              $state,
               "revers",
               "revers"
             )
@@ -157,7 +174,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
           <div
             className={classNames(projectcss.all, sty.freeBox__r8WDs, {
               [sty.freeBoxrevers__r8WDSh81JN]: hasVariant(
-                variants,
+                $state,
                 "revers",
                 "revers"
               )
@@ -191,7 +208,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
           <div
             className={classNames(projectcss.all, sty.freeBox__vWeSq, {
               [sty.freeBoxrevers__vWeSQh81JN]: hasVariant(
-                variants,
+                $state,
                 "revers",
                 "revers"
               )
@@ -284,7 +301,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
         hasGap={true}
         className={classNames(projectcss.all, sty.freeBox__dowBa, {
           [sty.freeBoxrevers__dowBAh81JN]: hasVariant(
-            variants,
+            $state,
             "revers",
             "revers"
           )
@@ -294,7 +311,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
           data-plasmic-name={"h3"}
           data-plasmic-override={overrides.h3}
           className={classNames(projectcss.all, projectcss.h3, sty.h3, {
-            [sty.h3revers]: hasVariant(variants, "revers", "revers")
+            [sty.h3revers]: hasVariant($state, "revers", "revers")
           })}
         >
           {p.renderPlasmicSlot({
@@ -306,7 +323,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
         <div
           className={classNames(projectcss.all, sty.freeBox__knD, {
             [sty.freeBoxrevers__knDh81JN]: hasVariant(
-              variants,
+              $state,
               "revers",
               "revers"
             )
@@ -321,7 +338,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
 
         <h4
           className={classNames(projectcss.all, projectcss.h4, sty.h4__xJerT, {
-            [sty.h4revers__xJerTh81JN]: hasVariant(variants, "revers", "revers")
+            [sty.h4revers__xJerTh81JN]: hasVariant($state, "revers", "revers")
           })}
         >
           {p.renderPlasmicSlot({
@@ -333,7 +350,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
         <div
           className={classNames(projectcss.all, sty.freeBox__utyex, {
             [sty.freeBoxrevers__utyexh81JN]: hasVariant(
-              variants,
+              $state,
               "revers",
               "revers"
             )
@@ -347,7 +364,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
 
         <h4
           className={classNames(projectcss.all, projectcss.h4, sty.h4__uyXl, {
-            [sty.h4revers__uyXlh81JN]: hasVariant(variants, "revers", "revers")
+            [sty.h4revers__uyXlh81JN]: hasVariant($state, "revers", "revers")
           })}
         >
           {p.renderPlasmicSlot({
@@ -359,7 +376,7 @@ function PlasmicProjectCardDetail__RenderFunc(props: {
         <div
           className={classNames(projectcss.all, sty.freeBox__zmDtG, {
             [sty.freeBoxrevers__zmDtGh81JN]: hasVariant(
-              variants,
+              $state,
               "revers",
               "revers"
             )
