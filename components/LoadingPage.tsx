@@ -2,9 +2,9 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import {
-  PlasmicTestimonial,
-  DefaultTestimonialProps
-} from "./plasmic/landing_page_starter/PlasmicTestimonial";
+  PlasmicLoadingPage,
+  DefaultLoadingPageProps
+} from "./plasmic/laziness_demo/PlasmicLoadingPage";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 // Your component props start with props for variants and slots you defined
@@ -14,32 +14,32 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 // If you don't want to expose certain variants or slots as a prop, you can use
 // Omit to hide them:
 //
-// interface TestimonialProps extends Omit<DefaultTestimonialProps, "hideProps1"|"hideProp2"> {
+// interface LoadingPageProps extends Omit<DefaultLoadingPageProps, "hideProps1"|"hideProp2"> {
 //   // etc.
 // }
 //
-// You can also stop extending from DefaultTestimonialProps altogether and have
+// You can also stop extending from DefaultLoadingPageProps altogether and have
 // total control over the props for your component.
-export interface TestimonialProps extends DefaultTestimonialProps {}
+export interface LoadingPageProps extends DefaultLoadingPageProps {}
 
-function Testimonial_(props: TestimonialProps, ref: HTMLElementRefOf<"div">) {
-  // Use PlasmicTestimonial to render this component as it was
+function LoadingPage_(props: LoadingPageProps, ref: HTMLElementRefOf<"div">) {
+  // Use PlasmicLoadingPage to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicTestimonial are:
+  // Props you can pass into PlasmicLoadingPage are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, we are just piping all TestimonialProps here, but feel free
+  // By default, we are just piping all LoadingPageProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicTestimonial root={{ ref }} {...props} />;
+  return <PlasmicLoadingPage root={{ ref }} {...props} />;
 }
 
-const Testimonial = React.forwardRef(Testimonial_);
-export default Testimonial;
+const LoadingPage = React.forwardRef(LoadingPage_);
+export default LoadingPage;

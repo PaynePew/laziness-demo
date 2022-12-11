@@ -94,6 +94,10 @@ function PlasmicPrice2__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });
@@ -103,11 +107,19 @@ function PlasmicPrice2__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"價目表"}</title>
+        <title key="title">{PlasmicPrice2.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"價目表"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicPrice2.pageMetadata.title}
+        />
 
-        <meta key="twitter:title" name="twitter:title" content={"價目表"} />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicPrice2.pageMetadata.title}
+        />
       </Head>
 
       <style>{`
@@ -308,7 +320,15 @@ export const PlasmicPrice2 = Object.assign(
 
     // Metadata about props expected for PlasmicPrice2
     internalVariantProps: PlasmicPrice2__VariantProps,
-    internalArgProps: PlasmicPrice2__ArgProps
+    internalArgProps: PlasmicPrice2__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "價目表",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

@@ -109,6 +109,10 @@ function PlasmicCallToActionSection__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });

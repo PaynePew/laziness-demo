@@ -134,19 +134,6 @@
           "componentType": "component"
         },
         {
-          "id": "kaaNaks9l5Jr0_",
-          "name": "Testimonial",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/landing_page_starter/PlasmicTestimonial.tsx",
-          "importSpec": {
-            "modulePath": "Testimonial.tsx"
-          },
-          "cssFilePath": "plasmic/landing_page_starter/PlasmicTestimonial.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "6XRBcj5dbKAqQ0",
           "name": "CallToActionSection",
           "type": "managed",
@@ -357,19 +344,6 @@
           "plumeType": "text-input"
         },
         {
-          "id": "CtTUSfG2PU6",
-          "name": "LogInForm",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicLogInForm.tsx",
-          "importSpec": {
-            "modulePath": "LogInForm.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicLogInForm.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "GGAMZHnNF_K",
           "name": "Admin",
           "type": "managed",
@@ -409,19 +383,6 @@
           "componentType": "page"
         },
         {
-          "id": "MYiOb2nF0s",
-          "name": "ResultCard",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicResultCard.tsx",
-          "importSpec": {
-            "modulePath": "ResultCard.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicResultCard.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "kctI_m0loCm",
           "name": "AdminAccounts",
           "type": "managed",
@@ -431,19 +392,6 @@
             "modulePath": "../pages/admin/accounts.tsx"
           },
           "cssFilePath": "plasmic/laziness_demo/PlasmicAdminAccounts.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
-          "id": "0G2s1E43PqJ",
-          "name": "AdminResults",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAdminResults.tsx",
-          "importSpec": {
-            "modulePath": "../pages/admin/results.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicAdminResults.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         },
@@ -459,19 +407,6 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicAccountCard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "ReJzREwAZMA",
-          "name": "AdminSignUp",
-          "type": "managed",
-          "projectId": "qtkpEraJg2gN978YDtMYaP",
-          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAdminSignUp.tsx",
-          "importSpec": {
-            "modulePath": "../pages/admin/signup.tsx"
-          },
-          "cssFilePath": "plasmic/laziness_demo/PlasmicAdminSignUp.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
         },
         {
           "id": "d8mQqWAV6f",
@@ -498,6 +433,71 @@
           "cssFilePath": "plasmic/laziness_demo/PlasmicPrice2.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "0G2s1E43PqJ",
+          "name": "AdminReport",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicAdminReport.tsx",
+          "importSpec": {
+            "modulePath": "../pages/admin/report.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicAdminReport.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "CtTUSfG2PU6",
+          "name": "RegisterForm",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicRegisterForm.tsx",
+          "importSpec": {
+            "modulePath": "RegisterForm.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicRegisterForm.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "2-E2zw9NpK",
+          "name": "LoadingPage",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicLoadingPage.tsx",
+          "importSpec": {
+            "modulePath": "LoadingPage.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicLoadingPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "MYiOb2nF0s",
+          "name": "DashboardProjectCard",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicDashboardProjectCard.tsx",
+          "importSpec": {
+            "modulePath": "DashboardProjectCard.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicDashboardProjectCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "WxtJVk4hck",
+          "name": "ProjectCreateForm",
+          "type": "managed",
+          "projectId": "qtkpEraJg2gN978YDtMYaP",
+          "renderModuleFilePath": "plasmic/laziness_demo/PlasmicProjectCreateForm.tsx",
+          "importSpec": {
+            "modulePath": "ProjectCreateForm.tsx"
+          },
+          "cssFilePath": "plasmic/laziness_demo/PlasmicProjectCreateForm.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -882,6 +882,46 @@
           "id": "GgcdSYaN5",
           "name": "懶得算_logo_ico_04_彩色橫排-figma.svg",
           "filePath": "../public/plasmic/laziness_demo/images/懶得算LogoIco04彩色橫排Figmasvg.svg"
+        },
+        {
+          "id": "HwVX9F5dH",
+          "name": "大園區五塊厝集合住宅新建工程.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/大園區五塊厝集合住宅新建工程jpg.jpeg"
+        },
+        {
+          "id": "onFN3Fl5L",
+          "name": "威鈞君藏集合式住宅案.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/威鈞君藏集合式住宅案jpg.jpeg"
+        },
+        {
+          "id": "5_7dTsV4B",
+          "name": "三重區重陽公園停車場新建統包工程-4.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程4Jpg.jpeg"
+        },
+        {
+          "id": "3EXyALPeV",
+          "name": "三重區重陽公園停車場新建統包工程.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程jpg.jpeg"
+        },
+        {
+          "id": "bD80Xygrs",
+          "name": "三重區重陽公園停車場新建統包工程-1.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程1Jpg.jpeg"
+        },
+        {
+          "id": "C_XIbYwbR",
+          "name": "三重區重陽公園停車場新建統包工程-2.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程2Jpg.jpeg"
+        },
+        {
+          "id": "fofZtdlnk",
+          "name": "三重區重陽公園停車場新建統包工程-3.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/三重區重陽公園停車場新建統包工程3Jpg.jpeg"
+        },
+        {
+          "id": "POyKO24Xy",
+          "name": "水美工程觀音資源回收廠增建工程.jpg",
+          "filePath": "../public/plasmic/laziness_demo/images/水美工程觀音資源回收廠增建工程jpg.jpeg"
         }
       ],
       "indirect": false,
@@ -901,6 +941,11 @@
           "id": "ZopKvLJJag",
           "name": "PriceChart",
           "componentImportPath": "./components/PriceChart"
+        },
+        {
+          "id": "cGyIacytvy",
+          "name": "Fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ]
     },
@@ -921,8 +966,7 @@
           "name": "EmbedCss",
           "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "caTPwKxj5ZrD9LQ7DMdK4Z",
@@ -956,8 +1000,7 @@
           "name": "DataProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "7nJ7UcFmq9UzB6eXfC5z4a",
@@ -976,8 +1019,7 @@
           "name": "NavigationBar",
           "componentImportPath": "@plasmicpkgs/plasmic-nav"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -996,8 +1038,7 @@
           "name": "Reveal",
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     }
   ],
   "globalVariants": {

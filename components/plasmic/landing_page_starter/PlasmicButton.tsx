@@ -17,6 +17,7 @@ import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -169,6 +170,83 @@ function PlasmicButton__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "showStartIcon",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.showStartIcon
+      },
+
+      {
+        path: "showEndIcon",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.showEndIcon
+      },
+
+      {
+        path: "color",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.color
+      },
+
+      {
+        path: "iconOnly",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.iconOnly
+      },
+
+      {
+        path: "outline",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.outline
+      },
+
+      {
+        path: "bgDifference",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.bgDifference
+      },
+
+      {
+        path: "round",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.round
+      },
+
+      {
+        path: "large",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.large
+      },
+
+      {
+        path: "flat",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.flat
+      },
+
+      {
+        path: "extraSmallShadow",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.extraSmallShadow
+      },
+
+      {
+        path: "isDisabled",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.isDisabled
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <p.Stack
       as={"button"}
@@ -187,45 +265,41 @@ function PlasmicButton__RenderFunc(props: {
         sty.root,
         {
           [sty.rootbgDifference]: hasVariant(
-            variants,
+            $state,
             "bgDifference",
             "bgDifference"
           ),
-          [sty.rootcolor_blue]: hasVariant(variants, "color", "blue"),
-          [sty.rootcolor_darkGray]: hasVariant(variants, "color", "darkGray"),
-          [sty.rootcolor_green]: hasVariant(variants, "color", "green"),
-          [sty.rootcolor_navLink]: hasVariant(variants, "color", "navLink"),
+          [sty.rootcolor_blue]: hasVariant($state, "color", "blue"),
+          [sty.rootcolor_darkGray]: hasVariant($state, "color", "darkGray"),
+          [sty.rootcolor_green]: hasVariant($state, "color", "green"),
+          [sty.rootcolor_navLink]: hasVariant($state, "color", "navLink"),
           [sty.rootcolor_navLink_outline]:
-            hasVariant(variants, "color", "navLink") &&
-            hasVariant(variants, "outline", "outline"),
-          [sty.rootcolor_pink]: hasVariant(variants, "color", "pink"),
-          [sty.rootcolor_red]: hasVariant(variants, "color", "red"),
-          [sty.rootcolor_white]: hasVariant(variants, "color", "white"),
+            hasVariant($state, "color", "navLink") &&
+            hasVariant($state, "outline", "outline"),
+          [sty.rootcolor_pink]: hasVariant($state, "color", "pink"),
+          [sty.rootcolor_red]: hasVariant($state, "color", "red"),
+          [sty.rootcolor_white]: hasVariant($state, "color", "white"),
           [sty.rootextraSmallShadow]: hasVariant(
-            variants,
+            $state,
             "extraSmallShadow",
             "extraSmallShadow"
           ),
-          [sty.rootflat]: hasVariant(variants, "flat", "flat"),
-          [sty.rooticonOnly]: hasVariant(variants, "iconOnly", "iconOnly"),
-          [sty.rootisDisabled]: hasVariant(
-            variants,
-            "isDisabled",
-            "isDisabled"
-          ),
-          [sty.rootlarge]: hasVariant(variants, "large", "large"),
-          [sty.rootoutline]: hasVariant(variants, "outline", "outline"),
-          [sty.rootround]: hasVariant(variants, "round", "round"),
+          [sty.rootflat]: hasVariant($state, "flat", "flat"),
+          [sty.rooticonOnly]: hasVariant($state, "iconOnly", "iconOnly"),
+          [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
+          [sty.rootlarge]: hasVariant($state, "large", "large"),
+          [sty.rootoutline]: hasVariant($state, "outline", "outline"),
+          [sty.rootround]: hasVariant($state, "round", "round"),
           [sty.rootround_color_primary]:
-            hasVariant(variants, "color", "primary") &&
-            hasVariant(variants, "round", "round"),
+            hasVariant($state, "color", "primary") &&
+            hasVariant($state, "round", "round"),
           [sty.rootshowEndIcon]: hasVariant(
-            variants,
+            $state,
             "showEndIcon",
             "showEndIcon"
           ),
           [sty.rootshowStartIcon]: hasVariant(
-            variants,
+            $state,
             "showStartIcon",
             "showStartIcon"
           )
@@ -233,9 +307,9 @@ function PlasmicButton__RenderFunc(props: {
       )}
     >
       {(
-        hasVariant(variants, "iconOnly", "iconOnly")
+        hasVariant($state, "iconOnly", "iconOnly")
           ? true
-          : hasVariant(variants, "showStartIcon", "showStartIcon")
+          : hasVariant($state, "showStartIcon", "showStartIcon")
           ? true
           : false
       )
@@ -250,64 +324,64 @@ function PlasmicButton__RenderFunc(props: {
             value: args.startIcon,
             className: classNames(sty.slotTargetStartIcon, {
               [sty.slotTargetStartIconcolor_blue]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "blue"
               ),
               [sty.slotTargetStartIconcolor_darkGray]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "darkGray"
               ),
               [sty.slotTargetStartIconcolor_green]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "green"
               ),
               [sty.slotTargetStartIconcolor_green_showEndIcon]:
-                hasVariant(variants, "showEndIcon", "showEndIcon") &&
-                hasVariant(variants, "color", "green"),
+                hasVariant($state, "showEndIcon", "showEndIcon") &&
+                hasVariant($state, "color", "green"),
               [sty.slotTargetStartIconcolor_green_showEndIcon_showStartIcon]:
-                hasVariant(variants, "showStartIcon", "showStartIcon") &&
-                hasVariant(variants, "showEndIcon", "showEndIcon") &&
-                hasVariant(variants, "color", "green"),
+                hasVariant($state, "showStartIcon", "showStartIcon") &&
+                hasVariant($state, "showEndIcon", "showEndIcon") &&
+                hasVariant($state, "color", "green"),
               [sty.slotTargetStartIconcolor_link]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "link"
               ),
               [sty.slotTargetStartIconcolor_navLink]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "navLink"
               ),
               [sty.slotTargetStartIconcolor_pink]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "pink"
               ),
               [sty.slotTargetStartIconcolor_red]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "red"
               ),
               [sty.slotTargetStartIconcolor_white]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "white"
               ),
               [sty.slotTargetStartIconiconOnly]: hasVariant(
-                variants,
+                $state,
                 "iconOnly",
                 "iconOnly"
               ),
               [sty.slotTargetStartIconisDisabled]: hasVariant(
-                variants,
+                $state,
                 "isDisabled",
                 "isDisabled"
               ),
               [sty.slotTargetStartIconshowStartIcon]: hasVariant(
-                variants,
+                $state,
                 "showStartIcon",
                 "showStartIcon"
               )
@@ -315,94 +389,94 @@ function PlasmicButton__RenderFunc(props: {
           })
         : null}
 
-      {(hasVariant(variants, "iconOnly", "iconOnly") ? false : true)
+      {(hasVariant($state, "iconOnly", "iconOnly") ? false : true)
         ? p.renderPlasmicSlot({
             defaultContents: "Label",
             value: args.children,
             className: classNames(sty.slotTargetChildren, {
               [sty.slotTargetChildrenbgDifference]: hasVariant(
-                variants,
+                $state,
                 "bgDifference",
                 "bgDifference"
               ),
               [sty.slotTargetChildrencolor_blue]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "blue"
               ),
               [sty.slotTargetChildrencolor_darkGray]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "darkGray"
               ),
               [sty.slotTargetChildrencolor_green]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "green"
               ),
               [sty.slotTargetChildrencolor_link]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "link"
               ),
               [sty.slotTargetChildrencolor_navLink]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "navLink"
               ),
               [sty.slotTargetChildrencolor_navLink_outline]:
-                hasVariant(variants, "color", "navLink") &&
-                hasVariant(variants, "outline", "outline"),
+                hasVariant($state, "color", "navLink") &&
+                hasVariant($state, "outline", "outline"),
               [sty.slotTargetChildrencolor_pink]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "pink"
               ),
               [sty.slotTargetChildrencolor_primary]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "primary"
               ),
               [sty.slotTargetChildrencolor_red]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "red"
               ),
               [sty.slotTargetChildrencolor_white]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "white"
               ),
               [sty.slotTargetChildreniconOnly]: hasVariant(
-                variants,
+                $state,
                 "iconOnly",
                 "iconOnly"
               ),
               [sty.slotTargetChildrenisDisabled]: hasVariant(
-                variants,
+                $state,
                 "isDisabled",
                 "isDisabled"
               ),
               [sty.slotTargetChildrenlarge]: hasVariant(
-                variants,
+                $state,
                 "large",
                 "large"
               ),
               [sty.slotTargetChildrenoutline]: hasVariant(
-                variants,
+                $state,
                 "outline",
                 "outline"
               ),
               [sty.slotTargetChildrenround_color_primary]:
-                hasVariant(variants, "color", "primary") &&
-                hasVariant(variants, "round", "round"),
+                hasVariant($state, "color", "primary") &&
+                hasVariant($state, "round", "round"),
               [sty.slotTargetChildrenshowEndIcon]: hasVariant(
-                variants,
+                $state,
                 "showEndIcon",
                 "showEndIcon"
               ),
               [sty.slotTargetChildrenshowStartIcon]: hasVariant(
-                variants,
+                $state,
                 "showStartIcon",
                 "showStartIcon"
               )
@@ -411,11 +485,11 @@ function PlasmicButton__RenderFunc(props: {
         : null}
 
       {(
-        hasVariant(variants, "showEndIcon", "showEndIcon")
+        hasVariant($state, "showEndIcon", "showEndIcon")
           ? true
-          : hasVariant(variants, "iconOnly", "iconOnly")
+          : hasVariant($state, "iconOnly", "iconOnly")
           ? false
-          : hasVariant(variants, "showStartIcon", "showStartIcon")
+          : hasVariant($state, "showStartIcon", "showStartIcon")
           ? false
           : false
       )
@@ -430,62 +504,62 @@ function PlasmicButton__RenderFunc(props: {
             value: args.endIcon,
             className: classNames(sty.slotTargetEndIcon, {
               [sty.slotTargetEndIconcolor_blue]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "blue"
               ),
               [sty.slotTargetEndIconcolor_darkGray]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "darkGray"
               ),
               [sty.slotTargetEndIconcolor_green]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "green"
               ),
               [sty.slotTargetEndIconcolor_link]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "link"
               ),
               [sty.slotTargetEndIconcolor_navLink]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "navLink"
               ),
               [sty.slotTargetEndIconcolor_pink]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "pink"
               ),
               [sty.slotTargetEndIconcolor_red]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "red"
               ),
               [sty.slotTargetEndIconcolor_white]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "white"
               ),
               [sty.slotTargetEndIconiconOnly]: hasVariant(
-                variants,
+                $state,
                 "iconOnly",
                 "iconOnly"
               ),
               [sty.slotTargetEndIconisDisabled]: hasVariant(
-                variants,
+                $state,
                 "isDisabled",
                 "isDisabled"
               ),
               [sty.slotTargetEndIconshowEndIcon]: hasVariant(
-                variants,
+                $state,
                 "showEndIcon",
                 "showEndIcon"
               ),
               [sty.slotTargetEndIconshowStartIcon]: hasVariant(
-                variants,
+                $state,
                 "showStartIcon",
                 "showStartIcon"
               )

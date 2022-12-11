@@ -1,15 +1,21 @@
 import "../styles/globals.css";
 import { PlasmicRootProvider } from "@plasmicapp/react-web";
 import GlobalContextsProvider from "../components/plasmic/laziness_demo/PlasmicGlobalContextsProvider";
+
 import { useEffect } from "react";
 import Script from "next/script";
 import { useRouter } from "next/router";
-import * as gtag from "../lib/gtag";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }) {
+import * as gtag from "../lib/gtag";
+import { UserProvider } from "@supabase/auth-helpers-react";
+import { supabaseClient } from "@supabase/auth-helpers-nextjs";
+import { CustomUserContextProvider } from "../utils/useUser";
+
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: string) => {
       gtag.pageview(url);
     };
     router.events.on("routeChangeComplete", handleRouteChange);
@@ -17,6 +23,7 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
   return (
     <>
       <Script
@@ -39,7 +46,11 @@ function MyApp({ Component, pageProps }) {
       />
       <PlasmicRootProvider>
         <GlobalContextsProvider>
-          <Component {...pageProps} />
+          <UserProvider supabaseClient={supabaseClient}>
+            <CustomUserContextProvider supabaseClient={supabaseClient}>
+              <Component {...pageProps} />
+            </CustomUserContextProvider>
+          </UserProvider>
         </GlobalContextsProvider>
       </PlasmicRootProvider>
     </>

@@ -6,31 +6,31 @@ import GlobalContextsProvider from "../components/plasmic/laziness_demo/PlasmicG
 import { ScreenVariantProvider } from "../components/plasmic/landing_page_starter/PlasmicGlobalVariant__Screen";
 import { PlasmicLogIn } from "../components/plasmic/laziness_demo/PlasmicLogIn";
 import { useRouter } from "next/router";
+import { useUser } from "../utils/useUser";
+import LoadingPage from "../components/LoadingPage";
 
 function LogIn() {
-  // Use PlasmicLogIn to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicLogIn are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, PlasmicLogIn is wrapped by your project's global
-  // variant context providers. These wrappers may be moved to
-  // Next.js Custom App component
-  // (https://nextjs.org/docs/advanced-features/custom-app).
+  const router = useRouter();
+  const { userDetails, isLoading } = useUser();
+  React.useEffect(() => {
+    if (userDetails && !isLoading) {
+      if (userDetails.isadmin) {
+        router.replace("/admin");
+        return;
+      }
+      router.replace("/member");
+      return;
+    }
+  }, [userDetails, isLoading]);
+
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
         params={useRouter().query}
         query={useRouter().query}
       >
-        <PlasmicLogIn />
+        {/* todo:!!!if client side loading render not working and dont want to use swr, try server side */}
+        {userDetails ? <LoadingPage /> : <PlasmicLogIn />}
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
   );

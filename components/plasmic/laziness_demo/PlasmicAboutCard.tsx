@@ -114,6 +114,23 @@ function PlasmicAboutCard__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "card",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.card
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });
@@ -132,7 +149,7 @@ function PlasmicAboutCard__RenderFunc(props: {
           projectcss.plasmic_mixins,
           projectcss.plasmic_tokens,
           sty.root,
-          { [sty.rootcard]: hasVariant(variants, "card", "card") }
+          { [sty.rootcard]: hasVariant($state, "card", "card") }
         )}
       >
         {true ? (
@@ -140,7 +157,7 @@ function PlasmicAboutCard__RenderFunc(props: {
             data-plasmic-name={"root2"}
             data-plasmic-override={overrides.root2}
             className={classNames(projectcss.all, sty.root2, {
-              [sty.root2card]: hasVariant(variants, "card", "card")
+              [sty.root2card]: hasVariant($state, "card", "card")
             })}
           >
             {(
@@ -151,7 +168,7 @@ function PlasmicAboutCard__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__po5Ny, {
                       [sty.freeBoxcard__po5Nyv6Dsw]: hasVariant(
-                        variants,
+                        $state,
                         "card",
                         "card"
                       )
@@ -186,7 +203,7 @@ function PlasmicAboutCard__RenderFunc(props: {
                 <div
                   className={classNames(projectcss.all, sty.freeBox___5O2Ag, {
                     [sty.freeBoxcard___5O2Agv6Dsw]: hasVariant(
-                      variants,
+                      $state,
                       "card",
                       "card"
                     )
@@ -202,7 +219,7 @@ function PlasmicAboutCard__RenderFunc(props: {
                         projectcss.all,
                         projectcss.h4,
                         sty.h4,
-                        { [sty.h4card]: hasVariant(variants, "card", "card") }
+                        { [sty.h4card]: hasVariant($state, "card", "card") }
                       )}
                     >
                       {p.renderPlasmicSlot({
@@ -219,7 +236,7 @@ function PlasmicAboutCard__RenderFunc(props: {
                         projectcss.all,
                         projectcss.h5,
                         sty.h5,
-                        { [sty.h5card]: hasVariant(variants, "card", "card") }
+                        { [sty.h5card]: hasVariant($state, "card", "card") }
                       )}
                     >
                       {p.renderPlasmicSlot({
@@ -233,7 +250,7 @@ function PlasmicAboutCard__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__scTin, {
                       [sty.freeBoxcard__scTinV6Dsw]: hasVariant(
-                        variants,
+                        $state,
                         "card",
                         "card"
                       )

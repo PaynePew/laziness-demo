@@ -35,7 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import LogInForm from "../../LogInForm"; // plasmic-import: CtTUSfG2PU6/component
+import RegisterForm from "../../RegisterForm"; // plasmic-import: CtTUSfG2PU6/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -59,7 +59,7 @@ export type PlasmicLogIn__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
-  logInForm?: p.Flex<typeof LogInForm>;
+  registerForm?: p.Flex<typeof RegisterForm>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -90,19 +90,27 @@ function PlasmicLogIn__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"會員資訊平台"}</title>
+        <title key="title">{PlasmicLogIn.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"會員資訊平台"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicLogIn.pageMetadata.title}
+        />
 
         <meta
           key="twitter:title"
           name="twitter:title"
-          content={"會員資訊平台"}
+          content={PlasmicLogIn.pageMetadata.title}
         />
       </Head>
 
@@ -163,10 +171,10 @@ function PlasmicLogIn__RenderFunc(props: {
           >
             <div className={classNames(projectcss.all, sty.freeBox__uOToU)}>
               <div className={classNames(projectcss.all, sty.freeBox__gNdPd)}>
-                <LogInForm
-                  data-plasmic-name={"logInForm"}
-                  data-plasmic-override={overrides.logInForm}
-                  className={classNames("__wab_instance", sty.logInForm)}
+                <RegisterForm
+                  data-plasmic-name={"registerForm"}
+                  data-plasmic-override={overrides.registerForm}
+                  className={classNames("__wab_instance", sty.registerForm)}
                 />
               </div>
             </div>
@@ -190,14 +198,14 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "accountSection",
-    "logInForm",
+    "registerForm",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection", "logInForm"],
-  logInForm: ["logInForm"],
+  accountSection: ["accountSection", "registerForm"],
+  registerForm: ["registerForm"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -209,7 +217,7 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   accountSection: "div";
-  logInForm: typeof LogInForm;
+  registerForm: typeof RegisterForm;
   footerSection: typeof FooterSection;
 };
 
@@ -278,12 +286,20 @@ export const PlasmicLogIn = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
-    logInForm: makeNodeComponent("logInForm"),
+    registerForm: makeNodeComponent("registerForm"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicLogIn
     internalVariantProps: PlasmicLogIn__VariantProps,
-    internalArgProps: PlasmicLogIn__ArgProps
+    internalArgProps: PlasmicLogIn__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "會員資訊平台",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

@@ -61,6 +61,7 @@ export type PlasmicAdmin__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
+  logOutButton?: p.Flex<typeof Button>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -91,16 +92,28 @@ function PlasmicAdmin__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"後台管理"}</title>
+        <title key="title">{PlasmicAdmin.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"後台管理"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicAdmin.pageMetadata.title}
+        />
 
-        <meta key="twitter:title" name="twitter:title" content={"後台管理"} />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicAdmin.pageMetadata.title}
+        />
       </Head>
 
       <style>{`
@@ -183,7 +196,7 @@ function PlasmicAdmin__RenderFunc(props: {
                 <Button
                   className={classNames("__wab_instance", sty.button__eh2Wj)}
                   color={"blue" as const}
-                  link={`/admin/results`}
+                  link={`/admin/report`}
                 >
                   <div
                     className={classNames(
@@ -197,18 +210,19 @@ function PlasmicAdmin__RenderFunc(props: {
                 </Button>
 
                 <Button
-                  className={classNames("__wab_instance", sty.button__dfBCj)}
-                  color={"pink" as const}
-                  link={`/admin/signup`}
+                  data-plasmic-name={"logOutButton"}
+                  data-plasmic-override={overrides.logOutButton}
+                  className={classNames("__wab_instance", sty.logOutButton)}
+                  color={"navLink" as const}
                 >
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__zvgoM
+                      sty.text__s6JLb
                     )}
                   >
-                    {"新增會員資料"}
+                    {"登出"}
                   </div>
                 </Button>
               </p.Stack>
@@ -233,12 +247,14 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "accountSection",
+    "logOutButton",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection"],
+  accountSection: ["accountSection", "logOutButton"],
+  logOutButton: ["logOutButton"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -250,6 +266,7 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   accountSection: "div";
+  logOutButton: typeof Button;
   footerSection: typeof FooterSection;
 };
 
@@ -318,11 +335,20 @@ export const PlasmicAdmin = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
+    logOutButton: makeNodeComponent("logOutButton"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicAdmin
     internalVariantProps: PlasmicAdmin__VariantProps,
-    internalArgProps: PlasmicAdmin__ArgProps
+    internalArgProps: PlasmicAdmin__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "後台管理",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

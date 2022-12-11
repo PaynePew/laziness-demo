@@ -35,13 +35,16 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: 2AU0qEyM1oCTCP/component
-import ResultCard from "../../ResultCard"; // plasmic-import: MYiOb2nF0s/component
+import DashboardProjectCard from "../../DashboardProjectCard"; // plasmic-import: MYiOb2nF0s/component
+import Button from "../../Button"; // plasmic-import: kcMTy-wpYm5s_7/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 1ez9I6FpbEKqEg/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "../landing_page_starter/plasmic_landing_page_starter.module.css"; // plasmic-import: qtkpEraJg2gN978YDtMYaP/projectcss
 import sty from "./PlasmicMember.module.css"; // plasmic-import: krho14hlwT/css
+
+import AppleIcon from "../landing_page_starter/icons/PlasmicIcon__Apple"; // plasmic-import: Zu9y5vY-DbAu23/icon
 
 export type PlasmicMember__VariantMembers = {};
 
@@ -59,7 +62,10 @@ export type PlasmicMember__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
-  resultCard?: p.Flex<typeof ResultCard>;
+  dashboardProjectCard?: p.Flex<typeof DashboardProjectCard>;
+  freeBox?: p.Flex<"div">;
+  manageButton?: p.Flex<typeof Button>;
+  signOutButton?: p.Flex<typeof Button>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -90,19 +96,27 @@ function PlasmicMember__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"會員資訊平台"}</title>
+        <title key="title">{PlasmicMember.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"會員資訊平台"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicMember.pageMetadata.title}
+        />
 
         <meta
           key="twitter:title"
           name="twitter:title"
-          content={"會員資訊平台"}
+          content={PlasmicMember.pageMetadata.title}
         />
       </Head>
 
@@ -161,11 +175,38 @@ function PlasmicMember__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.accountSection)}
           >
-            <ResultCard
-              data-plasmic-name={"resultCard"}
-              data-plasmic-override={overrides.resultCard}
-              className={classNames("__wab_instance", sty.resultCard)}
+            <DashboardProjectCard
+              data-plasmic-name={"dashboardProjectCard"}
+              data-plasmic-override={overrides.dashboardProjectCard}
+              className={classNames("__wab_instance", sty.dashboardProjectCard)}
+              isProjectDetailView={true}
             />
+
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"freeBox"}
+              data-plasmic-override={overrides.freeBox}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox)}
+            >
+              <Button
+                data-plasmic-name={"manageButton"}
+                data-plasmic-override={overrides.manageButton}
+                className={classNames("__wab_instance", sty.manageButton)}
+                color={"red" as const}
+              >
+                {"管理帳號"}
+              </Button>
+
+              <Button
+                data-plasmic-name={"signOutButton"}
+                data-plasmic-override={overrides.signOutButton}
+                className={classNames("__wab_instance", sty.signOutButton)}
+                color={"red" as const}
+              >
+                {"登出"}
+              </Button>
+            </p.Stack>
           </p.Stack>
 
           <FooterSection
@@ -186,14 +227,26 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "accountSection",
-    "resultCard",
+    "dashboardProjectCard",
+    "freeBox",
+    "manageButton",
+    "signOutButton",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection", "resultCard"],
-  resultCard: ["resultCard"],
+  accountSection: [
+    "accountSection",
+    "dashboardProjectCard",
+    "freeBox",
+    "manageButton",
+    "signOutButton"
+  ],
+  dashboardProjectCard: ["dashboardProjectCard"],
+  freeBox: ["freeBox", "manageButton", "signOutButton"],
+  manageButton: ["manageButton"],
+  signOutButton: ["signOutButton"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -205,7 +258,10 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   accountSection: "div";
-  resultCard: typeof ResultCard;
+  dashboardProjectCard: typeof DashboardProjectCard;
+  freeBox: "div";
+  manageButton: typeof Button;
+  signOutButton: typeof Button;
   footerSection: typeof FooterSection;
 };
 
@@ -274,12 +330,23 @@ export const PlasmicMember = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
-    resultCard: makeNodeComponent("resultCard"),
+    dashboardProjectCard: makeNodeComponent("dashboardProjectCard"),
+    freeBox: makeNodeComponent("freeBox"),
+    manageButton: makeNodeComponent("manageButton"),
+    signOutButton: makeNodeComponent("signOutButton"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicMember
     internalVariantProps: PlasmicMember__VariantProps,
-    internalArgProps: PlasmicMember__ArgProps
+    internalArgProps: PlasmicMember__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "會員資訊平台",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

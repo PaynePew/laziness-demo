@@ -103,6 +103,23 @@ function PlasmicNavbar__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "showModal",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.showModal
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });
@@ -122,7 +139,7 @@ function PlasmicNavbar__RenderFunc(props: {
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
         sty.root,
-        { [sty.rootshowModal]: hasVariant(variants, "showModal", "showModal") }
+        { [sty.rootshowModal]: hasVariant($state, "showModal", "showModal") }
       )}
     >
       {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
@@ -201,7 +218,7 @@ function PlasmicNavbar__RenderFunc(props: {
             <Button
               className={classNames("__wab_instance", sty.button__axQ7P)}
               color={"navLink" as const}
-              link={`/login`}
+              link={`/member`}
               outline={true}
             >
               {"會員資訊平台"}
@@ -214,7 +231,7 @@ function PlasmicNavbar__RenderFunc(props: {
         <div
           className={classNames(projectcss.all, sty.freeBox__pqNE, {
             [sty.freeBoxshowModal__pqNEuyJcM]: hasVariant(
-              variants,
+              $state,
               "showModal",
               "showModal"
             )
@@ -231,11 +248,7 @@ function PlasmicNavbar__RenderFunc(props: {
               data-plasmic-name={"svg"}
               data-plasmic-override={overrides.svg}
               className={classNames(projectcss.all, sty.svg, {
-                [sty.svgshowModal]: hasVariant(
-                  variants,
-                  "showModal",
-                  "showModal"
-                )
+                [sty.svgshowModal]: hasVariant($state, "showModal", "showModal")
               })}
               role={"img"}
             />
@@ -305,7 +318,7 @@ function PlasmicNavbar__RenderFunc(props: {
       ) : null}
 
       {(
-        hasVariant(variants, "showModal", "showModal") &&
+        hasVariant($state, "showModal", "showModal") &&
         hasVariant(globalVariants, "screen", "mobileOnly")
           ? true
           : true
@@ -320,18 +333,14 @@ function PlasmicNavbar__RenderFunc(props: {
             sty.modal,
             "modal-pop" as const,
             {
-              [sty.modalshowModal]: hasVariant(
-                variants,
-                "showModal",
-                "showModal"
-              )
+              [sty.modalshowModal]: hasVariant($state, "showModal", "showModal")
             }
           )}
         >
           <Button
             className={classNames("__wab_instance", sty.button___1UgVl, {
               [sty.buttonshowModal___1UgVlUyJcM]: hasVariant(
-                variants,
+                $state,
                 "showModal",
                 "showModal"
               )
@@ -345,7 +354,7 @@ function PlasmicNavbar__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__eXzmm, {
               [sty.buttonshowModal__eXzmmUyJcM]: hasVariant(
-                variants,
+                $state,
                 "showModal",
                 "showModal"
               )
@@ -359,7 +368,7 @@ function PlasmicNavbar__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__tp7Xx, {
               [sty.buttonshowModal__tp7XxUyJcM]: hasVariant(
-                variants,
+                $state,
                 "showModal",
                 "showModal"
               )
@@ -373,7 +382,7 @@ function PlasmicNavbar__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__cFzWn, {
               [sty.buttonshowModal__cFzWnUyJcM]: hasVariant(
-                variants,
+                $state,
                 "showModal",
                 "showModal"
               )
@@ -387,7 +396,7 @@ function PlasmicNavbar__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__qaXs1, {
               [sty.buttonshowModal__qaXs1UyJcM]: hasVariant(
-                variants,
+                $state,
                 "showModal",
                 "showModal"
               )
@@ -401,7 +410,7 @@ function PlasmicNavbar__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__assMv, {
               [sty.buttonshowModal__assMvUyJcM]: hasVariant(
-                variants,
+                $state,
                 "showModal",
                 "showModal"
               )
@@ -415,13 +424,13 @@ function PlasmicNavbar__RenderFunc(props: {
           <Button
             className={classNames("__wab_instance", sty.button__lIhF4, {
               [sty.buttonshowModal__lIhF4UyJcM]: hasVariant(
-                variants,
+                $state,
                 "showModal",
                 "showModal"
               )
             })}
             color={"navLink" as const}
-            link={`/login`}
+            link={`/member`}
             outline={true}
           >
             {"會員資訊平台"}
@@ -433,7 +442,7 @@ function PlasmicNavbar__RenderFunc(props: {
             alt={""}
             className={classNames(sty.closeIcon, {
               [sty.closeIconshowModal]: hasVariant(
-                variants,
+                $state,
                 "showModal",
                 "showModal"
               )

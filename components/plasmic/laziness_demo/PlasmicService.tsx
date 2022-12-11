@@ -99,6 +99,10 @@ function PlasmicService__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });
@@ -108,11 +112,19 @@ function PlasmicService__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"服務項目"}</title>
+        <title key="title">{PlasmicService.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"服務項目"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicService.pageMetadata.title}
+        />
 
-        <meta key="twitter:title" name="twitter:title" content={"服務項目"} />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicService.pageMetadata.title}
+        />
       </Head>
 
       <style>{`
@@ -505,7 +517,15 @@ export const PlasmicService = Object.assign(
 
     // Metadata about props expected for PlasmicService
     internalVariantProps: PlasmicService__VariantProps,
-    internalArgProps: PlasmicService__ArgProps
+    internalArgProps: PlasmicService__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "服務項目",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

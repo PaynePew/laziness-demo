@@ -1,5 +1,5 @@
 .root {
-  flex-direction: row;
+  flex-direction: column;
   box-shadow: 0px 10px 10px 0px #00000026;
   display: flex;
   width: 100%;
@@ -9,18 +9,18 @@
   padding: 8px;
 }
 .root > :global(.__wab_flex-container) {
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   min-width: 0;
-  margin-left: calc(0px - 22px);
-  width: calc(100% + 22px);
+  margin-top: calc(0px - 12px);
+  height: calc(100% + 12px);
 }
 .root > :global(.__wab_flex-container) > *,
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
 .root > :global(.__wab_flex-container) > picture > img,
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
-  margin-left: 22px;
+  margin-top: 12px;
 }
 @media (min-width: 0px) and (max-width: 769px) {
   .root {
@@ -31,6 +31,7 @@
 @media (min-width: 0px) and (max-width: 769px) {
   .root > :global(.__wab_flex-container) {
     flex-direction: column;
+    align-items: flex-start;
     margin-left: calc(0px - 0px);
     width: calc(100% + 0px);
   }
@@ -47,23 +48,85 @@
     margin-left: 0px;
   }
 }
+.freeBox__vOdfl {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox__vOdfl {
+    display: flex;
+    flex-direction: column;
+    flex-column-gap: 0px;
+  }
+}
+.freeBoxisProjectView__vOdflTrcB4 {
+  display: flex;
+}
+.toggleButton {
+  object-fit: cover;
+  max-width: 100%;
+  transition-property: transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  -webkit-transition-property: transform;
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.4s;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .toggleButton {
+    align-self: flex-start;
+  }
+}
+.toggleButtonisProjectView {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(90deg);
+  align-self: center;
+}
+.toggleButtonisCreateProject {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(90deg);
+}
+.toggleButtonisError {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(90deg);
+}
 .freeBox__aOatv {
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 18%;
   display: flex;
   flex-direction: row;
   min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox__aOatv {
+    max-width: none;
+  }
+}
+.freeBoxisProjectView__aOatvTrcB4 {
+  align-self: center;
 }
 .freeBox___77Luy {
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 10%;
   display: flex;
   flex-direction: row;
   min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox___77Luy {
+    max-width: none;
+  }
 }
 .slotTargetName {
   white-space: pre-wrap;
@@ -72,23 +135,33 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 10%;
   display: flex;
   flex-direction: row;
   min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox___2PEge {
+    max-width: none;
+  }
 }
 .freeBox__wc02L {
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 25%;
   flex-shrink: 1;
   flex-grow: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
   min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox__wc02L {
+    max-width: none;
+  }
 }
 .slotTargetEmail {
   white-space: pre-wrap;
@@ -99,12 +172,137 @@
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 12%;
   display: flex;
   flex-direction: row;
   min-width: 0;
 }
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox___3Bg96 {
+    max-width: none;
+  }
+}
 .freeBox___2DQkd {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 20%;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
+@media (min-width: 0px) and (max-width: 769px) {
+  .freeBox___2DQkd {
+    max-width: none;
+  }
+}
+.freeBoxisProjectView___2DQkdTrcB4 {
+  align-self: flex-start;
+}
+.freeBox__x1Qw5 {
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
+  padding: 0px 8px 8px 40px;
+}
+.freeBox__x1Qw5 > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 24px);
+  width: calc(100% + 24px);
+}
+.freeBox__x1Qw5 > :global(.__wab_flex-container) > *,
+.freeBox__x1Qw5 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__x1Qw5 > :global(.__wab_flex-container) > picture > img,
+.freeBox__x1Qw5
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 24px;
+}
+.freeBoxisProjectView__x1Qw5TrcB4 {
+  display: flex;
+}
+.freeBoxisCreateProject__x1Qw5FiRto {
+  display: flex;
+}
+.freeBoxisError__x1Qw508Nok {
+  display: flex;
+}
+.editButton:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.editButtonisCreateProject:global(.__wab_instance) {
+  display: none;
+}
+.editButtonisError:global(.__wab_instance) {
+  display: none;
+}
+.svg__fHvL {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+}
+.svg___1Fjj {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+}
+.createProjectButton:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.createProjectButtonisCreateProject:global(.__wab_instance) {
+  display: flex;
+}
+.createProjectButtonisError:global(.__wab_instance) {
+  display: flex;
+}
+.svg__zZn1V {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+}
+.svg__vzShR {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+}
+.submitProjectButton:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.submitProjectButtonisProjectView:global(.__wab_instance) {
+  display: none;
+}
+.submitProjectButtonisCreateProject_isProjectView:global(.__wab_instance) {
+  display: flex;
+}
+.svg___5IbYv {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+}
+.svg__jaHap {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  object-fit: cover;
+}
+.freeBox__cbxjf {
   position: relative;
   width: 100%;
   height: auto;
@@ -112,4 +310,125 @@
   display: flex;
   flex-direction: row;
   min-width: 0;
+}
+.freeBoxisProjectView__cbxjfTrcB4 {
+  display: none;
+}
+.freeBoxisCreateProject__cbxjfFiRto {
+  display: none;
+}
+.freeBoxisError_isCreateProject__cbxjf08NokFiRto {
+  display: flex;
+}
+.slotTargetErrorMessage {
+  color: var(--token-dtdSaZTrY3pRCl);
+}
+.freeBox___83XVg {
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
+  padding: 0px 8px 8px 32px;
+}
+.freeBox___83XVg > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-width: 0;
+  margin-left: calc(0px - 12px);
+  width: calc(100% + 12px);
+}
+.freeBox___83XVg > :global(.__wab_flex-container) > *,
+.freeBox___83XVg > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox___83XVg > :global(.__wab_flex-container) > picture > img,
+.freeBox___83XVg
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 12px;
+}
+.freeBoxisCreateProject___83XVgFiRto {
+  padding-left: 40px;
+  display: flex;
+}
+.freeBoxisError___83XVg08Nok {
+  padding-left: 40px;
+  display: flex;
+}
+.projectNameInput:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__epdSy {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.svg__g2W9W {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.priceInput:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__dLukh {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.svg__q2PYb {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.descriptionInput:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__hTd8Y {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.svg___9SwNs {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.projectStack {
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  display: none;
+  padding: 0px 8px 8px 40px;
+}
+.projectStackisProjectView {
+  display: flex;
+}
+.projectStackisCreateProject {
+  display: flex;
+}
+.projectStackisError {
+  display: flex;
+}
+.dashboardProjectCard:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
 }

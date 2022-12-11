@@ -3,42 +3,101 @@
 import * as React from "react";
 import {
   PlasmicAccountCard,
-  DefaultAccountCardProps
+  DefaultAccountCardProps,
 } from "./plasmic/laziness_demo/PlasmicAccountCard";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import useSWR, { Fetcher } from "swr";
+// import { UserDetails } from "../types";
+import { useUser } from "../utils/useUser";
+import { createProject } from "../utils/supabase-client";
 
-// Your component props start with props for variants and slots you defined
-// in Plasmic, but you can add more here, like event handlers that you can
-// attach to named nodes in your component.
-//
-// If you don't want to expose certain variants or slots as a prop, you can use
-// Omit to hide them:
-//
-// interface AccountCardProps extends Omit<DefaultAccountCardProps, "hideProps1"|"hideProp2"> {
-//   // etc.
-// }
-//
-// You can also stop extending from DefaultAccountCardProps altogether and have
-// total control over the props for your component.
 export interface AccountCardProps extends DefaultAccountCardProps {}
 
-function AccountCard_(props: AccountCardProps, ref: HTMLElementRefOf<"div">) {
-  // Use PlasmicAccountCard to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicAccountCard are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, we are just piping all AccountCardProps here, but feel free
-  // to do whatever works for you.
+// const fetcher: Fetcher<UserDetails, string> = (url) =>
+//   fetch(url, { method: "GET" }).then((res) => res.json());
 
-  return <PlasmicAccountCard root={{ ref }} {...props} />;
+function AccountCard_(props: AccountCardProps, ref: HTMLElementRefOf<"div">) {
+  const { isLoading, userDetails } = useUser();
+  const [isProjectView, setIsProjectView] = React.useState(false);
+  const [isCreateProject, setIsCreateProject] = React.useState(false);
+  const [isError, setIsError] = React.useState(false);
+  const [projectName, setProjectName] = React.useState("");
+  const [price, setPrice] = React.useState("");
+  const [description, setDescription] = React.useState("");
+  const [supabaseError, setSupabaseError] = React.useState<string | null>(null);
+  const userId = props.userId;
+
+  // const { data, error } = useSWR("/api/getProjects", fetcher);
+  // console.log(data);
+  const handleQueryProjects = async () => {};
+
+  const handleCreateProject = async () => {
+    // todo: handle form error(not null and text limit)
+    setSupabaseError(null);
+    setIsError(false);
+    if (!projectName) {
+      setIsError(true);
+      setSupabaseError("請輸入專案名稱");
+      console.log("error", supabaseError);
+      return;
+    }
+    if (!isLoading && userDetails?.isadmin && userId) {
+      const error = await createProject(
+        projectName,
+        +price,
+        description,
+        userId
+      );
+      if (error) {
+        setSupabaseError(error);
+        setIsError(true);
+        return;
+      }
+      setIsCreateProject(false);
+    }
+    setSupabaseError("沒有創立專案的權限");
+    setIsError(true);
+
+    // await fetch("/api/projects", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ projectName, price, description }),
+    // });
+  };
+
+  return (
+    <PlasmicAccountCard
+      isProjectView={isProjectView}
+      isCreateProject={isCreateProject && isProjectView}
+      isError={isError && isCreateProject && isProjectView}
+      root={{ ref }}
+      {...props}
+      errorMessage={supabaseError}
+      toggleButton={{
+        onClick: () => setIsProjectView(!isProjectView),
+      }}
+      createProjectButton={{
+        onClick: () => setIsCreateProject(!isCreateProject),
+      }}
+      projectNameInput={{
+        value: projectName,
+        onChange: (e) => setProjectName(e.target.value),
+      }}
+      priceInput={{
+        value: price,
+        onChange: (e) => setPrice(e.target.value),
+      }}
+      descriptionInput={{
+        value: description,
+        onChange: (e) => setDescription(e.target.value),
+      }}
+      submitProjectButton={{
+        onClick: () => handleCreateProject(),
+      }}
+    />
+  );
 }
 
 const AccountCard = React.forwardRef(AccountCard_);

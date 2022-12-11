@@ -61,6 +61,7 @@ export type PlasmicAdminAccounts__OverridesType = {
   navbar?: p.Flex<typeof Navbar>;
   h2?: p.Flex<"h2">;
   accountSection?: p.Flex<"div">;
+  accountCardList?: p.Flex<"div">;
   accountCard?: p.Flex<typeof AccountCard>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
@@ -92,6 +93,10 @@ function PlasmicAdminAccounts__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsnCpqQwRKrRf2Hx()
   });
@@ -101,11 +106,19 @@ function PlasmicAdminAccounts__RenderFunc(props: {
       <Head>
         <meta name="twitter:card" content="summary" />
 
-        <title key="title">{"後台管理"}</title>
+        <title key="title">{PlasmicAdminAccounts.pageMetadata.title}</title>
 
-        <meta key="og:title" property="og:title" content={"後台管理"} />
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicAdminAccounts.pageMetadata.title}
+        />
 
-        <meta key="twitter:title" name="twitter:title" content={"後台管理"} />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicAdminAccounts.pageMetadata.title}
+        />
       </Head>
 
       <style>{`
@@ -234,12 +247,32 @@ function PlasmicAdminAccounts__RenderFunc(props: {
                 </p.Stack>
               ) : null}
 
-              <AccountCard
-                data-plasmic-name={"accountCard"}
-                data-plasmic-override={overrides.accountCard}
-                className={classNames("__wab_instance", sty.accountCard)}
-                email={"nlpam06@gmail.com"}
-              />
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"accountCardList"}
+                data-plasmic-override={overrides.accountCardList}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.accountCardList)}
+              >
+                <AccountCard
+                  data-plasmic-name={"accountCard"}
+                  data-plasmic-override={overrides.accountCard}
+                  className={classNames("__wab_instance", sty.accountCard)}
+                  email={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__luzNr,
+                        "text-wrap" as const
+                      )}
+                    >
+                      {"nlpam06@gmail.com"}
+                    </div>
+                  }
+                  isProjectView={true}
+                />
+              </p.Stack>
             </div>
           </p.Stack>
 
@@ -261,13 +294,15 @@ const PlasmicDescendants = {
     "navbar",
     "h2",
     "accountSection",
+    "accountCardList",
     "accountCard",
     "footerSection"
   ],
   headerHeroSection: ["headerHeroSection", "navbar", "h2"],
   navbar: ["navbar"],
   h2: ["h2"],
-  accountSection: ["accountSection", "accountCard"],
+  accountSection: ["accountSection", "accountCardList", "accountCard"],
+  accountCardList: ["accountCardList", "accountCard"],
   accountCard: ["accountCard"],
   footerSection: ["footerSection"]
 } as const;
@@ -280,6 +315,7 @@ type NodeDefaultElementType = {
   navbar: typeof Navbar;
   h2: "h2";
   accountSection: "div";
+  accountCardList: "div";
   accountCard: typeof AccountCard;
   footerSection: typeof FooterSection;
 };
@@ -349,12 +385,21 @@ export const PlasmicAdminAccounts = Object.assign(
     navbar: makeNodeComponent("navbar"),
     h2: makeNodeComponent("h2"),
     accountSection: makeNodeComponent("accountSection"),
+    accountCardList: makeNodeComponent("accountCardList"),
     accountCard: makeNodeComponent("accountCard"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicAdminAccounts
     internalVariantProps: PlasmicAdminAccounts__VariantProps,
-    internalArgProps: PlasmicAdminAccounts__ArgProps
+    internalArgProps: PlasmicAdminAccounts__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "後台管理",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

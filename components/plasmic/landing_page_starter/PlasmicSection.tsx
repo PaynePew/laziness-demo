@@ -100,6 +100,29 @@ function PlasmicSection__RenderFunc(props: {
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "background",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.background
+      },
+
+      {
+        path: "size",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.size
+      }
+    ],
+
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <div
       data-plasmic-name={"root"}
@@ -114,10 +137,10 @@ function PlasmicSection__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root,
         {
-          [sty.rootbackground_dark]: hasVariant(variants, "background", "dark"),
-          [sty.rootbackground_gray]: hasVariant(variants, "background", "gray"),
+          [sty.rootbackground_dark]: hasVariant($state, "background", "dark"),
+          [sty.rootbackground_gray]: hasVariant($state, "background", "gray"),
           [sty.rootsize_fullContentWidth]: hasVariant(
-            variants,
+            $state,
             "size",
             "fullContentWidth"
           )
@@ -129,7 +152,7 @@ function PlasmicSection__RenderFunc(props: {
         data-plasmic-override={overrides.freeBox}
         className={classNames(projectcss.all, sty.freeBox, {
           [sty.freeBoxsize_fullContentWidth]: hasVariant(
-            variants,
+            $state,
             "size",
             "fullContentWidth"
           )
